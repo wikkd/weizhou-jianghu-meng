@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""生成项目入口主页 index.html（零依赖，引用 kb.html / poems/ / 仓库）。
+"""生成项目入口主页 index.html（鸿蒙风格，守则见 DEV_RULES.md）。
 
-读取 knowledge_base.json 与 poems.json 取实时数据，保证统计与诗词预览始终准确。
+- 视觉：引用 assets/theme.css 设计令牌 + 明暗双主题（wzjm_theme），零硬编码色；
+- 图标：HarmonyOS 官方图标库（D:/harmony资源包/HarmonyOS_Icons.zip）按需入库 assets/icons/；
+- 交互：搜索表单 GET 直达 wiki/index.html?q=；命名空间卡深链 #ns-锚点；主题切换有持久化与反馈；
+- 数据：统计单源 knowledge_base.json + poems.json + wiki/search-index.json。
 """
 import json, os
 
@@ -19,6 +22,42 @@ n_chapters = len(CH)
 n_chars = len(C)
 n_edges = len(RC)
 n_poems = len(poems)
+
+# wiki 已建词条数（单源：search-index.json）
+widx = json.load(open(os.path.join(OUTDIR, "wiki", "search-index.json"), encoding="utf-8"))
+built = {}
+for e in widx["entries"]:
+    built[e["ns"]] = built.get(e["ns"], 0) + 1
+
+NS_CARDS = [
+    ("人物", "ic_public_contacts",       n_chars,    "33 位人物的花名册词条：身份、首见、出场跨章时间线，词条链互引。"),
+    ("章节", "ic_public_view_list",      n_chapters, "63 章（含自序）逐章词条：剧情梗概、出场人物、出处章节链。"),
+    ("地点", "ic_public_navigation",     0,          "江湖地理：苇舟渡、门派山门等场景词条。规划中，随词条补全开放。"),
+    ("组织", "ic_public_contacts_group", 0,          "门派、帮会与势力词条，梳理人物归属与阵营关系。规划中。"),
+    ("术语", "ic_public_text",           0,          "武功、物件、称谓等专有名词释义，解释古风语境。规划中。"),
+    ("诗词", "ic_public_notes",          n_poems,    "9 首题画诗、口占与福纸愿的词条化整理，与诗图对照页互链。"),
+]
+
+def ns_card(name, icon, plan, desc):
+    have = built.get(name, 0)
+    if have > 0:
+        chip = f'<span class="chip green">已开放 {have}</span>'
+        href = f'wiki/index.html#ns-{name}'
+    elif plan > 0:
+        chip = f'<span class="chip gray">规划 {plan}</span>'
+        href = 'wiki/待创建.html'
+    else:
+        chip = '<span class="chip gray">待规划</span>'
+        href = 'wiki/待创建.html'
+    return f"""
+      <a class="nsc" href="{href}">
+        <div class="nsc-h"><img class="hic" src="assets/icons/{icon}.svg" alt="" width="24" height="24">
+          <span class="nsc-t">{name}</span>{chip}</div>
+        <p class="nsc-d">{desc}</p>
+        <div class="nsc-go">进入{name}词条 →</div>
+      </a>"""
+
+NS_GRID = "\n".join(ns_card(*c) for c in NS_CARDS)
 
 # 自序撷英：取前两句
 pref_text = CH[0]["text"] if CH and CH[0].get("is_preface") else ""
@@ -79,115 +118,148 @@ HERO_SVG = r"""
 </svg>"""
 
 HTML = r"""<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>苇舟江湖梦 · 项目主页</title>
+<script>(function(){var d=document.documentElement,t=localStorage.getItem("wzjm_theme");
+if(!t)t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+d.setAttribute("data-theme",t);})();</script>
+<link rel="stylesheet" href="assets/theme.css">
 <style>
-:root{
-  --bg:#f5f8fc;--panel:#fff;--ink:#1f2a37;--muted:#6b7a90;
-  --line:#e2e9f3;--blue:#2f6fed;--blue2:#e8f0fe;--accent:#0f9d8b;
-  --gold:#caa24a;--shadow:0 1px 3px rgba(31,42,55,.08),0 6px 20px rgba(31,42,55,.06);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Noto Sans CJK SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
-  background:var(--bg);color:var(--ink);font-size:15px;line-height:1.7}
-a{color:var(--blue);text-decoration:none}
-.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.86);backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:10px 22px}
-.nav .brand{font-weight:800;font-size:16px;letter-spacing:1px;color:var(--ink);display:flex;align-items:center;gap:8px}
-.nav .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--accent))}
-.nav .sp{flex:1}
-.nav a.lk{padding:6px 12px;border-radius:8px;color:var(--muted);font-weight:600;font-size:13px}
-.nav a.lk:hover{background:var(--blue2);color:var(--blue)}
-.wrap{max-width:1120px;margin:0 auto;padding:0 22px 70px}
+/* 页面专属样式：只取 theme.css 设计令牌，不硬编码颜色 */
+.wrap{max-width:1080px}
+.hic{display:block}
+[data-theme="dark"] .hic{filter:invert(1)}
 
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;
-  padding:42px 0 30px}
-.hero h1{margin:0;font-size:46px;line-height:1.15;letter-spacing:3px;
-  font-family:"Noto Serif CJK SC","Songti SC",serif;
-  background:linear-gradient(120deg,#2f6fed,#0f9d8b);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* Hero */
+.hero{display:grid;grid-template-columns:1.12fr .88fr;gap:26px;align-items:center;padding:44px 0 32px}
+.hero h1{margin:0;font-size:44px;line-height:1.18;letter-spacing:4px;font-weight:700;color:var(--ink)}
 .hero .by{margin-top:10px;color:var(--muted);font-size:14px;letter-spacing:1px}
-.hero .tag{margin-top:16px;font-size:18px;font-family:"Noto Serif CJK SC","Songti SC",serif;color:var(--accent);font-weight:700}
-.hero .desc{margin-top:14px;color:#44546a;max-width:480px}
-.hero .cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{padding:11px 20px;border-radius:11px;font-weight:700;font-size:14px;border:1px solid transparent;cursor:pointer;display:inline-block}
-.btn.primary{background:linear-gradient(120deg,#2f6fed,#0f9d8b);color:#fff;box-shadow:var(--shadow)}
-.btn.ghost{background:#fff;color:var(--blue);border-color:var(--line)}
-.hero .art{background:linear-gradient(160deg,#eef4fb,#e3eef9);border:1px solid var(--line);
-  border-radius:18px;padding:10px;box-shadow:var(--shadow)}
+.hero .tag{margin-top:16px;font-size:17px;color:var(--brand);font-weight:500}
+.hero .desc{margin-top:12px;color:var(--muted);max-width:480px;font-size:13.5px}
 
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 30px}
-.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;
+/* 搜索胶囊（GET 表单，直达 wiki 检索） */
+.hsearch{margin-top:20px;display:flex;gap:8px;max-width:460px}
+.hsearch .box{flex:1;display:flex;align-items:center;gap:8px;background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:9px 16px}
+.hsearch .box:focus-within{border-color:var(--brand)}
+.hsearch input{flex:1;border:none;outline:none;background:transparent;color:var(--ink);font-size:13.5px;
+  font-family:inherit}
+.hsearch input::placeholder{color:var(--muted)}
+.quick{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.quick .ql{font-size:12px;color:var(--muted)}
+.hero .cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .art{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:10px;box-shadow:var(--shadow)}
+
+/* 统计 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 34px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;
   text-align:center;box-shadow:var(--shadow)}
-.stat .n{font-size:30px;font-weight:800;color:var(--blue);line-height:1}
+.stat .n{font-size:30px;font-weight:700;color:var(--brand);line-height:1}
 .stat .l{color:var(--muted);font-size:12.5px;margin-top:8px}
 
-.sec{margin:34px 0 8px}
-.sec h2{font-size:20px;margin:0 0 4px;display:flex;align-items:center;gap:10px}
-.sec h2 .bar{width:5px;height:20px;border-radius:3px;background:linear-gradient(180deg,var(--blue),var(--accent))}
+/* 分区标题 */
+.sec{margin:36px 0 10px}
+.sec h2{font-size:19px;font-weight:500;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+.sec h2::before{content:"";width:4px;height:18px;border-radius:2px;background:var(--brand)}
 .sec .hint{color:var(--muted);font-size:13px;margin:0 0 16px}
 
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.entry{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;
-  box-shadow:var(--shadow);transition:.18s;display:flex;flex-direction:column}
-.entry:hover{transform:translateY(-4px);border-color:#bcd0f3}
-.entry .ic{width:46px;height:46px;border-radius:12px;background:var(--blue2);
-  display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.entry h3{margin:0 0 8px;font-size:17px}
-.entry p{margin:0;color:#44546a;font-size:13.5px;flex:1}
-.entry .go{margin-top:16px;font-weight:700;color:var(--blue);font-size:13.5px}
+/* Wiki 结构总览：命名空间卡片 */
+.ns-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.nsc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;
+  box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.18s}
+.nsc:hover{transform:translateY(-3px);border-color:var(--brand)}
+.nsc-h{display:flex;align-items:center;gap:10px}
+.nsc-h .chip{margin-left:auto}
+.nsc-t{font-size:15.5px;font-weight:500;color:var(--ink)}
+.nsc-d{margin:10px 0 0;color:var(--muted);font-size:12.5px;flex:1}
+.nsc-go{margin-top:14px;font-size:12.5px;font-weight:500;color:var(--brand)}
 
+/* 四入口 */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.entry{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+  box-shadow:var(--shadow);transition:.18s;display:flex;flex-direction:column}
+.entry:hover{transform:translateY(-3px);border-color:var(--brand)}
+.entry .ic{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--brand-soft);
+  display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.entry h3{margin:0 0 6px;font-size:15.5px;font-weight:500}
+.entry p{margin:0;color:var(--muted);font-size:12.5px;flex:1}
+.entry .go{margin-top:14px;font-weight:500;color:var(--brand);font-size:12.5px}
+
+/* 诗词 */
 .poems{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.pcard{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:14px 16px;
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;
   box-shadow:var(--shadow);transition:.18s}
-.pcard:hover{transform:translateY(-3px);border-color:#bcd0f3}
-.pcard .pidx{font-weight:800;color:var(--gold);font-size:13px}
+.pcard:hover{transform:translateY(-2px);border-color:var(--brand)}
+.pcard .pidx{font-weight:700;color:var(--gold);font-size:13px}
 .pcard .ptype{color:var(--muted);font-size:12px;margin:3px 0 8px}
 .pcard .ptext{font-family:"Noto Serif CJK SC","Songti SC",serif;font-size:13.5px;color:var(--ink);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-.about{background:linear-gradient(120deg,#f0f6ff,#eefaf7);border:1px solid var(--line);
-  border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
-.about p{margin:0 0 10px;color:#37485e}
-.about .quote{border-left:3px solid var(--accent);padding:6px 0 6px 14px;color:var(--accent);
+/* 关于 */
+.about{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 24px;box-shadow:var(--shadow)}
+.about p{margin:0 0 10px;color:var(--muted);font-size:13px}
+.about .quote{border-left:3px solid var(--brand);padding:6px 0 6px 14px;color:var(--brand);
   font-family:"Noto Serif CJK SC","Songti SC",serif;font-style:italic}
 
-footer{border-top:1px solid var(--line);margin-top:46px;padding:22px;color:var(--muted);font-size:12.5px;text-align:center;line-height:1.9}
-footer a{color:var(--blue)}
+footer{border-top:1px solid var(--line);margin-top:46px;padding:22px;color:var(--muted);
+  font-size:12.5px;text-align:center;line-height:1.9}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--brand)}
 
 @media(max-width:880px){
   .hero{grid-template-columns:1fr}.hero .art{max-width:340px}
   .stats{grid-template-columns:repeat(2,1fr)}
-  .cards,.poems{grid-template-columns:1fr}
+  .ns-grid,.cards,.poems{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .nav{flex-wrap:wrap}
 }
 </style>
 </head>
 <body>
 <nav class="nav">
-  <div class="brand"><span class="dot"></span>苇舟江湖梦</div>
+  <a class="brand" href="index.html">苇舟江湖梦</a>
   <span class="sp"></span>
-  <a class="lk" href="#about">关于</a>
-  <a class="lk" href="wiki/index.html">Wiki</a>
+  <a class="lk on" href="wiki/index.html">总目录</a>
   <a class="lk" href="kb.html">知识库</a>
   <a class="lk" href="poems/poem_gallery.html">诗图</a>
   <a class="lk" href="文学/产物/00_总览导航/index.html">量化报告</a>
   <a class="lk" href="https://github.com/wikkd/weizhou-jianghu-meng" target="_blank" rel="noopener">仓库</a>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="切换明暗主题">
+    <img class="hic" src="assets/icons/ic_public_themes.svg" alt="" width="18" height="18">
+  </button>
 </nav>
 
 <div class="wrap">
   <section class="hero">
     <div>
       <h1>苇舟江湖梦</h1>
-      <div class="by">__AUTHOR__ 著 · 知识性索引与诗图工程</div>
+      <div class="by">__AUTHOR__ 著 · Wiki 式知识工程</div>
       <div class="tag">“每人都有每人的江湖。”</div>
-      <div class="desc">一部以少年任琅、少女尚樱为主角的江湖长篇。本站将全书结构化，
-        重建人物图谱、章节索引与角色诗图，供读者检索、对照与重温。</div>
+      <div class="desc">一部以少年任琅、少女尚樱为主角的江湖长篇。本站将全书结构化为 Wiki 词条：
+        人物、章节、地点、组织、术语、诗词六大命名空间，词条链互引、回链可溯。</div>
+      <form class="hsearch" action="wiki/index.html" method="get">
+        <label class="box">
+          <img class="hic" src="assets/icons/ic_public_search.svg" alt="" width="16" height="16">
+          <input type="search" name="q" placeholder="检索词条：人物 / 章节 / 别名…" aria-label="检索 Wiki 词条">
+        </label>
+        <button class="btn primary" type="submit">检索</button>
+      </form>
+      <div class="quick">
+        <span class="ql">试试：</span>
+        <a class="chip lnk" href="wiki/人物/任琅.html">任琅</a>
+        <a class="chip lnk" href="wiki/人物/尚樱.html">尚樱</a>
+        <a class="chip lnk" href="wiki/章节/一.html">第一章</a>
+        <a class="chip lnk" href="wiki/index.html">全部词条</a>
+      </div>
       <div class="cta">
-        <a class="btn primary" href="kb.html">进入知识库 →</a>
-        <a class="btn ghost" href="poems/poem_gallery.html">角色诗图对照</a>
+        <a class="btn primary" href="wiki/index.html">进入 Wiki 总目录 →</a>
+        <a class="btn ghost" href="kb.html">知识性索引数据库</a>
       </div>
     </div>
     <div class="art">__HERO_SVG__</div>
@@ -196,29 +268,35 @@ footer a{color:var(--blue)}
   <section class="stats">__STATS__</section>
 
   <div class="sec">
-    <h2><span class="bar"></span>四处入口</h2>
+    <h2>Wiki 结构总览</h2>
+    <p class="hint">六大命名空间。点击任意命名空间进入总目录对应分区；未开放分区落到待创建说明页。</p>
+    <div class="ns-grid">__NS_GRID__</div>
+  </div>
+
+  <div class="sec">
+    <h2>四处入口</h2>
     <p class="hint">从任意一扇门进入这片江湖。</p>
     <div class="cards">
       <a class="entry" href="wiki/index.html">
-        <div class="ic">📖</div>
+        <div class="ic"><img class="hic" src="assets/icons/ic_public_detail.svg" alt="" width="22" height="22"></div>
         <h3>Wiki 词条</h3>
         <p>人物、章节、术语的百科词条，词条链互引、回链可溯，随构建自动更新。</p>
         <div class="go">浏览词条 →</div>
       </a>
       <a class="entry" href="kb.html">
-        <div class="ic">📚</div>
+        <div class="ic"><img class="hic" src="assets/icons/ic_public_storage.svg" alt="" width="22" height="22"></div>
         <h3>知识性索引数据库</h3>
         <p>33 位人物花名册、63 章索引、共现关系网络与全文检索。点击人物可看其跨章出场时间线。</p>
         <div class="go">打开知识库 →</div>
       </a>
       <a class="entry" href="poems/poem_gallery.html">
-        <div class="ic">🖼️</div>
+        <div class="ic"><img class="hic" src="assets/icons/ic_public_picture.svg" alt="" width="22" height="22"></div>
         <h3>角色诗图对照</h3>
-        <p>9 首题画诗、口占与福纸愿，配 Qwen-Image-2.1 生成的意境图。含 4 处待考归属标注。</p>
+        <p>9 首题画诗、口占与福纸愿，配本地 AI 生成意境图。含 4 处待考归属标注。</p>
         <div class="go">浏览诗图 →</div>
       </a>
       <a class="entry" href="https://github.com/wikkd/weizhou-jianghu-meng" target="_blank" rel="noopener">
-        <div class="ic">⚙️</div>
+        <div class="ic"><img class="hic" src="assets/icons/ic_public_code.svg" alt="" width="22" height="22"></div>
         <h3>开源仓库</h3>
         <p>原始数据（knowledge_base.json / CSV）、全部构建脚本与部署配置，供复现与接管。</p>
         <div class="go">前往仓库 →</div>
@@ -227,30 +305,47 @@ footer a{color:var(--blue)}
   </div>
 
   <div class="sec" id="about">
-    <h2><span class="bar"></span>关于本项目</h2>
+    <h2>关于本项目</h2>
     <p class="hint">本站是什么，以及它不做什么。</p>
     <div class="about">
       <p>《苇舟江湖梦》全书约 __WAN__ 万字，作者自序明言“故事源于友人梦境”，人物地名纯属巧合。
-        本工程以 python-docx 解析原文，自动抽取章节、人物与场景标签，构建共现关系，并内联为可离线打开的单文件索引；
-        另以大模型为各角色诗作生成意境配图。</p>
+        本工程以 python-docx 解析原文，自动抽取章节、人物与场景标签，构建共现关系，并以 Wiki 词条形式内联为可离线打开的静态页；
+        配图由本地 AI 生图通道生成。</p>
       <p class="quote">“富人有富人的愁，穷人有穷人的乐，每人都有每人的江湖。”</p>
       <p>自序撷英：__PREF__</p>
-      <p style="color:var(--muted);font-size:12.5px;margin-bottom:0">
+      <p style="margin-bottom:0;font-size:12px">
         说明：诗图由 AI 生成，仅供意境欣赏，非商业用途；小说版权归作者 __AUTHOR__ 所有。站点由 WorkBuddy 构建并托管于 GitHub Pages。</p>
     </div>
   </div>
 
   <div class="sec">
-    <h2><span class="bar"></span>诗词撷英</h2>
+    <h2>诗词撷英</h2>
     <p class="hint">九首诗的首句，点击任意一张进入完整诗图对照。</p>
     <div class="poems">__POEM_CARDS__</div>
   </div>
 </div>
 
 <footer>
-  苇舟江湖梦 · 知识性索引与诗图工程 ｜ 作者 __AUTHOR__ ｜ 数据来源：苇舟江湖梦.docx<br>
+  <a href="wiki/index.html">Wiki 总目录</a> · <a href="kb.html">知识库</a> ·
+  <a href="poems/poem_gallery.html">诗图</a> · <a href="文学/产物/00_总览导航/index.html">量化报告</a> ·
+  <a href="https://github.com/wikkd/weizhou-jianghu-meng" target="_blank" rel="noopener">GitHub</a><br>
+  苇舟江湖梦 · 知识性索引与诗图工程 ｜ 作者 __AUTHOR__<br>
   站内诗图由 AI 生成仅供欣赏，版权与作品权利归原作者所有。
 </footer>
+
+<script>
+/* 主题切换：持久化 wzjm_theme（守则二：状态反馈 + localStorage 记忆） */
+(function(){
+  var btn=document.getElementById("themeBtn");
+  btn.addEventListener("click",function(){
+    var d=document.documentElement;
+    var t=d.getAttribute("data-theme")==="dark"?"light":"dark";
+    d.setAttribute("data-theme",t);
+    try{localStorage.setItem("wzjm_theme",t);}catch(e){}
+    btn.setAttribute("aria-label",t==="dark"?"切换到浅色主题":"切换到深色主题");
+  });
+})();
+</script>
 </body>
 </html>"""
 
@@ -259,10 +354,13 @@ html = (HTML
         .replace("__AUTHOR__", META.get("author", "霜月仲明"))
         .replace("__HERO_SVG__", HERO_SVG)
         .replace("__STATS__", STATS)
+        .replace("__NS_GRID__", NS_GRID)
         .replace("__POEM_CARDS__", POEM_CARDS)
         .replace("__WAN__", f"{wan:.1f}")
         .replace("__PREF__", pref_excerpt))
 
 with open(os.path.join(OUTDIR, "index.html"), "w", encoding="utf-8") as f:
     f.write(html)
-print("index.html (home) bytes:", len(html), "| chapters", n_chapters, "chars", n_chars, "edges", n_edges, "poems", n_poems)
+print("index.html (home) bytes:", len(html),
+      "| chapters", n_chapters, "chars", n_chars, "edges", n_edges, "poems", n_poems,
+      "| wiki built:", built)

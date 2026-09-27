@@ -166,7 +166,7 @@ def build_infobox(e, base):
     return box, extra
 
 # ---------- 页面模板 ----------
-THEME_INIT = ('<script>(function(){var d=document.documentElement,t=localStorage.getItem("theme");'
+THEME_INIT = ('<script>(function(){var d=document.documentElement,t=localStorage.getItem("wzjm_theme");'
               'if(!t)t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";'
               'd.setAttribute("data-theme",t);})();</script>')
 
@@ -192,7 +192,7 @@ def page_html(*, title, body_html, base, history_path=None, extra_head=""):
 {body_html}
 <div class="foot">{hist}<span>由 build_wiki.py 构建 · {BUILD_TIME}</span><span>schema v{SCHEMA_VERSION}</span></div>
 </div>
-<script>function toggleTheme(){{var d=document.documentElement,t=d.getAttribute("data-theme")==="dark"?"light":"dark";d.setAttribute("data-theme",t);localStorage.setItem("theme",t);}}</script>
+<script>function toggleTheme(){{var d=document.documentElement,t=d.getAttribute("data-theme")==="dark"?"light":"dark";d.setAttribute("data-theme",t);localStorage.setItem("wzjm_theme",t);}}</script>
 </body></html>"""
 
 # ---------- 回链收集 ----------
@@ -281,7 +281,7 @@ for ns in NS_ORDER:
         f'<a class="entry-card" href="{urllib.parse.quote(e["ns"])}/{urllib.parse.quote(e["title"])}.html">'
         f'<div class="t">{esc(e["title"])}{" <span class=\"chip gray\">别名 " + esc("、".join(e["aliases"])) + "</span>" if e["aliases"] else ""}</div>'
         f'<div class="s">{esc(e["summary"])}</div></a>' for e in items)
-    sec_html.append(f'<div class="ns-sec" data-ns="{esc(ns)}"><h2>{esc(ns)} <span class="chip gray">{len(items)}</span></h2>{cards}</div>')
+    sec_html.append(f'<div class="ns-sec" id="ns-{esc(ns)}" data-ns="{esc(ns)}"><h2>{esc(ns)} <span class="chip gray">{len(items)}</span></h2>{cards}</div>')
     for e in items:
         plain = re.sub(r"\[\[([^\[\]|]+)(?:\|([^\[\]]+))?\]\]", r"\1", e["body"])
         search_index.append({"ns": e["ns"], "title": e["title"], "aliases": e["aliases"],
