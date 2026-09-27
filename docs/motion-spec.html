@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>动效细则 · 苇舟江湖梦 · 工程文档</title>
+<script>(function(){var d=document.documentElement,t=localStorage.getItem("wzjm_theme");if(!t)t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme",t);})();</script>
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+/* 文档页专属：只取 theme.css 令牌 */
+.doc{max-width:860px}
+.doc h1{font-size:24px;font-weight:700;letter-spacing:1px;margin:18px 0 6px}
+.doc .src{color:var(--muted);font-size:12px;margin-bottom:18px}
+.doc h2{font-size:17px;font-weight:500;margin:26px 0 10px;padding-left:10px;border-left:3px solid var(--brand)}
+.doc h3{font-size:14.5px;font-weight:500;margin:18px 0 8px}
+.doc p{margin:0 0 10px;font-size:13.5px;color:var(--ink)}
+.doc ul,.doc ol{margin:0 0 12px;padding-left:22px;font-size:13.5px}
+.doc li{margin:3px 0}
+.doc blockquote{margin:0 0 14px;padding:8px 14px;border-left:3px solid var(--brand);
+  background:var(--brand-soft);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  color:var(--muted);font-size:13px}
+.doc code{background:var(--field);border-radius:6px;padding:1px 6px;font-size:12.5px;color:var(--brand)}
+.doc pre{background:var(--field);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:12px 14px;overflow:auto;margin:0 0 14px}
+.doc pre code{background:none;padding:0;color:var(--ink);font-size:12px;line-height:1.6}
+.doc table{width:100%;border-collapse:collapse;font-size:13px;margin:0 0 14px}
+.doc th,.doc td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.doc th{color:var(--muted);font-weight:500;background:var(--field)}
+.doc hr{border:none;border-top:1px solid var(--line);margin:18px 0}
+.toc{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 20px}
+.toc a{font-size:12px;padding:4px 14px;border-radius:999px;background:var(--card);
+  border:1px solid var(--line);color:var(--muted);
+  transition:color var(--dur-fast) var(--ease-std),border-color var(--dur-fast) var(--ease-std),transform var(--dur-fast) var(--ease-elastic-out)}
+.toc a:hover{color:var(--brand);border-color:var(--brand);transform:scale(1.05)}
+@media(max-width:760px){.nav{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="../index.html">苇舟江湖梦</a>
+  <span class="sp"></span>
+  <a class="lk on" href="../docs/index.html">文档</a>
+  <a class="lk" href="../wiki/index.html">总目录</a>
+  <a class="lk" href="../kb.html">知识库</a>
+  <a class="lk" href="../poems/poem_gallery.html">诗图</a>
+  <a class="lk" href="../文学/产物/00_总览导航/index.html">量化报告</a>
+  <a class="lk" href="https://github.com/wikkd/weizhou-jianghu-meng" target="_blank" rel="noopener">仓库</a>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="切换明暗主题">
+    <img src="../assets/icons/ic_public_themes.svg" alt="" width="18" height="18">
+  </button>
+</nav>
+<div class="wrap doc fade-in">
+<h1>动效细则</h1>
+<div class="src">源文件 <a href="https://github.com/wikkd/weizhou-jianghu-meng/blob/master/MOTION_SPEC.md" target="_blank" rel="noopener">MOTION_SPEC.md</a> ｜ 由 build_docs.py 构建，改动请编辑源 md</div>
+<div class="toc"><a href="#sec-1">1. 组件库选型结论（2026-09-27 调研）</a><a href="#sec-2">2. 曲线令牌（非线性优先）</a><a href="#sec-3">3. 时长刻度</a><a href="#sec-4">4. 交互触发动效映射表（新增交互照此选型）</a><a href="#sec-5">5. 硬性红线</a><a href="#sec-6">6. 验收清单（每页动效过一遍）</a></div>
+<blockquote>DEV_RULES.md 守则一/守则二的<b>动效深化</b>，对所有页面新增/改动的交互动效强制生效。<br>令牌落地件：<code>assets/theme.css</code>（<code>--ease-*</code> / <code>--dur-*</code>），全站引用，禁止页面内自造曲线。<br>曲线令牌取自 <a href="https://github.com/argyleink/open-props" target="_blank" rel="noopener">Open Props</a>（MIT）精选子集，注释已署名。</blockquote>
+<hr>
+<h2 id="sec-1">1. 组件库选型结论（2026-09-27 调研）</h2>
+<table><thead><tr><th>候选</th><th>许可</th><th>结论</th><th>理由</th></tr></thead><tbody><tr><td><a href="https://github.com/argyleink/open-props" target="_blank" rel="noopener">Open Props</a></td><td>MIT</td><td><b>采用（曲线令牌子集内联）</b></td><td>缓动值就是 <code>cubic-bezier</code>/<code>linear()</code> 常量，直接并入 theme.css，零依赖不破坏</td></tr><tr><td><a href="https://gitee.com/hongweifei/harmony-style" target="_blank" rel="noopener">harmony-style</a>（Gitee）</td><td>ISC</td><td><b>仅作规范参考，不引入</b></td><td>自带 <code>--color-brand</code> 变量体系与本站 theme.css 冲突；深色模式走 <code>prefers-color-scheme</code> 与本站 <code>data-theme</code> 手动切换冲突</td></tr><tr><td>IBest-UI / ArkUI ace_engine</td><td>—</td><td>排除</td><td>ArkTS 原生库，不适用于 Web 静态页</td></tr></tbody></table>
+<blockquote>若未来 harmony-style 支持外部主题挂载，可再评估整库引入；当前沿用 theme.css 单一令牌源。</blockquote>
+<h2 id="sec-2">2. 曲线令牌（非线性优先）</h2>
+<p><b>总原则：所有过渡/动画一律使用下列非线性曲线；<code>linear</code>、<code>ease</code>、<code>ease-in/out</code> 等原生关键字禁止使用</b>（<code>linear()</code> 弹性曲线与 <code>steps()</code> 除外）。</p>
+<table><thead><tr><th>令牌</th><th>值</th><th>用途</th></tr></thead><tbody><tr><td><code>--ease-std</code></td><td><code>cubic-bezier(.25,0,.3,1)</code></td><td><b>默认</b>。悬停、取色、下划线等标准过渡</td></tr><tr><td><code>--ease-out</code></td><td><code>cubic-bezier(0,0,.1,1)</code></td><td>进入/展开：卡片上浮、面板滑入</td></tr><tr><td><code>--ease-out-soft</code></td><td><code>cubic-bezier(0,0,.3,1)</code></td><td>进入·柔和版（长列表避免过冲）</td></tr><tr><td><code>--ease-in-out</code></td><td><code>cubic-bezier(.5,0,.5,1)</code></td><td>位移往返、主题切换颜色过渡</td></tr><tr><td><code>--ease-expo-out</code></td><td><code>cubic-bezier(.19,1,.22,1)</code></td><td>sheet/抽屉等大面板滑入（强减速）</td></tr><tr><td><code>--ease-spring</code></td><td><code>linear(...)</code>（Open Props spring-3）</td><td>弹性强调：按压回弹、弹出层；旧浏览器自动降级为 <code>ease</code></td></tr><tr><td><code>--ease-bounce</code></td><td><code>linear(...)</code>（Open Props bounce-2）</td><td>完成态反馈：打勾、落位、"已复制"</td></tr><tr><td><code>--ease-elastic-out</code></td><td><code>cubic-bezier(.5,1.25,.75,1.25)</code></td><td>微反馈：chip 放大、小位移过冲</td></tr></tbody></table>
+<h2 id="sec-3">3. 时长刻度</h2>
+<table><thead><tr><th>令牌</th><th>值</th><th>用途</th></tr></thead><tbody><tr><td><code>--dur-fast</code></td><td>120ms</td><td>微反馈：hover、chip、链接下划线</td></tr><tr><td><code>--dur-base</code></td><td>200ms</td><td>标准过渡：按钮、卡片、tab、焦点环</td></tr><tr><td><code>--dur-slow</code></td><td>320ms</td><td>大位移：抽屉、sheet、主题切换、页面入场</td></tr><tr><td><code>--dur-drama</code></td><td>480ms</td><td>强调：搜索命中闪烁、页首横幅</td></tr></tbody></table>
+<blockquote>配对惯例：位移/尺寸变化用「慢曲线快时长」之外，<b>out 系曲线配 fast/base，spring/bounce 配 base 及以上</b>——弹性曲线太短会抖。</blockquote>
+<h2 id="sec-4">4. 交互触发动效映射表（新增交互照此选型）</h2>
+<table><thead><tr><th>交互</th><th>属性</th><th>曲线</th><th>时长</th><th>备注</th></tr></thead><tbody><tr><td>链接/导航 hover</td><td><code>background</code> <code>color</code></td><td><code>--ease-std</code></td><td>fast</td><td>词条蓝链 <code>.wl</code> 另加下划线实线化</td></tr><tr><td>卡片 hover</td><td><code>transform:translateY(-2px)</code> + <code>box-shadow</code></td><td><code>--ease-out</code></td><td>base</td><td>只上浮不加缩放</td></tr><tr><td>按钮 hover / 按压</td><td><code>translateY</code> / <code>scale(.96)</code></td><td><code>--ease-spring</code></td><td>base</td><td>按压回弹是鸿蒙手感核心</td></tr><tr><td>chip 类小件 hover</td><td><code>scale(1.06)</code> / 按压 <code>scale(.94)</code></td><td><code>--ease-elastic-out</code></td><td>fast</td><td>仅可点的 <code>.lnk</code> chip</td></tr><tr><td>主题切换按钮</td><td><code>rotate(15deg)</code> + 按压缩放</td><td><code>--ease-spring</code></td><td>base</td><td>旋转+回弹</td></tr><tr><td>主题切换全局</td><td><code>background</code> <code>color</code></td><td><code>--ease-in-out</code></td><td>slow</td><td>body 已有 0.25s 过渡，页面无需另写</td></tr><tr><td>抽屉/半模态 sheet</td><td><code>transform:translateX/Y</code></td><td><code>--ease-expo-out</code></td><td>slow</td><td>遮罩淡入用 <code>--ease-std</code></td></tr><tr><td>tab/分段器切换</td><td>内容淡入</td><td><code>--ease-out-soft</code></td><td>base</td><td>参考 <code>.fade-in</code></td></tr><tr><td>页面载入</td><td><code>opacity</code> + <code>translateY(8px)</code>（<code>.fade-in</code>）</td><td><code>--ease-out</code></td><td>slow</td><td>列表容器加 stagger：<code>animation-delay:calc(var(--i)*40ms)</code></td></tr><tr><td>搜索命中</td><td>命中卡淡入</td><td><code>--ease-out-soft</code></td><td>base</td><td>空态提示不动画（反馈靠文案）</td></tr><tr><td>完成提示（复制/保存成功）</td><td>打勾 <code>scale</code> 0→1</td><td><code>--ease-bounce</code></td><td>base</td><td>一次性，不循环</td></tr><tr><td>红链 hover</td><td>虚线→实线</td><td><code>--ease-std</code></td><td>fast</td><td>语义：可创建的词条</td></tr></tbody></table>
+<h2 id="sec-5">5. 硬性红线</h2>
+<ol><li><b>只动合成层属性</b>：<code>transform</code>、<code>opacity</code>、<code>filter</code>。禁止动画 <code>width/height/top/left/margin</code>（引发布局抖动）。</li><li><b><code>prefers-reduced-motion: reduce</code> 必须降级</b>：theme.css 已全站兜底，页面私有动画无需重复写，但新增<b>循环动画</b>时自查降级效果。</li><li><b>禁止无限循环装饰动画</b>（呼吸、漂浮、渐变流光）。唯一例外：加载指示器（<code>.loading</code> 类）。</li><li><b>入场动画必须渐进增强</b>：<code>animation ... backwards</code> + 内容默认可见，禁 JS 阻塞注入类名才显示的写法。</li><li><b>stagger 上限</b>：<code>animation-delay</code> 步进 ≤40ms、总数 ≤12 项，超出部分直接显示。</li><li><b>曲线禁令</b>：页面内出现 <code>transition: all</code>、<code>ease</code>、<code>linear</code>（非 spring/bounce 场景）即为违规。</li></ol>
+<h2 id="sec-6">6. 验收清单（每页动效过一遍）</h2>
+<ul><li>[ ] 全部过渡引用 <code>--ease-*</code>/<code>--dur-*</code>，无自造 bezier、无 <code>transition: all</code></li><li>[ ] 按钮/卡片/chip 三类手感齐全（hover、按压、回弹）</li><li>[ ] 系统开启「减少动效」后页面静态可用</li><li>[ ] 动画只涉及 transform/opacity/filter</li><li>[ ] 无循环装饰动画；加载态除外</li><li>[ ] 入场动画不阻塞内容可见（禁 JS 时页面完整）</li></ul>
+</div>
+<script>
+document.getElementById('themeBtn').addEventListener('click',function(){
+  var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';
+  d.setAttribute('data-theme',t);
+  try{localStorage.setItem('wzjm_theme',t);}catch(e){}
+  this.setAttribute('aria-label',t==='dark'?'切换到浅色主题':'切换到深色主题');
+});
+</script>
+</body></html>

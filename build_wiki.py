@@ -183,6 +183,7 @@ def page_html(*, title, body_html, base, history_path=None, extra_head=""):
 <body>
 <nav class="nav">
   <a class="lk" href="{base}../index.html">‹ 主页</a>
+  <a class="lk" href="{base}../docs/index.html">文档</a>
   <div class="brand">苇舟江湖梦 · Wiki</div>
   <span class="sp"></span>
   <form action="{base}index.html" method="get" style="margin:0"><input class="search k" name="q" placeholder="搜索词条…"></form>

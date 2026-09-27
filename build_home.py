@@ -228,6 +228,7 @@ footer a:hover{color:var(--brand)}
   <span class="sp"></span>
   <a class="lk on" href="wiki/index.html">总目录</a>
   <a class="lk" href="kb.html">知识库</a>
+  <a class="lk" href="docs/index.html">文档</a>
   <a class="lk" href="poems/poem_gallery.html">诗图</a>
   <a class="lk" href="文学/产物/00_总览导航/index.html">量化报告</a>
   <a class="lk" href="https://github.com/wikkd/weizhou-jianghu-meng" target="_blank" rel="noopener">仓库</a>
@@ -328,6 +329,7 @@ footer a:hover{color:var(--brand)}
 
 <footer>
   <a href="wiki/index.html">Wiki 总目录</a> · <a href="kb.html">知识库</a> ·
+  <a href="docs/index.html">工程文档</a> ·
   <a href="poems/poem_gallery.html">诗图</a> · <a href="文学/产物/00_总览导航/index.html">量化报告</a> ·
   <a href="https://github.com/wikkd/weizhou-jianghu-meng" target="_blank" rel="noopener">GitHub</a><br>
   苇舟江湖梦 · 知识性索引与诗图工程 ｜ 作者 __AUTHOR__<br>

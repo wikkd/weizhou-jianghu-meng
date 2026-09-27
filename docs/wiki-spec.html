@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wiki 架构 · 苇舟江湖梦 · 工程文档</title>
+<script>(function(){var d=document.documentElement,t=localStorage.getItem("wzjm_theme");if(!t)t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme",t);})();</script>
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+/* 文档页专属：只取 theme.css 令牌 */
+.doc{max-width:860px}
+.doc h1{font-size:24px;font-weight:700;letter-spacing:1px;margin:18px 0 6px}
+.doc .src{color:var(--muted);font-size:12px;margin-bottom:18px}
+.doc h2{font-size:17px;font-weight:500;margin:26px 0 10px;padding-left:10px;border-left:3px solid var(--brand)}
+.doc h3{font-size:14.5px;font-weight:500;margin:18px 0 8px}
+.doc p{margin:0 0 10px;font-size:13.5px;color:var(--ink)}
+.doc ul,.doc ol{margin:0 0 12px;padding-left:22px;font-size:13.5px}
+.doc li{margin:3px 0}
+.doc blockquote{margin:0 0 14px;padding:8px 14px;border-left:3px solid var(--brand);
+  background:var(--brand-soft);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  color:var(--muted);font-size:13px}
+.doc code{background:var(--field);border-radius:6px;padding:1px 6px;font-size:12.5px;color:var(--brand)}
+.doc pre{background:var(--field);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:12px 14px;overflow:auto;margin:0 0 14px}
+.doc pre code{background:none;padding:0;color:var(--ink);font-size:12px;line-height:1.6}
+.doc table{width:100%;border-collapse:collapse;font-size:13px;margin:0 0 14px}
+.doc th,.doc td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.doc th{color:var(--muted);font-weight:500;background:var(--field)}
+.doc hr{border:none;border-top:1px solid var(--line);margin:18px 0}
+.toc{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 20px}
+.toc a{font-size:12px;padding:4px 14px;border-radius:999px;background:var(--card);
+  border:1px solid var(--line);color:var(--muted);
+  transition:color var(--dur-fast) var(--ease-std),border-color var(--dur-fast) var(--ease-std),transform var(--dur-fast) var(--ease-elastic-out)}
+.toc a:hover{color:var(--brand);border-color:var(--brand);transform:scale(1.05)}
+@media(max-width:760px){.nav{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="../index.html">苇舟江湖梦</a>
+  <span class="sp"></span>
+  <a class="lk on" href="../docs/index.html">文档</a>
+  <a class="lk" href="../wiki/index.html">总目录</a>
+  <a class="lk" href="../kb.html">知识库</a>
+  <a class="lk" href="../poems/poem_gallery.html">诗图</a>
+  <a class="lk" href="../文学/产物/00_总览导航/index.html">量化报告</a>
+  <a class="lk" href="https://github.com/wikkd/weizhou-jianghu-meng" target="_blank" rel="noopener">仓库</a>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="切换明暗主题">
+    <img src="../assets/icons/ic_public_themes.svg" alt="" width="18" height="18">
+  </button>
+</nav>
+<div class="wrap doc fade-in">
+<h1>Wiki 架构</h1>
+<div class="src">源文件 <a href="https://github.com/wikkd/weizhou-jianghu-meng/blob/master/WIKI_SPEC.md" target="_blank" rel="noopener">WIKI_SPEC.md</a> ｜ 由 build_docs.py 构建，改动请编辑源 md</div>
+<div class="toc"><a href="#sec-1">1. 定位与原则</a><a href="#sec-2">2. 命名空间与 URL</a><a href="#sec-3">3. 词条源格式（content/）</a><a href="#sec-4">4. 构建管线 build_wiki.py（纯标准库）</a><a href="#sec-5">5. 页面模板与现有页关系</a><a href="#sec-6">6. 扩展预留（只读期不启用）</a><a href="#sec-7">7. 分期路线</a><a href="#sec-8">8. 验收标准</a></div>
+<blockquote>定稿 2026-09-27。三项决策：① 词条源 = Markdown + frontmatter ② 编辑预留 = git-based CMS（Decap 占位）③ 一期 = 骨架 + 5 个种子词条。<br>配套设计系统见 <code>UI_SPEC.md</code>（鸿蒙风格、双主题、内嵌鸿蒙 Sans）。</blockquote>
+<h2 id="sec-1">1. 定位与原则</h2>
+<ul><li><b>Wiki 功能 = 构建期生成</b>：读者看到的是纯静态 HTML（GitHub Pages 直出），无后端、运行时零依赖。</li><li><b>内容与渲染分离</b>：词条内容活在 <code>content/</code>（git 内 Markdown），改内容 = 改 md + 重跑构建；"不开放编辑"只是不加编辑入口，数据层面天然可编辑。</li><li><b>扩展开关</b>：CMS / 评论 / 历史均为可插拔接口，启用时不动架构。</li></ul>
+<h2 id="sec-2">2. 命名空间与 URL</h2>
+<table><thead><tr><th>命名空间</th><th>URL</th><th>来源</th></tr></thead><tbody><tr><td>人物</td><td><code>/wiki/人物/任琅.html</code></td><td>手写 md + knowledge_base.json 自动信息框</td></tr><tr><td>章节</td><td><code>/wiki/章节/一.html</code></td><td>chapters_index + 分章 txt 自动生成正文</td></tr><tr><td>地点 / 组织 / 术语</td><td><code>/wiki/地点/青楼.html</code> 等</td><td>手写 md（一期仅骨架占位）</td></tr><tr><td>诗词</td><td><code>/wiki/诗词/其一.html</code></td><td>poems.json</td></tr><tr><td>特殊页</td><td><code>/wiki/index.html</code>（总目录）、分类页、消歧义页、重定向页（别名自动生成）</td><td>构建器产出</td></tr></tbody></table>
+<h2 id="sec-3">3. 词条源格式（content/）</h2>
+<pre>---
+title: 任琅
+ns: 人物
+aliases: [任少侠]
+summary: 本书主人公之一，与尚樱定情于情花节。
+infobox:            # 缺省键自动从 knowledge_base.json 回填（首见/末见/提及/出场）
+  身份: 少年剑客
+tags: [主角, 五岳盟]
+---
+正文支持 Markdown 子集与词条链：[[尚樱]]、[[章节/十一|情花节福纸]]、[[妖刀]]（未创建=红链）。</pre>
+<ul><li>目录：<code>content/&lt;ns&gt;/&lt;title&gt;.md</code>；<code>schema_version</code> 写入构建产物。</li><li>构建器校验：死链清单输出（红链可点→"词条待创建"页）。</li></ul>
+<h2 id="sec-4">4. 构建管线 build_wiki.py（纯标准库）</h2>
+<ol><li>扫描 <code>content/</code> 解析 frontmatter（自写解析，不引 PyYAML）</li><li><code>[[链]]</code> 解析：<code>[[title]]</code> / <code>[[ns/title]]</code> / <code>[[ns/title|显示名]]</code>，别名归一</li><li>生成：词条页、重定向页、分类页、总目录、消歧义页</li><li>回链索引（谁引用了本词条）+ 章节出处自动汇聚（infobox 数据来自 knowledge_base.json，词条间保持单一事实源）</li><li><code>wiki/search-index.json</code>（标题/摘要/正文分词碎片）</li><li>输出死链报告 + 构建统计</li></ol>
+<h2 id="sec-5">5. 页面模板与现有页关系</h2>
+<ul><li><code>assets/theme.css</code>：鸿蒙设计令牌（UI_SPEC 落地件，三页与 wiki 共用）。</li><li>词条页结构：命名空间徽标 → 大标题/别名 → 信息框（左）+ 正文（右）→ 章节出处胶囊 → 反向链接 → 页脚（修订历史链接 = 该文件 GitHub commits 页 + 构建时间 + schema 版本）。</li><li><code>index.html</code> 门户加"Wiki 词条"入口；<code>kb.html</code> 保留为<b>数据库视图</b>（五视图），wiki 为<b>叙事视图</b>，二期 kb 人物表点击跳词条页。</li></ul>
+<h2 id="sec-6">6. 扩展预留（只读期不启用）</h2>
+<table><thead><tr><th>接口</th><th>预留方式</th><th>启用动作</th></tr></thead><tbody><tr><td>编辑</td><td><code>content/</code> 即编辑面；<code>admin/config.yml</code> 占位（Decap CMS 配置）</td><td>部署 Decap + GitHub OAuth，网页编辑→提 PR</td></tr><tr><td>评论</td><td>词条模板预留 <code>&lt;div id="giscus"&gt;</code> 挂载点</td><td>填 giscus 仓库参数即可</td></tr><tr><td>历史</td><td>页脚 git commits 链接（已可用）</td><td>无需动作</td></tr><tr><td>开放数据</td><td><code>knowledge_base.json</code> / <code>search-index.json</code> 常驻可直连</td><td>无需动作</td></tr><tr><td>版本</td><td>产物内嵌 <code>schema_version</code></td><td>升级时迁移脚本按版本判断</td></tr></tbody></table>
+<h2 id="sec-7">7. 分期路线</h2>
+<ul><li><b>P1（本次）</b>：<code>content/</code> 骨架 + <code>build_wiki.py</code> + <code>assets/theme.css</code> 落地 + 5 个种子词条（任琅 / 尚樱 / 夏叶 / 章节·一 / 章节·十一）+ 总目录 + 死链机制 + 门户入口。</li><li><b>P2</b>：全量自动词条（33 人物 + 63 章节，信息框自动、正文待补）+ 分类页 + 站内搜索接线。</li><li><b>P3</b>：鸿蒙双主题统一三页 + wiki（UI_SPEC 全量实施，含内嵌字体）。</li><li><b>P4</b>：按需启用 CMS / 评论。</li></ul>
+<h2 id="sec-8">8. 验收标准</h2>
+<ul><li>[[链]]零死链（或红链显式可见）；别名重定向可达</li><li>信息框数据与 kb.html 同源一致（单源校验）</li><li>搜索可命中词条正文关键词</li><li>双主题 + 移动端 375px 可用；<code>bash deploy.sh</code> 一键上线不变</li></ul>
+</div>
+<script>
+document.getElementById('themeBtn').addEventListener('click',function(){
+  var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';
+  d.setAttribute('data-theme',t);
+  try{localStorage.setItem('wzjm_theme',t);}catch(e){}
+  this.setAttribute('aria-label',t==='dark'?'切换到浅色主题':'切换到深色主题');
+});
+</script>
+</body></html>
