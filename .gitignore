@@ -2,3 +2,7 @@
 _agentkit_stage/
 *.pyc
 __pycache__/
+
+# 截图与浏览器调试产物
+_shots/
+.playwright-cli/
