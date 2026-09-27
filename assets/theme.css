@@ -1,5 +1,6 @@
 /* 苇舟江湖梦 · 鸿蒙设计令牌与基础组件（UI_SPEC.md 落地件）
-   wiki 页与后续站点三页改造共用；双主题：html[data-theme="light|dark"] */
+   wiki 页与后续站点三页改造共用；双主题：html[data-theme="light|dark"]
+   动效令牌（--ease-*/--dur-*）取自 Open Props（MIT）精选子集，见 MOTION_SPEC.md */
 :root{
   --bg:#F1F3F5; --card:#FFFFFF; --ink:#182431; --muted:#7A8A99;
   --line:rgba(24,36,49,.10); --brand:#0A59F7; --brand-soft:#E6F1FB;
@@ -8,6 +9,30 @@
   --nav-bg:rgba(255,255,255,.86); --field:#F1F3F5;
   --radius:16px; --radius-sm:12px;
   --shadow:0 8px 24px rgba(0,0,0,.06);
+
+  /* ---- 动效：非线性缓动曲线（Open Props MIT 精选子集） ---- */
+  --ease-std:cubic-bezier(.25,0,.3,1);            /* 默认过渡 */
+  --ease-out:cubic-bezier(0,0,.1,1);              /* 进入/展开：快出缓停 */
+  --ease-out-soft:cubic-bezier(0,0,.3,1);         /* 进入·柔和版 */
+  --ease-in-out:cubic-bezier(.5,0,.5,1);          /* 位移/主题切换 */
+  --ease-expo-out:cubic-bezier(.19,1,.22,1);      /* sheet/大面板滑入 */
+  --ease-spring:linear(                           /* 弹性强调（press/弹出），旧浏览器自动降级为 ease */
+    0, 0.009, 0.035 2.1%, 0.141 4.4%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077,
+    1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%,
+    1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%,
+    0.997 69.8%, 1.003 76.9%, 1);
+  --ease-bounce:linear(                           /* 完成态反馈（打勾/落位） */
+    0, 0.004, 0.016, 0.035, 0.063, 0.098, 0.141 15.1%, 0.25, 0.391, 0.562, 0.765,
+    1, 0.892 45.2%, 0.849, 0.815, 0.788, 0.769, 0.757, 0.753, 0.757, 0.769, 0.788,
+    0.815, 0.85, 0.892 75.2%, 1 80.2%, 0.973, 0.954, 0.943, 0.939, 0.943, 0.954,
+    0.973, 1);
+  --ease-elastic-out:cubic-bezier(.5,1.25,.75,1.25); /* 微反馈（hover 徽标/小位移） */
+
+  /* ---- 动效：时长刻度 ---- */
+  --dur-fast:120ms;    /* 微反馈：hover、chip、链接下划线 */
+  --dur-base:200ms;    /* 标准过渡：按钮、卡片、tab */
+  --dur-slow:320ms;    /* 大位移：抽屉、sheet、主题切换 */
+  --dur-drama:480ms;   /* 强调：页面载入、搜索命中 */
 }
 [data-theme="dark"]{
   --bg:#000000; --card:#1C1C1E; --ink:#F1F3F5; --muted:rgba(255,255,255,.60);
@@ -31,30 +56,41 @@ a{color:var(--brand);text-decoration:none}
 .nav .brand{font-weight:500;font-size:15px;color:var(--ink);display:flex;align-items:center;gap:8px}
 .nav .brand::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--brand)}
 .nav .sp{flex:1}
-.nav .lk{padding:6px 14px;border-radius:999px;color:var(--muted);font-weight:500;font-size:13px}
+.nav .lk{padding:6px 14px;border-radius:999px;color:var(--muted);font-weight:500;font-size:13px;
+  transition:background var(--dur-fast) var(--ease-std),color var(--dur-fast) var(--ease-std)}
 .nav .lk:hover{background:var(--brand-soft);color:var(--brand)}
 .nav .lk.on{background:var(--brand);color:#fff}
 .theme-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--card);
-  cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink)}
+  cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink);
+  transition:transform var(--dur-base) var(--ease-spring),border-color var(--dur-fast) var(--ease-std)}
+.theme-btn:hover{border-color:var(--brand);transform:rotate(15deg)}
+.theme-btn:active{transform:rotate(15deg) scale(.9)}
 
 /* 胶囊 / 卡片 / 表单 */
-.btn{display:inline-block;padding:9px 18px;border-radius:999px;font-weight:500;font-size:13.5px;cursor:pointer;border:1px solid transparent}
+.btn{display:inline-block;padding:9px 18px;border-radius:999px;font-weight:500;font-size:13.5px;cursor:pointer;
+  border:1px solid transparent;
+  transition:transform var(--dur-base) var(--ease-spring),box-shadow var(--dur-base) var(--ease-out),background var(--dur-fast) var(--ease-std)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px var(--brand-soft)}
+.btn:active{transform:translateY(0) scale(.96)}
 .btn.primary{background:var(--brand);color:#fff}
 .btn.ghost{background:var(--card);color:var(--brand);border-color:var(--line)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
 .search{width:100%;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--field);
-  color:var(--ink);font-size:13.5px;outline:none}
-.search:focus{border-color:var(--brand)}
+  color:var(--ink);font-size:13.5px;outline:none;
+  transition:border-color var(--dur-fast) var(--ease-std),box-shadow var(--dur-base) var(--ease-out)}
+.search:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
 .search.k{max-width:260px}
 
 /* 胶囊标签 */
 .chip{display:inline-block;padding:2px 12px;border-radius:999px;font-size:12px;margin:2px;
-  background:var(--brand-soft);color:var(--brand);border:none}
+  background:var(--brand-soft);color:var(--brand);border:none;
+  transition:transform var(--dur-fast) var(--ease-elastic-out),filter var(--dur-fast) var(--ease-std)}
 .chip.green{background:var(--accent-soft);color:var(--accent)}
 .chip.gray{background:var(--field);color:var(--muted)}
 .chip.gold{background:transparent;color:var(--gold);border:1px solid var(--gold)}
 .chip.lnk{cursor:pointer}
-.chip.lnk:hover{filter:brightness(.96)}
+.chip.lnk:hover{filter:brightness(.96);transform:scale(1.06)}
+.chip.lnk:active{transform:scale(.94)}
 
 /* 词条页 */
 .crumb{display:flex;align-items:center;gap:10px;margin:2px 0 4px}
@@ -73,8 +109,11 @@ h1.title{margin:0 0 14px;font-size:24px;font-weight:500;letter-spacing:1px}
 .body h3{font-size:15px;font-weight:500;margin:16px 0 8px}
 .body ul{margin:0 0 12px;padding-left:20px}
 .body .sec-h{font-size:13px;font-weight:500;margin:14px 0 6px}
-.wl{color:var(--brand);border-bottom:1px solid var(--brand-soft)}
+.wl{color:var(--brand);border-bottom:1px solid var(--brand-soft);
+  transition:border-color var(--dur-fast) var(--ease-std),color var(--dur-fast) var(--ease-std)}
+.wl:hover{border-bottom-color:var(--brand)}
 .wl.red{color:var(--redlink);border-bottom:1px dashed var(--redlink-line)}
+.wl.red:hover{border-bottom-style:solid}
 .foot{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:11.5px;color:var(--muted)}
 .foot a{color:var(--muted);text-decoration:underline}
 
@@ -82,9 +121,21 @@ h1.title{margin:0 0 14px;font-size:24px;font-weight:500;letter-spacing:1px}
 .ns-sec h2{font-size:16px;font-weight:500;margin:22px 0 10px;display:flex;align-items:center;gap:8px}
 .ns-sec h2::before{content:"";width:4px;height:16px;border-radius:2px;background:var(--brand)}
 .entry-card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:12px 16px;margin:8px 0;transition:.18s}
-.entry-card:hover{border-color:var(--brand);transform:translateY(-2px)}
+  padding:12px 16px;margin:8px 0;
+  transition:transform var(--dur-base) var(--ease-out),border-color var(--dur-fast) var(--ease-std),box-shadow var(--dur-base) var(--ease-out)}
+.entry-card:hover{border-color:var(--brand);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.entry-card:active{transform:translateY(0) scale(.99)}
 .entry-card .t{font-weight:500;font-size:14.5px}
 .entry-card .s{font-size:12.5px;color:var(--muted);margin-top:2px;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .empty{color:var(--muted);font-size:13px;text-align:center;padding:40px 0}
+
+/* 页面载入入场（渐进增强：无 JS 也可用，仅是少了动画） */
+.fade-in{animation:fade-in var(--dur-slow) var(--ease-out) backwards}
+@keyframes fade-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* 可访问性：系统级减少动效偏好 → 全站动效近零化 */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
