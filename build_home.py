@@ -1,4 +1,84 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""生成项目入口主页 index.html（零依赖，引用 kb.html / poems/ / 仓库）。
+
+读取 knowledge_base.json 与 poems.json 取实时数据，保证统计与诗词预览始终准确。
+"""
+import json, os
+
+OUTDIR = os.path.dirname(os.path.abspath(__file__))
+kb = json.load(open(os.path.join(OUTDIR, "knowledge_base.json"), encoding="utf-8"))
+poems = json.load(open(os.path.join(OUTDIR, "poems.json"), encoding="utf-8"))
+
+CH = kb["chapters"]
+C = kb["characters"]
+RC = kb["relations_cooccur"]
+META = kb["meta"]
+
+n_chapters = len(CH)
+n_chars = len(C)
+n_edges = len(RC)
+n_poems = len(poems)
+
+# 自序撷英：取前两句
+pref_text = CH[0]["text"] if CH and CH[0].get("is_preface") else ""
+sentences = [s.strip() + "。" for s in pref_text.split("。") if s.strip()]
+pref_excerpt = "".join(sentences[:2])
+
+STATS = f"""
+<div class="stat"><div class="n">{n_chapters}</div><div class="l">章节（含自序）</div></div>
+<div class="stat"><div class="n">{n_chars}</div><div class="l">已索引人物</div></div>
+<div class="stat"><div class="n">{n_edges}</div><div class="l">共现关系边</div></div>
+<div class="stat"><div class="n">{n_poems}</div><div class="l">角色诗图</div></div>"""
+
+# 诗词撷英卡片
+POEM_CARDS = "\n".join(f"""
+  <a class="pcard" href="poems/poem_gallery.html">
+    <div class="pidx">其{p['id']:X} · {p['char']}</div>
+    <div class="ptype">{p['chapter']} {p['type']}</div>
+    <div class="ptext">{p['text'].split(chr(10))[0]}…</div>
+  </a>""" for p in poems)
+
+HERO_SVG = r"""
+<svg viewBox="0 0 400 300" width="100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaf2fb"/><stop offset="1" stop-color="#d6e7f6"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bcd6ee"/><stop offset="1" stop-color="#9cc2e3"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#fff7da"/><stop offset="1" stop-color="#f3e3a6"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="190" fill="url(#sky)"/>
+  <rect y="190" width="400" height="110" fill="url(#water)"/>
+  <circle cx="312" cy="64" r="34" fill="url(#moon)"/>
+  <circle cx="312" cy="64" r="34" fill="none" stroke="#e7d28a" stroke-width="1" opacity=".6"/>
+  <ellipse cx="312" cy="196" rx="30" ry="7" fill="#e9dc9a" opacity=".5"/>
+  <!-- 远山 -->
+  <path d="M0 190 Q70 150 150 188 T400 184 L400 190 Z" fill="#cdddee" opacity=".7"/>
+  <!-- 苇丛 -->
+  <g stroke="#3f7d4f" stroke-width="3" fill="none" opacity=".85" stroke-linecap="round">
+    <path d="M28 196 C24 160 30 140 26 120"/><path d="M40 196 C44 162 38 142 44 124"/>
+    <path d="M54 196 C50 170 56 150 52 132"/>
+    <path d="M372 196 C368 158 374 138 370 116"/><path d="M384 196 C388 164 382 146 388 128"/>
+  </g>
+  <ellipse cx="372" cy="120" rx="6" ry="11" fill="#caa24a" opacity=".8"/>
+  <ellipse cx="28" cy="120" rx="6" ry="11" fill="#caa24a" opacity=".8"/>
+  <!-- 小舟 -->
+  <g>
+    <path d="M150 214 Q200 246 250 214 Q200 230 150 214 Z" fill="#6b4a2f"/>
+    <path d="M150 214 Q200 246 250 214" fill="none" stroke="#4f3621" stroke-width="2"/>
+    <rect x="196" y="178" width="3" height="38" fill="#5a3f28"/>
+    <path d="M199 180 L236 196 L199 210 Z" fill="#f4ede0" stroke="#d9cdb4" stroke-width="1"/>
+    <circle cx="178" cy="206" r="6" fill="#2f3b4a"/>
+  </g>
+  <ellipse cx="200" cy="246" rx="58" ry="6" fill="#7fa8cf" opacity=".5"/>
+</svg>"""
+
+HTML = r"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -99,7 +179,7 @@ footer a{color:var(--blue)}
   <section class="hero">
     <div>
       <h1>苇舟江湖梦</h1>
-      <div class="by">霜月仲明 著 · 知识性索引与诗图工程</div>
+      <div class="by">__AUTHOR__ 著 · 知识性索引与诗图工程</div>
       <div class="tag">“每人都有每人的江湖。”</div>
       <div class="desc">一部以少年任琅、少女尚樱为主角的江湖长篇。本站将全书结构化，
         重建人物图谱、章节索引与角色诗图，供读者检索、对照与重温。</div>
@@ -108,51 +188,10 @@ footer a{color:var(--blue)}
         <a class="btn ghost" href="poems/poem_gallery.html">角色诗图对照</a>
       </div>
     </div>
-    <div class="art">
-<svg viewBox="0 0 400 300" width="100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-  <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#eaf2fb"/><stop offset="1" stop-color="#d6e7f6"/>
-    </linearGradient>
-    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#bcd6ee"/><stop offset="1" stop-color="#9cc2e3"/>
-    </linearGradient>
-    <radialGradient id="moon" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#fff7da"/><stop offset="1" stop-color="#f3e3a6"/>
-    </radialGradient>
-  </defs>
-  <rect width="400" height="190" fill="url(#sky)"/>
-  <rect y="190" width="400" height="110" fill="url(#water)"/>
-  <circle cx="312" cy="64" r="34" fill="url(#moon)"/>
-  <circle cx="312" cy="64" r="34" fill="none" stroke="#e7d28a" stroke-width="1" opacity=".6"/>
-  <ellipse cx="312" cy="196" rx="30" ry="7" fill="#e9dc9a" opacity=".5"/>
-  <!-- 远山 -->
-  <path d="M0 190 Q70 150 150 188 T400 184 L400 190 Z" fill="#cdddee" opacity=".7"/>
-  <!-- 苇丛 -->
-  <g stroke="#3f7d4f" stroke-width="3" fill="none" opacity=".85" stroke-linecap="round">
-    <path d="M28 196 C24 160 30 140 26 120"/><path d="M40 196 C44 162 38 142 44 124"/>
-    <path d="M54 196 C50 170 56 150 52 132"/>
-    <path d="M372 196 C368 158 374 138 370 116"/><path d="M384 196 C388 164 382 146 388 128"/>
-  </g>
-  <ellipse cx="372" cy="120" rx="6" ry="11" fill="#caa24a" opacity=".8"/>
-  <ellipse cx="28" cy="120" rx="6" ry="11" fill="#caa24a" opacity=".8"/>
-  <!-- 小舟 -->
-  <g>
-    <path d="M150 214 Q200 246 250 214 Q200 230 150 214 Z" fill="#6b4a2f"/>
-    <path d="M150 214 Q200 246 250 214" fill="none" stroke="#4f3621" stroke-width="2"/>
-    <rect x="196" y="178" width="3" height="38" fill="#5a3f28"/>
-    <path d="M199 180 L236 196 L199 210 Z" fill="#f4ede0" stroke="#d9cdb4" stroke-width="1"/>
-    <circle cx="178" cy="206" r="6" fill="#2f3b4a"/>
-  </g>
-  <ellipse cx="200" cy="246" rx="58" ry="6" fill="#7fa8cf" opacity=".5"/>
-</svg></div>
+    <div class="art">__HERO_SVG__</div>
   </section>
 
-  <section class="stats">
-<div class="stat"><div class="n">63</div><div class="l">章节（含自序）</div></div>
-<div class="stat"><div class="n">33</div><div class="l">已索引人物</div></div>
-<div class="stat"><div class="n">234</div><div class="l">共现关系边</div></div>
-<div class="stat"><div class="n">9</div><div class="l">角色诗图</div></div></section>
+  <section class="stats">__STATS__</section>
 
   <div class="sec">
     <h2><span class="bar"></span>三处入口</h2>
@@ -183,79 +222,39 @@ footer a{color:var(--blue)}
     <h2><span class="bar"></span>关于本项目</h2>
     <p class="hint">本站是什么，以及它不做什么。</p>
     <div class="about">
-      <p>《苇舟江湖梦》全书约 23.4 万字，作者自序明言“故事源于友人梦境”，人物地名纯属巧合。
+      <p>《苇舟江湖梦》全书约 __WAN__ 万字，作者自序明言“故事源于友人梦境”，人物地名纯属巧合。
         本工程以 python-docx 解析原文，自动抽取章节、人物与场景标签，构建共现关系，并内联为可离线打开的单文件索引；
         另以大模型为各角色诗作生成意境配图。</p>
       <p class="quote">“富人有富人的愁，穷人有穷人的乐，每人都有每人的江湖。”</p>
-      <p>自序撷英：说来这应当是第一本信誓旦旦一定要写完发表的书，当然这不是第一次写了，曾经也有过尝试，但因为一些突发情况，横竖是放弃了。喜欢古武，因为他们体现着自由，体现着那独有的“侠”，有人说“侠”不一定十分正派，也对，毕竟人生哪有那么多正反派，各为其主罢了，“侠”之独有的气概，如今是少之又少的。</p>
+      <p>自序撷英：__PREF__</p>
       <p style="color:var(--muted);font-size:12.5px;margin-bottom:0">
-        说明：诗图由 AI 生成，仅供意境欣赏，非商业用途；小说版权归作者 霜月仲明 所有。站点由 WorkBuddy 构建并托管于 GitHub Pages。</p>
+        说明：诗图由 AI 生成，仅供意境欣赏，非商业用途；小说版权归作者 __AUTHOR__ 所有。站点由 WorkBuddy 构建并托管于 GitHub Pages。</p>
     </div>
   </div>
 
   <div class="sec">
     <h2><span class="bar"></span>诗词撷英</h2>
     <p class="hint">九首诗的首句，点击任意一张进入完整诗图对照。</p>
-    <div class="poems">
-  <a class="pcard" href="poems/poem_gallery.html">
-    <div class="pidx">其1 · 尚樱</div>
-    <div class="ptype">十八、 夏叶打油诗·赠嫂子</div>
-    <div class="ptext">声若弦簧唇赤丹，目似平波颜带欢，…</div>
-  </a>
-
-  <a class="pcard" href="poems/poem_gallery.html">
-    <div class="pidx">其2 · 任琅 · 尚樱</div>
-    <div class="ptype">十一、 情花节·福纸愿</div>
-    <div class="ptext">尚樱：如果可以，希望任琅能永遠和尚樱一起…</div>
-  </a>
-
-  <a class="pcard" href="poems/poem_gallery.html">
-    <div class="pidx">其3 · 任琅（疑）</div>
-    <div class="ptype">四十二、 题画诗</div>
-    <div class="ptext">张灯成宴度佳节，高墙月明照影孑，…</div>
-  </a>
-
-  <a class="pcard" href="poems/poem_gallery.html">
-    <div class="pidx">其4 · 刘媛灵</div>
-    <div class="ptype">一、 临别口占</div>
-    <div class="ptext">此去一别经世年，心中遗憾再难填。…</div>
-  </a>
-
-  <a class="pcard" href="poems/poem_gallery.html">
-    <div class="pidx">其5 · 夏叶</div>
-    <div class="ptype">三十五、 词（题草纸）</div>
-    <div class="ptext">窗外小楼隔夜雨，暗问庭树默不语。…</div>
-  </a>
-
-  <a class="pcard" href="poems/poem_gallery.html">
-    <div class="pidx">其6 · 陈奉天 / 梨阳王一脉</div>
-    <div class="ptype">二十八、 神像飘字条·五言</div>
-    <div class="ptext">梨阳川阴替，长生迷心计，…</div>
-  </a>
-
-  <a class="pcard" href="poems/poem_gallery.html">
-    <div class="pidx">其7 · 尚樱身世（疑）</div>
-    <div class="ptype">二十八、 题画诗</div>
-    <div class="ptext">朝观婴孩木边戏，夕思己小不与同，…</div>
-  </a>
-
-  <a class="pcard" href="poems/poem_gallery.html">
-    <div class="pidx">其8 · 青楼/琴笛女子（待考，疑苏雨）</div>
-    <div class="ptype">二十五、 题画·七言律</div>
-    <div class="ptext">柔情皎身离青楼，事态相违只得愁，…</div>
-  </a>
-
-  <a class="pcard" href="poems/poem_gallery.html">
-    <div class="pidx">其9 · 女斋主/守青灯者（待考）</div>
-    <div class="ptype">四十九、 题画·七言律</div>
-    <div class="ptext">曾时林间猎弓惊，幸而遇得帝同情，…</div>
-  </a></div>
+    <div class="poems">__POEM_CARDS__</div>
   </div>
 </div>
 
 <footer>
-  苇舟江湖梦 · 知识性索引与诗图工程 ｜ 作者 霜月仲明 ｜ 数据来源：苇舟江湖梦.docx<br>
+  苇舟江湖梦 · 知识性索引与诗图工程 ｜ 作者 __AUTHOR__ ｜ 数据来源：苇舟江湖梦.docx<br>
   站内诗图由 AI 生成仅供欣赏，版权与作品权利归原作者所有。
 </footer>
 </body>
-</html>
+</html>"""
+
+wan = sum(c.get("chars", 0) for c in CH) / 10000
+html = (HTML
+        .replace("__AUTHOR__", META.get("author", "霜月仲明"))
+        .replace("__HERO_SVG__", HERO_SVG)
+        .replace("__STATS__", STATS)
+        .replace("__POEM_CARDS__", POEM_CARDS)
+        .replace("__WAN__", f"{wan:.1f}")
+        .replace("__PREF__", pref_excerpt))
+
+with open(os.path.join(OUTDIR, "index.html"), "w", encoding="utf-8") as f:
+    f.write(html)
+print("index.html (home) bytes:", len(html), "| chapters", n_chapters, "chars", n_chars, "edges", n_edges, "poems", n_poems)

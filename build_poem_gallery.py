@@ -78,7 +78,7 @@ a.back{display:inline-block;margin:6px 0 14px;color:var(--blue);text-decoration:
 <header><h1>苇舟江湖梦 · 角色诗图对照</h1>
 <div class="sub">9 首题画诗/口占/福纸愿 × Qwen-Image-2.1 生图 ｜ 含 4 处待考归属</div></header>
 <div class="wrap">
-<a class="back" href="../index.html">← 返回知识库索引</a>
+<a class="back" href="../index.html">← 返回主页</a>
 <div class="grid">__CARDS__</div>
 </div></body></html>"""
 

@@ -25,7 +25,10 @@ body{margin:0;font-family:"Noto Sans CJK SC","Microsoft YaHei",system-ui,-apple-
   background:var(--bg);color:var(--ink);font-size:14px;line-height:1.6}
 header{background:linear-gradient(120deg,#2f6fed,#0f9d8b);color:#fff;padding:18px 24px;box-shadow:var(--shadow)}
 header h1{margin:0;font-size:20px;letter-spacing:1px}
-header .sub{opacity:.9;font-size:12px;margin-top:2px}
+header .hrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header .homelink{margin-left:auto;color:#fff;background:rgba(255,255,255,.16);padding:5px 12px;border-radius:9px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.35)}
+header .homelink:hover{background:rgba(255,255,255,.28)}
+header .sub{opacity:.9;font-size:12px;margin-top:6px}
 .wrap{max-width:1180px;margin:0 auto;padding:18px 20px 60px}
 .tabs{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0}
 .tab{padding:8px 16px;border:1px solid var(--line);background:var(--panel);border-radius:10px;cursor:pointer;color:var(--muted);font-weight:600}
@@ -69,7 +72,10 @@ a.k{color:var(--blue);cursor:pointer;text-decoration:underline}
 </head>
 <body>
 <header>
-  <h1>苇舟江湖梦 · 知识性索引数据库</h1>
+  <div class="hrow">
+    <h1>苇舟江湖梦 · 知识性索引数据库</h1>
+    <a class="homelink" href="index.html">← 主页</a>
+  </div>
   <div class="sub" id="hdrsub"></div>
 </header>
 <div class="wrap">
@@ -276,6 +282,6 @@ vOverview();
 </html>"""
 
 out = HTML.replace("__KB_JSON__", KB_JSON)
-with open(os.path.join(OUTDIR, "index.html"), "w", encoding="utf-8") as f:
+with open(os.path.join(OUTDIR, "kb.html"), "w", encoding="utf-8") as f:
     f.write(out)
-print("index.html bytes:", len(out))
+print("kb.html bytes:", len(out))
