@@ -1,6 +1,10 @@
 /* 苇舟江湖梦 · 鸿蒙设计令牌与基础组件（UI_SPEC.md 落地件）
    wiki 页与后续站点三页改造共用；双主题：html[data-theme="light|dark"]
-   动效令牌（--ease-*/--dur-*）取自 Open Props（MIT）精选子集，见 MOTION_SPEC.md */
+   动效令牌（--ease-*/--dur-*）取自 Open Props（MIT）精选子集，见 MOTION_SPEC.md
+   字体：内嵌 HarmonyOS Sans SC Regular/Medium（cn-font-split woff2 分片，按 unicode-range 按需加载；
+   npm harmonyos-sans-sc-webfont-splitted，华为官方字体允许免费商用），shards 在 fonts/ 目录 */
+@import url("fonts/Regular.css");
+@import url("fonts/Medium.css");
 :root{
   --bg:#F1F3F5; --card:#FFFFFF; --ink:#182431; --muted:#7A8A99;
   --line:rgba(24,36,49,.10); --brand:#0A59F7; --brand-soft:#E6F1FB;

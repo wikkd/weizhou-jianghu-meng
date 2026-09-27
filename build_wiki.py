@@ -178,7 +178,8 @@ def page_html(*, title, body_html, base, history_path=None, extra_head=""):
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · 苇舟江湖梦 Wiki</title>
-{THEME_INIT}<link rel="stylesheet" href="{base}../assets/theme.css">{extra_head}
+{THEME_INIT}<link rel="icon" type="image/svg+xml" href="{base}../assets/favicon.svg">
+<link rel="stylesheet" href="{base}../assets/theme.css">{extra_head}
 </head>
 <body>
 <nav class="nav">

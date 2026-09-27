@@ -131,6 +131,7 @@ PAGE = """<!DOCTYPE html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>__TITLE__ · 苇舟江湖梦 · 工程文档</title>
 __THEME_INIT__
+<link rel="icon" type="image/svg+xml" href="__BASE__assets/favicon.svg">
 <link rel="stylesheet" href="__BASE__assets/theme.css">
 <style>
 /* 文档页专属：只取 theme.css 令牌 */
@@ -220,6 +221,7 @@ INDEX = """<!DOCTYPE html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>工程文档 · 苇舟江湖梦</title>
 __THEME_INIT__
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/theme.css">
 <style>
 .dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}

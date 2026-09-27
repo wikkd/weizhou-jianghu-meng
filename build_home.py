@@ -126,6 +126,7 @@ HTML = r"""<!DOCTYPE html>
 <script>(function(){var d=document.documentElement,t=localStorage.getItem("wzjm_theme");
 if(!t)t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
 d.setAttribute("data-theme",t);})();</script>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/theme.css">
 <style>
 /* 页面专属样式：只取 theme.css 设计令牌，不硬编码颜色 */
