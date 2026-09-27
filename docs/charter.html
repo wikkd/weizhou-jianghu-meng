@@ -32,7 +32,23 @@
   border:1px solid var(--line);color:var(--muted);
   transition:color var(--dur-fast) var(--ease-std),border-color var(--dur-fast) var(--ease-std),transform var(--dur-fast) var(--ease-elastic-out)}
 .toc a:hover{color:var(--brand);border-color:var(--brand);transform:scale(1.05)}
-@media(max-width:760px){.nav{flex-wrap:wrap}}
+/* 上一篇/下一篇 */
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:34px 0 10px}
+.pager a{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;
+  transition:border-color var(--dur-fast) var(--ease-std),transform var(--dur-base) var(--ease-out)}
+.pager a:hover{border-color:var(--brand);transform:translateY(-2px)}
+.pager a.next{text-align:right}
+.pager .dir{font-size:11px;color:var(--muted)}
+.pager .pt{font-size:13.5px;font-weight:500;color:var(--brand);margin-top:2px}
+/* 返回顶部：无 JS 时锚点跳转仍可用 */
+.totop{position:fixed;right:22px;bottom:26px;z-index:30;width:40px;height:40px;border-radius:50%;
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);
+  display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;
+  transition:opacity var(--dur-base) var(--ease-std),visibility var(--dur-base) var(--ease-std),transform var(--dur-base) var(--ease-spring)}
+.totop.show{opacity:1;visibility:visible}
+.totop:hover{transform:translateY(-3px);border-color:var(--brand)}
+[data-theme="dark"] .totop img{filter:invert(1)}
+@media(max-width:760px){.nav{flex-wrap:wrap}.pager{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -49,9 +65,9 @@
     <img src="../assets/icons/ic_public_themes.svg" alt="" width="18" height="18">
   </button>
 </nav>
-<div class="wrap doc fade-in">
+<div class="wrap doc fade-in" id="top">
 <h1>开发章程</h1>
-<div class="src">源文件 <a href="https://github.com/wikkd/weizhou-jianghu-meng/blob/master/CHARTER.md" target="_blank" rel="noopener">CHARTER.md</a> ｜ 由 build_docs.py 构建，改动请编辑源 md</div>
+<div class="src">源文件 <a href="https://github.com/wikkd/weizhou-jianghu-meng/blob/master/CHARTER.md" target="_blank" rel="noopener">CHARTER.md</a> ｜ 更新于 2026-09-27 ｜ 由 build_docs.py 构建，改动请编辑源 md</div>
 <div class="toc"><a href="#sec-1">1. 使命与范围</a><a href="#sec-2">2. 角色与分工</a><a href="#sec-3">3. 仓库双域模型</a><a href="#sec-4">4. 开发流程（八步）</a><a href="#sec-5">5. 验收门禁（DoD，七项）</a><a href="#sec-6">6. 内容工作流（Wiki 词条）</a><a href="#sec-7">7. 技术约束</a><a href="#sec-8">8. 安全红线</a><a href="#sec-9">9. 文档体系</a><a href="#sec-10">10. 路线图治理</a><a href="#sec-11">11. 沟通约定</a></div>
 <blockquote>苇舟江湖梦 · 数字知识工程 ｜ 2026-09-27 定稿 ｜ 修改本章程需作者确认后以 commit 形式生效。<br>配套文档：<code>README.md</code>（分类索引）· <code>DEV_RULES.md</code>（开发守则·强制）· <code>MOTION_SPEC.md</code>（动效细则·强制）· <code>UI_SPEC.md</code>（设计系统）· <code>WIKI_SPEC.md</code>（Wiki 架构）。</blockquote>
 <h2 id="sec-1">1. 使命与范围</h2>
@@ -76,7 +92,11 @@
 <ul><li>P1 Wiki 骨架 ✅（2026-09-27）→ P2 全量词条+分类+搜索 → P3 鸿蒙双主题全站统一 → P4 编辑能力（CMS/评论）。</li><li>每期开工前在对应 SPEC 更新计划，完工后在章程标记状态。</li><li>计划外需求走流程 ①-② 重新立项，不夹带。</li></ul>
 <h2 id="sec-11">11. 沟通约定</h2>
 <ul><li>作者可用简短指令（"继续"/"开始"）驱动，AI 按最近一期计划顺序推进。</li><li>AI 结论必须给证据（构建输出/线上核验/代码级引用），可疑结论接受复核要求。</li><li>教训与坑必须在当期日志沉淀，可复现流程优先固化为脚本或文档。</li></ul>
+<div class="pager"><a href="readme.html"><div class="dir">← 上一篇</div><div class="pt">项目总览</div></a><a class="next" href="dev-rules.html"><div class="dir">下一篇 →</div><div class="pt">开发守则</div></a></div>
 </div>
+<a class="totop" id="totop" href="#top" aria-label="返回顶部">
+  <img src="../assets/icons/ic_public_backtotop.svg" alt="" width="18" height="18">
+</a>
 <script>
 document.getElementById('themeBtn').addEventListener('click',function(){
   var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';
@@ -84,5 +104,11 @@ document.getElementById('themeBtn').addEventListener('click',function(){
   try{localStorage.setItem('wzjm_theme',t);}catch(e){}
   this.setAttribute('aria-label',t==='dark'?'切换到浅色主题':'切换到深色主题');
 });
+/* 返回顶部：滚动显隐 + 平滑滚动（渐进增强，无 JS 时锚点跳转可用） */
+(function(){
+  var btn=document.getElementById('totop');
+  addEventListener('scroll',function(){btn.classList.toggle('show',scrollY>400)},{passive:true});
+  btn.addEventListener('click',function(e){e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+})();
 </script>
 </body></html>

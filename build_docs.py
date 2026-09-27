@@ -9,6 +9,7 @@
 import html as H
 import os
 import re
+import subprocess
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "docs")
@@ -19,6 +20,18 @@ THEME_INIT = ('<script>(function(){var d=document.documentElement,t=localStorage
               'if(!t)t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";'
               'd.setAttribute("data-theme",t);})();</script>')
 
+def md_last_updated(md_name: str) -> str:
+    """md 最后提交日期（git log 单源；失败回退文件 mtime）"""
+    try:
+        d = subprocess.run(["git", "log", "-1", "--format=%cs", "--", md_name],
+                           cwd=ROOT, capture_output=True, text=True, timeout=10).stdout.strip()
+        if d:
+            return d
+    except Exception:
+        pass
+    import datetime
+    return datetime.date.fromtimestamp(os.path.getmtime(os.path.join(ROOT, md_name))).isoformat()
+
 DOCS = [
     ("README.md",      "readme",      "项目总览",   "双域结构、六类资产分类与部署模型"),
     ("CHARTER.md",     "charter",     "开发章程",   "流程 / DoD 门禁 / 安全红线"),
@@ -27,6 +40,7 @@ DOCS = [
     ("UI_SPEC.md",     "ui-spec",     "设计系统",   "设计令牌 / 组件 / 页面验收"),
     ("WIKI_SPEC.md",   "wiki-spec",   "Wiki 架构",  "命名空间 / 构建管线 / 分期规划"),
 ]
+UPDATED = {md: md_last_updated(md) for md, *_ in DOCS}
 
 # ---------- Markdown 子集渲染 ----------
 def inline(s: str) -> str:
@@ -159,7 +173,23 @@ __THEME_INIT__
   border:1px solid var(--line);color:var(--muted);
   transition:color var(--dur-fast) var(--ease-std),border-color var(--dur-fast) var(--ease-std),transform var(--dur-fast) var(--ease-elastic-out)}
 .toc a:hover{color:var(--brand);border-color:var(--brand);transform:scale(1.05)}
-@media(max-width:760px){.nav{flex-wrap:wrap}}
+/* 上一篇/下一篇 */
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:34px 0 10px}
+.pager a{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;
+  transition:border-color var(--dur-fast) var(--ease-std),transform var(--dur-base) var(--ease-out)}
+.pager a:hover{border-color:var(--brand);transform:translateY(-2px)}
+.pager a.next{text-align:right}
+.pager .dir{font-size:11px;color:var(--muted)}
+.pager .pt{font-size:13.5px;font-weight:500;color:var(--brand);margin-top:2px}
+/* 返回顶部：无 JS 时锚点跳转仍可用 */
+.totop{position:fixed;right:22px;bottom:26px;z-index:30;width:40px;height:40px;border-radius:50%;
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);
+  display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;
+  transition:opacity var(--dur-base) var(--ease-std),visibility var(--dur-base) var(--ease-std),transform var(--dur-base) var(--ease-spring)}
+.totop.show{opacity:1;visibility:visible}
+.totop:hover{transform:translateY(-3px);border-color:var(--brand)}
+[data-theme="dark"] .totop img{filter:invert(1)}
+@media(max-width:760px){.nav{flex-wrap:wrap}.pager{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -176,12 +206,16 @@ __THEME_INIT__
     <img src="__BASE__assets/icons/ic_public_themes.svg" alt="" width="18" height="18">
   </button>
 </nav>
-<div class="wrap doc fade-in">
+<div class="wrap doc fade-in" id="top">
 <h1>__TITLE__</h1>
-<div class="src">源文件 <a href="__REPO__/blob/master/__MD__" target="_blank" rel="noopener">__MD__</a> ｜ 由 build_docs.py 构建，改动请编辑源 md</div>
+<div class="src">源文件 <a href="__REPO__/blob/master/__MD__" target="_blank" rel="noopener">__MD__</a> ｜ 更新于 __UPDATED__ ｜ 由 build_docs.py 构建，改动请编辑源 md</div>
 <div class="toc">__TOC__</div>
 __BODY__
+__PAGER__
 </div>
+<a class="totop" id="totop" href="#top" aria-label="返回顶部">
+  <img src="../assets/icons/ic_public_backtotop.svg" alt="" width="18" height="18">
+</a>
 <script>
 document.getElementById('themeBtn').addEventListener('click',function(){
   var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';
@@ -189,20 +223,37 @@ document.getElementById('themeBtn').addEventListener('click',function(){
   try{localStorage.setItem('wzjm_theme',t);}catch(e){}
   this.setAttribute('aria-label',t==='dark'?'切换到浅色主题':'切换到深色主题');
 });
+/* 返回顶部：滚动显隐 + 平滑滚动（渐进增强，无 JS 时锚点跳转可用） */
+(function(){
+  var btn=document.getElementById('totop');
+  addEventListener('scroll',function(){btn.classList.toggle('show',scrollY>400)},{passive:true});
+  btn.addEventListener('click',function(e){e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+})();
 </script>
 </body></html>"""
 
 # ---------- 单文档页 ----------
-for md_name, slug, zh, desc in DOCS:
+for idx, (md_name, slug, zh, desc) in enumerate(DOCS):
     md = open(os.path.join(ROOT, md_name), encoding="utf-8").read()
     title, toc, body = render(md)
     toc_html = "".join(f'<a href="#{hid}">{H.escape(txt)}</a>' for hid, txt in toc)
+    # 上一篇/下一篇
+    prev_doc = DOCS[idx - 1] if idx > 0 else None
+    next_doc = DOCS[idx + 1] if idx < len(DOCS) - 1 else None
+    pager_html = '<div class="pager">'
+    pager_html += (f'<a href="{prev_doc[1]}.html"><div class="dir">← 上一篇</div>'
+                   f'<div class="pt">{prev_doc[2]}</div></a>' if prev_doc else '<span></span>')
+    pager_html += (f'<a class="next" href="{next_doc[1]}.html"><div class="dir">下一篇 →</div>'
+                   f'<div class="pt">{next_doc[2]}</div></a>' if next_doc else '<span></span>')
+    pager_html += '</div>'
     page = (PAGE.replace("__TITLE__", H.escape(zh))
                 .replace("__MD__", md_name)
+                .replace("__UPDATED__", UPDATED[md_name])
                 .replace("__THEME_INIT__", THEME_INIT)
                 .replace("__BASE__", "../")
                 .replace("__REPO__", REPO)
                 .replace("__TOC__", toc_html)
+                .replace("__PAGER__", pager_html)
                 .replace("__BODY__", body))
     with open(os.path.join(OUT, f"{slug}.html"), "w", encoding="utf-8") as f:
         f.write(page)
@@ -212,8 +263,9 @@ cards = "\n".join(f"""
     <a class="dcard" href="{slug}.html">
       <div class="t">{zh}</div>
       <div class="s">{desc}</div>
+      <div class="meta">更新于 {UPDATED[md]} · 源 {md}</div>
       <div class="go">阅读 →</div>
-    </a>""" for _, slug, zh, desc in DOCS)
+    </a>""" for md, slug, zh, desc in DOCS)
 
 INDEX = """<!DOCTYPE html>
 <html lang="zh-CN" data-theme="light">
@@ -233,7 +285,8 @@ __THEME_INIT__
 .dcard:hover{transform:translateY(-3px);border-color:var(--brand);box-shadow:0 8px 20px rgba(0,0,0,.08)}
 .dcard .t{font-size:15px;font-weight:500;margin-bottom:6px}
 .dcard .s{color:var(--muted);font-size:12.5px;flex:1}
-.dcard .go{margin-top:12px;font-size:12.5px;color:var(--brand);font-weight:500}
+.dcard .meta{margin-top:10px;font-size:11px;color:var(--muted);opacity:.8}
+.dcard .go{margin-top:6px;font-size:12.5px;color:var(--brand);font-weight:500}
 @media(max-width:760px){.nav{flex-wrap:wrap}}
 </style>
 </head>

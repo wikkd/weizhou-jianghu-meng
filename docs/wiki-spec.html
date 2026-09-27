@@ -32,7 +32,23 @@
   border:1px solid var(--line);color:var(--muted);
   transition:color var(--dur-fast) var(--ease-std),border-color var(--dur-fast) var(--ease-std),transform var(--dur-fast) var(--ease-elastic-out)}
 .toc a:hover{color:var(--brand);border-color:var(--brand);transform:scale(1.05)}
-@media(max-width:760px){.nav{flex-wrap:wrap}}
+/* 上一篇/下一篇 */
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:34px 0 10px}
+.pager a{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;
+  transition:border-color var(--dur-fast) var(--ease-std),transform var(--dur-base) var(--ease-out)}
+.pager a:hover{border-color:var(--brand);transform:translateY(-2px)}
+.pager a.next{text-align:right}
+.pager .dir{font-size:11px;color:var(--muted)}
+.pager .pt{font-size:13.5px;font-weight:500;color:var(--brand);margin-top:2px}
+/* 返回顶部：无 JS 时锚点跳转仍可用 */
+.totop{position:fixed;right:22px;bottom:26px;z-index:30;width:40px;height:40px;border-radius:50%;
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);
+  display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;
+  transition:opacity var(--dur-base) var(--ease-std),visibility var(--dur-base) var(--ease-std),transform var(--dur-base) var(--ease-spring)}
+.totop.show{opacity:1;visibility:visible}
+.totop:hover{transform:translateY(-3px);border-color:var(--brand)}
+[data-theme="dark"] .totop img{filter:invert(1)}
+@media(max-width:760px){.nav{flex-wrap:wrap}.pager{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -49,9 +65,9 @@
     <img src="../assets/icons/ic_public_themes.svg" alt="" width="18" height="18">
   </button>
 </nav>
-<div class="wrap doc fade-in">
+<div class="wrap doc fade-in" id="top">
 <h1>Wiki 架构</h1>
-<div class="src">源文件 <a href="https://github.com/wikkd/weizhou-jianghu-meng/blob/master/WIKI_SPEC.md" target="_blank" rel="noopener">WIKI_SPEC.md</a> ｜ 由 build_docs.py 构建，改动请编辑源 md</div>
+<div class="src">源文件 <a href="https://github.com/wikkd/weizhou-jianghu-meng/blob/master/WIKI_SPEC.md" target="_blank" rel="noopener">WIKI_SPEC.md</a> ｜ 更新于 2026-09-27 ｜ 由 build_docs.py 构建，改动请编辑源 md</div>
 <div class="toc"><a href="#sec-1">1. 定位与原则</a><a href="#sec-2">2. 命名空间与 URL</a><a href="#sec-3">3. 词条源格式（content/）</a><a href="#sec-4">4. 构建管线 build_wiki.py（纯标准库）</a><a href="#sec-5">5. 页面模板与现有页关系</a><a href="#sec-6">6. 扩展预留（只读期不启用）</a><a href="#sec-7">7. 分期路线</a><a href="#sec-8">8. 验收标准</a></div>
 <blockquote>定稿 2026-09-27。三项决策：① 词条源 = Markdown + frontmatter ② 编辑预留 = git-based CMS（Decap 占位）③ 一期 = 骨架 + 5 个种子词条。<br>配套设计系统见 <code>UI_SPEC.md</code>（鸿蒙风格、双主题、内嵌鸿蒙 Sans）。</blockquote>
 <h2 id="sec-1">1. 定位与原则</h2>
@@ -77,10 +93,14 @@ tags: [主角, 五岳盟]
 <h2 id="sec-6">6. 扩展预留（只读期不启用）</h2>
 <table><thead><tr><th>接口</th><th>预留方式</th><th>启用动作</th></tr></thead><tbody><tr><td>编辑</td><td><code>content/</code> 即编辑面；<code>admin/config.yml</code> 占位（Decap CMS 配置）</td><td>部署 Decap + GitHub OAuth，网页编辑→提 PR</td></tr><tr><td>评论</td><td>词条模板预留 <code>&lt;div id="giscus"&gt;</code> 挂载点</td><td>填 giscus 仓库参数即可</td></tr><tr><td>历史</td><td>页脚 git commits 链接（已可用）</td><td>无需动作</td></tr><tr><td>开放数据</td><td><code>knowledge_base.json</code> / <code>search-index.json</code> 常驻可直连</td><td>无需动作</td></tr><tr><td>版本</td><td>产物内嵌 <code>schema_version</code></td><td>升级时迁移脚本按版本判断</td></tr></tbody></table>
 <h2 id="sec-7">7. 分期路线</h2>
-<ul><li><b>P1（本次）</b>：<code>content/</code> 骨架 + <code>build_wiki.py</code> + <code>assets/theme.css</code> 落地 + 5 个种子词条（任琅 / 尚樱 / 夏叶 / 章节·一 / 章节·十一）+ 总目录 + 死链机制 + 门户入口。</li><li><b>P2</b>：全量自动词条（33 人物 + 63 章节，信息框自动、正文待补）+ 分类页 + 站内搜索接线。</li><li><b>P3</b>：鸿蒙双主题统一三页 + wiki（UI_SPEC 全量实施，含内嵌字体）。</li><li><b>P4</b>：按需启用 CMS / 评论。</li></ul>
+<ul><li><b>P1 ✅（2026-09-27）</b>：<code>content/</code> 骨架 + <code>build_wiki.py</code> + <code>assets/theme.css</code> 落地 + 5 个种子词条（任琅 / 尚樱 / 夏叶 / 章节·一 / 章节·十一）+ 总目录 + 死链机制 + 门户入口。</li><li><b>P2（当前待办）</b>：全量自动词条（33 人物 + 63 章节，信息框自动、正文待补）+ 分类页 + 站内搜索接线。</li><li><b>P3 ✅（2026-09-27，提前完成）</b>：鸿蒙双主题统一全站页（index / kb / poem_gallery / wiki / docs），含内嵌 HarmonyOS Sans SC 字体（fonts/ 分片）、官方图标库、动效令牌（MOTION_SPEC.md）。</li><li><b>P4</b>：按需启用 CMS / 评论。</li></ul>
 <h2 id="sec-8">8. 验收标准</h2>
 <ul><li>[[链]]零死链（或红链显式可见）；别名重定向可达</li><li>信息框数据与 kb.html 同源一致（单源校验）</li><li>搜索可命中词条正文关键词</li><li>双主题 + 移动端 375px 可用；<code>bash deploy.sh</code> 一键上线不变</li></ul>
+<div class="pager"><a href="ui-spec.html"><div class="dir">← 上一篇</div><div class="pt">设计系统</div></a><span></span></div>
 </div>
+<a class="totop" id="totop" href="#top" aria-label="返回顶部">
+  <img src="../assets/icons/ic_public_backtotop.svg" alt="" width="18" height="18">
+</a>
 <script>
 document.getElementById('themeBtn').addEventListener('click',function(){
   var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';
@@ -88,5 +108,11 @@ document.getElementById('themeBtn').addEventListener('click',function(){
   try{localStorage.setItem('wzjm_theme',t);}catch(e){}
   this.setAttribute('aria-label',t==='dark'?'切换到浅色主题':'切换到深色主题');
 });
+/* 返回顶部：滚动显隐 + 平滑滚动（渐进增强，无 JS 时锚点跳转可用） */
+(function(){
+  var btn=document.getElementById('totop');
+  addEventListener('scroll',function(){btn.classList.toggle('show',scrollY>400)},{passive:true});
+  btn.addEventListener('click',function(e){e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+})();
 </script>
 </body></html>

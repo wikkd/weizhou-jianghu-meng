@@ -6,10 +6,14 @@
 
 ```
 ├── 网站工程（仓库根）
-│   ├── 页面：index.html / kb.html / poems/
+│   ├── 页面：index.html / kb.html / poems/ / wiki/ / docs/
 │   ├── 数据：knowledge_base.json / chapters.csv / characters.csv / poems.json
 │   ├── 构建：build_kb.py / build_html.py / build_home.py / build_poem_gallery.py
-│   └── 运维：deploy.sh / .gitignore / README.md / UI_SPEC.md
+│   │         / build_wiki.py / build_docs.py
+│   ├── 资产：assets/（theme.css 设计令牌 + 动效令牌、icons/ 官方图标、fonts/ 内嵌鸿蒙字体、favicon.svg）
+│   ├── 治理：README.md / CHARTER.md / DEV_RULES.md / MOTION_SPEC.md / UI_SPEC.md / WIKI_SPEC.md
+│   │         （均已站点化为 docs/ 页面，md 为单一事实源）
+│   └── 运维：deploy.sh / .gitignore
 └── 文学/（原 agent-kit，内部结构保持产线原样）
     ├── 源文件/ ：苇舟江湖梦.docx、参考地图
     ├── 数据/   ：full_text.txt、60 章分章 txt、章节标签、分析 JSON
@@ -26,8 +30,10 @@
 ### A. 线上站点页面（gh-pages 可访问）
 | 路径 | 内容 |
 |---|---|
-| `index.html` | 项目入口主页（导航/统计/诗词撷英） |
+| `index.html` | 项目入口主页（鸿蒙双主题，导航/搜索/统计/Wiki 结构总览） |
 | `kb.html` | 知识性索引数据库（人物/章节/关系/检索五视图） |
+| `wiki/` | Wiki 词条（总目录 + 人物/章节等命名空间词条，构建期生成） |
+| `docs/` | 工程文档站点化版本（6 份治理文档，构建期生成） |
 | `poems/poem_gallery.html` | 9 首角色诗图对照画廊 |
 | `文学/产物/00_总览导航/index.html` | 量化报告总览（仅 gh-pages 存在） |
 
@@ -36,8 +42,11 @@
 |---|---|
 | `build_kb.py` | docx → knowledge_base.json + CSV（解析层） |
 | `build_html.py` / `build_home.py` / `build_poem_gallery.py` | 生成 kb.html / index.html / 诗图画廊 |
+| `build_wiki.py` | content/*.md → wiki/ 静态词条（纯标准库，规格见 WIKI_SPEC.md） |
+| `build_docs.py` | 治理 md → docs/ 文档页（纯标准库 Markdown 子集渲染器） |
 | `deploy.sh` | 一键部署：gh-pages 确定性重建 = master + 报告挂载 |
-| `UI_SPEC.md` | 鸿蒙风格 UI 设计规格（双主题/字体/三页改造） |
+| `CHARTER.md` / `DEV_RULES.md` / `MOTION_SPEC.md` | 治理三层：章程 → 守则 → 动效细则 |
+| `UI_SPEC.md` / `WIKI_SPEC.md` | 设计系统 / Wiki 架构规格 |
 | `README.md` | 本文件 |
 
 ### C. 站点数据层（仓库根）
