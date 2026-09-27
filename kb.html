@@ -44,10 +44,15 @@ tbody tr:hover{background:var(--brand-soft)}
 .cell{width:20px;height:20px;border-radius:4px;font-size:9px;display:flex;align-items:center;justify-content:center;color:#fff;cursor:default}
 .muted{color:var(--muted)}
 .small{font-size:12px}
-.drawer{position:fixed;top:0;right:0;height:100%;width:420px;max-width:92vw;background:var(--card);box-shadow:-8px 0 30px rgba(0,0,0,.15);transform:translateX(100%);transition:.25s;z-index:50;overflow:auto;padding:18px}
+.drawer{position:fixed;top:0;right:0;height:100%;width:420px;max-width:92vw;background:var(--card);box-shadow:-8px 0 30px rgba(0,0,0,.15);transform:translateX(100%);transition:transform var(--dur-slow) var(--ease-expo-out);z-index:50;overflow:auto;padding:18px}
 .drawer.open{transform:translateX(0)}
-.mask{position:fixed;inset:0;background:rgba(0,0,0,.35);display:none;z-index:40}
-.mask.open{display:block}
+.mask{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;visibility:hidden;z-index:40;
+  transition:opacity var(--dur-base) var(--ease-std),visibility var(--dur-base) var(--ease-std)}
+.mask.open{opacity:1;visibility:visible}
+tbody tr{transition:background var(--dur-fast) var(--ease-std)}
+.chip[onclick]{cursor:pointer}
+.chip[onclick]:hover{transform:scale(1.06)}
+.chip[onclick]:active{transform:scale(.94)}
 .close{float:right;cursor:pointer;color:var(--muted);font-size:20px;border:none;background:none}
 .legend{font-size:11px;color:var(--muted);margin-top:6px}
 a.k{color:var(--brand);cursor:pointer;text-decoration:underline}
@@ -115,7 +120,7 @@ function vOverview(){
     ${pts.map((p,i)=> i%6===0?`<circle cx="${p[0]}" cy="${p[1]}" r="2.5" style="fill:var(--accent)"/>`:'').join('')}
     </svg>`;
   view.innerHTML = `
-  <div class="grid g4">
+  <div class="grid g4 stagger">
     <div class="stat"><div class="n">${KB.meta.chapter_count}</div><div class="l">章节（含自序）</div></div>
     <div class="stat"><div class="n">${Object.keys(C).length}</div><div class="l">已索引人物</div></div>
     <div class="stat"><div class="n">${(CH.reduce((a,c)=>a+c.chars,0)/10000).toFixed(1)}万</div><div class="l">正文字数</div></div>
@@ -224,7 +229,7 @@ function vRel(){
   view.innerHTML = `
    <div class="card"><h2>已知关系事实（作者标注）</h2>
      <table><thead><tr><th>人物</th><th>关系</th><th>说明</th></tr></thead><tbody>${known}</tbody></table></div>
-   <div class="grid g2">
+   <div class="grid g2 stagger">
      <div class="card"><h2>人物共现网络（TOP14）</h2>
        <svg viewBox="0 0 ${W} ${H}" width="100%">${edges}${nodes}</svg>
        <div class="legend">节点大小=提及量；连线粗细=共同出场章数。</div></div>
@@ -261,9 +266,11 @@ function doSearch(q){
 
 /* ---------- 路由 ---------- */
 const views={overview:vOverview,chars:vChars,chapters:vChapters,rel:vRel,search:vSearch};
+/* 视图切换淡入（MOTION_SPEC：tab 切换 --ease-out-soft/base；重触发需强制 reflow） */
+function replayFade(){view.classList.remove('fade-in');void view.offsetWidth;view.classList.add('fade-in');}
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
-  t.classList.add('active'); views[t.dataset.v]();
+  t.classList.add('active'); views[t.dataset.v](); replayFade();
 });
 function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('mask').classList.remove('open');}
 document.getElementById('mask').onclick=closeDrawer;

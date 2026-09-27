@@ -11,11 +11,14 @@ d.setAttribute("data-theme",t);})();</script>
 *{box-sizing:border-box}
 .wrap{max-width:1180px}
 .sub{color:var(--muted);font-size:12.5px;margin:14px 0 0}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:14px}
-@media(max-width:760px){.grid{grid-template-columns:1fr}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-.img{background:var(--field);display:flex;justify-content:center}
-.img img{width:100%;max-height:520px;object-fit:contain;display:block}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:14px}@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+  transition:transform var(--dur-base) var(--ease-out),box-shadow var(--dur-base) var(--ease-out),border-color var(--dur-fast) var(--ease-std)}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.10);border-color:var(--brand)}
+.img{background:var(--field);display:flex;justify-content:center;overflow:hidden}
+.img img{width:100%;max-height:520px;object-fit:contain;display:block;
+  transition:transform var(--dur-slow) var(--ease-out)}
+.card:hover .img img{transform:scale(1.03)}
 .meta{padding:14px 16px}
 .ch{font-weight:500;font-size:15px;margin-bottom:8px}
 .tag{display:inline-block;padding:2px 11px;border-radius:999px;font-size:11px;background:var(--gold);color:var(--card);margin-left:4px;font-weight:500}
@@ -40,7 +43,7 @@ a.back{display:inline-block;margin:6px 0 2px;color:var(--brand);text-decoration:
 <div class="wrap">
 <div class="sub" style="margin-top:14px">9 首题画诗/口占/福纸愿 × 本地 AI 生图 ｜ 金色章标=归属明确，灰色=待考</div>
 <a class="back" href="../index.html">← 返回主页</a>
-<div class="grid">
+<div class="grid stagger">
     <div class="card">
       <div class="img"><img src="poem01_shangying_rongmao.png" alt="尚樱" loading="lazy"></div>
       <div class="meta">

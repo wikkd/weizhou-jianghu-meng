@@ -186,9 +186,9 @@ def page_html(*, title, body_html, base, history_path=None, extra_head=""):
   <div class="brand">苇舟江湖梦 · Wiki</div>
   <span class="sp"></span>
   <form action="{base}index.html" method="get" style="margin:0"><input class="search k" name="q" placeholder="搜索词条…"></form>
-  <button class="theme-btn" onclick="toggleTheme()" title="明暗切换">◐</button>
+  <button class="theme-btn" onclick="toggleTheme()" title="明暗切换" aria-label="切换明暗主题"><img src="{base}../assets/icons/ic_public_themes.svg" alt="" width="18" height="18"></button>
 </nav>
-<div class="wrap">
+<div class="wrap fade-in">
 {body_html}
 <div class="foot">{hist}<span>由 build_wiki.py 构建 · {BUILD_TIME}</span><span>schema v{SCHEMA_VERSION}</span></div>
 </div>
@@ -281,7 +281,7 @@ for ns in NS_ORDER:
         f'<a class="entry-card" href="{urllib.parse.quote(e["ns"])}/{urllib.parse.quote(e["title"])}.html">'
         f'<div class="t">{esc(e["title"])}{" <span class=\"chip gray\">别名 " + esc("、".join(e["aliases"])) + "</span>" if e["aliases"] else ""}</div>'
         f'<div class="s">{esc(e["summary"])}</div></a>' for e in items)
-    sec_html.append(f'<div class="ns-sec" id="ns-{esc(ns)}" data-ns="{esc(ns)}"><h2>{esc(ns)} <span class="chip gray">{len(items)}</span></h2>{cards}</div>')
+    sec_html.append(f'<div class="ns-sec stagger" id="ns-{esc(ns)}" data-ns="{esc(ns)}"><h2>{esc(ns)} <span class="chip gray">{len(items)}</span></h2>{cards}</div>')
     for e in items:
         plain = re.sub(r"\[\[([^\[\]|]+)(?:\|([^\[\]]+))?\]\]", r"\1", e["body"])
         search_index.append({"ns": e["ns"], "title": e["title"], "aliases": e["aliases"],

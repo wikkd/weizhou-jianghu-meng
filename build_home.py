@@ -170,7 +170,8 @@ d.setAttribute("data-theme",t);})();</script>
 /* Wiki 结构总览：命名空间卡片 */
 .ns-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .nsc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;
-  box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.18s}
+  box-shadow:var(--shadow);display:flex;flex-direction:column;
+  transition:transform var(--dur-base) var(--ease-out),border-color var(--dur-fast) var(--ease-std),box-shadow var(--dur-base) var(--ease-out)}
 .nsc:hover{transform:translateY(-3px);border-color:var(--brand)}
 .nsc-h{display:flex;align-items:center;gap:10px}
 .nsc-h .chip{margin-left:auto}
@@ -181,7 +182,7 @@ d.setAttribute("data-theme",t);})();</script>
 /* 四入口 */
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .entry{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;
-  box-shadow:var(--shadow);transition:.18s;display:flex;flex-direction:column}
+  box-shadow:var(--shadow);transition:transform var(--dur-base) var(--ease-out),border-color var(--dur-fast) var(--ease-std),box-shadow var(--dur-base) var(--ease-out);display:flex;flex-direction:column}
 .entry:hover{transform:translateY(-3px);border-color:var(--brand)}
 .entry .ic{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--brand-soft);
   display:flex;align-items:center;justify-content:center;margin-bottom:12px}
@@ -192,7 +193,7 @@ d.setAttribute("data-theme",t);})();</script>
 /* 诗词 */
 .poems{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;
-  box-shadow:var(--shadow);transition:.18s}
+  box-shadow:var(--shadow);transition:transform var(--dur-base) var(--ease-out),border-color var(--dur-fast) var(--ease-std),box-shadow var(--dur-base) var(--ease-out)}
 .pcard:hover{transform:translateY(-2px);border-color:var(--brand)}
 .pcard .pidx{font-weight:700;color:var(--gold);font-size:13px}
 .pcard .ptype{color:var(--muted);font-size:12px;margin:3px 0 8px}
@@ -236,7 +237,7 @@ footer a:hover{color:var(--brand)}
 </nav>
 
 <div class="wrap">
-  <section class="hero">
+  <section class="hero fade-in">
     <div>
       <h1>苇舟江湖梦</h1>
       <div class="by">__AUTHOR__ 著 · Wiki 式知识工程</div>
@@ -265,18 +266,18 @@ footer a:hover{color:var(--brand)}
     <div class="art">__HERO_SVG__</div>
   </section>
 
-  <section class="stats">__STATS__</section>
+  <section class="stats stagger">__STATS__</section>
 
   <div class="sec">
     <h2>Wiki 结构总览</h2>
     <p class="hint">六大命名空间。点击任意命名空间进入总目录对应分区；未开放分区落到待创建说明页。</p>
-    <div class="ns-grid">__NS_GRID__</div>
+    <div class="ns-grid stagger">__NS_GRID__</div>
   </div>
 
   <div class="sec">
     <h2>四处入口</h2>
     <p class="hint">从任意一扇门进入这片江湖。</p>
-    <div class="cards">
+    <div class="cards stagger">
       <a class="entry" href="wiki/index.html">
         <div class="ic"><img class="hic" src="assets/icons/ic_public_detail.svg" alt="" width="22" height="22"></div>
         <h3>Wiki 词条</h3>
@@ -321,7 +322,7 @@ footer a:hover{color:var(--brand)}
   <div class="sec">
     <h2>诗词撷英</h2>
     <p class="hint">九首诗的首句，点击任意一张进入完整诗图对照。</p>
-    <div class="poems">__POEM_CARDS__</div>
+    <div class="poems stagger">__POEM_CARDS__</div>
   </div>
 </div>
 
