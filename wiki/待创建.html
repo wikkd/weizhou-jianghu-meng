@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>词条待创建 · 苇舟江湖梦 Wiki</title>
+<script>(function(){var d=document.documentElement,t=localStorage.getItem("theme");if(!t)t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme",t);})();</script><link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+<nav class="nav">
+  <a class="lk" href="../index.html">‹ 主页</a>
+  <div class="brand">苇舟江湖梦 · Wiki</div>
+  <span class="sp"></span>
+  <form action="index.html" method="get" style="margin:0"><input class="search k" name="q" placeholder="搜索词条…"></form>
+  <button class="theme-btn" onclick="toggleTheme()" title="明暗切换">◐</button>
+</nav>
+<div class="wrap">
+
+<div class="card" style="margin-top:30px;text-align:center;padding:46px 20px">
+  <div style="font-size:34px">🚧</div>
+  <h2 style="font-size:18px;font-weight:500;margin:10px 0 6px">该词条尚未创建</h2>
+  <p id="t" style="color:var(--muted);margin:0">正在读取词条名…</p>
+  <p style="margin-top:16px"><a class="btn primary" href="index.html">返回总目录</a></p>
+</div>
+<div class="foot"><span>源 <a href='https://github.com/wikkd/weizhou-jianghu-meng' target='_blank' rel='noopener'>GitHub</a></span><span>由 build_wiki.py 构建 · 2026-09-27 16:09</span><span>schema v1</span></div>
+</div>
+<script>function toggleTheme(){var d=document.documentElement,t=d.getAttribute("data-theme")==="dark"?"light":"dark";d.setAttribute("data-theme",t);localStorage.setItem("theme",t);}</script>
+</body></html>
+<script>var q=new URLSearchParams(location.search).get("t");if(q)document.getElementById("t").textContent="「"+q+"」还没有词条。可在 content/ 对应命名空间目录新建该词条后重新构建。";</script>

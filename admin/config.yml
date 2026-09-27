@@ -1,0 +1,21 @@
+# Decap CMS 占位配置（WIKI_SPEC.md §6 编辑预留）
+# 启用步骤：① 部署本目录为静态页并引入 decap-cms 脚本 ② 配置 GitHub OAuth（需一个 OAuth 网关）
+# ③ 删除本注释后即可在 /admin/ 网页编辑 content/ 词条 → 提 PR
+backend:
+  name: github
+  repo: wikkd/weizhou-jianghu-meng
+  branch: master
+media_folder: "poems"
+public_folder: "/poems"
+collections:
+  - name: "wiki"
+    label: "Wiki 词条"
+    folder: "content"
+    create: true
+    slug: "{{title}}"
+    fields:
+      - { label: "命名空间", name: "ns", widget: "select", options: [人物, 章节, 地点, 组织, 术语, 诗词] }
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "别名", name: "aliases", widget: "list", required: false }
+      - { label: "摘要", name: "summary", widget: "string" }
+      - { label: "正文", name: "body", widget: "markdown" }
