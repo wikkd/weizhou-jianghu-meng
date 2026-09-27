@@ -172,7 +172,7 @@ footer a{color:var(--blue)}
   <a class="lk" href="#about">关于</a>
   <a class="lk" href="kb.html">知识库</a>
   <a class="lk" href="poems/poem_gallery.html">诗图</a>
-  <a class="lk" href="agent-kit/产物/00_总览导航/index.html">量化报告</a>
+  <a class="lk" href="文学/产物/00_总览导航/index.html">量化报告</a>
   <a class="lk" href="https://github.com/wikkd/weizhou-jianghu-meng" target="_blank" rel="noopener">仓库</a>
 </nav>
 
