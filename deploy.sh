@@ -25,6 +25,7 @@ else
   echo "WARN: 未找到 $STAGE/产物，跳过产物挂载（线上报告不会更新）"
 fi
 
-git push origin gh-pages
+# gh-pages 的报告提交每次 rebase 都会改写哈希，部署分支仅本脚本维护，故用 force-with-lease
+git push --force-with-lease origin gh-pages
 git checkout master
 echo "deploy done."
