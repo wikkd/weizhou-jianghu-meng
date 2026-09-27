@@ -1,0 +1,316 @@
+{
+  "method": "dict_fallback",
+  "chapters": [
+    {
+      "chapter": 1,
+      "sentiment": 0.588235,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 2,
+      "sentiment": 0.351852,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 3,
+      "sentiment": 0.436364,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 4,
+      "sentiment": 0.5,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 5,
+      "sentiment": 0.45,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 6,
+      "sentiment": 0.488636,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 7,
+      "sentiment": 0.688312,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 8,
+      "sentiment": 0.552632,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 9,
+      "sentiment": 0.804348,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 10,
+      "sentiment": 0.538462,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 11,
+      "sentiment": 0.684783,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 12,
+      "sentiment": 0.901408,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 13,
+      "sentiment": 0.753846,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 14,
+      "sentiment": 0.576923,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 15,
+      "sentiment": 0.566038,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 16,
+      "sentiment": 0.693182,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 17,
+      "sentiment": 0.361111,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 18,
+      "sentiment": 0.727273,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 19,
+      "sentiment": 0.913043,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 20,
+      "sentiment": 0.744361,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 21,
+      "sentiment": 0.4,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 22,
+      "sentiment": 0.507937,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 23,
+      "sentiment": 0.565217,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 24,
+      "sentiment": 0.369048,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 25,
+      "sentiment": 0.583333,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 26,
+      "sentiment": 0.703297,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 27,
+      "sentiment": 0.737864,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 28,
+      "sentiment": 0.6,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 29,
+      "sentiment": 0.518248,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 30,
+      "sentiment": 0.666667,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 31,
+      "sentiment": 0.74026,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 32,
+      "sentiment": 0.658824,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 33,
+      "sentiment": 0.63522,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 34,
+      "sentiment": 0.351351,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 35,
+      "sentiment": 0.44186,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 36,
+      "sentiment": 0.719298,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 37,
+      "sentiment": 0.488889,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 38,
+      "sentiment": 0.746479,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 39,
+      "sentiment": 0.337349,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 40,
+      "sentiment": 0.545455,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 41,
+      "sentiment": 0.818182,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 42,
+      "sentiment": 0.7,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 43,
+      "sentiment": 0.7,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 44,
+      "sentiment": 0.713287,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 45,
+      "sentiment": 0.606557,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 46,
+      "sentiment": 0.574713,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 47,
+      "sentiment": 0.566667,
+      "combat_intensity": 2
+    },
+    {
+      "chapter": 48,
+      "sentiment": 0.479592,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 49,
+      "sentiment": 0.466667,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 50,
+      "sentiment": 0.523077,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 51,
+      "sentiment": 0.469388,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 52,
+      "sentiment": 0.645161,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 53,
+      "sentiment": 0.396825,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 54,
+      "sentiment": 0.558559,
+      "combat_intensity": 1
+    },
+    {
+      "chapter": 55,
+      "sentiment": 0.455696,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 56,
+      "sentiment": 0.418182,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 57,
+      "sentiment": 0.396226,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 58,
+      "sentiment": 0.449153,
+      "combat_intensity": 3
+    },
+    {
+      "chapter": 59,
+      "sentiment": 0.732394,
+      "combat_intensity": 0
+    }
+  ],
+  "mean": 0.581487,
+  "thirds": {
+    "early": 0.609287,
+    "mid": 0.575775,
+    "late": 0.560789
+  },
+  "corr": {
+    "pearson": {
+      "r": -0.464618,
+      "p": 0.00021
+    },
+    "spearman": {
+      "r": -0.478411,
+      "p": 0.000127
+    }
+  }
+}

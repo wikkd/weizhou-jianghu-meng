@@ -1,0 +1,616 @@
+{
+ "recurring_utterances": [
+  {
+   "phrase": "月隐糖",
+   "character": "任琅",
+   "freq": 3,
+   "chapters": [
+    5,
+    15
+   ],
+   "first_chapter": 5,
+   "sample_context": "，心想：这么砍过去肯定不行。想着想着，偶然间瞥到“月隐糖”想起影给介绍的功效，拿起一颗放到嘴中，咔吧一声咬"
+  },
+  {
+   "phrase": "怎么了",
+   "character": "尚樱",
+   "freq": 3,
+   "chapters": [
+    11,
+    14,
+    38
+   ],
+   "first_chapter": 11,
+   "sample_context": "“怎么了？”尚樱定了定神，而后向门处喊。"
+  },
+  {
+   "phrase": "明白",
+   "character": "赵翔",
+   "freq": 3,
+   "chapters": [
+    59,
+    60
+   ],
+   "first_chapter": 59,
+   "sample_context": "“明白。”"
+  },
+  {
+   "phrase": "怎么",
+   "character": "任琅",
+   "freq": 2,
+   "chapters": [
+    4,
+    36
+   ],
+   "first_chapter": 4,
+   "sample_context": "“怎么？”影回头“少说话，保存体力。”"
+  },
+  {
+   "phrase": "哦好",
+   "character": "任琅",
+   "freq": 2,
+   "chapters": [
+    7
+   ],
+   "first_chapter": 7,
+   "sample_context": "“哦，好。”尚樱此时声音软弱弱的似乎还带着些迷糊，任琅一扶额"
+  },
+  {
+   "phrase": "当然",
+   "character": "任琅",
+   "freq": 2,
+   "chapters": [
+    16,
+    34
+   ],
+   "first_chapter": 16,
+   "sample_context": "“当然。”福指着白猿消失的山谷“从这似乎可以到前山，我不想"
+  },
+  {
+   "phrase": "哈哈哈",
+   "character": "任琅",
+   "freq": 2,
+   "chapters": [
+    36,
+    54
+   ],
+   "first_chapter": 36,
+   "sample_context": "“哈哈哈……”夏叶一笑“所以，你在意吗？”"
+  },
+  {
+   "phrase": "怎么说",
+   "character": "任琅",
+   "freq": 2,
+   "chapters": [
+    38,
+    43
+   ],
+   "first_chapter": 38,
+   "sample_context": "“怎么说？”尚樱来了兴致，眨眨眼问。"
+  },
+  {
+   "phrase": "怎么",
+   "character": "尚樱",
+   "freq": 2,
+   "chapters": [
+    5,
+    36
+   ],
+   "first_chapter": 5,
+   "sample_context": "“怎么？”尚衫虎不解。"
+  },
+  {
+   "phrase": "不要",
+   "character": "尚樱",
+   "freq": 2,
+   "chapters": [
+    11,
+    20
+   ],
+   "first_chapter": 11,
+   "sample_context": "下，“咚”的一声坠入湖中时，尚樱猛然惊醒伸手大喊“不要！”此时福的叫门声自门外传来“尚樱姑娘！”"
+  },
+  {
+   "phrase": "杀戮糖",
+   "character": "尚樱",
+   "freq": 2,
+   "chapters": [
+    24
+   ],
+   "first_chapter": 24,
+   "sample_context": "”面具下蓝色的眼睛直直地盯着尚樱，迅速从腰间掏出“杀戮糖”一口嚼碎。尚樱见状一皱眉，自己什么都没带，但眼下"
+  },
+  {
+   "phrase": "放箭",
+   "character": "许达",
+   "freq": 2,
+   "chapters": [
+    30,
+    35
+   ],
+   "first_chapter": 30,
+   "sample_context": "阵以待。\t许达目测敌船大概进入射程，便一声令下：“放箭！”身旁的副官立马擂响战鼓，箭矢顿时如雨点般射向远处"
+  },
+  {
+   "phrase": "你站住",
+   "character": "许达",
+   "freq": 2,
+   "chapters": [
+    35,
+    60
+   ],
+   "first_chapter": 35,
+   "sample_context": "马走在最前端，就在马头与红伞交汇时，忽然听到一句“你站住！”不算十分响亮的女声中却透露着满满地怒气，许达一把"
+  },
+  {
+   "phrase": "就是没有",
+   "character": "夏叶",
+   "freq": 2,
+   "chapters": [
+    21
+   ],
+   "first_chapter": 21,
+   "sample_context": "“就是没有。”夏叶生硬地解释“就是没有。”"
+  },
+  {
+   "phrase": "不知道",
+   "character": "刘笑岩",
+   "freq": 2,
+   "chapters": [
+    26,
+    28
+   ],
+   "first_chapter": 26,
+   "sample_context": "方向看去，雨雾中跳动着些许紫色的如火焰般的光芒。“不知道。”刚出口，随即便吓得大脑一片空白，只见从那雨雾中走"
+  },
+  {
+   "phrase": "尚樱你怎么来了",
+   "character": "刘笑岩",
+   "freq": 2,
+   "chapters": [
+    41,
+    43
+   ],
+   "first_chapter": 41,
+   "sample_context": "“嗯？”刘笑岩听到声音转过头来，略带惊喜地说“尚樱你怎么来了？”"
+  },
+  {
+   "phrase": "得令",
+   "character": "韩德",
+   "freq": 2,
+   "chapters": [
+    51
+   ],
+   "first_chapter": 51,
+   "sample_context": "“得令！”来人应下后急匆匆小跑出军帐。不多时，高颌快步走进"
+  }
+ ],
+ "signature_ngrams": [
+  {
+   "phrase": "本王",
+   "character": "陈奉天",
+   "freq": 8,
+   "share": 0.73,
+   "chapters": [
+    18,
+    23,
+    35,
+    37,
+    57
+   ],
+   "first_chapter": 18,
+   "sample_context": ""
+  },
+  {
+   "phrase": "百两",
+   "character": "尚樱",
+   "freq": 7,
+   "share": 0.88,
+   "chapters": [
+    12,
+    33,
+    35,
+    36,
+    41
+   ],
+   "first_chapter": 12,
+   "sample_context": ""
+  },
+  {
+   "phrase": "来此",
+   "character": "任琅",
+   "freq": 7,
+   "share": 0.78,
+   "chapters": [
+    34,
+    35,
+    39,
+    42,
+    52
+   ],
+   "first_chapter": 34,
+   "sample_context": ""
+  },
+  {
+   "phrase": "问问",
+   "character": "尚樱",
+   "freq": 6,
+   "share": 0.86,
+   "chapters": [
+    9,
+    19,
+    43,
+    44,
+    45,
+    59
+   ],
+   "first_chapter": 9,
+   "sample_context": ""
+  },
+  {
+   "phrase": "一百",
+   "character": "尚樱",
+   "freq": 6,
+   "share": 0.86,
+   "chapters": [
+    12,
+    35,
+    36,
+    41
+   ],
+   "first_chapter": 12,
+   "sample_context": ""
+  },
+  {
+   "phrase": "你不是",
+   "character": "任琅",
+   "freq": 6,
+   "share": 0.75,
+   "chapters": [
+    7,
+    9,
+    11,
+    12,
+    17,
+    52
+   ],
+   "first_chapter": 7,
+   "sample_context": ""
+  },
+  {
+   "phrase": "记忆",
+   "character": "任琅",
+   "freq": 5,
+   "share": 1.0,
+   "chapters": [
+    6,
+    7,
+    8,
+    16
+   ],
+   "first_chapter": 6,
+   "sample_context": ""
+  },
+  {
+   "phrase": "一百两",
+   "character": "尚樱",
+   "freq": 5,
+   "share": 1.0,
+   "chapters": [
+    12,
+    35,
+    36,
+    41
+   ],
+   "first_chapter": 12,
+   "sample_context": ""
+  },
+  {
+   "phrase": "有机",
+   "character": "任琅",
+   "freq": 5,
+   "share": 0.83,
+   "chapters": [
+    12,
+    14,
+    38
+   ],
+   "first_chapter": 12,
+   "sample_context": ""
+  },
+  {
+   "phrase": "有机会",
+   "character": "任琅",
+   "freq": 5,
+   "share": 0.83,
+   "chapters": [
+    12,
+    14,
+    38
+   ],
+   "first_chapter": 12,
+   "sample_context": ""
+  },
+  {
+   "phrase": "那会",
+   "character": "尚樱",
+   "freq": 5,
+   "share": 0.83,
+   "chapters": [
+    11,
+    31
+   ],
+   "first_chapter": 11,
+   "sample_context": ""
+  },
+  {
+   "phrase": "玩意",
+   "character": "尚樱",
+   "freq": 5,
+   "share": 0.83,
+   "chapters": [
+    14,
+    20,
+    29,
+    38,
+    44
+   ],
+   "first_chapter": 14,
+   "sample_context": ""
+  },
+  {
+   "phrase": "帝老",
+   "character": "陈奉天",
+   "freq": 5,
+   "share": 0.83,
+   "chapters": [
+    18,
+    19,
+    57
+   ],
+   "first_chapter": 18,
+   "sample_context": ""
+  },
+  {
+   "phrase": "老儿",
+   "character": "陈奉天",
+   "freq": 5,
+   "share": 0.83,
+   "chapters": [
+    18,
+    19,
+    57
+   ],
+   "first_chapter": 18,
+   "sample_context": ""
+  },
+  {
+   "phrase": "皇帝老",
+   "character": "陈奉天",
+   "freq": 5,
+   "share": 0.83,
+   "chapters": [
+    18,
+    19,
+    57
+   ],
+   "first_chapter": 18,
+   "sample_context": ""
+  },
+  {
+   "phrase": "帝老儿",
+   "character": "陈奉天",
+   "freq": 5,
+   "share": 0.83,
+   "chapters": [
+    18,
+    19,
+    57
+   ],
+   "first_chapter": 18,
+   "sample_context": ""
+  },
+  {
+   "phrase": "皇帝老儿",
+   "character": "陈奉天",
+   "freq": 5,
+   "share": 0.83,
+   "chapters": [
+    18,
+    19,
+    57
+   ],
+   "first_chapter": 18,
+   "sample_context": ""
+  },
+  {
+   "phrase": "任哥",
+   "character": "夏叶",
+   "freq": 5,
+   "share": 0.83,
+   "chapters": [
+    18,
+    20,
+    29
+   ],
+   "first_chapter": 18,
+   "sample_context": ""
+  },
+  {
+   "phrase": "相识",
+   "character": "尚樱",
+   "freq": 5,
+   "share": 0.71,
+   "chapters": [
+    11,
+    16,
+    23,
+    39,
+    55
+   ],
+   "first_chapter": 11,
+   "sample_context": ""
+  },
+  {
+   "phrase": "衣服",
+   "character": "尚樱",
+   "freq": 5,
+   "share": 0.71,
+   "chapters": [
+    11,
+    17,
+    37
+   ],
+   "first_chapter": 11,
+   "sample_context": ""
+  },
+  {
+   "phrase": "继续",
+   "character": "尚樱",
+   "freq": 5,
+   "share": 0.71,
+   "chapters": [
+    17,
+    31,
+    32,
+    35
+   ],
+   "first_chapter": 17,
+   "sample_context": ""
+  },
+  {
+   "phrase": "洒家",
+   "character": "尚樱",
+   "freq": 5,
+   "share": 0.71,
+   "chapters": [
+    36
+   ],
+   "first_chapter": 36,
+   "sample_context": ""
+  },
+  {
+   "phrase": "殿下",
+   "character": "尚樱",
+   "freq": 5,
+   "share": 0.71,
+   "chapters": [
+    42,
+    44,
+    59
+   ],
+   "first_chapter": 42,
+   "sample_context": ""
+  },
+  {
+   "phrase": "老姐",
+   "character": "苏沐文",
+   "freq": 5,
+   "share": 0.71,
+   "chapters": [
+    33,
+    47,
+    53
+   ],
+   "first_chapter": 33,
+   "sample_context": ""
+  },
+  {
+   "phrase": "纪程",
+   "character": "安弈霖",
+   "freq": 5,
+   "share": 0.71,
+   "chapters": [
+    44,
+    52
+   ],
+   "first_chapter": 44,
+   "sample_context": ""
+  },
+  {
+   "phrase": "程浩",
+   "character": "安弈霖",
+   "freq": 5,
+   "share": 0.71,
+   "chapters": [
+    44,
+    52
+   ],
+   "first_chapter": 44,
+   "sample_context": ""
+  },
+  {
+   "phrase": "纪程浩",
+   "character": "安弈霖",
+   "freq": 5,
+   "share": 0.71,
+   "chapters": [
+    44,
+    52
+   ],
+   "first_chapter": 44,
+   "sample_context": ""
+  }
+ ],
+ "by_character": {
+  "任琅": [
+   "月隐糖",
+   "怎么",
+   "哦好",
+   "当然",
+   "哈哈哈",
+   "怎么说",
+   "来此",
+   "你不是"
+  ],
+  "尚樱": [
+   "怎么了",
+   "怎么",
+   "不要",
+   "杀戮糖",
+   "百两",
+   "问问",
+   "一百",
+   "一百两"
+  ],
+  "赵翔": [
+   "明白"
+  ],
+  "许达": [
+   "放箭",
+   "你站住"
+  ],
+  "夏叶": [
+   "就是没有",
+   "任哥"
+  ],
+  "刘笑岩": [
+   "不知道",
+   "尚樱你怎么来了"
+  ],
+  "韩德": [
+   "得令"
+  ],
+  "陈奉天": [
+   "本王",
+   "帝老",
+   "老儿",
+   "皇帝老",
+   "帝老儿",
+   "皇帝老儿"
+  ],
+  "苏沐文": [
+   "老姐"
+  ],
+  "安弈霖": [
+   "纪程",
+   "程浩",
+   "纪程浩"
+  ]
+ },
+ "stats": {
+  "characters_with_catchphrase": 10,
+  "recurring_count": 17,
+  "signature_ngram_count": 27
+ }
+}

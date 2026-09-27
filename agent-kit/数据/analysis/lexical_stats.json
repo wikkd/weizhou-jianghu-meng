@@ -1,0 +1,1187 @@
+{
+  "top_words": [
+    {
+      "word": "任琅",
+      "freq": 1460
+    },
+    {
+      "word": "尚樱",
+      "freq": 1202
+    },
+    {
+      "word": "夏叶",
+      "freq": 329
+    },
+    {
+      "word": "刘笑岩",
+      "freq": 288
+    },
+    {
+      "word": "陈奉天",
+      "freq": 275
+    },
+    {
+      "word": "福",
+      "freq": 241
+    },
+    {
+      "word": "许达",
+      "freq": 213
+    },
+    {
+      "word": "刀",
+      "freq": 155
+    },
+    {
+      "word": "死",
+      "freq": 130
+    },
+    {
+      "word": "皇帝",
+      "freq": 126
+    },
+    {
+      "word": "刑布",
+      "freq": 122
+    },
+    {
+      "word": "苏雨",
+      "freq": 119
+    },
+    {
+      "word": "剑",
+      "freq": 118
+    },
+    {
+      "word": "赵翔",
+      "freq": 116
+    },
+    {
+      "word": "赵骁",
+      "freq": 113
+    },
+    {
+      "word": "马远",
+      "freq": 109
+    },
+    {
+      "word": "打",
+      "freq": 98
+    },
+    {
+      "word": "王慕",
+      "freq": 96
+    },
+    {
+      "word": "李博",
+      "freq": 93
+    },
+    {
+      "word": "斩",
+      "freq": 92
+    },
+    {
+      "word": "苏沐文",
+      "freq": 92
+    },
+    {
+      "word": "张潇璃",
+      "freq": 92
+    },
+    {
+      "word": "聂林",
+      "freq": 92
+    },
+    {
+      "word": "将军",
+      "freq": 85
+    },
+    {
+      "word": "喊",
+      "freq": 81
+    },
+    {
+      "word": "陆仲",
+      "freq": 81
+    },
+    {
+      "word": "声音",
+      "freq": 78
+    },
+    {
+      "word": "影",
+      "freq": 78
+    },
+    {
+      "word": "王",
+      "freq": 77
+    },
+    {
+      "word": "尚衫虎",
+      "freq": 75
+    },
+    {
+      "word": "点点头",
+      "freq": 75
+    },
+    {
+      "word": "立马",
+      "freq": 71
+    },
+    {
+      "word": "无",
+      "freq": 70
+    },
+    {
+      "word": "抽出",
+      "freq": 70
+    },
+    {
+      "word": "铁面人",
+      "freq": 70
+    },
+    {
+      "word": "虞环",
+      "freq": 69
+    },
+    {
+      "word": "黄亚钊",
+      "freq": 67
+    },
+    {
+      "word": "完",
+      "freq": 66
+    },
+    {
+      "word": "程廖",
+      "freq": 65
+    },
+    {
+      "word": "回来",
+      "freq": 63
+    },
+    {
+      "word": "继续",
+      "freq": 63
+    },
+    {
+      "word": "端木",
+      "freq": 63
+    },
+    {
+      "word": "邦",
+      "freq": 63
+    },
+    {
+      "word": "武蒯",
+      "freq": 63
+    },
+    {
+      "word": "纪田",
+      "freq": 63
+    },
+    {
+      "word": "不能",
+      "freq": 62
+    },
+    {
+      "word": "处",
+      "freq": 62
+    },
+    {
+      "word": "哥",
+      "freq": 62
+    },
+    {
+      "word": "孩子",
+      "freq": 62
+    },
+    {
+      "word": "放下",
+      "freq": 61
+    }
+  ],
+  "ttr": [
+    {
+      "chapter": 1,
+      "ttr": 0.7415
+    },
+    {
+      "chapter": 2,
+      "ttr": 0.6799
+    },
+    {
+      "chapter": 3,
+      "ttr": 0.6914
+    },
+    {
+      "chapter": 4,
+      "ttr": 0.6836
+    },
+    {
+      "chapter": 5,
+      "ttr": 0.6991
+    },
+    {
+      "chapter": 6,
+      "ttr": 0.6904
+    },
+    {
+      "chapter": 7,
+      "ttr": 0.7035
+    },
+    {
+      "chapter": 8,
+      "ttr": 0.7066
+    },
+    {
+      "chapter": 9,
+      "ttr": 0.6799
+    },
+    {
+      "chapter": 10,
+      "ttr": 0.6822
+    },
+    {
+      "chapter": 11,
+      "ttr": 0.693
+    },
+    {
+      "chapter": 12,
+      "ttr": 0.6812
+    },
+    {
+      "chapter": 13,
+      "ttr": 0.7045
+    },
+    {
+      "chapter": 14,
+      "ttr": 0.6847
+    },
+    {
+      "chapter": 15,
+      "ttr": 0.6393
+    },
+    {
+      "chapter": 16,
+      "ttr": 0.6879
+    },
+    {
+      "chapter": 17,
+      "ttr": 0.6982
+    },
+    {
+      "chapter": 18,
+      "ttr": 0.6555
+    },
+    {
+      "chapter": 19,
+      "ttr": 0.6946
+    },
+    {
+      "chapter": 20,
+      "ttr": 0.6519
+    },
+    {
+      "chapter": 21,
+      "ttr": 0.7309
+    },
+    {
+      "chapter": 22,
+      "ttr": 0.6903
+    },
+    {
+      "chapter": 23,
+      "ttr": 0.6265
+    },
+    {
+      "chapter": 24,
+      "ttr": 0.6957
+    },
+    {
+      "chapter": 25,
+      "ttr": 0.7231
+    },
+    {
+      "chapter": 26,
+      "ttr": 0.6782
+    },
+    {
+      "chapter": 27,
+      "ttr": 0.658
+    },
+    {
+      "chapter": 28,
+      "ttr": 0.6677
+    },
+    {
+      "chapter": 29,
+      "ttr": 0.6435
+    },
+    {
+      "chapter": 30,
+      "ttr": 0.6324
+    },
+    {
+      "chapter": 31,
+      "ttr": 0.7218
+    },
+    {
+      "chapter": 32,
+      "ttr": 0.7073
+    },
+    {
+      "chapter": 33,
+      "ttr": 0.6423
+    },
+    {
+      "chapter": 34,
+      "ttr": 0.603
+    },
+    {
+      "chapter": 35,
+      "ttr": 0.6597
+    },
+    {
+      "chapter": 36,
+      "ttr": 0.6249
+    },
+    {
+      "chapter": 37,
+      "ttr": 0.6558
+    },
+    {
+      "chapter": 38,
+      "ttr": 0.6772
+    },
+    {
+      "chapter": 39,
+      "ttr": 0.719
+    },
+    {
+      "chapter": 40,
+      "ttr": 0.7022
+    },
+    {
+      "chapter": 41,
+      "ttr": 0.6929
+    },
+    {
+      "chapter": 42,
+      "ttr": 0.7091
+    },
+    {
+      "chapter": 43,
+      "ttr": 0.6599
+    },
+    {
+      "chapter": 44,
+      "ttr": 0.5942
+    },
+    {
+      "chapter": 45,
+      "ttr": 0.695
+    },
+    {
+      "chapter": 46,
+      "ttr": 0.6714
+    },
+    {
+      "chapter": 47,
+      "ttr": 0.6767
+    },
+    {
+      "chapter": 48,
+      "ttr": 0.7229
+    },
+    {
+      "chapter": 49,
+      "ttr": 0.7341
+    },
+    {
+      "chapter": 50,
+      "ttr": 0.7031
+    },
+    {
+      "chapter": 51,
+      "ttr": 0.6589
+    },
+    {
+      "chapter": 52,
+      "ttr": 0.6769
+    },
+    {
+      "chapter": 53,
+      "ttr": 0.6981
+    },
+    {
+      "chapter": 54,
+      "ttr": 0.661
+    },
+    {
+      "chapter": 55,
+      "ttr": 0.6676
+    },
+    {
+      "chapter": 56,
+      "ttr": 0.6563
+    },
+    {
+      "chapter": 57,
+      "ttr": 0.6191
+    },
+    {
+      "chapter": 58,
+      "ttr": 0.6029
+    },
+    {
+      "chapter": 59,
+      "ttr": 0.6651
+    },
+    {
+      "chapter": 60,
+      "ttr": 0.6253
+    }
+  ],
+  "avg_sent_len": 25.739,
+  "drift": {
+    "early_top": [
+      {
+        "word": "任琅",
+        "freq": 522
+      },
+      {
+        "word": "尚樱",
+        "freq": 326
+      },
+      {
+        "word": "福",
+        "freq": 171
+      },
+      {
+        "word": "刀",
+        "freq": 87
+      },
+      {
+        "word": "尚衫虎",
+        "freq": 75
+      },
+      {
+        "word": "影",
+        "freq": 65
+      },
+      {
+        "word": "死",
+        "freq": 51
+      },
+      {
+        "word": "剑",
+        "freq": 50
+      },
+      {
+        "word": "李博",
+        "freq": 46
+      },
+      {
+        "word": "斩",
+        "freq": 38
+      },
+      {
+        "word": "叶云",
+        "freq": 37
+      },
+      {
+        "word": "陈奉天",
+        "freq": 28
+      },
+      {
+        "word": "少侠",
+        "freq": 25
+      },
+      {
+        "word": "抽出",
+        "freq": 24
+      },
+      {
+        "word": "喊",
+        "freq": 23
+      },
+      {
+        "word": "疑惑",
+        "freq": 23
+      },
+      {
+        "word": "东西",
+        "freq": 22
+      },
+      {
+        "word": "点点头",
+        "freq": 22
+      },
+      {
+        "word": "女孩",
+        "freq": 21
+      },
+      {
+        "word": "刑布",
+        "freq": 21
+      },
+      {
+        "word": "回来",
+        "freq": 20
+      },
+      {
+        "word": "声音",
+        "freq": 20
+      },
+      {
+        "word": "处",
+        "freq": 20
+      },
+      {
+        "word": "孩子",
+        "freq": 20
+      },
+      {
+        "word": "传来",
+        "freq": 19
+      },
+      {
+        "word": "邦",
+        "freq": 19
+      },
+      {
+        "word": "打",
+        "freq": 18
+      },
+      {
+        "word": "开始",
+        "freq": 18
+      },
+      {
+        "word": "王奔",
+        "freq": 18
+      },
+      {
+        "word": "门",
+        "freq": 18
+      }
+    ],
+    "late_top": [
+      {
+        "word": "任琅",
+        "freq": 347
+      },
+      {
+        "word": "尚樱",
+        "freq": 310
+      },
+      {
+        "word": "陈奉天",
+        "freq": 156
+      },
+      {
+        "word": "聂林",
+        "freq": 92
+      },
+      {
+        "word": "张潇璃",
+        "freq": 91
+      },
+      {
+        "word": "皇帝",
+        "freq": 88
+      },
+      {
+        "word": "马远",
+        "freq": 82
+      },
+      {
+        "word": "陆仲",
+        "freq": 81
+      },
+      {
+        "word": "刑布",
+        "freq": 76
+      },
+      {
+        "word": "许达",
+        "freq": 70
+      },
+      {
+        "word": "赵翔",
+        "freq": 66
+      },
+      {
+        "word": "程廖",
+        "freq": 65
+      },
+      {
+        "word": "纪田",
+        "freq": 63
+      },
+      {
+        "word": "将军",
+        "freq": 58
+      },
+      {
+        "word": "赵骁",
+        "freq": 56
+      },
+      {
+        "word": "打",
+        "freq": 50
+      },
+      {
+        "word": "福",
+        "freq": 49
+      },
+      {
+        "word": "枢",
+        "freq": 48
+      },
+      {
+        "word": "空",
+        "freq": 47
+      },
+      {
+        "word": "虞环",
+        "freq": 47
+      },
+      {
+        "word": "刘笑岩",
+        "freq": 45
+      },
+      {
+        "word": "纪程",
+        "freq": 44
+      },
+      {
+        "word": "苏雨",
+        "freq": 43
+      },
+      {
+        "word": "黄",
+        "freq": 42
+      },
+      {
+        "word": "苏沐文",
+        "freq": 41
+      },
+      {
+        "word": "浩",
+        "freq": 41
+      },
+      {
+        "word": "武蒯",
+        "freq": 40
+      },
+      {
+        "word": "夏叶",
+        "freq": 38
+      },
+      {
+        "word": "铁面人",
+        "freq": 38
+      },
+      {
+        "word": "黄亚钊",
+        "freq": 38
+      }
+    ],
+    "diff": [
+      {
+        "word": "任琅",
+        "early": 522,
+        "late": 347,
+        "early_rate": 50.992,
+        "late_rate": 20.047,
+        "delta": -30.944
+      },
+      {
+        "word": "尚樱",
+        "early": 326,
+        "late": 310,
+        "early_rate": 31.845,
+        "late_rate": 17.91,
+        "delta": -13.936
+      },
+      {
+        "word": "福",
+        "early": 171,
+        "late": 49,
+        "early_rate": 16.704,
+        "late_rate": 2.831,
+        "delta": -13.873
+      },
+      {
+        "word": "尚衫虎",
+        "early": 75,
+        "late": 0,
+        "early_rate": 7.326,
+        "late_rate": 0.0,
+        "delta": -7.326
+      },
+      {
+        "word": "刀",
+        "early": 87,
+        "late": 24,
+        "early_rate": 8.499,
+        "late_rate": 1.387,
+        "delta": -7.112
+      },
+      {
+        "word": "陈奉天",
+        "early": 28,
+        "late": 156,
+        "early_rate": 2.735,
+        "late_rate": 9.013,
+        "delta": 6.277
+      },
+      {
+        "word": "影",
+        "early": 65,
+        "late": 4,
+        "early_rate": 6.35,
+        "late_rate": 0.231,
+        "delta": -6.118
+      },
+      {
+        "word": "聂林",
+        "early": 0,
+        "late": 92,
+        "early_rate": 0.0,
+        "late_rate": 5.315,
+        "delta": 5.315
+      },
+      {
+        "word": "张潇璃",
+        "early": 0,
+        "late": 91,
+        "early_rate": 0.0,
+        "late_rate": 5.257,
+        "delta": 5.257
+      },
+      {
+        "word": "马远",
+        "early": 0,
+        "late": 82,
+        "early_rate": 0.0,
+        "late_rate": 4.737,
+        "delta": 4.737
+      },
+      {
+        "word": "陆仲",
+        "early": 0,
+        "late": 81,
+        "early_rate": 0.0,
+        "late_rate": 4.68,
+        "delta": 4.68
+      },
+      {
+        "word": "皇帝",
+        "early": 5,
+        "late": 88,
+        "early_rate": 0.488,
+        "late_rate": 5.084,
+        "delta": 4.596
+      },
+      {
+        "word": "李博",
+        "early": 46,
+        "late": 1,
+        "early_rate": 4.494,
+        "late_rate": 0.058,
+        "delta": -4.436
+      },
+      {
+        "word": "剑",
+        "early": 50,
+        "late": 12,
+        "early_rate": 4.884,
+        "late_rate": 0.693,
+        "delta": -4.191
+      },
+      {
+        "word": "赵翔",
+        "early": 0,
+        "late": 66,
+        "early_rate": 0.0,
+        "late_rate": 3.813,
+        "delta": 3.813
+      },
+      {
+        "word": "程廖",
+        "early": 0,
+        "late": 65,
+        "early_rate": 0.0,
+        "late_rate": 3.755,
+        "delta": 3.755
+      },
+      {
+        "word": "纪田",
+        "early": 0,
+        "late": 63,
+        "early_rate": 0.0,
+        "late_rate": 3.64,
+        "delta": 3.64
+      },
+      {
+        "word": "叶云",
+        "early": 37,
+        "late": 0,
+        "early_rate": 3.614,
+        "late_rate": 0.0,
+        "delta": -3.614
+      },
+      {
+        "word": "死",
+        "early": 51,
+        "late": 29,
+        "early_rate": 4.982,
+        "late_rate": 1.675,
+        "delta": -3.306
+      },
+      {
+        "word": "赵骁",
+        "early": 0,
+        "late": 56,
+        "early_rate": 0.0,
+        "late_rate": 3.235,
+        "delta": 3.235
+      },
+      {
+        "word": "许达",
+        "early": 9,
+        "late": 70,
+        "early_rate": 0.879,
+        "late_rate": 4.044,
+        "delta": 3.165
+      },
+      {
+        "word": "枢",
+        "early": 0,
+        "late": 48,
+        "early_rate": 0.0,
+        "late_rate": 2.773,
+        "delta": 2.773
+      },
+      {
+        "word": "斩",
+        "early": 38,
+        "late": 18,
+        "early_rate": 3.712,
+        "late_rate": 1.04,
+        "delta": -2.672
+      },
+      {
+        "word": "空",
+        "early": 1,
+        "late": 47,
+        "early_rate": 0.098,
+        "late_rate": 2.715,
+        "delta": 2.618
+      },
+      {
+        "word": "刘笑岩",
+        "early": 0,
+        "late": 45,
+        "early_rate": 0.0,
+        "late_rate": 2.6,
+        "delta": 2.6
+      },
+      {
+        "word": "将军",
+        "early": 8,
+        "late": 58,
+        "early_rate": 0.781,
+        "late_rate": 3.351,
+        "delta": 2.569
+      },
+      {
+        "word": "纪程",
+        "early": 0,
+        "late": 44,
+        "early_rate": 0.0,
+        "late_rate": 2.542,
+        "delta": 2.542
+      },
+      {
+        "word": "苏雨",
+        "early": 0,
+        "late": 43,
+        "early_rate": 0.0,
+        "late_rate": 2.484,
+        "delta": 2.484
+      },
+      {
+        "word": "少侠",
+        "early": 25,
+        "late": 0,
+        "early_rate": 2.442,
+        "late_rate": 0.0,
+        "delta": -2.442
+      },
+      {
+        "word": "黄",
+        "early": 0,
+        "late": 42,
+        "early_rate": 0.0,
+        "late_rate": 2.426,
+        "delta": 2.426
+      },
+      {
+        "word": "浩",
+        "early": 0,
+        "late": 41,
+        "early_rate": 0.0,
+        "late_rate": 2.369,
+        "delta": 2.369
+      },
+      {
+        "word": "苏沐文",
+        "early": 0,
+        "late": 41,
+        "early_rate": 0.0,
+        "late_rate": 2.369,
+        "delta": 2.369
+      },
+      {
+        "word": "刑布",
+        "early": 21,
+        "late": 76,
+        "early_rate": 2.051,
+        "late_rate": 4.391,
+        "delta": 2.339
+      },
+      {
+        "word": "武蒯",
+        "early": 0,
+        "late": 40,
+        "early_rate": 0.0,
+        "late_rate": 2.311,
+        "delta": 2.311
+      },
+      {
+        "word": "铁面人",
+        "early": 0,
+        "late": 38,
+        "early_rate": 0.0,
+        "late_rate": 2.195,
+        "delta": 2.195
+      },
+      {
+        "word": "黄亚钊",
+        "early": 0,
+        "late": 38,
+        "early_rate": 0.0,
+        "late_rate": 2.195,
+        "delta": 2.195
+      },
+      {
+        "word": "韩德",
+        "early": 0,
+        "late": 37,
+        "early_rate": 0.0,
+        "late_rate": 2.138,
+        "delta": 2.138
+      },
+      {
+        "word": "虞环",
+        "early": 6,
+        "late": 47,
+        "early_rate": 0.586,
+        "late_rate": 2.715,
+        "delta": 2.129
+      },
+      {
+        "word": "女孩",
+        "early": 21,
+        "late": 0,
+        "early_rate": 2.051,
+        "late_rate": 0.0,
+        "delta": -2.051
+      },
+      {
+        "word": "安弈霖",
+        "early": 0,
+        "late": 34,
+        "early_rate": 0.0,
+        "late_rate": 1.964,
+        "delta": 1.964
+      }
+    ],
+    "only_early": [
+      {
+        "word": "尚衫虎",
+        "early": 75
+      },
+      {
+        "word": "叶云",
+        "early": 37
+      },
+      {
+        "word": "少侠",
+        "early": 25
+      },
+      {
+        "word": "女孩",
+        "early": 21
+      },
+      {
+        "word": "邦",
+        "early": 19
+      },
+      {
+        "word": "寺",
+        "early": 18
+      },
+      {
+        "word": "王奔",
+        "early": 18
+      },
+      {
+        "word": "宗师",
+        "early": 17
+      },
+      {
+        "word": "刘媛灵",
+        "early": 17
+      },
+      {
+        "word": "僧人",
+        "early": 17
+      },
+      {
+        "word": "小女孩",
+        "early": 16
+      },
+      {
+        "word": "仙峰",
+        "early": 15
+      },
+      {
+        "word": "端木",
+        "early": 14
+      },
+      {
+        "word": "老者",
+        "early": 13
+      },
+      {
+        "word": "阮盛",
+        "early": 13
+      },
+      {
+        "word": "王慕",
+        "early": 12
+      },
+      {
+        "word": "无首",
+        "early": 11
+      },
+      {
+        "word": "武者",
+        "early": 11
+      },
+      {
+        "word": "铁戟",
+        "early": 11
+      },
+      {
+        "word": "掌柜",
+        "early": 9
+      }
+    ],
+    "only_late": [
+      {
+        "word": "聂林",
+        "late": 92
+      },
+      {
+        "word": "张潇璃",
+        "late": 91
+      },
+      {
+        "word": "马远",
+        "late": 82
+      },
+      {
+        "word": "陆仲",
+        "late": 81
+      },
+      {
+        "word": "赵翔",
+        "late": 66
+      },
+      {
+        "word": "程廖",
+        "late": 65
+      },
+      {
+        "word": "纪田",
+        "late": 63
+      },
+      {
+        "word": "赵骁",
+        "late": 56
+      },
+      {
+        "word": "枢",
+        "late": 48
+      },
+      {
+        "word": "刘笑岩",
+        "late": 45
+      },
+      {
+        "word": "纪程",
+        "late": 44
+      },
+      {
+        "word": "苏雨",
+        "late": 43
+      },
+      {
+        "word": "黄",
+        "late": 42
+      },
+      {
+        "word": "浩",
+        "late": 41
+      },
+      {
+        "word": "苏沐文",
+        "late": 41
+      },
+      {
+        "word": "武蒯",
+        "late": 40
+      },
+      {
+        "word": "铁面人",
+        "late": 38
+      },
+      {
+        "word": "黄亚钊",
+        "late": 38
+      },
+      {
+        "word": "韩德",
+        "late": 37
+      },
+      {
+        "word": "安弈霖",
+        "late": 34
+      }
+    ],
+    "early_token_total": 10237,
+    "late_token_total": 17309
+  },
+  "meta": {
+    "total_tokens": 48244,
+    "unique_tokens": 11825,
+    "ttr_mean": 0.6766,
+    "n_chapters": 60
+  }
+}

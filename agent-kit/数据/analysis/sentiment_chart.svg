@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" font-family="system-ui,Segoe UI,Helvetica,Arial,sans-serif">
+<rect x="0" y="0" width="1000" height="520" fill="#fff"/>
+<text x="60" y="28" font-size="16" font-weight="600" fill="#222">《苇舟江湖梦》情感极性时序 vs 战斗强度</text>
+<text x="60" y="44" font-size="11" fill="#888">左轴=情感 polarity(0-1, 蓝) ｜ 右轴=战斗强度(0-3, 红) ｜ 方法=dict_fallback</text>
+<line x1="60" y1="460.00" x2="940" y2="460.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="464.00" font-size="11" fill="#888" text-anchor="end">0.0</text>
+<line x1="60" y1="419.00" x2="940" y2="419.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="423.00" font-size="11" fill="#888" text-anchor="end">0.1</text>
+<line x1="60" y1="378.00" x2="940" y2="378.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="382.00" font-size="11" fill="#888" text-anchor="end">0.2</text>
+<line x1="60" y1="337.00" x2="940" y2="337.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="341.00" font-size="11" fill="#888" text-anchor="end">0.3</text>
+<line x1="60" y1="296.00" x2="940" y2="296.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="300.00" font-size="11" fill="#888" text-anchor="end">0.4</text>
+<line x1="60" y1="255.00" x2="940" y2="255.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="259.00" font-size="11" fill="#888" text-anchor="end">0.5</text>
+<line x1="60" y1="214.00" x2="940" y2="214.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="218.00" font-size="11" fill="#888" text-anchor="end">0.6</text>
+<line x1="60" y1="173.00" x2="940" y2="173.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="177.00" font-size="11" fill="#888" text-anchor="end">0.7</text>
+<line x1="60" y1="132.00" x2="940" y2="132.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="136.00" font-size="11" fill="#888" text-anchor="end">0.8</text>
+<line x1="60" y1="91.00" x2="940" y2="91.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="95.00" font-size="11" fill="#888" text-anchor="end">0.9</text>
+<line x1="60" y1="50.00" x2="940" y2="50.00" stroke="#eee" stroke-width="1"/>
+<text x="52" y="54.00" font-size="11" fill="#888" text-anchor="end">1.0</text>
+<text x="948" y="464.00" font-size="11" fill="#c0392b" text-anchor="start">0</text>
+<text x="948" y="327.33" font-size="11" fill="#c0392b" text-anchor="start">1</text>
+<text x="948" y="190.67" font-size="11" fill="#c0392b" text-anchor="start">2</text>
+<text x="948" y="54.00" font-size="11" fill="#c0392b" text-anchor="start">3</text>
+<text x="60.00" y="478" font-size="11" fill="#888" text-anchor="middle">01</text>
+<text x="135.86" y="478" font-size="11" fill="#888" text-anchor="middle">06</text>
+<text x="211.72" y="478" font-size="11" fill="#888" text-anchor="middle">11</text>
+<text x="287.59" y="478" font-size="11" fill="#888" text-anchor="middle">16</text>
+<text x="363.45" y="478" font-size="11" fill="#888" text-anchor="middle">21</text>
+<text x="439.31" y="478" font-size="11" fill="#888" text-anchor="middle">26</text>
+<text x="515.17" y="478" font-size="11" fill="#888" text-anchor="middle">31</text>
+<text x="591.03" y="478" font-size="11" fill="#888" text-anchor="middle">36</text>
+<text x="666.90" y="478" font-size="11" fill="#888" text-anchor="middle">41</text>
+<text x="742.76" y="478" font-size="11" fill="#888" text-anchor="middle">46</text>
+<text x="818.62" y="478" font-size="11" fill="#888" text-anchor="middle">51</text>
+<text x="894.48" y="478" font-size="11" fill="#888" text-anchor="middle">56</text>
+<text x="940.00" y="478" font-size="11" fill="#888" text-anchor="middle">59</text>
+<polyline fill="none" stroke="#2980b9" stroke-width="2" points="60.00,218.82 75.17,315.74 90.34,281.09 105.52,255.00 120.69,275.50 135.86,259.66 151.03,177.79 166.21,233.42 181.38,130.22 196.55,239.23 211.72,179.24 226.90,90.42 242.07,150.92 257.24,223.46 272.41,227.92 287.59,175.80 302.76,311.94 317.93,161.82 333.10,85.65 348.28,154.81 363.45,296.00 378.62,251.75 393.79,228.26 408.97,308.69 424.14,220.83 439.31,171.65 454.48,157.48 469.66,214.00 484.83,247.52 500.00,186.67 515.17,156.49 530.34,189.88 545.52,199.56 560.69,315.95 575.86,278.84 591.03,165.09 606.21,259.56 621.38,153.94 636.55,321.69 651.72,236.36 666.90,124.55 682.07,173.00 697.24,173.00 712.41,167.55 727.59,211.31 742.76,224.37 757.93,227.67 773.10,263.37 788.28,268.67 803.45,245.54 818.62,267.55 833.79,195.48 848.97,297.30 864.14,230.99 879.31,273.16 894.48,288.55 909.66,297.55 924.83,275.85 940.00,159.72"/>
+<polyline fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4" points="60.00,323.33 75.17,186.67 90.34,186.67 105.52,186.67 120.69,186.67 135.86,186.67 151.03,323.33 166.21,460.00 181.38,460.00 196.55,50.00 211.72,186.67 226.90,460.00 242.07,460.00 257.24,186.67 272.41,186.67 287.59,323.33 302.76,186.67 317.93,186.67 333.10,323.33 348.28,323.33 363.45,323.33 378.62,186.67 393.79,460.00 408.97,50.00 424.14,460.00 439.31,186.67 454.48,186.67 469.66,186.67 484.83,186.67 500.00,186.67 515.17,323.33 530.34,186.67 545.52,186.67 560.69,50.00 575.86,323.33 591.03,323.33 606.21,50.00 621.38,460.00 636.55,186.67 651.72,460.00 666.90,323.33 682.07,460.00 697.24,460.00 712.41,323.33 727.59,460.00 742.76,186.67 757.93,186.67 773.10,460.00 788.28,323.33 803.45,50.00 818.62,50.00 833.79,50.00 848.97,460.00 864.14,323.33 879.31,50.00 894.48,50.00 909.66,50.00 924.83,50.00 940.00,460.00"/>
+<line x1="60" y1="221.59" x2="940" y2="221.59" stroke="#2980b9" stroke-width="1" stroke-dasharray="2 3" opacity="0.6"/>
+<text x="870" y="216.59" font-size="10" fill="#2980b9">均值 0.581</text>
+<rect x="60" y="500" width="14" height="4" fill="#2980b9"/><text x="80" y="504" font-size="11" fill="#2980b9">情感 polarity</text>
+<rect x="190" y="500" width="14" height="4" fill="#c0392b"/><text x="210" y="504" font-size="11" fill="#c0392b">战斗强度</text>
+</svg>

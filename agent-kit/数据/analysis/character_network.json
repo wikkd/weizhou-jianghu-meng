@@ -1,0 +1,7303 @@
+{
+  "nodes": [
+    {
+      "name": "任琅",
+      "degree": 0.98,
+      "pagerank": 0.072211,
+      "community": 1,
+      "appearances": 1460
+    },
+    {
+      "name": "尚樱",
+      "degree": 0.97,
+      "pagerank": 0.071516,
+      "community": 1,
+      "appearances": 1202
+    },
+    {
+      "name": "陈奉天",
+      "degree": 0.74,
+      "pagerank": 0.036472,
+      "community": 0,
+      "appearances": 275
+    },
+    {
+      "name": "福",
+      "degree": 0.65,
+      "pagerank": 0.029914,
+      "community": 1,
+      "appearances": 23
+    },
+    {
+      "name": "夏叶",
+      "degree": 0.62,
+      "pagerank": 0.03169,
+      "community": 1,
+      "appearances": 329
+    },
+    {
+      "name": "刘笑岩",
+      "degree": 0.59,
+      "pagerank": 0.030395,
+      "community": 1,
+      "appearances": 288
+    },
+    {
+      "name": "赵骁",
+      "degree": 0.58,
+      "pagerank": 0.020673,
+      "community": 0,
+      "appearances": 113
+    },
+    {
+      "name": "法慧",
+      "degree": 0.57,
+      "pagerank": 0.017984,
+      "community": 0,
+      "appearances": 39
+    },
+    {
+      "name": "影",
+      "degree": 0.56,
+      "pagerank": 0.019882,
+      "community": 0,
+      "appearances": 94
+    },
+    {
+      "name": "刑布",
+      "degree": 0.55,
+      "pagerank": 0.019639,
+      "community": 0,
+      "appearances": 122
+    },
+    {
+      "name": "皇帝",
+      "degree": 0.52,
+      "pagerank": 0.019598,
+      "community": 0,
+      "appearances": 10
+    },
+    {
+      "name": "许达",
+      "degree": 0.51,
+      "pagerank": 0.023046,
+      "community": 2,
+      "appearances": 213
+    },
+    {
+      "name": "聂林",
+      "degree": 0.49,
+      "pagerank": 0.018029,
+      "community": 0,
+      "appearances": 92
+    },
+    {
+      "name": "苏雨",
+      "degree": 0.47,
+      "pagerank": 0.022153,
+      "community": 2,
+      "appearances": 119
+    },
+    {
+      "name": "铁面人",
+      "degree": 0.46,
+      "pagerank": 0.014314,
+      "community": 0,
+      "appearances": 6
+    },
+    {
+      "name": "武蒯",
+      "degree": 0.44,
+      "pagerank": 0.017175,
+      "community": 2,
+      "appearances": 63
+    },
+    {
+      "name": "虞环",
+      "degree": 0.44,
+      "pagerank": 0.01389,
+      "community": 2,
+      "appearances": 69
+    },
+    {
+      "name": "安明",
+      "degree": 0.43,
+      "pagerank": 0.014301,
+      "community": 0,
+      "appearances": 25
+    },
+    {
+      "name": "纪田",
+      "degree": 0.43,
+      "pagerank": 0.014301,
+      "community": 0,
+      "appearances": 63
+    },
+    {
+      "name": "赵翔",
+      "degree": 0.42,
+      "pagerank": 0.017566,
+      "community": 2,
+      "appearances": 116
+    },
+    {
+      "name": "张潇璃",
+      "degree": 0.41,
+      "pagerank": 0.013764,
+      "community": 0,
+      "appearances": 92
+    },
+    {
+      "name": "空",
+      "degree": 0.41,
+      "pagerank": 0.014408,
+      "community": 0,
+      "appearances": 8
+    },
+    {
+      "name": "苏沐文",
+      "degree": 0.37,
+      "pagerank": 0.017226,
+      "community": 2,
+      "appearances": 92
+    },
+    {
+      "name": "牛银",
+      "degree": 0.36,
+      "pagerank": 0.011015,
+      "community": 0,
+      "appearances": 4
+    },
+    {
+      "name": "王芣",
+      "degree": 0.36,
+      "pagerank": 0.014725,
+      "community": 2,
+      "appearances": 7
+    },
+    {
+      "name": "韩德",
+      "degree": 0.36,
+      "pagerank": 0.011788,
+      "community": 0,
+      "appearances": 37
+    },
+    {
+      "name": "老道",
+      "degree": 0.34,
+      "pagerank": 0.008621,
+      "community": 2,
+      "appearances": 3
+    },
+    {
+      "name": "张览",
+      "degree": 0.33,
+      "pagerank": 0.009694,
+      "community": 0,
+      "appearances": 19
+    },
+    {
+      "name": "贺曲",
+      "degree": 0.32,
+      "pagerank": 0.008369,
+      "community": 0,
+      "appearances": 3
+    },
+    {
+      "name": "马远",
+      "degree": 0.32,
+      "pagerank": 0.012938,
+      "community": 2,
+      "appearances": 109
+    },
+    {
+      "name": "高颌",
+      "degree": 0.32,
+      "pagerank": 0.00946,
+      "community": 0,
+      "appearances": 3
+    },
+    {
+      "name": "陆仲",
+      "degree": 0.3,
+      "pagerank": 0.007965,
+      "community": 0,
+      "appearances": 81
+    },
+    {
+      "name": "牛金",
+      "degree": 0.29,
+      "pagerank": 0.007652,
+      "community": 0,
+      "appearances": 2
+    },
+    {
+      "name": "刘基",
+      "degree": 0.28,
+      "pagerank": 0.007053,
+      "community": 0,
+      "appearances": 2
+    },
+    {
+      "name": "安弈霖",
+      "degree": 0.27,
+      "pagerank": 0.007982,
+      "community": 0,
+      "appearances": 34
+    },
+    {
+      "name": "纪程浩",
+      "degree": 0.27,
+      "pagerank": 0.007982,
+      "community": 0,
+      "appearances": 3
+    },
+    {
+      "name": "谢仁玄",
+      "degree": 0.27,
+      "pagerank": 0.008225,
+      "community": 2,
+      "appearances": 36
+    },
+    {
+      "name": "吕真",
+      "degree": 0.26,
+      "pagerank": 0.005569,
+      "community": 0,
+      "appearances": 1
+    },
+    {
+      "name": "建武太守",
+      "degree": 0.26,
+      "pagerank": 0.005569,
+      "community": 0,
+      "appearances": 1
+    },
+    {
+      "name": "方奇",
+      "degree": 0.26,
+      "pagerank": 0.005569,
+      "community": 0,
+      "appearances": 1
+    },
+    {
+      "name": "王浑",
+      "degree": 0.26,
+      "pagerank": 0.005569,
+      "community": 0,
+      "appearances": 1
+    },
+    {
+      "name": "马垈",
+      "degree": 0.26,
+      "pagerank": 0.005569,
+      "community": 0,
+      "appearances": 1
+    },
+    {
+      "name": "黄九州",
+      "degree": 0.26,
+      "pagerank": 0.005569,
+      "community": 0,
+      "appearances": 1
+    },
+    {
+      "name": "岱胜",
+      "degree": 0.24,
+      "pagerank": 0.007094,
+      "community": 2,
+      "appearances": 3
+    },
+    {
+      "name": "李博",
+      "degree": 0.24,
+      "pagerank": 0.010851,
+      "community": 1,
+      "appearances": 93
+    },
+    {
+      "name": "端木邦",
+      "degree": 0.24,
+      "pagerank": 0.007993,
+      "community": 1,
+      "appearances": 4
+    },
+    {
+      "name": "刑泰",
+      "degree": 0.22,
+      "pagerank": 0.005867,
+      "community": 0,
+      "appearances": 17
+    },
+    {
+      "name": "程廖",
+      "degree": 0.22,
+      "pagerank": 0.005112,
+      "community": 0,
+      "appearances": 65
+    },
+    {
+      "name": "孑",
+      "degree": 0.21,
+      "pagerank": 0.005708,
+      "community": 1,
+      "appearances": 3
+    },
+    {
+      "name": "李月婵",
+      "degree": 0.21,
+      "pagerank": 0.007963,
+      "community": 2,
+      "appearances": 4
+    },
+    {
+      "name": "道士",
+      "degree": 0.19,
+      "pagerank": 0.004969,
+      "community": 2,
+      "appearances": 2
+    },
+    {
+      "name": "陆仲枢",
+      "degree": 0.19,
+      "pagerank": 0.006014,
+      "community": 0,
+      "appearances": 3
+    },
+    {
+      "name": "陆天",
+      "degree": 0.19,
+      "pagerank": 0.005504,
+      "community": 3,
+      "appearances": 2
+    },
+    {
+      "name": "陆海",
+      "degree": 0.19,
+      "pagerank": 0.005504,
+      "community": 3,
+      "appearances": 2
+    },
+    {
+      "name": "白族主",
+      "degree": 0.18,
+      "pagerank": 0.00506,
+      "community": 0,
+      "appearances": 2
+    },
+    {
+      "name": "黄亚钊",
+      "degree": 0.18,
+      "pagerank": 0.00589,
+      "community": 2,
+      "appearances": 67
+    },
+    {
+      "name": "上官安",
+      "degree": 0.17,
+      "pagerank": 0.004028,
+      "community": 2,
+      "appearances": 1
+    },
+    {
+      "name": "张洵",
+      "degree": 0.17,
+      "pagerank": 0.005931,
+      "community": 1,
+      "appearances": 20
+    },
+    {
+      "name": "秦阳",
+      "degree": 0.17,
+      "pagerank": 0.006369,
+      "community": 2,
+      "appearances": 52
+    },
+    {
+      "name": "赵思俪",
+      "degree": 0.17,
+      "pagerank": 0.005084,
+      "community": 1,
+      "appearances": 18
+    },
+    {
+      "name": "陈彻",
+      "degree": 0.17,
+      "pagerank": 0.004028,
+      "community": 2,
+      "appearances": 1
+    },
+    {
+      "name": "鹤童子",
+      "degree": 0.17,
+      "pagerank": 0.004975,
+      "community": 0,
+      "appearances": 2
+    },
+    {
+      "name": "叶云",
+      "degree": 0.16,
+      "pagerank": 0.006371,
+      "community": 1,
+      "appearances": 53
+    },
+    {
+      "name": "周舫",
+      "degree": 0.15,
+      "pagerank": 0.00384,
+      "community": 3,
+      "appearances": 1
+    },
+    {
+      "name": "孟柯",
+      "degree": 0.15,
+      "pagerank": 0.00384,
+      "community": 3,
+      "appearances": 1
+    },
+    {
+      "name": "刘媛灵",
+      "degree": 0.14,
+      "pagerank": 0.005014,
+      "community": 1,
+      "appearances": 24
+    },
+    {
+      "name": "孙维",
+      "degree": 0.14,
+      "pagerank": 0.00359,
+      "community": 1,
+      "appearances": 1
+    },
+    {
+      "name": "楚涣",
+      "degree": 0.14,
+      "pagerank": 0.003679,
+      "community": 2,
+      "appearances": 1
+    },
+    {
+      "name": "夏穗良",
+      "degree": 0.13,
+      "pagerank": 0.005011,
+      "community": 1,
+      "appearances": 44
+    },
+    {
+      "name": "张广义",
+      "degree": 0.13,
+      "pagerank": 0.004362,
+      "community": 2,
+      "appearances": 2
+    },
+    {
+      "name": "聂铎",
+      "degree": 0.13,
+      "pagerank": 0.003491,
+      "community": 0,
+      "appearances": 1
+    },
+    {
+      "name": "谢春华",
+      "degree": 0.13,
+      "pagerank": 0.004541,
+      "community": 1,
+      "appearances": 2
+    },
+    {
+      "name": "陆子明",
+      "degree": 0.13,
+      "pagerank": 0.003491,
+      "community": 0,
+      "appearances": 1
+    },
+    {
+      "name": "陆宇堃",
+      "degree": 0.13,
+      "pagerank": 0.004541,
+      "community": 1,
+      "appearances": 2
+    },
+    {
+      "name": "魏才思",
+      "degree": 0.13,
+      "pagerank": 0.005112,
+      "community": 1,
+      "appearances": 3
+    },
+    {
+      "name": "魏祎心",
+      "degree": 0.13,
+      "pagerank": 0.004362,
+      "community": 2,
+      "appearances": 2
+    },
+    {
+      "name": "尚衫虎",
+      "degree": 0.12,
+      "pagerank": 0.006675,
+      "community": 1,
+      "appearances": 75
+    },
+    {
+      "name": "张百慧",
+      "degree": 0.12,
+      "pagerank": 0.004614,
+      "community": 1,
+      "appearances": 33
+    },
+    {
+      "name": "王慕",
+      "degree": 0.12,
+      "pagerank": 0.005455,
+      "community": 1,
+      "appearances": 96
+    },
+    {
+      "name": "楚湘",
+      "degree": 0.11,
+      "pagerank": 0.003318,
+      "community": 2,
+      "appearances": 1
+    },
+    {
+      "name": "楚笙",
+      "degree": 0.11,
+      "pagerank": 0.003318,
+      "community": 2,
+      "appearances": 11
+    },
+    {
+      "name": "秦昭",
+      "degree": 0.11,
+      "pagerank": 0.003213,
+      "community": 2,
+      "appearances": 1
+    },
+    {
+      "name": "阮盛",
+      "degree": 0.11,
+      "pagerank": 0.004252,
+      "community": 1,
+      "appearances": 13
+    },
+    {
+      "name": "黄羽",
+      "degree": 0.11,
+      "pagerank": 0.004252,
+      "community": 1,
+      "appearances": 2
+    },
+    {
+      "name": "向巢",
+      "degree": 0.1,
+      "pagerank": 0.003357,
+      "community": 1,
+      "appearances": 1
+    },
+    {
+      "name": "向达",
+      "degree": 0.1,
+      "pagerank": 0.003357,
+      "community": 1,
+      "appearances": 1
+    },
+    {
+      "name": "李勇",
+      "degree": 0.1,
+      "pagerank": 0.004515,
+      "community": 1,
+      "appearances": 2
+    },
+    {
+      "name": "王奔",
+      "degree": 0.1,
+      "pagerank": 0.004515,
+      "community": 1,
+      "appearances": 18
+    },
+    {
+      "name": "黄朱陶",
+      "degree": 0.1,
+      "pagerank": 0.003069,
+      "community": 2,
+      "appearances": 1
+    },
+    {
+      "name": "王监军",
+      "degree": 0.09,
+      "pagerank": 0.002859,
+      "community": 0,
+      "appearances": 31
+    },
+    {
+      "name": "督军",
+      "degree": 0.09,
+      "pagerank": 0.00285,
+      "community": 2,
+      "appearances": 1
+    },
+    {
+      "name": "陈番",
+      "degree": 0.08,
+      "pagerank": 0.003288,
+      "community": 2,
+      "appearances": 2
+    },
+    {
+      "name": "刘安",
+      "degree": 0.07,
+      "pagerank": 0.003153,
+      "community": 1,
+      "appearances": 9
+    },
+    {
+      "name": "刘老太公",
+      "degree": 0.07,
+      "pagerank": 0.003592,
+      "community": 1,
+      "appearances": 2
+    },
+    {
+      "name": "范豪",
+      "degree": 0.07,
+      "pagerank": 0.003654,
+      "community": 1,
+      "appearances": 56
+    },
+    {
+      "name": "六方剑",
+      "degree": 0.06,
+      "pagerank": 0.003173,
+      "community": 1,
+      "appearances": 2
+    },
+    {
+      "name": "枭",
+      "degree": 0.06,
+      "pagerank": 0.002963,
+      "community": 1,
+      "appearances": 2
+    },
+    {
+      "name": "楚圆圆",
+      "degree": 0.06,
+      "pagerank": 0.002344,
+      "community": 2,
+      "appearances": 1
+    },
+    {
+      "name": "王五",
+      "degree": 0.04,
+      "pagerank": 0.002062,
+      "community": 1,
+      "appearances": 1
+    },
+    {
+      "name": "元工匠人",
+      "degree": 0.03,
+      "pagerank": 0.001916,
+      "community": 1,
+      "appearances": 1
+    },
+    {
+      "name": "李二",
+      "degree": 0.03,
+      "pagerank": 0.002015,
+      "community": 1,
+      "appearances": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "上官安",
+      "target": "刑布",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "刘笑岩",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "尚樱",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "武蒯",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "王芣",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "上官安",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "刘媛灵",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "刘老太公",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "刘安",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "尚衫虎",
+      "weight": 5
+    },
+    {
+      "source": "任琅",
+      "target": "影",
+      "weight": 11
+    },
+    {
+      "source": "任琅",
+      "target": "李勇",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "王奔",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "李二",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "尚樱",
+      "weight": 51
+    },
+    {
+      "source": "任琅",
+      "target": "李博",
+      "weight": 9
+    },
+    {
+      "source": "任琅",
+      "target": "法慧",
+      "weight": 7
+    },
+    {
+      "source": "任琅",
+      "target": "福",
+      "weight": 22
+    },
+    {
+      "source": "任琅",
+      "target": "六方剑",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "叶云",
+      "weight": 4
+    },
+    {
+      "source": "任琅",
+      "target": "枭",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "刑布",
+      "weight": 8
+    },
+    {
+      "source": "任琅",
+      "target": "元工匠人",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "王五",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "许达",
+      "weight": 11
+    },
+    {
+      "source": "任琅",
+      "target": "端木邦",
+      "weight": 4
+    },
+    {
+      "source": "任琅",
+      "target": "阮盛",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "黄羽",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "向巢",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "向达",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "夏叶",
+      "weight": 18
+    },
+    {
+      "source": "任琅",
+      "target": "虞环",
+      "weight": 6
+    },
+    {
+      "source": "任琅",
+      "target": "陈奉天",
+      "weight": 18
+    },
+    {
+      "source": "任琅",
+      "target": "孑",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "王慕",
+      "weight": 5
+    },
+    {
+      "source": "任琅",
+      "target": "张洵",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "张百慧",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "赵翔",
+      "weight": 9
+    },
+    {
+      "source": "任琅",
+      "target": "赵骁",
+      "weight": 9
+    },
+    {
+      "source": "任琅",
+      "target": "刘笑岩",
+      "weight": 15
+    },
+    {
+      "source": "任琅",
+      "target": "夏穗良",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "范豪",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "魏才思",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "岱胜",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "楚湘",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "楚笙",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "秦阳",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "苏雨",
+      "weight": 10
+    },
+    {
+      "source": "任琅",
+      "target": "李月婵",
+      "weight": 4
+    },
+    {
+      "source": "任琅",
+      "target": "秦昭",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "黄亚钊",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "谢仁玄",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "刑泰",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "皇帝",
+      "weight": 9
+    },
+    {
+      "source": "任琅",
+      "target": "谢春华",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "陆宇堃",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "苏沐文",
+      "weight": 8
+    },
+    {
+      "source": "任琅",
+      "target": "张广义",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "魏祎心",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "黄朱陶",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "道士",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "陈番",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "王芣",
+      "weight": 6
+    },
+    {
+      "source": "任琅",
+      "target": "马远",
+      "weight": 5
+    },
+    {
+      "source": "任琅",
+      "target": "武蒯",
+      "weight": 8
+    },
+    {
+      "source": "任琅",
+      "target": "赵思俪",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "楚涣",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "楚圆圆",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "张潇璃",
+      "weight": 7
+    },
+    {
+      "source": "任琅",
+      "target": "铁面人",
+      "weight": 6
+    },
+    {
+      "source": "任琅",
+      "target": "孙维",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "空",
+      "weight": 7
+    },
+    {
+      "source": "任琅",
+      "target": "老道",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "周舫",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "孟柯",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "安弈霖",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "安明",
+      "weight": 5
+    },
+    {
+      "source": "任琅",
+      "target": "纪田",
+      "weight": 5
+    },
+    {
+      "source": "任琅",
+      "target": "纪程浩",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "陆天",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "陆海",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "督军",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "白族主",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "聂林",
+      "weight": 7
+    },
+    {
+      "source": "任琅",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "刘基",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "吕真",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "建武太守",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "张览",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "方奇",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "牛金",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "牛银",
+      "weight": 4
+    },
+    {
+      "source": "任琅",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "贺曲",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "韩德",
+      "weight": 4
+    },
+    {
+      "source": "任琅",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "高颌",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "聂铎",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "陆子明",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "陆仲枢",
+      "weight": 3
+    },
+    {
+      "source": "任琅",
+      "target": "鹤童子",
+      "weight": 2
+    },
+    {
+      "source": "任琅",
+      "target": "程廖",
+      "weight": 1
+    },
+    {
+      "source": "任琅",
+      "target": "王监军",
+      "weight": 1
+    },
+    {
+      "source": "元工匠人",
+      "target": "尚樱",
+      "weight": 1
+    },
+    {
+      "source": "元工匠人",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "六方剑",
+      "target": "叶云",
+      "weight": 2
+    },
+    {
+      "source": "六方剑",
+      "target": "尚樱",
+      "weight": 2
+    },
+    {
+      "source": "六方剑",
+      "target": "枭",
+      "weight": 1
+    },
+    {
+      "source": "六方剑",
+      "target": "福",
+      "weight": 2
+    },
+    {
+      "source": "六方剑",
+      "target": "刑布",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "叶云",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "尚樱",
+      "weight": 9
+    },
+    {
+      "source": "刑布",
+      "target": "福",
+      "weight": 6
+    },
+    {
+      "source": "刑布",
+      "target": "枭",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "刑泰",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "刘笑岩",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "夏叶",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "影",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "皇帝",
+      "weight": 3
+    },
+    {
+      "source": "刑布",
+      "target": "谢仁玄",
+      "weight": 3
+    },
+    {
+      "source": "刑布",
+      "target": "谢春华",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "陆宇堃",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "武蒯",
+      "weight": 3
+    },
+    {
+      "source": "刑布",
+      "target": "法慧",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "王芣",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "聂林",
+      "weight": 3
+    },
+    {
+      "source": "刑布",
+      "target": "苏沐文",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "苏雨",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "许达",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "赵翔",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "马远",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "刘基",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "吕真",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "安明",
+      "weight": 3
+    },
+    {
+      "source": "刑布",
+      "target": "建武太守",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "张览",
+      "weight": 3
+    },
+    {
+      "source": "刑布",
+      "target": "方奇",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "牛金",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "牛银",
+      "weight": 3
+    },
+    {
+      "source": "刑布",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "纪田",
+      "weight": 3
+    },
+    {
+      "source": "刑布",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "赵骁",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "陈奉天",
+      "weight": 5
+    },
+    {
+      "source": "刑布",
+      "target": "韩德",
+      "weight": 4
+    },
+    {
+      "source": "刑布",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "高颌",
+      "weight": 3
+    },
+    {
+      "source": "刑布",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "空",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "聂铎",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "陆子明",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "安弈霖",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "纪程浩",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "程廖",
+      "weight": 2
+    },
+    {
+      "source": "刑布",
+      "target": "张潇璃",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "陆仲枢",
+      "weight": 1
+    },
+    {
+      "source": "刑布",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "刘笑岩",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "夏叶",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "尚樱",
+      "weight": 2
+    },
+    {
+      "source": "刑泰",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "皇帝",
+      "weight": 2
+    },
+    {
+      "source": "刑泰",
+      "target": "谢仁玄",
+      "weight": 2
+    },
+    {
+      "source": "刑泰",
+      "target": "谢春华",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "陆宇堃",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "程廖",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "刑泰",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "刘基",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "王监军",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "刑泰",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "吕真",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "安明",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "尚樱",
+      "weight": 2
+    },
+    {
+      "source": "刘基",
+      "target": "建武太守",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "张览",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "方奇",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "法慧",
+      "weight": 2
+    },
+    {
+      "source": "刘基",
+      "target": "牛金",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "牛银",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "皇帝",
+      "weight": 2
+    },
+    {
+      "source": "刘基",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "聂林",
+      "weight": 2
+    },
+    {
+      "source": "刘基",
+      "target": "贺曲",
+      "weight": 2
+    },
+    {
+      "source": "刘基",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "刘基",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "刘基",
+      "target": "王监军",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "刘老太公",
+      "weight": 2
+    },
+    {
+      "source": "刘媛灵",
+      "target": "刘安",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "尚衫虎",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "李勇",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "王奔",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "孑",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "尚樱",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "张百慧",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "刘媛灵",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "刘安",
+      "target": "刘老太公",
+      "weight": 1
+    },
+    {
+      "source": "刘安",
+      "target": "尚衫虎",
+      "weight": 1
+    },
+    {
+      "source": "刘安",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "刘安",
+      "target": "李勇",
+      "weight": 1
+    },
+    {
+      "source": "刘安",
+      "target": "王奔",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "叶云",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "夏叶",
+      "weight": 17
+    },
+    {
+      "source": "刘笑岩",
+      "target": "范豪",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "夏穗良",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "魏才思",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "尚樱",
+      "weight": 16
+    },
+    {
+      "source": "刘笑岩",
+      "target": "岱胜",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "楚湘",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "楚笙",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "法慧",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "秦阳",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "苏雨",
+      "weight": 8
+    },
+    {
+      "source": "刘笑岩",
+      "target": "许达",
+      "weight": 7
+    },
+    {
+      "source": "刘笑岩",
+      "target": "李月婵",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "福",
+      "weight": 4
+    },
+    {
+      "source": "刘笑岩",
+      "target": "秦昭",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "谢仁玄",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "影",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "皇帝",
+      "weight": 4
+    },
+    {
+      "source": "刘笑岩",
+      "target": "谢春华",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "陆宇堃",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "苏沐文",
+      "weight": 5
+    },
+    {
+      "source": "刘笑岩",
+      "target": "张广义",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "陈奉天",
+      "weight": 5
+    },
+    {
+      "source": "刘笑岩",
+      "target": "魏祎心",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "黄朱陶",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "张洵",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "李博",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "武蒯",
+      "weight": 6
+    },
+    {
+      "source": "刘笑岩",
+      "target": "王芣",
+      "weight": 6
+    },
+    {
+      "source": "刘笑岩",
+      "target": "端木邦",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "赵思俪",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "楚涣",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "赵翔",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "赵骁",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "张潇璃",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "铁面人",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "孑",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "孙维",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "空",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "老道",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "马远",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "周舫",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "孟柯",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "安弈霖",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "安明",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "纪程浩",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "虞环",
+      "weight": 3
+    },
+    {
+      "source": "刘笑岩",
+      "target": "陆天",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "陆海",
+      "weight": 2
+    },
+    {
+      "source": "刘笑岩",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "刘笑岩",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "刘老太公",
+      "target": "尚衫虎",
+      "weight": 1
+    },
+    {
+      "source": "刘老太公",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "刘老太公",
+      "target": "李勇",
+      "weight": 1
+    },
+    {
+      "source": "刘老太公",
+      "target": "王奔",
+      "weight": 1
+    },
+    {
+      "source": "叶云",
+      "target": "尚樱",
+      "weight": 4
+    },
+    {
+      "source": "叶云",
+      "target": "枭",
+      "weight": 1
+    },
+    {
+      "source": "叶云",
+      "target": "福",
+      "weight": 3
+    },
+    {
+      "source": "叶云",
+      "target": "向巢",
+      "weight": 1
+    },
+    {
+      "source": "叶云",
+      "target": "向达",
+      "weight": 1
+    },
+    {
+      "source": "叶云",
+      "target": "夏叶",
+      "weight": 2
+    },
+    {
+      "source": "叶云",
+      "target": "端木邦",
+      "weight": 1
+    },
+    {
+      "source": "叶云",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "叶云",
+      "target": "阮盛",
+      "weight": 1
+    },
+    {
+      "source": "叶云",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "叶云",
+      "target": "黄羽",
+      "weight": 1
+    },
+    {
+      "source": "叶云",
+      "target": "范豪",
+      "weight": 1
+    },
+    {
+      "source": "向巢",
+      "target": "向达",
+      "weight": 1
+    },
+    {
+      "source": "向巢",
+      "target": "夏叶",
+      "weight": 1
+    },
+    {
+      "source": "向巢",
+      "target": "尚樱",
+      "weight": 1
+    },
+    {
+      "source": "向巢",
+      "target": "端木邦",
+      "weight": 1
+    },
+    {
+      "source": "向巢",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "向巢",
+      "target": "阮盛",
+      "weight": 1
+    },
+    {
+      "source": "向巢",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "向巢",
+      "target": "黄羽",
+      "weight": 1
+    },
+    {
+      "source": "向达",
+      "target": "夏叶",
+      "weight": 1
+    },
+    {
+      "source": "向达",
+      "target": "尚樱",
+      "weight": 1
+    },
+    {
+      "source": "向达",
+      "target": "端木邦",
+      "weight": 1
+    },
+    {
+      "source": "向达",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "向达",
+      "target": "阮盛",
+      "weight": 1
+    },
+    {
+      "source": "向达",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "向达",
+      "target": "黄羽",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "安明",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "尚樱",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "建武太守",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "张览",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "方奇",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "牛金",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "牛银",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "吕真",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "夏叶",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "孟柯",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "安弈霖",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "安明",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "尚樱",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "纪程浩",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "周舫",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "尚樱",
+      "weight": 18
+    },
+    {
+      "source": "夏叶",
+      "target": "端木邦",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "虞环",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "阮盛",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "陈奉天",
+      "weight": 6
+    },
+    {
+      "source": "夏叶",
+      "target": "黄羽",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "张洵",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "李博",
+      "weight": 4
+    },
+    {
+      "source": "夏叶",
+      "target": "王慕",
+      "weight": 2
+    },
+    {
+      "source": "夏叶",
+      "target": "福",
+      "weight": 5
+    },
+    {
+      "source": "夏叶",
+      "target": "张百慧",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "影",
+      "weight": 4
+    },
+    {
+      "source": "夏叶",
+      "target": "范豪",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "夏穗良",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "魏才思",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "岱胜",
+      "weight": 2
+    },
+    {
+      "source": "夏叶",
+      "target": "楚湘",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "楚笙",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "法慧",
+      "weight": 2
+    },
+    {
+      "source": "夏叶",
+      "target": "秦阳",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "苏雨",
+      "weight": 7
+    },
+    {
+      "source": "夏叶",
+      "target": "许达",
+      "weight": 6
+    },
+    {
+      "source": "夏叶",
+      "target": "李月婵",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "秦昭",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "谢仁玄",
+      "weight": 2
+    },
+    {
+      "source": "夏叶",
+      "target": "皇帝",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "谢春华",
+      "weight": 2
+    },
+    {
+      "source": "夏叶",
+      "target": "陆宇堃",
+      "weight": 2
+    },
+    {
+      "source": "夏叶",
+      "target": "苏沐文",
+      "weight": 4
+    },
+    {
+      "source": "夏叶",
+      "target": "张广义",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "魏祎心",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "黄朱陶",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "武蒯",
+      "weight": 5
+    },
+    {
+      "source": "夏叶",
+      "target": "王芣",
+      "weight": 5
+    },
+    {
+      "source": "夏叶",
+      "target": "赵思俪",
+      "weight": 2
+    },
+    {
+      "source": "夏叶",
+      "target": "楚涣",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "赵翔",
+      "weight": 2
+    },
+    {
+      "source": "夏叶",
+      "target": "赵骁",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "张潇璃",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "铁面人",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "孑",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "孙维",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "空",
+      "weight": 3
+    },
+    {
+      "source": "夏叶",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "孟柯",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "安弈霖",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "安明",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "纪程浩",
+      "weight": 1
+    },
+    {
+      "source": "夏叶",
+      "target": "陆天",
+      "weight": 2
+    },
+    {
+      "source": "夏叶",
+      "target": "陆海",
+      "weight": 2
+    },
+    {
+      "source": "夏穗良",
+      "target": "范豪",
+      "weight": 2
+    },
+    {
+      "source": "夏穗良",
+      "target": "魏才思",
+      "weight": 2
+    },
+    {
+      "source": "夏穗良",
+      "target": "尚樱",
+      "weight": 2
+    },
+    {
+      "source": "夏穗良",
+      "target": "李月婵",
+      "weight": 1
+    },
+    {
+      "source": "夏穗良",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "夏穗良",
+      "target": "秦昭",
+      "weight": 1
+    },
+    {
+      "source": "夏穗良",
+      "target": "秦阳",
+      "weight": 1
+    },
+    {
+      "source": "夏穗良",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "夏穗良",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "夏穗良",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "尚樱",
+      "weight": 3
+    },
+    {
+      "source": "孑",
+      "target": "李博",
+      "weight": 2
+    },
+    {
+      "source": "孑",
+      "target": "王慕",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "孑",
+      "target": "张百慧",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "孙维",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "张洵",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "张潇璃",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "武蒯",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "王芣",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "空",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "孑",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "孙维",
+      "target": "尚樱",
+      "weight": 1
+    },
+    {
+      "source": "孙维",
+      "target": "张洵",
+      "weight": 1
+    },
+    {
+      "source": "孙维",
+      "target": "张潇璃",
+      "weight": 1
+    },
+    {
+      "source": "孙维",
+      "target": "李博",
+      "weight": 1
+    },
+    {
+      "source": "孙维",
+      "target": "武蒯",
+      "weight": 1
+    },
+    {
+      "source": "孙维",
+      "target": "王芣",
+      "weight": 1
+    },
+    {
+      "source": "孙维",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "孙维",
+      "target": "空",
+      "weight": 1
+    },
+    {
+      "source": "孙维",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "孙维",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "安弈霖",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "安明",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "尚樱",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "纪程浩",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "孟柯",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "安明",
+      "weight": 2
+    },
+    {
+      "source": "安弈霖",
+      "target": "尚樱",
+      "weight": 3
+    },
+    {
+      "source": "安弈霖",
+      "target": "纪田",
+      "weight": 2
+    },
+    {
+      "source": "安弈霖",
+      "target": "纪程浩",
+      "weight": 3
+    },
+    {
+      "source": "安弈霖",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "陈奉天",
+      "weight": 3
+    },
+    {
+      "source": "安弈霖",
+      "target": "张览",
+      "weight": 2
+    },
+    {
+      "source": "安弈霖",
+      "target": "武蒯",
+      "weight": 2
+    },
+    {
+      "source": "安弈霖",
+      "target": "牛银",
+      "weight": 2
+    },
+    {
+      "source": "安弈霖",
+      "target": "韩德",
+      "weight": 2
+    },
+    {
+      "source": "安弈霖",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "张潇璃",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "程廖",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "陆仲枢",
+      "weight": 1
+    },
+    {
+      "source": "安弈霖",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "尚樱",
+      "weight": 5
+    },
+    {
+      "source": "安明",
+      "target": "纪田",
+      "weight": 5
+    },
+    {
+      "source": "安明",
+      "target": "纪程浩",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "赵骁",
+      "weight": 4
+    },
+    {
+      "source": "安明",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "陈奉天",
+      "weight": 5
+    },
+    {
+      "source": "安明",
+      "target": "张潇璃",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "影",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "法慧",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "白族主",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "皇帝",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "福",
+      "weight": 3
+    },
+    {
+      "source": "安明",
+      "target": "空",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "聂林",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "铁面人",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "建武太守",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "张览",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "方奇",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "牛金",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "牛银",
+      "weight": 2
+    },
+    {
+      "source": "安明",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "韩德",
+      "weight": 3
+    },
+    {
+      "source": "安明",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "高颌",
+      "weight": 3
+    },
+    {
+      "source": "安明",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "聂铎",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "陆子明",
+      "weight": 1
+    },
+    {
+      "source": "安明",
+      "target": "武蒯",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "尚衫虎",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "影",
+      "weight": 9
+    },
+    {
+      "source": "尚樱",
+      "target": "李勇",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "李博",
+      "weight": 9
+    },
+    {
+      "source": "尚樱",
+      "target": "法慧",
+      "weight": 8
+    },
+    {
+      "source": "尚樱",
+      "target": "王奔",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "福",
+      "weight": 22
+    },
+    {
+      "source": "尚樱",
+      "target": "枭",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "王五",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "许达",
+      "weight": 12
+    },
+    {
+      "source": "尚樱",
+      "target": "端木邦",
+      "weight": 4
+    },
+    {
+      "source": "尚樱",
+      "target": "阮盛",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "黄羽",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "虞环",
+      "weight": 7
+    },
+    {
+      "source": "尚樱",
+      "target": "陈奉天",
+      "weight": 18
+    },
+    {
+      "source": "尚樱",
+      "target": "王慕",
+      "weight": 5
+    },
+    {
+      "source": "尚樱",
+      "target": "张洵",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "张百慧",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "赵翔",
+      "weight": 10
+    },
+    {
+      "source": "尚樱",
+      "target": "赵骁",
+      "weight": 9
+    },
+    {
+      "source": "尚樱",
+      "target": "范豪",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "魏才思",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "岱胜",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "楚湘",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "楚笙",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "秦阳",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "苏雨",
+      "weight": 11
+    },
+    {
+      "source": "尚樱",
+      "target": "李月婵",
+      "weight": 4
+    },
+    {
+      "source": "尚樱",
+      "target": "秦昭",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "黄亚钊",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "谢仁玄",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "皇帝",
+      "weight": 10
+    },
+    {
+      "source": "尚樱",
+      "target": "谢春华",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "陆宇堃",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "苏沐文",
+      "weight": 9
+    },
+    {
+      "source": "尚樱",
+      "target": "张广义",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "魏祎心",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "黄朱陶",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "道士",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "陈番",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "王芣",
+      "weight": 7
+    },
+    {
+      "source": "尚樱",
+      "target": "马远",
+      "weight": 6
+    },
+    {
+      "source": "尚樱",
+      "target": "武蒯",
+      "weight": 9
+    },
+    {
+      "source": "尚樱",
+      "target": "赵思俪",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "楚涣",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "楚圆圆",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "张潇璃",
+      "weight": 7
+    },
+    {
+      "source": "尚樱",
+      "target": "铁面人",
+      "weight": 6
+    },
+    {
+      "source": "尚樱",
+      "target": "空",
+      "weight": 7
+    },
+    {
+      "source": "尚樱",
+      "target": "老道",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "纪田",
+      "weight": 5
+    },
+    {
+      "source": "尚樱",
+      "target": "纪程浩",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "陆天",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "陆海",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "督军",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "聂林",
+      "weight": 8
+    },
+    {
+      "source": "尚樱",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "白族主",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "建武太守",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "张览",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "方奇",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "牛金",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "牛银",
+      "weight": 4
+    },
+    {
+      "source": "尚樱",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "贺曲",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "韩德",
+      "weight": 4
+    },
+    {
+      "source": "尚樱",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "高颌",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "聂铎",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "陆子明",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "陆仲枢",
+      "weight": 3
+    },
+    {
+      "source": "尚樱",
+      "target": "鹤童子",
+      "weight": 2
+    },
+    {
+      "source": "尚樱",
+      "target": "程廖",
+      "weight": 1
+    },
+    {
+      "source": "尚樱",
+      "target": "王监军",
+      "weight": 1
+    },
+    {
+      "source": "尚衫虎",
+      "target": "影",
+      "weight": 4
+    },
+    {
+      "source": "尚衫虎",
+      "target": "李勇",
+      "weight": 2
+    },
+    {
+      "source": "尚衫虎",
+      "target": "王奔",
+      "weight": 2
+    },
+    {
+      "source": "尚衫虎",
+      "target": "李二",
+      "weight": 1
+    },
+    {
+      "source": "尚衫虎",
+      "target": "李博",
+      "weight": 3
+    },
+    {
+      "source": "尚衫虎",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "尚衫虎",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "楚湘",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "楚笙",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "秦阳",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "苏雨",
+      "weight": 3
+    },
+    {
+      "source": "岱胜",
+      "target": "许达",
+      "weight": 2
+    },
+    {
+      "source": "岱胜",
+      "target": "魏才思",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "楚涣",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "王芣",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "端木邦",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "赵思俪",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "赵翔",
+      "weight": 2
+    },
+    {
+      "source": "岱胜",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "督军",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "岱胜",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "张览",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "方奇",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "牛金",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "牛银",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "建武太守",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "张广义",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "张广义",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "张广义",
+      "target": "许达",
+      "weight": 2
+    },
+    {
+      "source": "张广义",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "张广义",
+      "target": "魏祎心",
+      "weight": 2
+    },
+    {
+      "source": "张广义",
+      "target": "黄朱陶",
+      "weight": 1
+    },
+    {
+      "source": "张广义",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "张广义",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "张广义",
+      "target": "陈番",
+      "weight": 1
+    },
+    {
+      "source": "张洵",
+      "target": "李博",
+      "weight": 3
+    },
+    {
+      "source": "张洵",
+      "target": "王慕",
+      "weight": 1
+    },
+    {
+      "source": "张洵",
+      "target": "福",
+      "weight": 2
+    },
+    {
+      "source": "张洵",
+      "target": "武蒯",
+      "weight": 2
+    },
+    {
+      "source": "张洵",
+      "target": "王芣",
+      "weight": 2
+    },
+    {
+      "source": "张洵",
+      "target": "端木邦",
+      "weight": 1
+    },
+    {
+      "source": "张洵",
+      "target": "赵思俪",
+      "weight": 1
+    },
+    {
+      "source": "张洵",
+      "target": "张潇璃",
+      "weight": 1
+    },
+    {
+      "source": "张洵",
+      "target": "空",
+      "weight": 1
+    },
+    {
+      "source": "张洵",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "张洵",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "武蒯",
+      "weight": 3
+    },
+    {
+      "source": "张潇璃",
+      "target": "王芣",
+      "weight": 2
+    },
+    {
+      "source": "张潇璃",
+      "target": "皇帝",
+      "weight": 2
+    },
+    {
+      "source": "张潇璃",
+      "target": "苏沐文",
+      "weight": 2
+    },
+    {
+      "source": "张潇璃",
+      "target": "铁面人",
+      "weight": 5
+    },
+    {
+      "source": "张潇璃",
+      "target": "李博",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "福",
+      "weight": 5
+    },
+    {
+      "source": "张潇璃",
+      "target": "空",
+      "weight": 4
+    },
+    {
+      "source": "张潇璃",
+      "target": "老道",
+      "weight": 2
+    },
+    {
+      "source": "张潇璃",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "陈奉天",
+      "weight": 3
+    },
+    {
+      "source": "张潇璃",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "白族主",
+      "weight": 2
+    },
+    {
+      "source": "张潇璃",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "聂林",
+      "weight": 3
+    },
+    {
+      "source": "张潇璃",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "陆仲枢",
+      "weight": 2
+    },
+    {
+      "source": "张潇璃",
+      "target": "鹤童子",
+      "weight": 2
+    },
+    {
+      "source": "张潇璃",
+      "target": "张览",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "牛银",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "程廖",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "纪程浩",
+      "weight": 1
+    },
+    {
+      "source": "张潇璃",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "张百慧",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "张百慧",
+      "target": "李博",
+      "weight": 1
+    },
+    {
+      "source": "张百慧",
+      "target": "王慕",
+      "weight": 2
+    },
+    {
+      "source": "张百慧",
+      "target": "虞环",
+      "weight": 2
+    },
+    {
+      "source": "张百慧",
+      "target": "赵翔",
+      "weight": 2
+    },
+    {
+      "source": "张百慧",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "张百慧",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "影",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "方奇",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "牛金",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "牛银",
+      "weight": 3
+    },
+    {
+      "source": "张览",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "福",
+      "weight": 2
+    },
+    {
+      "source": "张览",
+      "target": "纪田",
+      "weight": 2
+    },
+    {
+      "source": "张览",
+      "target": "聂林",
+      "weight": 2
+    },
+    {
+      "source": "张览",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "陈奉天",
+      "weight": 3
+    },
+    {
+      "source": "张览",
+      "target": "韩德",
+      "weight": 3
+    },
+    {
+      "source": "张览",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "高颌",
+      "weight": 2
+    },
+    {
+      "source": "张览",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "武蒯",
+      "weight": 2
+    },
+    {
+      "source": "张览",
+      "target": "纪程浩",
+      "weight": 2
+    },
+    {
+      "source": "张览",
+      "target": "程廖",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "陆仲枢",
+      "weight": 1
+    },
+    {
+      "source": "张览",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "李勇",
+      "weight": 2
+    },
+    {
+      "source": "影",
+      "target": "王奔",
+      "weight": 2
+    },
+    {
+      "source": "影",
+      "target": "李二",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "李博",
+      "weight": 3
+    },
+    {
+      "source": "影",
+      "target": "法慧",
+      "weight": 4
+    },
+    {
+      "source": "影",
+      "target": "王慕",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "皇帝",
+      "weight": 5
+    },
+    {
+      "source": "影",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "谢春华",
+      "weight": 2
+    },
+    {
+      "source": "影",
+      "target": "陆宇堃",
+      "weight": 2
+    },
+    {
+      "source": "影",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "苏雨",
+      "weight": 2
+    },
+    {
+      "source": "影",
+      "target": "楚涣",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "王芣",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "端木邦",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "赵思俪",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "赵骁",
+      "weight": 3
+    },
+    {
+      "source": "影",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "陈奉天",
+      "weight": 3
+    },
+    {
+      "source": "影",
+      "target": "陈番",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "白族主",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "福",
+      "weight": 2
+    },
+    {
+      "source": "影",
+      "target": "空",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "纪田",
+      "weight": 2
+    },
+    {
+      "source": "影",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "聂林",
+      "weight": 2
+    },
+    {
+      "source": "影",
+      "target": "铁面人",
+      "weight": 2
+    },
+    {
+      "source": "影",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "影",
+      "target": "方奇",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "牛金",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "牛银",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "影",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "牛金",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "牛银",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "方奇",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "李勇",
+      "target": "王奔",
+      "weight": 2
+    },
+    {
+      "source": "李勇",
+      "target": "李博",
+      "weight": 1
+    },
+    {
+      "source": "李勇",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "李博",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "李博",
+      "target": "王奔",
+      "weight": 1
+    },
+    {
+      "source": "李博",
+      "target": "福",
+      "weight": 4
+    },
+    {
+      "source": "李博",
+      "target": "王慕",
+      "weight": 3
+    },
+    {
+      "source": "李博",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "李博",
+      "target": "武蒯",
+      "weight": 2
+    },
+    {
+      "source": "李博",
+      "target": "王芣",
+      "weight": 2
+    },
+    {
+      "source": "李博",
+      "target": "端木邦",
+      "weight": 1
+    },
+    {
+      "source": "李博",
+      "target": "赵思俪",
+      "weight": 1
+    },
+    {
+      "source": "李博",
+      "target": "空",
+      "weight": 1
+    },
+    {
+      "source": "李博",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "李博",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "李月婵",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "李月婵",
+      "target": "秦昭",
+      "weight": 1
+    },
+    {
+      "source": "李月婵",
+      "target": "秦阳",
+      "weight": 2
+    },
+    {
+      "source": "李月婵",
+      "target": "苏雨",
+      "weight": 4
+    },
+    {
+      "source": "李月婵",
+      "target": "许达",
+      "weight": 4
+    },
+    {
+      "source": "李月婵",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "李月婵",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "李月婵",
+      "target": "王芣",
+      "weight": 2
+    },
+    {
+      "source": "李月婵",
+      "target": "苏沐文",
+      "weight": 2
+    },
+    {
+      "source": "李月婵",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "李月婵",
+      "target": "赵骁",
+      "weight": 2
+    },
+    {
+      "source": "李月婵",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "李月婵",
+      "target": "马远",
+      "weight": 2
+    },
+    {
+      "source": "李月婵",
+      "target": "武蒯",
+      "weight": 1
+    },
+    {
+      "source": "李月婵",
+      "target": "空",
+      "weight": 1
+    },
+    {
+      "source": "李月婵",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "枭",
+      "target": "福",
+      "weight": 2
+    },
+    {
+      "source": "楚圆圆",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "楚圆圆",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "楚圆圆",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "楚圆圆",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "楚涣",
+      "target": "王芣",
+      "weight": 1
+    },
+    {
+      "source": "楚涣",
+      "target": "端木邦",
+      "weight": 1
+    },
+    {
+      "source": "楚涣",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "楚涣",
+      "target": "赵思俪",
+      "weight": 1
+    },
+    {
+      "source": "楚涣",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "楚涣",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "楚涣",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "楚涣",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "楚湘",
+      "target": "楚笙",
+      "weight": 1
+    },
+    {
+      "source": "楚湘",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "楚湘",
+      "target": "秦阳",
+      "weight": 1
+    },
+    {
+      "source": "楚湘",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "楚湘",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "楚湘",
+      "target": "魏才思",
+      "weight": 1
+    },
+    {
+      "source": "楚笙",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "楚笙",
+      "target": "秦阳",
+      "weight": 1
+    },
+    {
+      "source": "楚笙",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "楚笙",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "楚笙",
+      "target": "魏才思",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "王芣",
+      "weight": 5
+    },
+    {
+      "source": "武蒯",
+      "target": "端木邦",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "赵思俪",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "福",
+      "weight": 3
+    },
+    {
+      "source": "武蒯",
+      "target": "皇帝",
+      "weight": 2
+    },
+    {
+      "source": "武蒯",
+      "target": "苏沐文",
+      "weight": 3
+    },
+    {
+      "source": "武蒯",
+      "target": "铁面人",
+      "weight": 2
+    },
+    {
+      "source": "武蒯",
+      "target": "空",
+      "weight": 2
+    },
+    {
+      "source": "武蒯",
+      "target": "老道",
+      "weight": 2
+    },
+    {
+      "source": "武蒯",
+      "target": "苏雨",
+      "weight": 2
+    },
+    {
+      "source": "武蒯",
+      "target": "许达",
+      "weight": 3
+    },
+    {
+      "source": "武蒯",
+      "target": "赵翔",
+      "weight": 3
+    },
+    {
+      "source": "武蒯",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "陈奉天",
+      "weight": 4
+    },
+    {
+      "source": "武蒯",
+      "target": "马远",
+      "weight": 3
+    },
+    {
+      "source": "武蒯",
+      "target": "法慧",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "聂林",
+      "weight": 3
+    },
+    {
+      "source": "武蒯",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "牛银",
+      "weight": 3
+    },
+    {
+      "source": "武蒯",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "纪程浩",
+      "weight": 2
+    },
+    {
+      "source": "武蒯",
+      "target": "韩德",
+      "weight": 2
+    },
+    {
+      "source": "武蒯",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "程廖",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "陆仲枢",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "武蒯",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "王奔",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "秦阳",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "苏雨",
+      "weight": 3
+    },
+    {
+      "source": "法慧",
+      "target": "许达",
+      "weight": 2
+    },
+    {
+      "source": "法慧",
+      "target": "魏才思",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "皇帝",
+      "weight": 6
+    },
+    {
+      "source": "法慧",
+      "target": "苏沐文",
+      "weight": 2
+    },
+    {
+      "source": "法慧",
+      "target": "谢春华",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "陆宇堃",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "王芣",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "老道",
+      "weight": 2
+    },
+    {
+      "source": "法慧",
+      "target": "聂林",
+      "weight": 5
+    },
+    {
+      "source": "法慧",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "白族主",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "福",
+      "weight": 3
+    },
+    {
+      "source": "法慧",
+      "target": "空",
+      "weight": 2
+    },
+    {
+      "source": "法慧",
+      "target": "纪田",
+      "weight": 2
+    },
+    {
+      "source": "法慧",
+      "target": "赵骁",
+      "weight": 2
+    },
+    {
+      "source": "法慧",
+      "target": "铁面人",
+      "weight": 2
+    },
+    {
+      "source": "法慧",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "法慧",
+      "target": "陈奉天",
+      "weight": 3
+    },
+    {
+      "source": "法慧",
+      "target": "牛金",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "牛银",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "贺曲",
+      "weight": 2
+    },
+    {
+      "source": "法慧",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "王监军",
+      "weight": 1
+    },
+    {
+      "source": "法慧",
+      "target": "陆仲枢",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "牛银",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "福",
+      "weight": 2
+    },
+    {
+      "source": "牛金",
+      "target": "纪田",
+      "weight": 2
+    },
+    {
+      "source": "牛金",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "赵骁",
+      "weight": 2
+    },
+    {
+      "source": "牛金",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "牛金",
+      "target": "韩德",
+      "weight": 2
+    },
+    {
+      "source": "牛金",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "高颌",
+      "weight": 2
+    },
+    {
+      "source": "牛金",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "空",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "聂铎",
+      "weight": 1
+    },
+    {
+      "source": "牛金",
+      "target": "陆子明",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "王浑",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "福",
+      "weight": 2
+    },
+    {
+      "source": "牛银",
+      "target": "纪田",
+      "weight": 2
+    },
+    {
+      "source": "牛银",
+      "target": "聂林",
+      "weight": 3
+    },
+    {
+      "source": "牛银",
+      "target": "贺曲",
+      "weight": 2
+    },
+    {
+      "source": "牛银",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "陈奉天",
+      "weight": 4
+    },
+    {
+      "source": "牛银",
+      "target": "韩德",
+      "weight": 3
+    },
+    {
+      "source": "牛银",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "高颌",
+      "weight": 2
+    },
+    {
+      "source": "牛银",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "纪程浩",
+      "weight": 2
+    },
+    {
+      "source": "牛银",
+      "target": "程廖",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "陆仲枢",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "牛银",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "王五",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "王五",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "王慕",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "王慕",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "王慕",
+      "target": "赵翔",
+      "weight": 2
+    },
+    {
+      "source": "王慕",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "王浑",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "王监军",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "王监军",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "王监军",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "王监军",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "王芣",
+      "target": "苏沐文",
+      "weight": 4
+    },
+    {
+      "source": "王芣",
+      "target": "苏雨",
+      "weight": 4
+    },
+    {
+      "source": "王芣",
+      "target": "虞环",
+      "weight": 2
+    },
+    {
+      "source": "王芣",
+      "target": "许达",
+      "weight": 3
+    },
+    {
+      "source": "王芣",
+      "target": "赵骁",
+      "weight": 3
+    },
+    {
+      "source": "王芣",
+      "target": "陈奉天",
+      "weight": 3
+    },
+    {
+      "source": "王芣",
+      "target": "马远",
+      "weight": 3
+    },
+    {
+      "source": "王芣",
+      "target": "端木邦",
+      "weight": 2
+    },
+    {
+      "source": "王芣",
+      "target": "赵思俪",
+      "weight": 2
+    },
+    {
+      "source": "王芣",
+      "target": "赵翔",
+      "weight": 3
+    },
+    {
+      "source": "王芣",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "王芣",
+      "target": "皇帝",
+      "weight": 2
+    },
+    {
+      "source": "王芣",
+      "target": "铁面人",
+      "weight": 2
+    },
+    {
+      "source": "王芣",
+      "target": "福",
+      "weight": 1
+    },
+    {
+      "source": "王芣",
+      "target": "空",
+      "weight": 2
+    },
+    {
+      "source": "王芣",
+      "target": "老道",
+      "weight": 2
+    },
+    {
+      "source": "王芣",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "王芣",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "王芣",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "白族主",
+      "target": "皇帝",
+      "weight": 1
+    },
+    {
+      "source": "白族主",
+      "target": "福",
+      "weight": 2
+    },
+    {
+      "source": "白族主",
+      "target": "空",
+      "weight": 2
+    },
+    {
+      "source": "白族主",
+      "target": "纪田",
+      "weight": 1
+    },
+    {
+      "source": "白族主",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "白族主",
+      "target": "聂林",
+      "weight": 2
+    },
+    {
+      "source": "白族主",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "白族主",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "白族主",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "白族主",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "白族主",
+      "target": "陆仲枢",
+      "weight": 1
+    },
+    {
+      "source": "白族主",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "谢仁玄",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "谢春华",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "陆宇堃",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "苏沐文",
+      "weight": 3
+    },
+    {
+      "source": "皇帝",
+      "target": "苏雨",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "许达",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "陈番",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "魏祎心",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "铁面人",
+      "weight": 3
+    },
+    {
+      "source": "皇帝",
+      "target": "老道",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "聂林",
+      "weight": 5
+    },
+    {
+      "source": "皇帝",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "福",
+      "weight": 3
+    },
+    {
+      "source": "皇帝",
+      "target": "空",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "纪田",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "赵骁",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "陈奉天",
+      "weight": 3
+    },
+    {
+      "source": "皇帝",
+      "target": "贺曲",
+      "weight": 2
+    },
+    {
+      "source": "皇帝",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "皇帝",
+      "target": "陆仲枢",
+      "weight": 1
+    },
+    {
+      "source": "督军",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "督军",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "督军",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "督军",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "督军",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "督军",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "许达",
+      "weight": 2
+    },
+    {
+      "source": "福",
+      "target": "端木邦",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "阮盛",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "黄羽",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "秦昭",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "秦阳",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "空",
+      "weight": 7
+    },
+    {
+      "source": "福",
+      "target": "老道",
+      "weight": 2
+    },
+    {
+      "source": "福",
+      "target": "铁面人",
+      "weight": 4
+    },
+    {
+      "source": "福",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "陈奉天",
+      "weight": 6
+    },
+    {
+      "source": "福",
+      "target": "纪田",
+      "weight": 3
+    },
+    {
+      "source": "福",
+      "target": "聂林",
+      "weight": 5
+    },
+    {
+      "source": "福",
+      "target": "赵骁",
+      "weight": 3
+    },
+    {
+      "source": "福",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "福",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "韩德",
+      "weight": 3
+    },
+    {
+      "source": "福",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "高颌",
+      "weight": 2
+    },
+    {
+      "source": "福",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "聂铎",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "陆子明",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "陆仲枢",
+      "weight": 3
+    },
+    {
+      "source": "福",
+      "target": "鹤童子",
+      "weight": 2
+    },
+    {
+      "source": "福",
+      "target": "程廖",
+      "weight": 1
+    },
+    {
+      "source": "福",
+      "target": "纪程浩",
+      "weight": 1
+    },
+    {
+      "source": "秦昭",
+      "target": "秦阳",
+      "weight": 1
+    },
+    {
+      "source": "秦昭",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "秦昭",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "秦昭",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "秦阳",
+      "target": "苏雨",
+      "weight": 3
+    },
+    {
+      "source": "秦阳",
+      "target": "许达",
+      "weight": 3
+    },
+    {
+      "source": "秦阳",
+      "target": "魏才思",
+      "weight": 1
+    },
+    {
+      "source": "秦阳",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "秦阳",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "程廖",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "纪程浩",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "陆仲枢",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "程廖",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "老道",
+      "weight": 2
+    },
+    {
+      "source": "空",
+      "target": "铁面人",
+      "weight": 3
+    },
+    {
+      "source": "空",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "赵骁",
+      "weight": 3
+    },
+    {
+      "source": "空",
+      "target": "陈奉天",
+      "weight": 5
+    },
+    {
+      "source": "空",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "纪田",
+      "weight": 2
+    },
+    {
+      "source": "空",
+      "target": "聂林",
+      "weight": 3
+    },
+    {
+      "source": "空",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "聂铎",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "陆子明",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "空",
+      "target": "陆仲枢",
+      "weight": 2
+    },
+    {
+      "source": "空",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "端木邦",
+      "target": "阮盛",
+      "weight": 2
+    },
+    {
+      "source": "端木邦",
+      "target": "黄羽",
+      "weight": 2
+    },
+    {
+      "source": "端木邦",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "端木邦",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "端木邦",
+      "target": "赵思俪",
+      "weight": 2
+    },
+    {
+      "source": "端木邦",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "端木邦",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "端木邦",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "端木邦",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "纪田",
+      "target": "纪程浩",
+      "weight": 2
+    },
+    {
+      "source": "纪田",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "纪田",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "纪田",
+      "target": "赵骁",
+      "weight": 4
+    },
+    {
+      "source": "纪田",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "纪田",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "纪田",
+      "target": "陈奉天",
+      "weight": 5
+    },
+    {
+      "source": "纪田",
+      "target": "老道",
+      "weight": 1
+    },
+    {
+      "source": "纪田",
+      "target": "聂林",
+      "weight": 2
+    },
+    {
+      "source": "纪田",
+      "target": "铁面人",
+      "weight": 2
+    },
+    {
+      "source": "纪田",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "纪田",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "纪田",
+      "target": "韩德",
+      "weight": 3
+    },
+    {
+      "source": "纪田",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "纪田",
+      "target": "高颌",
+      "weight": 3
+    },
+    {
+      "source": "纪田",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "纪田",
+      "target": "聂铎",
+      "weight": 1
+    },
+    {
+      "source": "纪田",
+      "target": "陆子明",
+      "weight": 1
+    },
+    {
+      "source": "纪程浩",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "纪程浩",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "纪程浩",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "纪程浩",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "纪程浩",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "纪程浩",
+      "target": "陈奉天",
+      "weight": 3
+    },
+    {
+      "source": "纪程浩",
+      "target": "韩德",
+      "weight": 2
+    },
+    {
+      "source": "纪程浩",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "纪程浩",
+      "target": "聂林",
+      "weight": 1
+    },
+    {
+      "source": "纪程浩",
+      "target": "陆仲枢",
+      "weight": 1
+    },
+    {
+      "source": "纪程浩",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "铁面人",
+      "weight": 2
+    },
+    {
+      "source": "老道",
+      "target": "聂林",
+      "weight": 2
+    },
+    {
+      "source": "老道",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "许达",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "老道",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "聂林",
+      "target": "苏沐文",
+      "weight": 1
+    },
+    {
+      "source": "聂林",
+      "target": "苏雨",
+      "weight": 1
+    },
+    {
+      "source": "聂林",
+      "target": "虞环",
+      "weight": 1
+    },
+    {
+      "source": "聂林",
+      "target": "许达",
+      "weight": 2
+    },
+    {
+      "source": "聂林",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "聂林",
+      "target": "赵翔",
+      "weight": 2
+    },
+    {
+      "source": "聂林",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "聂林",
+      "target": "马远",
+      "weight": 2
+    },
+    {
+      "source": "聂林",
+      "target": "赵骁",
+      "weight": 2
+    },
+    {
+      "source": "聂林",
+      "target": "铁面人",
+      "weight": 2
+    },
+    {
+      "source": "聂林",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "聂林",
+      "target": "陈奉天",
+      "weight": 5
+    },
+    {
+      "source": "聂林",
+      "target": "贺曲",
+      "weight": 3
+    },
+    {
+      "source": "聂林",
+      "target": "韩德",
+      "weight": 2
+    },
+    {
+      "source": "聂林",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "聂林",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "聂林",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "聂林",
+      "target": "陆仲枢",
+      "weight": 3
+    },
+    {
+      "source": "聂林",
+      "target": "鹤童子",
+      "weight": 2
+    },
+    {
+      "source": "聂铎",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "聂铎",
+      "target": "陆子明",
+      "weight": 1
+    },
+    {
+      "source": "聂铎",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "聂铎",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "聂铎",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "苏沐文",
+      "target": "苏雨",
+      "weight": 8
+    },
+    {
+      "source": "苏沐文",
+      "target": "谢春华",
+      "weight": 1
+    },
+    {
+      "source": "苏沐文",
+      "target": "陆宇堃",
+      "weight": 1
+    },
+    {
+      "source": "苏沐文",
+      "target": "许达",
+      "weight": 6
+    },
+    {
+      "source": "苏沐文",
+      "target": "陈奉天",
+      "weight": 5
+    },
+    {
+      "source": "苏沐文",
+      "target": "魏祎心",
+      "weight": 1
+    },
+    {
+      "source": "苏沐文",
+      "target": "黄朱陶",
+      "weight": 1
+    },
+    {
+      "source": "苏沐文",
+      "target": "虞环",
+      "weight": 2
+    },
+    {
+      "source": "苏沐文",
+      "target": "赵骁",
+      "weight": 3
+    },
+    {
+      "source": "苏沐文",
+      "target": "马远",
+      "weight": 6
+    },
+    {
+      "source": "苏沐文",
+      "target": "赵翔",
+      "weight": 6
+    },
+    {
+      "source": "苏沐文",
+      "target": "铁面人",
+      "weight": 2
+    },
+    {
+      "source": "苏沐文",
+      "target": "黄亚钊",
+      "weight": 2
+    },
+    {
+      "source": "苏沐文",
+      "target": "谢仁玄",
+      "weight": 2
+    },
+    {
+      "source": "苏沐文",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "苏雨",
+      "target": "许达",
+      "weight": 9
+    },
+    {
+      "source": "苏雨",
+      "target": "魏才思",
+      "weight": 1
+    },
+    {
+      "source": "苏雨",
+      "target": "黄亚钊",
+      "weight": 3
+    },
+    {
+      "source": "苏雨",
+      "target": "谢仁玄",
+      "weight": 3
+    },
+    {
+      "source": "苏雨",
+      "target": "谢春华",
+      "weight": 1
+    },
+    {
+      "source": "苏雨",
+      "target": "陆宇堃",
+      "weight": 1
+    },
+    {
+      "source": "苏雨",
+      "target": "陈奉天",
+      "weight": 5
+    },
+    {
+      "source": "苏雨",
+      "target": "魏祎心",
+      "weight": 1
+    },
+    {
+      "source": "苏雨",
+      "target": "黄朱陶",
+      "weight": 1
+    },
+    {
+      "source": "苏雨",
+      "target": "虞环",
+      "weight": 2
+    },
+    {
+      "source": "苏雨",
+      "target": "赵骁",
+      "weight": 3
+    },
+    {
+      "source": "苏雨",
+      "target": "马远",
+      "weight": 6
+    },
+    {
+      "source": "苏雨",
+      "target": "赵思俪",
+      "weight": 1
+    },
+    {
+      "source": "苏雨",
+      "target": "赵翔",
+      "weight": 6
+    },
+    {
+      "source": "苏雨",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "苏雨",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "苏雨",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "范豪",
+      "target": "魏才思",
+      "weight": 2
+    },
+    {
+      "source": "虞环",
+      "target": "阮盛",
+      "weight": 1
+    },
+    {
+      "source": "虞环",
+      "target": "陈奉天",
+      "weight": 6
+    },
+    {
+      "source": "虞环",
+      "target": "黄羽",
+      "weight": 1
+    },
+    {
+      "source": "虞环",
+      "target": "赵翔",
+      "weight": 3
+    },
+    {
+      "source": "虞环",
+      "target": "赵骁",
+      "weight": 3
+    },
+    {
+      "source": "虞环",
+      "target": "许达",
+      "weight": 3
+    },
+    {
+      "source": "虞环",
+      "target": "马远",
+      "weight": 2
+    },
+    {
+      "source": "虞环",
+      "target": "陆天",
+      "weight": 2
+    },
+    {
+      "source": "虞环",
+      "target": "陆海",
+      "weight": 2
+    },
+    {
+      "source": "虞环",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "虞环",
+      "target": "谢仁玄",
+      "weight": 1
+    },
+    {
+      "source": "虞环",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "许达",
+      "target": "魏才思",
+      "weight": 1
+    },
+    {
+      "source": "许达",
+      "target": "黄亚钊",
+      "weight": 2
+    },
+    {
+      "source": "许达",
+      "target": "谢仁玄",
+      "weight": 3
+    },
+    {
+      "source": "许达",
+      "target": "陈奉天",
+      "weight": 6
+    },
+    {
+      "source": "许达",
+      "target": "魏祎心",
+      "weight": 2
+    },
+    {
+      "source": "许达",
+      "target": "黄朱陶",
+      "weight": 1
+    },
+    {
+      "source": "许达",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "许达",
+      "target": "陈番",
+      "weight": 1
+    },
+    {
+      "source": "许达",
+      "target": "赵骁",
+      "weight": 3
+    },
+    {
+      "source": "许达",
+      "target": "马远",
+      "weight": 6
+    },
+    {
+      "source": "许达",
+      "target": "赵翔",
+      "weight": 5
+    },
+    {
+      "source": "许达",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "许达",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "许达",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "许达",
+      "target": "贺曲",
+      "weight": 1
+    },
+    {
+      "source": "谢仁玄",
+      "target": "谢春华",
+      "weight": 1
+    },
+    {
+      "source": "谢仁玄",
+      "target": "陆宇堃",
+      "weight": 1
+    },
+    {
+      "source": "谢仁玄",
+      "target": "赵翔",
+      "weight": 2
+    },
+    {
+      "source": "谢仁玄",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "谢仁玄",
+      "target": "马远",
+      "weight": 2
+    },
+    {
+      "source": "谢仁玄",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "谢春华",
+      "target": "陆宇堃",
+      "weight": 2
+    },
+    {
+      "source": "贺曲",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "贺曲",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "贺曲",
+      "target": "陆仲",
+      "weight": 1
+    },
+    {
+      "source": "贺曲",
+      "target": "陈奉天",
+      "weight": 3
+    },
+    {
+      "source": "贺曲",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "贺曲",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "贺曲",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "贺曲",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "贺曲",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "贺曲",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "赵思俪",
+      "target": "赵翔",
+      "weight": 1
+    },
+    {
+      "source": "赵思俪",
+      "target": "赵骁",
+      "weight": 1
+    },
+    {
+      "source": "赵思俪",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "赵思俪",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "赵翔",
+      "target": "陈奉天",
+      "weight": 7
+    },
+    {
+      "source": "赵翔",
+      "target": "赵骁",
+      "weight": 4
+    },
+    {
+      "source": "赵翔",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "赵翔",
+      "target": "马远",
+      "weight": 6
+    },
+    {
+      "source": "赵翔",
+      "target": "铁面人",
+      "weight": 1
+    },
+    {
+      "source": "赵翔",
+      "target": "黄亚钊",
+      "weight": 2
+    },
+    {
+      "source": "赵翔",
+      "target": "陈彻",
+      "weight": 1
+    },
+    {
+      "source": "赵骁",
+      "target": "陈奉天",
+      "weight": 9
+    },
+    {
+      "source": "赵骁",
+      "target": "马远",
+      "weight": 2
+    },
+    {
+      "source": "赵骁",
+      "target": "道士",
+      "weight": 1
+    },
+    {
+      "source": "赵骁",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "赵骁",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "赵骁",
+      "target": "铁面人",
+      "weight": 2
+    },
+    {
+      "source": "赵骁",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "赵骁",
+      "target": "韩德",
+      "weight": 2
+    },
+    {
+      "source": "赵骁",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "赵骁",
+      "target": "高颌",
+      "weight": 2
+    },
+    {
+      "source": "赵骁",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "赵骁",
+      "target": "陆子明",
+      "weight": 1
+    },
+    {
+      "source": "道士",
+      "target": "陈番",
+      "weight": 1
+    },
+    {
+      "source": "道士",
+      "target": "魏祎心",
+      "weight": 1
+    },
+    {
+      "source": "道士",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "铁面人",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "铁面人",
+      "target": "黄亚钊",
+      "weight": 1
+    },
+    {
+      "source": "铁面人",
+      "target": "陆天",
+      "weight": 1
+    },
+    {
+      "source": "铁面人",
+      "target": "陆海",
+      "weight": 1
+    },
+    {
+      "source": "铁面人",
+      "target": "陈奉天",
+      "weight": 3
+    },
+    {
+      "source": "铁面人",
+      "target": "陆仲",
+      "weight": 2
+    },
+    {
+      "source": "铁面人",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "铁面人",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "铁面人",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "铁面人",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "阮盛",
+      "target": "黄羽",
+      "weight": 2
+    },
+    {
+      "source": "阮盛",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "陆仲",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "陆仲",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "陆仲",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "陆仲",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "陆仲",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "陆仲枢",
+      "target": "鹤童子",
+      "weight": 2
+    },
+    {
+      "source": "陆仲枢",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "陆仲枢",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "陆天",
+      "target": "陆海",
+      "weight": 2
+    },
+    {
+      "source": "陆天",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "陆子明",
+      "target": "陈奉天",
+      "weight": 1
+    },
+    {
+      "source": "陆子明",
+      "target": "韩德",
+      "weight": 1
+    },
+    {
+      "source": "陆子明",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "陆海",
+      "target": "陈奉天",
+      "weight": 2
+    },
+    {
+      "source": "陈奉天",
+      "target": "黄羽",
+      "weight": 1
+    },
+    {
+      "source": "陈奉天",
+      "target": "魏祎心",
+      "weight": 1
+    },
+    {
+      "source": "陈奉天",
+      "target": "黄朱陶",
+      "weight": 1
+    },
+    {
+      "source": "陈奉天",
+      "target": "马远",
+      "weight": 4
+    },
+    {
+      "source": "陈奉天",
+      "target": "韩德",
+      "weight": 4
+    },
+    {
+      "source": "陈奉天",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "陈奉天",
+      "target": "高颌",
+      "weight": 3
+    },
+    {
+      "source": "陈奉天",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "陈奉天",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "陈彻",
+      "target": "马远",
+      "weight": 1
+    },
+    {
+      "source": "陈番",
+      "target": "魏祎心",
+      "weight": 1
+    },
+    {
+      "source": "韩德",
+      "target": "马垈",
+      "weight": 1
+    },
+    {
+      "source": "韩德",
+      "target": "高颌",
+      "weight": 3
+    },
+    {
+      "source": "韩德",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "韩德",
+      "target": "鹤童子",
+      "weight": 1
+    },
+    {
+      "source": "马垈",
+      "target": "高颌",
+      "weight": 1
+    },
+    {
+      "source": "马垈",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "马远",
+      "target": "黄亚钊",
+      "weight": 2
+    },
+    {
+      "source": "高颌",
+      "target": "黄九州",
+      "weight": 1
+    },
+    {
+      "source": "魏祎心",
+      "target": "黄朱陶",
+      "weight": 1
+    }
+  ]
+}

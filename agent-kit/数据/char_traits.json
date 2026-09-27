@@ -1,0 +1,2050 @@
+{
+ "刘媛灵": {
+  "name": "刘媛灵",
+  "paragraphs": 18,
+  "chapters_present": [
+   1,
+   2,
+   16,
+   24
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "刘笑岩": {
+  "name": "刘笑岩",
+  "paragraphs": 226,
+  "chapters_present": [
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   36,
+   37,
+   38,
+   41,
+   42,
+   43,
+   44,
+   46,
+   48
+  ],
+  "trait_axes": {
+   "性情": "沉稳",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "沉稳",
+    "score_a": 1,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 44,
+      "word": "淡然",
+      "snippet": "直抱着？”夏叶连忙起身搭把手。刘笑岩淡然一笑：“我抱着！行了吧。”在拍平床垫"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.0
+ },
+ "夏穗良": {
+  "name": "夏穗良",
+  "paragraphs": 34,
+  "chapters_present": [
+   26,
+   27,
+   29
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "安弈霖": {
+  "name": "安弈霖",
+  "paragraphs": 22,
+  "chapters_present": [
+   44,
+   52,
+   55,
+   59
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "尚衫虎": {
+  "name": "尚衫虎",
+  "paragraphs": 53,
+  "chapters_present": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "川阴王": {
+  "name": "川阴王",
+  "paragraphs": 30,
+  "chapters_present": [
+   17,
+   18,
+   21,
+   22,
+   23,
+   24,
+   27,
+   28,
+   30,
+   31,
+   32,
+   33,
+   35,
+   37,
+   38,
+   41,
+   43,
+   48,
+   53
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "张潇璃": {
+  "name": "张潇璃",
+  "paragraphs": 67,
+  "chapters_present": [
+   41,
+   42,
+   45,
+   46,
+   49,
+   54,
+   55
+  ],
+  "trait_axes": {
+   "性情": "沉稳",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "沉稳"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "沉稳",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 54,
+      "word": "淡然",
+      "snippet": "“你不会拒绝的。”这淡然却又直击内心的话传来，张潇璃真的有些"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "张百慧": {
+  "name": "张百慧",
+  "paragraphs": 22,
+  "chapters_present": [
+   20,
+   21,
+   22,
+   23,
+   24
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "王监军": {
+  "name": "王监军",
+  "paragraphs": 11,
+  "chapters_present": [
+   57
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "苏沐文": {
+  "name": "苏沐文",
+  "paragraphs": 60,
+  "chapters_present": [
+   32,
+   33,
+   35,
+   40,
+   41,
+   43,
+   45,
+   47,
+   48,
+   53
+  ],
+  "trait_axes": {
+   "性情": "急躁",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "急躁"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "急躁",
+    "score_a": 0,
+    "score_b": 2,
+    "evidence": [
+     {
+      "chapter": 33,
+      "word": "急切",
+      "snippet": "“小六子，怎么是你？我姐呢？”苏沐文急切地说。"
+     },
+     {
+      "chapter": 47,
+      "word": "急躁",
+      "snippet": "先别急……”苏沐文闻言一声苦笑，有些急躁地说：“赵翔将军，他们要是派人送信，"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "谢仁玄": {
+  "name": "谢仁玄",
+  "paragraphs": 27,
+  "chapters_present": [
+   26,
+   30,
+   31,
+   32,
+   39,
+   48,
+   53
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "赵思俪": {
+  "name": "赵思俪",
+  "paragraphs": 14,
+  "chapters_present": [
+   36,
+   37
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "陈奉天": {
+  "name": "陈奉天",
+  "paragraphs": 183,
+  "chapters_present": [
+   17,
+   18,
+   19,
+   21,
+   23,
+   24,
+   28,
+   29,
+   33,
+   35,
+   36,
+   37,
+   39,
+   40,
+   42,
+   43,
+   44,
+   46,
+   49,
+   50,
+   51,
+   52,
+   53,
+   55,
+   56,
+   57,
+   58,
+   59
+  ],
+  "trait_axes": {
+   "性情": "沉稳",
+   "品性": null,
+   "心气": "谦和",
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "沉稳",
+   "谦和"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "沉稳",
+    "score_a": 2,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 56,
+      "word": "淡然",
+      "snippet": "聂林闻言淡然一笑，转回身来说：“我听闻，陈王有一"
+     },
+     {
+      "chapter": 57,
+      "word": "淡然",
+      "snippet": "身后飞出八根金羽直刺皇帝，老皇帝只是淡然挥手，一股血雾直接将金羽震碎，几乎同"
+     }
+    ]
+   },
+   {
+    "axis": "心气",
+    "pole": "谦和",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 50,
+      "word": "不骄",
+      "snippet": "牛金和牛银两兄弟虽然首战告捷，但也并不骄傲大意，两部成掎角之势在望岳镇北侧平"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.33
+ },
+ "黄亚钊": {
+  "name": "黄亚钊",
+  "paragraphs": 46,
+  "chapters_present": [
+   29,
+   32,
+   33,
+   34,
+   45,
+   47,
+   60
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "任琅": {
+  "name": "任琅",
+  "paragraphs": 944,
+  "chapters_present": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59
+  ],
+  "trait_axes": {
+   "性情": "沉稳",
+   "品性": "仁厚",
+   "心气": "谦和",
+   "情义": "重情",
+   "智愚": "鲁莽",
+   "胆气": "无畏"
+  },
+  "dominant_traits": [
+   "重情",
+   "仁厚",
+   "谦和"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "沉稳",
+    "score_a": 5,
+    "score_b": 5,
+    "evidence": [
+     {
+      "chapter": 16,
+      "word": "冷静",
+      "snippet": "“那边有人，狼不是冲我们来的。”任琅冷静的语气消除了尚樱内心的慌乱。"
+     },
+     {
+      "chapter": 29,
+      "word": "镇定",
+      "snippet": "着道士的背影心中有些发毛，但还是强装镇定地问：“道长可留姓名？”"
+     },
+     {
+      "chapter": 41,
+      "word": "从容",
+      "snippet": "端起三尖两刃枪，电光微露。尚樱则略显从容地一脚踢起地上的长枪，火光骤显。任琅"
+     }
+    ]
+   },
+   {
+    "axis": "品性",
+    "pole": "仁厚",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 21,
+      "word": "侠义",
+      "snippet": "看了李博一眼上前两步向任琅拱手：“少侠义气老朽早有耳闻，无须拘谨，此次前来乃"
+     }
+    ]
+   },
+   {
+    "axis": "心气",
+    "pole": "谦和",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 50,
+      "word": "不骄",
+      "snippet": "牛金和牛银两兄弟虽然首战告捷，但也并不骄傲大意，两部成掎角之势在望岳镇北侧平"
+     }
+    ]
+   },
+   {
+    "axis": "情义",
+    "pole": "重情",
+    "score_a": 4,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 21,
+      "word": "义气",
+      "snippet": "了李博一眼上前两步向任琅拱手：“少侠义气老朽早有耳闻，无须拘谨，此次前来乃是"
+     },
+     {
+      "chapter": 55,
+      "word": "舍身",
+      "snippet": "于此吧，虽不知是何人，但我当感谢他的舍身搭救。”"
+     },
+     {
+      "chapter": 58,
+      "word": "重情",
+      "snippet": "曾经救下的孤儿之手，选出一位品行良善重情重义的侠士，当然这就是那任琅，之后引"
+     }
+    ]
+   },
+   {
+    "axis": "智愚",
+    "pole": "鲁莽",
+    "score_a": 0,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 21,
+      "word": "莽撞",
+      "snippet": "去，步伐有些快，似乎还存着少年的那点莽撞。"
+     }
+    ]
+   },
+   {
+    "axis": "胆气",
+    "pole": "无畏",
+    "score_a": 2,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 9,
+      "word": "英勇",
+      "snippet": "族，据说他们在作战时有三头六臂，十分英勇。”尚樱眼神里带着些许疑惑“咋突然问"
+     },
+     {
+      "chapter": 44,
+      "word": "英勇",
+      "snippet": "”纪田回过神来，连忙凑上前说：“如此英勇，来川阴做什么？”任琅一笑：“陪家妻"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.83
+ },
+ "刑布": {
+  "name": "刑布",
+  "paragraphs": 86,
+  "chapters_present": [
+   8,
+   10,
+   11,
+   12,
+   14,
+   26,
+   28,
+   31,
+   38,
+   39,
+   48,
+   50,
+   51,
+   52,
+   53,
+   55,
+   57
+  ],
+  "trait_axes": {
+   "性情": "急躁",
+   "品性": null,
+   "心气": null,
+   "情义": "重情",
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "急躁",
+   "重情"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "急躁",
+    "score_a": 0,
+    "score_b": 2,
+    "evidence": [
+     {
+      "chapter": 10,
+      "word": "急切",
+      "snippet": "在水中散开，严冬湖水之寒自是刺骨，但急切的尚樱似乎业已无法感知。直到一把抱住"
+     },
+     {
+      "chapter": 53,
+      "word": "按捺不住",
+      "snippet": "观望，如今见刑布又退了一程，心里自是按捺不住，想要干点“大事”，暗地里写了封书信"
+     }
+    ]
+   },
+   {
+    "axis": "情义",
+    "pole": "重情",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 55,
+      "word": "舍身",
+      "snippet": "于此吧，虽不知是何人，但我当感谢他的舍身搭救。”"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.33
+ },
+ "刑泰": {
+  "name": "刑泰",
+  "paragraphs": 13,
+  "chapters_present": [
+   31,
+   53,
+   57
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "刘安": {
+  "name": "刘安",
+  "paragraphs": 6,
+  "chapters_present": [
+   2
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "叶云": {
+  "name": "叶云",
+  "paragraphs": 37,
+  "chapters_present": [
+   8,
+   10,
+   11,
+   12,
+   18,
+   20,
+   23,
+   25,
+   26,
+   27,
+   32
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "夏叶": {
+  "name": "夏叶",
+  "paragraphs": 241,
+  "chapters_present": [
+   17,
+   18,
+   20,
+   21,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   36,
+   37,
+   38,
+   41,
+   42,
+   43,
+   44,
+   46,
+   50,
+   59
+  ],
+  "trait_axes": {
+   "性情": "急躁",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": "鲁莽",
+   "胆气": null
+  },
+  "dominant_traits": [
+   "急躁",
+   "鲁莽"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "急躁",
+    "score_a": 1,
+    "score_b": 2,
+    "evidence": [
+     {
+      "chapter": 32,
+      "word": "急切",
+      "snippet": "“哎！”夏叶急切地伸伸手“不是！我过不去啊！”"
+     },
+     {
+      "chapter": 37,
+      "word": "火冒",
+      "snippet": "里，双手止不住地发抖，夏叶一瞬间也是火冒三丈，一把将腰间佩剑抽出，台上的团长"
+     }
+    ]
+   },
+   {
+    "axis": "智愚",
+    "pole": "鲁莽",
+    "score_a": 0,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 21,
+      "word": "莽撞",
+      "snippet": "去，步伐有些快，似乎还存着少年的那点莽撞。"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.33
+ },
+ "安明": {
+  "name": "安明",
+  "paragraphs": 22,
+  "chapters_present": [
+   44,
+   49,
+   50,
+   51,
+   52,
+   53
+  ],
+  "trait_axes": {
+   "性情": "急躁",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "急躁"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "急躁",
+    "score_a": 0,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 51,
+      "word": "急切",
+      "snippet": "，三步冲到纪田身旁，一把拽起纪田左臂急切地问：“赵老将军他……”"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "尚樱": {
+  "name": "尚樱",
+  "paragraphs": 863,
+  "chapters_present": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59
+  ],
+  "trait_axes": {
+   "性情": "急躁",
+   "品性": null,
+   "心气": "谦和",
+   "情义": null,
+   "智愚": "机变",
+   "胆气": "无畏"
+  },
+  "dominant_traits": [
+   "急躁",
+   "谦和",
+   "机变"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "急躁",
+    "score_a": 5,
+    "score_b": 6,
+    "evidence": [
+     {
+      "chapter": 10,
+      "word": "急切",
+      "snippet": "在水中散开，严冬湖水之寒自是刺骨，但急切的尚樱似乎业已无法感知。直到一把抱住"
+     },
+     {
+      "chapter": 12,
+      "word": "急切",
+      "snippet": "化作的仙子般优雅灵动，也未带佩刀，就急切切地敲响了任琅房间的门。"
+     },
+     {
+      "chapter": 29,
+      "word": "焦躁",
+      "snippet": "或许都是命吧，这样也好，最近却也有些焦躁，这下也可安静地做一个好妻子了，不过"
+     }
+    ]
+   },
+   {
+    "axis": "心气",
+    "pole": "谦和",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 50,
+      "word": "不骄",
+      "snippet": "牛金和牛银两兄弟虽然首战告捷，但也并不骄傲大意，两部成掎角之势在望岳镇北侧平"
+     }
+    ]
+   },
+   {
+    "axis": "智愚",
+    "pole": "机变",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 38,
+      "word": "通透",
+      "snippet": "“对政治军事的通透观察像是你们男人独有的天赋。”尚樱点"
+     }
+    ]
+   },
+   {
+    "axis": "胆气",
+    "pole": "无畏",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 9,
+      "word": "英勇",
+      "snippet": "族，据说他们在作战时有三头六臂，十分英勇。”尚樱眼神里带着些许疑惑“咋突然问"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.67
+ },
+ "张洵": {
+  "name": "张洵",
+  "paragraphs": 13,
+  "chapters_present": [
+   20,
+   36,
+   42
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "张览": {
+  "name": "张览",
+  "paragraphs": 8,
+  "chapters_present": [
+   50,
+   52,
+   55
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "李博": {
+  "name": "李博",
+  "paragraphs": 62,
+  "chapters_present": [
+   4,
+   5,
+   6,
+   7,
+   19,
+   20,
+   21,
+   36,
+   42
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": "仁厚",
+   "心气": null,
+   "情义": "重情",
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "仁厚",
+   "重情"
+  ],
+  "signals": [
+   {
+    "axis": "品性",
+    "pole": "仁厚",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 21,
+      "word": "侠义",
+      "snippet": "看了李博一眼上前两步向任琅拱手：“少侠义气老朽早有耳闻，无须拘谨，此次前来乃"
+     }
+    ]
+   },
+   {
+    "axis": "情义",
+    "pole": "重情",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 21,
+      "word": "义气",
+      "snippet": "了李博一眼上前两步向任琅拱手：“少侠义气老朽早有耳闻，无须拘谨，此次前来乃是"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.33
+ },
+ "李叔": {
+  "name": "李叔",
+  "paragraphs": 16,
+  "chapters_present": [
+   7,
+   19,
+   20,
+   21,
+   36,
+   42
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "楚笙": {
+  "name": "楚笙",
+  "paragraphs": 6,
+  "chapters_present": [
+   28
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "武蒯": {
+  "name": "武蒯",
+  "paragraphs": 44,
+  "chapters_present": [
+   36,
+   38,
+   41,
+   42,
+   43,
+   48,
+   52,
+   55,
+   56,
+   59
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "法慧": {
+  "name": "法慧",
+  "paragraphs": 26,
+  "chapters_present": [
+   4,
+   32,
+   48,
+   49,
+   50,
+   57,
+   58
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "王奔": {
+  "name": "王奔",
+  "paragraphs": 11,
+  "chapters_present": [
+   2,
+   4
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "王慕": {
+  "name": "王慕",
+  "paragraphs": 64,
+  "chapters_present": [
+   19,
+   20,
+   21,
+   22,
+   23,
+   24
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": "仁厚",
+   "心气": null,
+   "情义": "重情",
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "仁厚",
+   "重情"
+  ],
+  "signals": [
+   {
+    "axis": "品性",
+    "pole": "仁厚",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 21,
+      "word": "侠义",
+      "snippet": "看了李博一眼上前两步向任琅拱手：“少侠义气老朽早有耳闻，无须拘谨，此次前来乃"
+     }
+    ]
+   },
+   {
+    "axis": "情义",
+    "pole": "重情",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 21,
+      "word": "义气",
+      "snippet": "了李博一眼上前两步向任琅拱手：“少侠义气老朽早有耳闻，无须拘谨，此次前来乃是"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.33
+ },
+ "秦阳": {
+  "name": "秦阳",
+  "paragraphs": 31,
+  "chapters_present": [
+   28,
+   29,
+   30,
+   33
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "程廖": {
+  "name": "程廖",
+  "paragraphs": 34,
+  "chapters_present": [
+   53,
+   55,
+   56
+  ],
+  "trait_axes": {
+   "性情": "急躁",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "急躁"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "急躁",
+    "score_a": 0,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 53,
+      "word": "按捺不住",
+      "snippet": "观望，如今见刑布又退了一程，心里自是按捺不住，想要干点“大事”，暗地里写了封书信"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "纪田": {
+  "name": "纪田",
+  "paragraphs": 39,
+  "chapters_present": [
+   44,
+   49,
+   50,
+   51,
+   52,
+   53
+  ],
+  "trait_axes": {
+   "性情": "急躁",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": "无畏"
+  },
+  "dominant_traits": [
+   "急躁",
+   "无畏"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "急躁",
+    "score_a": 0,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 51,
+      "word": "急切",
+      "snippet": "，三步冲到纪田身旁，一把拽起纪田左臂急切地问：“赵老将军他……”"
+     }
+    ]
+   },
+   {
+    "axis": "胆气",
+    "pole": "无畏",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 44,
+      "word": "英勇",
+      "snippet": "”纪田回过神来，连忙凑上前说：“如此英勇，来川阴做什么？”任琅一笑：“陪家妻"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.33
+ },
+ "聂林": {
+  "name": "聂林",
+  "paragraphs": 63,
+  "chapters_present": [
+   48,
+   49,
+   50,
+   54,
+   55,
+   56,
+   57,
+   58
+  ],
+  "trait_axes": {
+   "性情": "沉稳",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "沉稳"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "沉稳",
+    "score_a": 2,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 54,
+      "word": "淡然",
+      "snippet": "得聂林的话并没有什么吃惊的表情，语气淡然地说。"
+     },
+     {
+      "chapter": 56,
+      "word": "淡然",
+      "snippet": "聂林闻言淡然一笑，转回身来说：“我听闻，陈王有一"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "苏雨": {
+  "name": "苏雨",
+  "paragraphs": 84,
+  "chapters_present": [
+   28,
+   29,
+   30,
+   32,
+   33,
+   35,
+   37,
+   43,
+   44,
+   45,
+   47,
+   48,
+   53,
+   59,
+   60
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": "怯懦"
+  },
+  "dominant_traits": [
+   "怯懦"
+  ],
+  "signals": [
+   {
+    "axis": "胆气",
+    "pole": "怯懦",
+    "score_a": 0,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 28,
+      "word": "胆寒",
+      "snippet": "三名随从立即掏出武器，但望着猛虎不免胆寒，艰难地眼下一口口水，眉头紧缩地盯着"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "范豪": {
+  "name": "范豪",
+  "paragraphs": 40,
+  "chapters_present": [
+   25,
+   26,
+   27,
+   28,
+   44
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "虞环": {
+  "name": "虞环",
+  "paragraphs": 50,
+  "chapters_present": [
+   18,
+   23,
+   24,
+   35,
+   44,
+   46,
+   48,
+   59
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "许达": {
+  "name": "许达",
+  "paragraphs": 140,
+  "chapters_present": [
+   14,
+   28,
+   29,
+   30,
+   33,
+   34,
+   35,
+   38,
+   39,
+   40,
+   43,
+   44,
+   45,
+   47,
+   48,
+   53,
+   56,
+   59,
+   60
+  ],
+  "trait_axes": {
+   "性情": "急躁",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "急躁"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "急躁",
+    "score_a": 0,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 33,
+      "word": "急切",
+      "snippet": "就在张广义愣神之时，两名副将冲了进来急切地喊：“将军快走，敌兵杀过来了！”不"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "赵翔": {
+  "name": "赵翔",
+  "paragraphs": 80,
+  "chapters_present": [
+   22,
+   23,
+   24,
+   33,
+   37,
+   40,
+   43,
+   44,
+   45,
+   47,
+   48,
+   51,
+   53,
+   55,
+   56,
+   59,
+   60
+  ],
+  "trait_axes": {
+   "性情": "急躁",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "急躁"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "急躁",
+    "score_a": 0,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 47,
+      "word": "急躁",
+      "snippet": "先别急……”苏沐文闻言一声苦笑，有些急躁地说：“赵翔将军，他们要是派人送信，"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "赵骁": {
+  "name": "赵骁",
+  "paragraphs": 80,
+  "chapters_present": [
+   21,
+   24,
+   35,
+   37,
+   40,
+   43,
+   44,
+   49,
+   50,
+   51
+  ],
+  "trait_axes": {
+   "性情": "急躁",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": "无畏"
+  },
+  "dominant_traits": [
+   "急躁",
+   "无畏"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "急躁",
+    "score_a": 0,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 51,
+      "word": "急切",
+      "snippet": "，三步冲到纪田身旁，一把拽起纪田左臂急切地问：“赵老将军他……”"
+     }
+    ]
+   },
+   {
+    "axis": "胆气",
+    "pole": "无畏",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 44,
+      "word": "英勇",
+      "snippet": "”纪田回过神来，连忙凑上前说：“如此英勇，来川阴做什么？”任琅一笑：“陪家妻"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.33
+ },
+ "金雷": {
+  "name": "金雷",
+  "paragraphs": 14,
+  "chapters_present": [
+   10,
+   24,
+   28,
+   30,
+   34,
+   39,
+   50,
+   54,
+   55,
+   58
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "阮盛": {
+  "name": "阮盛",
+  "paragraphs": 11,
+  "chapters_present": [
+   17,
+   18
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "陆仲": {
+  "name": "陆仲",
+  "paragraphs": 63,
+  "chapters_present": [
+   50,
+   54,
+   55,
+   58
+  ],
+  "trait_axes": {
+   "性情": "沉稳",
+   "品性": null,
+   "心气": null,
+   "情义": "重情",
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "沉稳",
+   "重情"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "沉稳",
+    "score_a": 2,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 54,
+      "word": "淡然",
+      "snippet": "得聂林的话并没有什么吃惊的表情，语气淡然地说。"
+     },
+     {
+      "chapter": 54,
+      "word": "淡然",
+      "snippet": "法在我赶到之前全其不死。”陆仲枢依旧淡然自若。"
+     }
+    ]
+   },
+   {
+    "axis": "情义",
+    "pole": "重情",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 58,
+      "word": "重情",
+      "snippet": "曾经救下的孤儿之手，选出一位品行良善重情重义的侠士，当然这就是那任琅，之后引"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.33
+ },
+ "陈王": {
+  "name": "陈王",
+  "paragraphs": 10,
+  "chapters_present": [
+   56,
+   58
+  ],
+  "trait_axes": {
+   "性情": "沉稳",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "沉稳"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "沉稳",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 56,
+      "word": "淡然",
+      "snippet": "聂林闻言淡然一笑，转回身来说：“我听闻，陈王有一"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "雷光": {
+  "name": "雷光",
+  "paragraphs": 15,
+  "chapters_present": [
+   6,
+   10,
+   24,
+   29,
+   34,
+   37,
+   40,
+   41,
+   44,
+   50,
+   56
+  ],
+  "trait_axes": {
+   "性情": "沉稳",
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [
+   "沉稳"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "沉稳",
+    "score_a": 2,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 29,
+      "word": "镇定",
+      "snippet": "着道士的背影心中有些发毛，但还是强装镇定地问：“道长可留姓名？”"
+     },
+     {
+      "chapter": 41,
+      "word": "从容",
+      "snippet": "端起三尖两刃枪，电光微露。尚樱则略显从容地一脚踢起地上的长枪，火光骤显。任琅"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "韩德": {
+  "name": "韩德",
+  "paragraphs": 23,
+  "chapters_present": [
+   50,
+   51,
+   52,
+   55
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": null,
+   "胆气": null
+  },
+  "dominant_traits": [],
+  "signals": [],
+  "confidence": 0.0
+ },
+ "马远": {
+  "name": "马远",
+  "paragraphs": 71,
+  "chapters_present": [
+   24,
+   35,
+   38,
+   39,
+   43,
+   44,
+   45,
+   47,
+   48,
+   53,
+   56,
+   59,
+   60
+  ],
+  "trait_axes": {
+   "性情": null,
+   "品性": null,
+   "心气": null,
+   "情义": null,
+   "智愚": "鲁莽",
+   "胆气": null
+  },
+  "dominant_traits": [
+   "鲁莽"
+  ],
+  "signals": [
+   {
+    "axis": "智愚",
+    "pole": "鲁莽",
+    "score_a": 0,
+    "score_b": 1,
+    "evidence": [
+     {
+      "chapter": 39,
+      "word": "冒进",
+      "snippet": "旁一个个传来阵阵哀号的伤员“是我急功冒进了……”"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.17
+ },
+ "影": {
+  "name": "影",
+  "paragraphs": 173,
+  "chapters_present": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   11,
+   13,
+   15,
+   16,
+   17,
+   18,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   32,
+   33,
+   34,
+   35,
+   37,
+   38,
+   39,
+   41,
+   42,
+   43,
+   44,
+   45,
+   47,
+   48,
+   49,
+   50,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59
+  ],
+  "trait_axes": {
+   "性情": "沉稳",
+   "品性": null,
+   "心气": null,
+   "情义": "重情",
+   "智愚": null,
+   "胆气": "无畏"
+  },
+  "dominant_traits": [
+   "沉稳",
+   "重情",
+   "无畏"
+  ],
+  "signals": [
+   {
+    "axis": "性情",
+    "pole": "沉稳",
+    "score_a": 2,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 29,
+      "word": "镇定",
+      "snippet": "着道士的背影心中有些发毛，但还是强装镇定地问：“道长可留姓名？”"
+     },
+     {
+      "chapter": 57,
+      "word": "稳重",
+      "snippet": "步向阶梯下走来，每一步虽然缓慢但十分稳重“不错，是朕授意，本来计划着留你爹一"
+     }
+    ]
+   },
+   {
+    "axis": "情义",
+    "pole": "重情",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 55,
+      "word": "舍身",
+      "snippet": "于此吧，虽不知是何人，但我当感谢他的舍身搭救。”"
+     }
+    ]
+   },
+   {
+    "axis": "胆气",
+    "pole": "无畏",
+    "score_a": 1,
+    "score_b": 0,
+    "evidence": [
+     {
+      "chapter": 2,
+      "word": "无畏",
+      "snippet": "“寻找年轻且无畏的力量，再入‘极死门’。”影回答而后"
+     }
+    ]
+   }
+  ],
+  "confidence": 0.5
+ }
+}
