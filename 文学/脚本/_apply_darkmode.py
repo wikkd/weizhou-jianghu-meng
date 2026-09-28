@@ -8,7 +8,7 @@
   · 接收 parent 广播（报告页）：应用主题
 用法：python3 脚本/_apply_darkmode.py
 """
-import os, glob, io, sys
+import os, glob, io, sys, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -60,6 +60,7 @@ DM_SCRIPT = r"""
   }
   function broadcast(d){
     try{
+      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：echarts-kit 重绘 */
       if(window.parent!==window){ window.parent.postMessage({wzTheme:d?'dark':'light'},'*'); }
       else{ var fs=document.querySelectorAll('iframe'); for(var i=0;i<fs.length;i++){ try{ fs[i].contentWindow.postMessage({wzTheme:d?'dark':'light'},'*'); }catch(e){} } }
     }catch(e){}
@@ -70,6 +71,7 @@ DM_SCRIPT = r"""
   apply(saved ? saved==='1' : !!prefers);
   buildBtn();
   sync();
+  setTimeout(function(){ broadcast(document.body.classList.contains('dark')); },0);
   window.addEventListener('message', function(e){
     if(e.data && e.data.wzTheme){
       var d = e.data.wzTheme==='dark';
@@ -88,6 +90,9 @@ def inject(path):
         print("  [跳过·不存在] " + path); return False
     with io.open(full, "r", encoding="utf-8") as f:
         html = f.read()
+    # 移除旧版注入（无自广播），保证升级到新版脚本
+    html = re.sub(r"<script>\s*\(function\(\)\{\s*var KEY='wz-dark';.*?\}\)\(\);\s*</script>",
+                  "", html, count=1, flags=re.S)
     if "dm-toggle" in html:
         print("  [跳过·已注入] " + path); return False
     if "</body>" not in html:
