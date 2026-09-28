@@ -48,7 +48,7 @@ PAYOFF = ["应验", "果然", "殊不知", "原来", "竟", "终究", "真相", 
 def build_foreshadow(parts, names):
     # names: 角色名列表（按长度降序，len>=2）
     setup_ch, payoff_ch = {}, {}
-    for k in range(1, 60):
+    for k in range(1, 63):
         sents = split_sentences(parts[k]) if k < len(parts) else []
         su = [s for s in sents if any(c in s for c in SETUP)]
         pa = [s for s in sents if any(c in s for c in PAYOFF)]
@@ -172,7 +172,7 @@ def build_kg(chapters, parts):
         if w in char_names:
             continue
         cnt = Counter()
-        for k in range(1, 60):
+        for k in range(1, 63):
             if k >= len(parts):
                 break
             n = parts[k].count(w)

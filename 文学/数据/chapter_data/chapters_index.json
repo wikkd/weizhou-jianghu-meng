@@ -3,420 +3,434 @@
     "chapter": 1,
     "cn": "一",
     "file": "chap_01.txt",
-    "chars": 1740,
+    "chars": 1682,
     "scene_hint": null
   },
   {
     "chapter": 2,
     "cn": "二",
     "file": "chap_02.txt",
-    "chars": 1960,
+    "chars": 1862,
     "scene_hint": "望岳镇"
   },
   {
     "chapter": 3,
     "cn": "三",
     "file": "chap_03.txt",
-    "chars": 3209,
+    "chars": 3121,
     "scene_hint": null
   },
   {
     "chapter": 4,
     "cn": "四",
     "file": "chap_04.txt",
-    "chars": 3335,
+    "chars": 3232,
     "scene_hint": null
   },
   {
     "chapter": 5,
     "cn": "五",
     "file": "chap_05.txt",
-    "chars": 3177,
+    "chars": 3113,
     "scene_hint": null
   },
   {
     "chapter": 6,
     "cn": "六",
     "file": "chap_06.txt",
-    "chars": 3330,
+    "chars": 3246,
     "scene_hint": null
   },
   {
     "chapter": 7,
     "cn": "七",
     "file": "chap_07.txt",
-    "chars": 2492,
+    "chars": 2385,
     "scene_hint": null
   },
   {
     "chapter": 8,
     "cn": "八",
     "file": "chap_08.txt",
-    "chars": 2236,
+    "chars": 2172,
     "scene_hint": "弈剑峰——弈剑门中堂"
   },
   {
     "chapter": 9,
     "cn": "九",
     "file": "chap_09.txt",
-    "chars": 1630,
+    "chars": 1580,
     "scene_hint": null
   },
   {
     "chapter": 10,
     "cn": "十",
     "file": "chap_10.txt",
-    "chars": 2609,
+    "chars": 2543,
     "scene_hint": null
   },
   {
     "chapter": 11,
     "cn": "十一",
     "file": "chap_11.txt",
-    "chars": 2926,
+    "chars": 2836,
     "scene_hint": null
   },
   {
     "chapter": 12,
     "cn": "十二",
     "file": "chap_12.txt",
-    "chars": 2452,
+    "chars": 2354,
     "scene_hint": null
   },
   {
     "chapter": 13,
     "cn": "十三",
     "file": "chap_13.txt",
-    "chars": 1879,
+    "chars": 1801,
     "scene_hint": null
   },
   {
     "chapter": 14,
     "cn": "十四",
     "file": "chap_14.txt",
-    "chars": 2647,
+    "chars": 2539,
     "scene_hint": "六年前。"
   },
   {
     "chapter": 15,
     "cn": "十五",
     "file": "chap_15.txt",
-    "chars": 2923,
+    "chars": 2809,
     "scene_hint": "二十余年前。仙峰寺前殿。"
   },
   {
     "chapter": 16,
     "cn": "十六",
     "file": "chap_16.txt",
-    "chars": 3450,
+    "chars": 3314,
     "scene_hint": "三十余年前"
   },
   {
     "chapter": 17,
     "cn": "十七",
     "file": "chap_17.txt",
-    "chars": 2887,
+    "chars": 2784,
     "scene_hint": "十余年前，深宫内"
   },
   {
     "chapter": 18,
     "cn": "十八",
     "file": "chap_18.txt",
-    "chars": 2915,
+    "chars": 2803,
     "scene_hint": null
   },
   {
     "chapter": 19,
     "cn": "十九",
     "file": "chap_19.txt",
-    "chars": 3867,
+    "chars": 3708,
     "scene_hint": null
   },
   {
     "chapter": 20,
     "cn": "二十",
     "file": "chap_20.txt",
-    "chars": 6877,
+    "chars": 6639,
     "scene_hint": null
   },
   {
     "chapter": 21,
     "cn": "二十一",
     "file": "chap_21.txt",
-    "chars": 3371,
+    "chars": 3275,
     "scene_hint": null
   },
   {
     "chapter": 22,
     "cn": "二十二",
     "file": "chap_22.txt",
-    "chars": 2858,
+    "chars": 2776,
     "scene_hint": null
   },
   {
     "chapter": 23,
     "cn": "二十三",
     "file": "chap_23.txt",
-    "chars": 3808,
+    "chars": 3702,
     "scene_hint": null
   },
   {
     "chapter": 24,
     "cn": "二十四",
     "file": "chap_24.txt",
-    "chars": 3801,
+    "chars": 3731,
     "scene_hint": null
   },
   {
     "chapter": 25,
     "cn": "二十五",
     "file": "chap_25.txt",
-    "chars": 3505,
+    "chars": 3397,
     "scene_hint": "二十多年前。"
   },
   {
     "chapter": 26,
     "cn": "二十六",
     "file": "chap_26.txt",
-    "chars": 2851,
+    "chars": 2764,
     "scene_hint": null
   },
   {
     "chapter": 27,
     "cn": "二十七",
     "file": "chap_27.txt",
-    "chars": 3398,
+    "chars": 3300,
     "scene_hint": null
   },
   {
     "chapter": 28,
     "cn": "二十八",
     "file": "chap_28.txt",
-    "chars": 6520,
+    "chars": 6366,
     "scene_hint": null
   },
   {
     "chapter": 29,
     "cn": "二十九",
     "file": "chap_29.txt",
-    "chars": 5716,
+    "chars": 5560,
     "scene_hint": null
   },
   {
     "chapter": 30,
     "cn": "三十",
     "file": "chap_30.txt",
-    "chars": 5822,
+    "chars": 5660,
     "scene_hint": null
   },
   {
     "chapter": 31,
     "cn": "三十一",
     "file": "chap_31.txt",
-    "chars": 3033,
+    "chars": 2933,
     "scene_hint": null
   },
   {
     "chapter": 32,
     "cn": "三十二",
     "file": "chap_32.txt",
-    "chars": 3274,
+    "chars": 3132,
     "scene_hint": null
   },
   {
     "chapter": 33,
     "cn": "三十三",
     "file": "chap_33.txt",
-    "chars": 6633,
+    "chars": 6443,
     "scene_hint": null
   },
   {
     "chapter": 34,
     "cn": "三十四",
     "file": "chap_34.txt",
-    "chars": 6907,
+    "chars": 6745,
     "scene_hint": null
   },
   {
     "chapter": 35,
     "cn": "三十五",
     "file": "chap_35.txt",
-    "chars": 5168,
+    "chars": 4980,
     "scene_hint": null
   },
   {
     "chapter": 36,
     "cn": "三十六",
     "file": "chap_36.txt",
-    "chars": 5160,
+    "chars": 5018,
     "scene_hint": null
   },
   {
     "chapter": 37,
     "cn": "三十七",
     "file": "chap_37.txt",
-    "chars": 7950,
+    "chars": 7723,
     "scene_hint": null
   },
   {
     "chapter": 38,
     "cn": "三十八",
     "file": "chap_38.txt",
-    "chars": 3289,
+    "chars": 3179,
     "scene_hint": null
   },
   {
     "chapter": 39,
     "cn": "三十九",
     "file": "chap_39.txt",
-    "chars": 4356,
+    "chars": 4264,
     "scene_hint": null
   },
   {
     "chapter": 40,
     "cn": "四十",
     "file": "chap_40.txt",
-    "chars": 3296,
+    "chars": 3196,
     "scene_hint": null
   },
   {
     "chapter": 41,
     "cn": "四十一",
     "file": "chap_41.txt",
-    "chars": 3164,
+    "chars": 3056,
     "scene_hint": null
   },
   {
     "chapter": 42,
     "cn": "四十二",
     "file": "chap_42.txt",
-    "chars": 4115,
+    "chars": 3983,
     "scene_hint": null
   },
   {
     "chapter": 43,
     "cn": "四十三",
     "file": "chap_43.txt",
-    "chars": 4712,
+    "chars": 4576,
     "scene_hint": null
   },
   {
     "chapter": 44,
     "cn": "四十四",
     "file": "chap_44.txt",
-    "chars": 7472,
+    "chars": 7276,
     "scene_hint": null
   },
   {
     "chapter": 45,
     "cn": "四十五",
     "file": "chap_45.txt",
-    "chars": 3504,
+    "chars": 3424,
     "scene_hint": null
   },
   {
     "chapter": 46,
     "cn": "四十六",
     "file": "chap_46.txt",
-    "chars": 3934,
+    "chars": 3846,
     "scene_hint": null
   },
   {
     "chapter": 47,
     "cn": "四十七",
     "file": "chap_47.txt",
-    "chars": 3825,
+    "chars": 3721,
     "scene_hint": null
   },
   {
     "chapter": 48,
     "cn": "四十八",
     "file": "chap_48.txt",
-    "chars": 3487,
+    "chars": 3403,
     "scene_hint": null
   },
   {
     "chapter": 49,
     "cn": "四十九",
     "file": "chap_49.txt",
-    "chars": 4953,
+    "chars": 4827,
     "scene_hint": null
   },
   {
     "chapter": 50,
     "cn": "五十",
     "file": "chap_50.txt",
-    "chars": 3072,
+    "chars": 2998,
     "scene_hint": null
   },
   {
     "chapter": 51,
     "cn": "五十一",
     "file": "chap_51.txt",
-    "chars": 4155,
+    "chars": 4041,
     "scene_hint": null
   },
   {
     "chapter": 52,
     "cn": "五十二",
     "file": "chap_52.txt",
-    "chars": 3534,
+    "chars": 3420,
     "scene_hint": null
   },
   {
     "chapter": 53,
     "cn": "五十三",
     "file": "chap_53.txt",
-    "chars": 3112,
+    "chars": 3054,
     "scene_hint": null
   },
   {
     "chapter": 54,
     "cn": "五十四",
     "file": "chap_54.txt",
-    "chars": 5516,
+    "chars": 5318,
     "scene_hint": null
   },
   {
     "chapter": 55,
     "cn": "五十五",
     "file": "chap_55.txt",
-    "chars": 4730,
+    "chars": 4612,
     "scene_hint": null
   },
   {
     "chapter": 56,
     "cn": "五十六",
     "file": "chap_56.txt",
-    "chars": 4223,
+    "chars": 4121,
     "scene_hint": null
   },
   {
     "chapter": 57,
     "cn": "五十七",
     "file": "chap_57.txt",
-    "chars": 3770,
+    "chars": 3696,
     "scene_hint": null
   },
   {
     "chapter": 58,
     "cn": "五十八",
     "file": "chap_58.txt",
-    "chars": 5129,
+    "chars": 5001,
     "scene_hint": null
   },
   {
     "chapter": 59,
     "cn": "五十九",
     "file": "chap_59.txt",
-    "chars": 4496,
+    "chars": 4308,
     "scene_hint": "仙境"
   },
   {
     "chapter": 60,
     "cn": "六十",
     "file": "chap_60.txt",
-    "chars": 2205,
+    "chars": 4210,
+    "scene_hint": null
+  },
+  {
+    "chapter": 61,
+    "cn": "六十一",
+    "file": "chap_61.txt",
+    "chars": 5728,
+    "scene_hint": null
+  },
+  {
+    "chapter": 62,
+    "cn": "六十二",
+    "file": "chap_62.txt",
+    "chars": 3978,
     "scene_hint": null
   }
 ]

@@ -163,7 +163,7 @@
     },
     {
       "chapter": 33,
-      "sentiment": 0.63522,
+      "sentiment": 0.63125,
       "combat_intensity": 2
     },
     {
@@ -295,22 +295,37 @@
       "chapter": 59,
       "sentiment": 0.732394,
       "combat_intensity": 0
+    },
+    {
+      "chapter": 60,
+      "sentiment": 0.672414,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 61,
+      "sentiment": 0.787879,
+      "combat_intensity": 0
+    },
+    {
+      "chapter": 62,
+      "sentiment": 0.608696,
+      "combat_intensity": 2
     }
   ],
-  "mean": 0.581487,
+  "mean": 0.586657,
   "thirds": {
-    "early": 0.609287,
-    "mid": 0.575775,
-    "late": 0.560789
+    "early": 0.605753,
+    "mid": 0.58654,
+    "late": 0.567673
   },
   "corr": {
     "pearson": {
-      "r": -0.464618,
-      "p": 0.00021
+      "r": -0.485065,
+      "p": 6.5e-05
     },
     "spearman": {
-      "r": -0.478411,
-      "p": 0.000127
+      "r": -0.494172,
+      "p": 4.5e-05
     }
   }
 }

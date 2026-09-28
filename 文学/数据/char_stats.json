@@ -1,17 +1,17 @@
 [
   {
     "name": "任琅",
-    "mentions": 1460,
-    "chapters_present": 57,
+    "mentions": 1510,
+    "chapters_present": 60,
     "first": 1,
-    "last": 59
+    "last": 62
   },
   {
     "name": "尚樱",
-    "mentions": 1202,
-    "chapters_present": 53,
+    "mentions": 1269,
+    "chapters_present": 56,
     "first": 4,
-    "last": 59
+    "last": 62
   },
   {
     "name": "夏叶",
@@ -29,10 +29,10 @@
   },
   {
     "name": "陈奉天",
-    "mentions": 275,
-    "chapters_present": 28,
+    "mentions": 294,
+    "chapters_present": 31,
     "first": 17,
-    "last": 59
+    "last": 62
   },
   {
     "name": "影",
@@ -43,24 +43,24 @@
   },
   {
     "name": "许达",
-    "mentions": 213,
-    "chapters_present": 19,
+    "mentions": 219,
+    "chapters_present": 20,
     "first": 14,
-    "last": 60
+    "last": 61
   },
   {
     "name": "刑布",
-    "mentions": 122,
-    "chapters_present": 17,
+    "mentions": 124,
+    "chapters_present": 19,
     "first": 8,
-    "last": 57
+    "last": 62
   },
   {
     "name": "苏雨",
-    "mentions": 119,
-    "chapters_present": 15,
+    "mentions": 143,
+    "chapters_present": 16,
     "first": 28,
-    "last": 60
+    "last": 61
   },
   {
     "name": "赵骁",
@@ -71,10 +71,10 @@
   },
   {
     "name": "马远",
-    "mentions": 109,
-    "chapters_present": 13,
+    "mentions": 117,
+    "chapters_present": 14,
     "first": 24,
-    "last": 60
+    "last": 61
   },
   {
     "name": "王慕",
@@ -92,10 +92,10 @@
   },
   {
     "name": "张潇璃",
-    "mentions": 92,
-    "chapters_present": 7,
+    "mentions": 100,
+    "chapters_present": 8,
     "first": 41,
-    "last": 55
+    "last": 62
   },
   {
     "name": "聂林",
@@ -106,17 +106,17 @@
   },
   {
     "name": "苏沐文",
-    "mentions": 92,
-    "chapters_present": 10,
+    "mentions": 109,
+    "chapters_present": 11,
     "first": 32,
-    "last": 53
+    "last": 61
   },
   {
     "name": "赵翔",
-    "mentions": 116,
-    "chapters_present": 17,
+    "mentions": 125,
+    "chapters_present": 18,
     "first": 22,
-    "last": 60
+    "last": 61
   },
   {
     "name": "陆仲",
@@ -134,17 +134,17 @@
   },
   {
     "name": "黄亚钊",
-    "mentions": 67,
-    "chapters_present": 7,
+    "mentions": 69,
+    "chapters_present": 8,
     "first": 29,
-    "last": 60
+    "last": 61
   },
   {
     "name": "虞环",
-    "mentions": 69,
-    "chapters_present": 8,
+    "mentions": 73,
+    "chapters_present": 9,
     "first": 18,
-    "last": 59
+    "last": 62
   },
   {
     "name": "程廖",
@@ -162,10 +162,10 @@
   },
   {
     "name": "武蒯",
-    "mentions": 63,
-    "chapters_present": 10,
+    "mentions": 70,
+    "chapters_present": 11,
     "first": 36,
-    "last": 59
+    "last": 62
   },
   {
     "name": "范豪",
@@ -190,10 +190,10 @@
   },
   {
     "name": "夏穗良",
-    "mentions": 44,
-    "chapters_present": 3,
-    "first": 26,
-    "last": 29
+    "mentions": 0,
+    "chapters_present": 0,
+    "first": null,
+    "last": null
   },
   {
     "name": "法慧",
@@ -204,10 +204,10 @@
   },
   {
     "name": "韩德",
-    "mentions": 37,
-    "chapters_present": 4,
+    "mentions": 43,
+    "chapters_present": 5,
     "first": 50,
-    "last": 55
+    "last": 62
   },
   {
     "name": "谢仁玄",
@@ -239,10 +239,10 @@
   },
   {
     "name": "安弈霖",
-    "mentions": 34,
-    "chapters_present": 4,
+    "mentions": 42,
+    "chapters_present": 5,
     "first": 44,
-    "last": 59
+    "last": 60
   },
   {
     "name": "安明",
@@ -295,10 +295,10 @@
   },
   {
     "name": "刑泰",
-    "mentions": 17,
-    "chapters_present": 3,
+    "mentions": 42,
+    "chapters_present": 5,
     "first": 31,
-    "last": 57
+    "last": 62
   },
   {
     "name": "金雷",

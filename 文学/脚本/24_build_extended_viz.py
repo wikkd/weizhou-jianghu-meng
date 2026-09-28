@@ -45,10 +45,10 @@ def _split_sentences(text):
     return [s.strip() for s in re.split(r"[。！？；…]", text) if len(s.strip()) >= 6]
 
 def build_causal(chapters, parts):
-    # parts[k] = 第 k 章原文（k=1..59）；章→章因果/时序边来自下一章原文是否含连词
+    # parts[k] = 第 k 章原文（k=1..62）；章→章因果/时序边来自下一章原文是否含连词
     edges = []
     involved = set()
-    for i in range(1, 59):
+    for i in range(1, 63):
         nxt = parts[i + 1] if i + 1 < len(parts) else ""
         c_hit = next((c for c in CAUSAL if _has_cue(nxt, c)), None)
         t_hit = next((c for c in TEMP if c in nxt), None)
@@ -70,7 +70,7 @@ def build_causal(chapters, parts):
     src = "\n".join(lines)
     # 章内真实因果子句链（取自原文，连词高亮）
     intra = []
-    for k in range(1, 60):
+    for k in range(1, 63):
         sents = _split_sentences(parts[k])
         pairs = []
         for j in range(len(sents) - 1):
@@ -149,7 +149,7 @@ def build_heat(chapters):
 
 def main():
     chapters = load()
-    # 原文分章（块0=自序，块1..59=第1..59章）
+    # 原文分章（块0=自序，块1..62=第1..62章）
     txt = open(os.path.join(DATA, "full_text.txt"), encoding="utf-8").read()
     marker = re.compile(r"^[一二三四五六七八九十百零〇\d]+[、．.]\s*$", re.M)
     parts = [p for p in re.split(marker, txt) if p and p.strip()]
@@ -253,7 +253,7 @@ a.rdr{color:var(--cyan);text-decoration:none}
 
 <section>
   <h2><span class="dot" style="background:var(--cyan)"></span>④ 角色登场矩阵热力图</h2>
-  <div class="sub">纵轴＝角色（按首登场排序），横轴＝章节(1–59)。亮点＝该章登场。竖向光带即人物弧光；群像章（多角色同亮）与独奏章一目了然。点击格子跳转原文。</div>
+  <div class="sub">纵轴＝角色（按首登场排序），横轴＝章节(1–62)。亮点＝该章登场。竖向光带即人物弧光；群像章（多角色同亮）与独奏章一目了然。点击格子跳转原文。</div>
   <div class="chart" id="heat" style="height:720px"></div>
 </section>
 

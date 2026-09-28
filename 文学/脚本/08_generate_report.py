@@ -127,7 +127,7 @@ def linechart(data, color="#c0392b", h=160, fill=True):
     svg.append('</svg>')
     return "".join(svg)
 
-# 人物出场热力图（top10 × 59章）
+# 人物出场热力图（top10 × 62章）
 def heatmap(names, perchap, N):
     cw=12; rh=18; labelw=56; W=labelw+N*cw+5; H=len(names)*rh+10
     svg=[f'<svg viewBox="0 0 {W} {H}" width="100%" preserveAspectRatio="xMinYMin meet" style="font-size:11px">']
@@ -284,7 +284,7 @@ html.append("</div>")
 
 html.append('<div class="card"><h3>2.2 主要角色出场章节分布（热力图）</h3>')
 html.append(heatmap(top10, series["per_chap_char"], N))
-html.append('<div class="note">深蓝=该章出现。任琅(57/59章)、尚樱(53/59章)贯穿全书；影自第2章起持续渗透；陈奉天第17章登场后成为后半程核心。</div>')
+html.append('<div class="note">深蓝=该章出现。任琅(60/62章)、尚樱(56/62章)贯穿全书；影自第2章起持续渗透；陈奉天第17章登场后成为后半程核心。</div>')
 html.append("</div>")
 
 html.append('<div class="card"><h3>2.3 角色共现网络（交互强度）</h3>')

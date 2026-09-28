@@ -1,7 +1,9 @@
 {
   "chapters": [
     {
-      "avg_sent_len": 26.983,
+      "avg_sent_len": 23.593,
+      "sent_hanzi": 1392,
+      "sent_cnt": 59,
       "punct_density": 0.1574,
       "dialogue_ratio": 0.1943,
       "para_count": 31,
@@ -9,7 +11,9 @@
       "chapter": 1
     },
     {
-      "avg_sent_len": 18.674,
+      "avg_sent_len": 16.054,
+      "sent_hanzi": 1477,
+      "sent_cnt": 92,
       "punct_density": 0.1849,
       "dialogue_ratio": 0.3438,
       "para_count": 51,
@@ -17,7 +21,9 @@
       "chapter": 2
     },
     {
-      "avg_sent_len": 29.147,
+      "avg_sent_len": 25.637,
+      "sent_hanzi": 2615,
+      "sent_cnt": 102,
       "punct_density": 0.1501,
       "dialogue_ratio": 0.39,
       "para_count": 45,
@@ -25,15 +31,19 @@
       "chapter": 3
     },
     {
-      "avg_sent_len": 26.397,
+      "avg_sent_len": 23.19,
+      "sent_hanzi": 2690,
+      "sent_cnt": 116,
       "punct_density": 0.1536,
       "dialogue_ratio": 0.3282,
-      "para_count": 53,
-      "avg_para_len": 59.962,
+      "para_count": 54,
+      "avg_para_len": 58.852,
       "chapter": 4
     },
     {
-      "avg_sent_len": 34.826,
+      "avg_sent_len": 30.942,
+      "sent_hanzi": 2661,
+      "sent_cnt": 86,
       "punct_density": 0.1363,
       "dialogue_ratio": 0.1954,
       "para_count": 33,
@@ -41,7 +51,9 @@
       "chapter": 5
     },
     {
-      "avg_sent_len": 31.684,
+      "avg_sent_len": 28.306,
+      "sent_hanzi": 2774,
+      "sent_cnt": 98,
       "punct_density": 0.1342,
       "dialogue_ratio": 0.2697,
       "para_count": 43,
@@ -49,15 +61,19 @@
       "chapter": 6
     },
     {
-      "avg_sent_len": 20.367,
+      "avg_sent_len": 17.642,
+      "sent_hanzi": 1923,
+      "sent_cnt": 109,
       "punct_density": 0.1743,
       "dialogue_ratio": 0.3851,
-      "para_count": 55,
-      "avg_para_len": 42.345,
+      "para_count": 56,
+      "avg_para_len": 41.589,
       "chapter": 7
     },
     {
-      "avg_sent_len": 29.557,
+      "avg_sent_len": 25.814,
+      "sent_hanzi": 1807,
+      "sent_cnt": 70,
       "punct_density": 0.1552,
       "dialogue_ratio": 0.5175,
       "para_count": 34,
@@ -65,7 +81,9 @@
       "chapter": 8
     },
     {
-      "avg_sent_len": 29.49,
+      "avg_sent_len": 25.765,
+      "sent_hanzi": 1314,
+      "sent_cnt": 51,
       "punct_density": 0.155,
       "dialogue_ratio": 0.3286,
       "para_count": 26,
@@ -73,7 +91,9 @@
       "chapter": 9
     },
     {
-      "avg_sent_len": 37.03,
+      "avg_sent_len": 33.015,
+      "sent_hanzi": 2179,
+      "sent_cnt": 66,
       "punct_density": 0.1319,
       "dialogue_ratio": 0.2024,
       "para_count": 34,
@@ -81,7 +101,9 @@
       "chapter": 10
     },
     {
-      "avg_sent_len": 29.087,
+      "avg_sent_len": 25.478,
+      "sent_hanzi": 2344,
+      "sent_cnt": 92,
       "punct_density": 0.1535,
       "dialogue_ratio": 0.3239,
       "para_count": 48,
@@ -89,7 +111,9 @@
       "chapter": 11
     },
     {
-      "avg_sent_len": 19.219,
+      "avg_sent_len": 16.743,
+      "sent_hanzi": 1892,
+      "sent_cnt": 113,
       "punct_density": 0.1788,
       "dialogue_ratio": 0.4891,
       "para_count": 51,
@@ -97,7 +121,9 @@
       "chapter": 12
     },
     {
-      "avg_sent_len": 19.253,
+      "avg_sent_len": 16.862,
+      "sent_hanzi": 1467,
+      "sent_cnt": 87,
       "punct_density": 0.1669,
       "dialogue_ratio": 0.3598,
       "para_count": 40,
@@ -105,7 +131,9 @@
       "chapter": 13
     },
     {
-      "avg_sent_len": 20.6,
+      "avg_sent_len": 18.325,
+      "sent_hanzi": 2089,
+      "sent_cnt": 114,
       "punct_density": 0.1587,
       "dialogue_ratio": 0.3947,
       "para_count": 57,
@@ -113,7 +141,9 @@
       "chapter": 14
     },
     {
-      "avg_sent_len": 21.908,
+      "avg_sent_len": 19.308,
+      "sent_hanzi": 2317,
+      "sent_cnt": 120,
       "punct_density": 0.1571,
       "dialogue_ratio": 0.3914,
       "para_count": 60,
@@ -121,7 +151,9 @@
       "chapter": 15
     },
     {
-      "avg_sent_len": 22.86,
+      "avg_sent_len": 20.148,
+      "sent_hanzi": 2720,
+      "sent_cnt": 135,
       "punct_density": 0.1618,
       "dialogue_ratio": 0.4737,
       "para_count": 70,
@@ -129,15 +161,19 @@
       "chapter": 16
     },
     {
-      "avg_sent_len": 26.01,
+      "avg_sent_len": 23.139,
+      "sent_hanzi": 2337,
+      "sent_cnt": 101,
       "punct_density": 0.1436,
       "dialogue_ratio": 0.258,
-      "para_count": 54,
-      "avg_para_len": 50.537,
+      "para_count": 55,
+      "avg_para_len": 49.618,
       "chapter": 17
     },
     {
-      "avg_sent_len": 20.976,
+      "avg_sent_len": 18.411,
+      "sent_hanzi": 2283,
+      "sent_cnt": 124,
       "punct_density": 0.1686,
       "dialogue_ratio": 0.3296,
       "para_count": 58,
@@ -145,7 +181,9 @@
       "chapter": 18
     },
     {
-      "avg_sent_len": 22.993,
+      "avg_sent_len": 19.947,
+      "sent_hanzi": 2992,
+      "sent_cnt": 150,
       "punct_density": 0.1744,
       "dialogue_ratio": 0.5121,
       "para_count": 84,
@@ -153,7 +191,9 @@
       "chapter": 19
     },
     {
-      "avg_sent_len": 25.555,
+      "avg_sent_len": 22.408,
+      "sent_hanzi": 5490,
+      "sent_cnt": 245,
       "punct_density": 0.1563,
       "dialogue_ratio": 0.3749,
       "para_count": 126,
@@ -161,7 +201,9 @@
       "chapter": 20
     },
     {
-      "avg_sent_len": 24.784,
+      "avg_sent_len": 21.736,
+      "sent_hanzi": 2717,
+      "sent_cnt": 125,
       "punct_density": 0.157,
       "dialogue_ratio": 0.3354,
       "para_count": 51,
@@ -169,7 +211,9 @@
       "chapter": 21
     },
     {
-      "avg_sent_len": 24.477,
+      "avg_sent_len": 21.598,
+      "sent_hanzi": 2311,
+      "sent_cnt": 107,
       "punct_density": 0.1529,
       "dialogue_ratio": 0.3827,
       "para_count": 45,
@@ -177,7 +221,9 @@
       "chapter": 22
     },
     {
-      "avg_sent_len": 26.832,
+      "avg_sent_len": 24.031,
+      "sent_hanzi": 3076,
+      "sent_cnt": 128,
       "punct_density": 0.1566,
       "dialogue_ratio": 0.3888,
       "para_count": 56,
@@ -185,7 +231,9 @@
       "chapter": 23
     },
     {
-      "avg_sent_len": 36.653,
+      "avg_sent_len": 33.153,
+      "sent_hanzi": 3249,
+      "sent_cnt": 98,
       "punct_density": 0.1195,
       "dialogue_ratio": 0.2133,
       "para_count": 40,
@@ -193,7 +241,9 @@
       "chapter": 24
     },
     {
-      "avg_sent_len": 26.393,
+      "avg_sent_len": 23.554,
+      "sent_hanzi": 2850,
+      "sent_cnt": 121,
       "punct_density": 0.147,
       "dialogue_ratio": 0.375,
       "para_count": 57,
@@ -201,15 +251,19 @@
       "chapter": 25
     },
     {
-      "avg_sent_len": 24.157,
+      "avg_sent_len": 21.25,
+      "sent_hanzi": 2295,
+      "sent_cnt": 108,
       "punct_density": 0.1553,
       "dialogue_ratio": 0.3309,
-      "para_count": 46,
-      "avg_para_len": 59.065,
+      "para_count": 47,
+      "avg_para_len": 57.809,
       "chapter": 26
     },
     {
-      "avg_sent_len": 25.623,
+      "avg_sent_len": 22.623,
+      "sent_hanzi": 2760,
+      "sent_cnt": 122,
       "punct_density": 0.1502,
       "dialogue_ratio": 0.3217,
       "para_count": 52,
@@ -217,7 +271,9 @@
       "chapter": 27
     },
     {
-      "avg_sent_len": 28.637,
+      "avg_sent_len": 25.78,
+      "sent_hanzi": 5388,
+      "sent_cnt": 209,
       "punct_density": 0.1423,
       "dialogue_ratio": 0.362,
       "para_count": 84,
@@ -225,7 +281,9 @@
       "chapter": 28
     },
     {
-      "avg_sent_len": 29.966,
+      "avg_sent_len": 26.61,
+      "sent_hanzi": 4710,
+      "sent_cnt": 177,
       "punct_density": 0.1407,
       "dialogue_ratio": 0.3204,
       "para_count": 80,
@@ -233,7 +291,9 @@
       "chapter": 29
     },
     {
-      "avg_sent_len": 31.401,
+      "avg_sent_len": 27.593,
+      "sent_hanzi": 4746,
+      "sent_cnt": 172,
       "punct_density": 0.1482,
       "dialogue_ratio": 0.3226,
       "para_count": 87,
@@ -241,7 +301,9 @@
       "chapter": 30
     },
     {
-      "avg_sent_len": 28.101,
+      "avg_sent_len": 24.485,
+      "sent_hanzi": 2424,
+      "sent_cnt": 99,
       "punct_density": 0.1586,
       "dialogue_ratio": 0.3294,
       "para_count": 53,
@@ -249,7 +311,9 @@
       "chapter": 31
     },
     {
-      "avg_sent_len": 23.278,
+      "avg_sent_len": 20.341,
+      "sent_hanzi": 2563,
+      "sent_cnt": 126,
       "punct_density": 0.1621,
       "dialogue_ratio": 0.3678,
       "para_count": 74,
@@ -257,15 +321,19 @@
       "chapter": 32
     },
     {
-      "avg_sent_len": 28.273,
-      "punct_density": 0.1591,
-      "dialogue_ratio": 0.3818,
+      "avg_sent_len": 24.653,
+      "sent_hanzi": 5325,
+      "sent_cnt": 216,
+      "punct_density": 0.1593,
+      "dialogue_ratio": 0.383,
       "para_count": 108,
-      "avg_para_len": 58.537,
+      "avg_para_len": 58.648,
       "chapter": 33
     },
     {
-      "avg_sent_len": 33.853,
+      "avg_sent_len": 30.241,
+      "sent_hanzi": 5776,
+      "sent_cnt": 191,
       "punct_density": 0.1323,
       "dialogue_ratio": 0.2831,
       "para_count": 87,
@@ -273,7 +341,9 @@
       "chapter": 34
     },
     {
-      "avg_sent_len": 26.582,
+      "avg_sent_len": 23.215,
+      "sent_hanzi": 4109,
+      "sent_cnt": 177,
       "punct_density": 0.1583,
       "dialogue_ratio": 0.4373,
       "para_count": 99,
@@ -281,7 +351,9 @@
       "chapter": 35
     },
     {
-      "avg_sent_len": 27.24,
+      "avg_sent_len": 23.737,
+      "sent_hanzi": 4154,
+      "sent_cnt": 175,
       "punct_density": 0.1596,
       "dialogue_ratio": 0.4172,
       "para_count": 76,
@@ -289,15 +361,19 @@
       "chapter": 36
     },
     {
-      "avg_sent_len": 32.197,
+      "avg_sent_len": 29.04,
+      "sent_hanzi": 6505,
+      "sent_cnt": 224,
       "punct_density": 0.1443,
       "dialogue_ratio": 0.3777,
-      "para_count": 117,
-      "avg_para_len": 64.974,
+      "para_count": 119,
+      "avg_para_len": 63.882,
       "chapter": 37
     },
     {
-      "avg_sent_len": 25.931,
+      "avg_sent_len": 22.534,
+      "sent_hanzi": 2614,
+      "sent_cnt": 116,
       "punct_density": 0.1633,
       "dialogue_ratio": 0.4978,
       "para_count": 56,
@@ -305,7 +381,9 @@
       "chapter": 38
     },
     {
-      "avg_sent_len": 39.124,
+      "avg_sent_len": 35.343,
+      "sent_hanzi": 3711,
+      "sent_cnt": 105,
       "punct_density": 0.1196,
       "dialogue_ratio": 0.1789,
       "para_count": 49,
@@ -313,7 +391,9 @@
       "chapter": 39
     },
     {
-      "avg_sent_len": 29.25,
+      "avg_sent_len": 25.922,
+      "sent_hanzi": 2670,
+      "sent_cnt": 103,
       "punct_density": 0.151,
       "dialogue_ratio": 0.427,
       "para_count": 52,
@@ -321,7 +401,9 @@
       "chapter": 40
     },
     {
-      "avg_sent_len": 27.047,
+      "avg_sent_len": 23.849,
+      "sent_hanzi": 2528,
+      "sent_cnt": 106,
       "punct_density": 0.1573,
       "dialogue_ratio": 0.4207,
       "para_count": 57,
@@ -329,7 +411,9 @@
       "chapter": 41
     },
     {
-      "avg_sent_len": 28.659,
+      "avg_sent_len": 25.546,
+      "sent_hanzi": 3321,
+      "sent_cnt": 130,
       "punct_density": 0.1517,
       "dialogue_ratio": 0.3637,
       "para_count": 69,
@@ -337,7 +421,9 @@
       "chapter": 42
     },
     {
-      "avg_sent_len": 29.849,
+      "avg_sent_len": 26.418,
+      "sent_hanzi": 3857,
+      "sent_cnt": 146,
       "punct_density": 0.1437,
       "dialogue_ratio": 0.3535,
       "para_count": 73,
@@ -345,7 +431,9 @@
       "chapter": 43
     },
     {
-      "avg_sent_len": 29.794,
+      "avg_sent_len": 26.142,
+      "sent_hanzi": 6065,
+      "sent_cnt": 232,
       "punct_density": 0.1547,
       "dialogue_ratio": 0.4085,
       "para_count": 102,
@@ -353,7 +441,9 @@
       "chapter": 44
     },
     {
-      "avg_sent_len": 37.011,
+      "avg_sent_len": 33.295,
+      "sent_hanzi": 2930,
+      "sent_cnt": 88,
       "punct_density": 0.1336,
       "dialogue_ratio": 0.3684,
       "para_count": 43,
@@ -361,7 +451,9 @@
       "chapter": 45
     },
     {
-      "avg_sent_len": 39.447,
+      "avg_sent_len": 34.904,
+      "sent_hanzi": 3281,
+      "sent_cnt": 94,
       "punct_density": 0.137,
       "dialogue_ratio": 0.3243,
       "para_count": 45,
@@ -369,7 +461,9 @@
       "chapter": 46
     },
     {
-      "avg_sent_len": 28.813,
+      "avg_sent_len": 25.211,
+      "sent_hanzi": 3101,
+      "sent_cnt": 123,
       "punct_density": 0.1543,
       "dialogue_ratio": 0.4358,
       "para_count": 54,
@@ -377,7 +471,9 @@
       "chapter": 47
     },
     {
-      "avg_sent_len": 38.518,
+      "avg_sent_len": 33.694,
+      "sent_hanzi": 2864,
+      "sent_cnt": 85,
       "punct_density": 0.1474,
       "dialogue_ratio": 0.3174,
       "para_count": 45,
@@ -385,7 +481,9 @@
       "chapter": 48
     },
     {
-      "avg_sent_len": 34.0,
+      "avg_sent_len": 28.985,
+      "sent_hanzi": 3913,
+      "sent_cnt": 135,
       "punct_density": 0.1505,
       "dialogue_ratio": 0.3373,
       "para_count": 68,
@@ -393,7 +491,9 @@
       "chapter": 49
     },
     {
-      "avg_sent_len": 38.467,
+      "avg_sent_len": 32.716,
+      "sent_hanzi": 2421,
+      "sent_cnt": 74,
       "punct_density": 0.1379,
       "dialogue_ratio": 0.2433,
       "para_count": 40,
@@ -401,7 +501,9 @@
       "chapter": 50
     },
     {
-      "avg_sent_len": 35.55,
+      "avg_sent_len": 30.417,
+      "sent_hanzi": 3285,
+      "sent_cnt": 108,
       "punct_density": 0.1428,
       "dialogue_ratio": 0.3758,
       "para_count": 58,
@@ -409,7 +511,9 @@
       "chapter": 51
     },
     {
-      "avg_sent_len": 29.036,
+      "avg_sent_len": 25.405,
+      "sent_hanzi": 2820,
+      "sent_cnt": 111,
       "punct_density": 0.1615,
       "dialogue_ratio": 0.446,
       "para_count": 58,
@@ -417,7 +521,9 @@
       "chapter": 52
     },
     {
-      "avg_sent_len": 47.032,
+      "avg_sent_len": 42.403,
+      "sent_hanzi": 2629,
+      "sent_cnt": 62,
       "punct_density": 0.1309,
       "dialogue_ratio": 0.277,
       "para_count": 30,
@@ -425,7 +531,9 @@
       "chapter": 53
     },
     {
-      "avg_sent_len": 26.447,
+      "avg_sent_len": 23.3,
+      "sent_hanzi": 4427,
+      "sent_cnt": 190,
       "punct_density": 0.1511,
       "dialogue_ratio": 0.3703,
       "para_count": 103,
@@ -433,7 +541,9 @@
       "chapter": 54
     },
     {
-      "avg_sent_len": 40.018,
+      "avg_sent_len": 36.297,
+      "sent_hanzi": 4029,
+      "sent_cnt": 111,
       "punct_density": 0.1151,
       "dialogue_ratio": 0.1994,
       "para_count": 60,
@@ -441,7 +551,9 @@
       "chapter": 55
     },
     {
-      "avg_sent_len": 39.297,
+      "avg_sent_len": 35.129,
+      "sent_hanzi": 3548,
+      "sent_cnt": 101,
       "punct_density": 0.1283,
       "dialogue_ratio": 0.3914,
       "para_count": 52,
@@ -449,7 +561,9 @@
       "chapter": 56
     },
     {
-      "avg_sent_len": 46.494,
+      "avg_sent_len": 41.727,
+      "sent_hanzi": 3213,
+      "sent_cnt": 77,
       "punct_density": 0.1217,
       "dialogue_ratio": 0.2425,
       "para_count": 39,
@@ -457,7 +571,9 @@
       "chapter": 57
     },
     {
-      "avg_sent_len": 47.402,
+      "avg_sent_len": 40.304,
+      "sent_hanzi": 4111,
+      "sent_cnt": 102,
       "punct_density": 0.124,
       "dialogue_ratio": 0.3838,
       "para_count": 65,
@@ -465,16 +581,48 @@
       "chapter": 58
     },
     {
-      "avg_sent_len": 27.466,
+      "avg_sent_len": 23.966,
+      "sent_hanzi": 3547,
+      "sent_cnt": 148,
       "punct_density": 0.1581,
       "dialogue_ratio": 0.5901,
       "para_count": 96,
       "avg_para_len": 43.885,
       "chapter": 59
+    },
+    {
+      "avg_sent_len": 22.197,
+      "sent_hanzi": 3485,
+      "sent_cnt": 157,
+      "punct_density": 0.1554,
+      "dialogue_ratio": 0.4804,
+      "para_count": 85,
+      "avg_para_len": 48.541,
+      "chapter": 60
+    },
+    {
+      "avg_sent_len": 27.523,
+      "sent_hanzi": 4844,
+      "sent_cnt": 176,
+      "punct_density": 0.1402,
+      "dialogue_ratio": 0.5472,
+      "para_count": 95,
+      "avg_para_len": 59.305,
+      "chapter": 61
+    },
+    {
+      "avg_sent_len": 23.486,
+      "sent_hanzi": 3335,
+      "sent_cnt": 142,
+      "punct_density": 0.1473,
+      "dialogue_ratio": 0.4492,
+      "para_count": 68,
+      "avg_para_len": 57.515,
+      "chapter": 62
     }
   ],
   "summary": {
-    "mean_sent_len": 29.758,
-    "mean_dialogue_ratio": 0.3553
+    "mean_sent_len": 25.659,
+    "mean_dialogue_ratio": 0.3619
   }
 }

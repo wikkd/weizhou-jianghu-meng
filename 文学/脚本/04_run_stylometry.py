@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-《苇舟江湖梦》59章 风格计量（文体指纹）
+《苇舟江湖梦》62章 风格计量（文体指纹）
 仅读取与分析，绝不修改任何源文件。
 """
 import os, re, json, math
@@ -13,7 +13,7 @@ PRODUCT_DIR = os.path.join(ROOT, "产物")
 # 标点符号集合（含中文弯引号、单引号、句读等）
 PUNCT = set('，。！？；：、“”‘’（）《》〈〉【】〔〕「」『』…—–·、～～　')
 
-SENT_DELIM = "。！？；"
+SENT_DELIM = "。！？"
 
 def is_ws(ch):
     return ch in "\n\r\t "
@@ -25,17 +25,17 @@ def count_punct(text):
     return sum(1 for ch in text if ch in PUNCT)
 
 def avg_sentence_len(text):
-    # 按句读切分
+    # 按句读切分（与 05_lexical_analysis 同口径：仅「。！？」、只数汉字）
     segs = re.split("[" + re.escape(SENT_DELIM) + "]", text)
     lens = []
     for s in segs:
-        c = sum(1 for ch in s if not is_ws(ch))
-        # 忽略空段
+        c = len(re.findall(r"[一-鿿]", s))
+        # 忽略无汉字的空段
         if c > 0:
             lens.append(c)
     if not lens:
-        return 0.0
-    return sum(lens) / len(lens)
+        return 0.0, 0, 0
+    return sum(lens) / len(lens), sum(lens), len(lens)
 
 def dialogue_chars(text):
     # 成对中文双引号 “” 与单引号 ‘’ 内字符计数（兼顾嵌套，未闭合不吞噬全文）
@@ -73,15 +73,17 @@ def analyze_chapter(path):
     tc = total_chars(text)
     if tc == 0:
         return {
-            "avg_sent_len": 0.0, "punct_density": 0.0,
+            "avg_sent_len": 0.0, "sent_hanzi": 0, "sent_cnt": 0, "punct_density": 0.0,
             "dialogue_ratio": 0.0, "para_count": 0, "avg_para_len": 0.0,
         }
     pc = count_punct(text)
     dl = dialogue_chars(text)
-    sl = avg_sentence_len(text)
+    sl, hanzi_total, sent_cnt = avg_sentence_len(text)
     pcnt, apl = paragraph_stats(text)
     return {
         "avg_sent_len": round(sl, 3),
+        "sent_hanzi": hanzi_total,
+        "sent_cnt": sent_cnt,
         "punct_density": round(pc / tc, 4),
         "dialogue_ratio": round(dl / tc, 4),
         "para_count": pcnt,
@@ -92,7 +94,7 @@ def main():
     os.makedirs(ANALYSIS_DIR, exist_ok=True)
 
     chapters = []
-    for i in range(1, 60):
+    for i in range(1, 63):
         fname = "chap_%02d.txt" % i
         fpath = os.path.join(CHAP_DIR, fname)
         if not os.path.exists(fpath):
@@ -101,7 +103,7 @@ def main():
         m["chapter"] = i
         chapters.append(m)
 
-    mean_sent_len = round(sum(c["avg_sent_len"] for c in chapters) / len(chapters), 3)
+    mean_sent_len = round(sum(c["sent_hanzi"] for c in chapters) / sum(c["sent_cnt"] for c in chapters), 3)
     mean_dialogue_ratio = round(sum(c["dialogue_ratio"] for c in chapters) / len(chapters), 4)
 
     out = {
@@ -126,7 +128,7 @@ def main():
     assert os.path.exists(json_path) and os.path.getsize(json_path) > 0, "stylometry.json 写入失败"
     assert os.path.exists(html_path) and os.path.getsize(html_path) > 0, "HTML 写入失败"
 
-    print("STYLE DONE: chapters=59")
+    print("STYLE DONE: chapters=%d" % len(chapters))
 
 def build_html(chapters, mean_sent_len, mean_dialogue_ratio):
     n = len(chapters)
@@ -221,7 +223,7 @@ def build_html(chapters, mean_sent_len, mean_dialogue_ratio):
     interpretation = f"""
     <h3>风格解读（基于数据）</h3>
     <ul>
-      <li><b>整体基准</b>：59 章平均句长 <b>{mean_sent_len:.2f}</b> 字/句，平均对话占比 <b>{mean_dialogue_ratio*100:.1f}%</b>。
+      <li><b>整体基准</b>：62 章平均句长 <b>{mean_sent_len:.2f}</b> 字/句，平均对话占比 <b>{mean_dialogue_ratio*100:.1f}%</b>。
           全篇以中短句为主，叙述与对话交替推进。</li>
       <li><b>对话占比最低 5 章</b>：{low_str}。
           这些章对话占比显著低于均值，引号内文字骤减，意味着叙述独白/动作描写主导——典型为<b>决战、奔袭、场面铺陈章</b>，
@@ -261,7 +263,7 @@ def build_html(chapters, mean_sent_len, mean_dialogue_ratio):
       <path d="{p_punc}" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="5 4"/>
       <text x="{L-8}" y="{T-12}" text-anchor="end" font-size="12" fill="#2563eb">平均句长(左)</text>
       <text x="{L+pw+8}" y="{T-12}" text-anchor="start" font-size="12" fill="#dc2626">对话占比(右)</text>
-      <text x="{W/2}" y="{H-14}" text-anchor="middle" font-size="12" fill="#374151">章节 (1–59)</text>
+      <text x="{W/2}" y="{H-14}" text-anchor="middle" font-size="12" fill="#374151">章节 (1–62)</text>
       <g transform="translate({L+12},{T+14})">
         <rect x="0" y="0" width="14" height="4" fill="#2563eb"/><text x="20" y="7" font-size="11" fill="#374151">平均句长</text>
         <rect x="110" y="0" width="14" height="4" fill="#dc2626"/><text x="130" y="7" font-size="11" fill="#374151">对话占比</text>
@@ -308,7 +310,7 @@ def build_html(chapters, mean_sent_len, mean_dialogue_ratio):
 
   {method}
 
-  <p style="color:#6b7280;font-size:12px;margin-top:24px;">本页面由风格计量脚本自动生成，仅基于 chapter_data/ 中 59 个章节文本，未改动任何源文件。</p>
+  <p style="color:#6b7280;font-size:12px;margin-top:24px;">本页面由风格计量脚本自动生成，仅基于 chapter_data/ 中 62 个章节文本，未改动任何源文件。</p>
 </body>
 </html>
 """

@@ -177,7 +177,7 @@ html.append('<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><titl
 html.append('''<link rel="stylesheet" href="theme.css"></head><body>''')
 
 html.append('<h1>《苇舟江湖梦》空间地点专业分析报告</h1>')
-html.append('<p><b>分析对象：</b>霜月仲明《苇舟江湖梦》全本 59 章；<b>数据来源：</b>小说内嵌参考图（reference_map.jpeg）像素坐标 + 文本旅行时间/方向/地形/战术描述。</p>')
+html.append('<p><b>分析对象：</b>霜月仲明《苇舟江湖梦》全本 62 章；<b>数据来源：</b>小说内嵌参考图（reference_map.jpeg）像素坐标 + 文本旅行时间/方向/地形/战术描述。</p>')
 
 html.append('<div style="display:flex;flex-wrap:wrap;justify-content:center">')
 html.append('<div class="metric"><b>32</b>空间节点</div>')

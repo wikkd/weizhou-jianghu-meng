@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""聚合 6 个批次标签为统一 all_tags.json，并做一致性校验。"""
+"""聚合 7 个批次标签为统一 all_tags.json，并做一致性校验。"""
 import json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = os.path.join(ROOT, "数据", "chapter_data")
-BATCHES = [f"tags_batch{i}.json" for i in range(1, 7)]
+BATCHES = [f"tags_batch{i}.json" for i in range(1, 8)]
 
 # —— 受控词表（与 tag_schema.md 保持一致）——
 TIME_LAYERS = {"序章/前史","初入江湖","江湖历练","庙堂初涉","乱世将起",
@@ -33,7 +33,7 @@ def main():
 
     # 校验章节完整性
     chs = [o.get("chapter") for o in all_objs]
-    missing = set(range(1, 60)) - set(chs)
+    missing = set(range(1, 63)) - set(chs)
     dup = [c for c in set(chs) if chs.count(c) > 1]
     print(f"总对象数: {len(all_objs)}  章节集合大小: {len(set(chs))}")
     if missing:
@@ -87,7 +87,7 @@ def main():
         if len(errors) > 50:
             print(f"  ... 其余 {len(errors)-50} 项省略")
     else:
-        print("\n[校验通过] 全部 59 章字段合规、枚举合法、人物已归一。")
+        print("\n[校验通过] 全部 62 章字段合规、枚举合法、人物已归一。")
 
 if __name__ == "__main__":
     main()

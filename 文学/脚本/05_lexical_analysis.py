@@ -4,7 +4,7 @@
 《苇舟江湖梦》全文本词汇计量分析。
 步骤：
  1. 建 analysis/ 目录
- 2. 读取 full_text.txt，按中文数字章节标记切分 59 章，jieba 分词，
+ 2. 读取 full_text.txt，按中文数字章节标记切分 62 章，jieba 分词，
     内置停用词表 + 词性过滤(仅保留 n/v/a 开头的实词)
  3. 计算：全本 Top50；逐章 TTR；全本平均句长(按 。！？ 切分)
  4. 用词漂移：前 19 章 vs 后 19 章高频词差异
@@ -189,9 +189,10 @@ for val, body in chapters:
     ttr_list.append({"chapter": val, "ttr": round(ttr, 4)})
 ttr_mean = sum(x["ttr"] for x in ttr_list) / len(ttr_list)
 
-# 全本平均句长（按 。！？ 切分，统计每句汉字数）
+# 全本平均句长（62 章正文拼接后按 。！？ 切分，统计每句汉字数；与 04 风格计量同口径）
 print("计算平均句长...")
-sentences = re.split(r"[。！？]", full_text)
+body_text = "\n".join(b for _, b in chapters)
+sentences = re.split(r"[。！？]", body_text)
 sent_chars = [len(re.findall(r"[一-鿿]", s)) for s in sentences if re.search(r"[一-鿿]", s)]
 avg_sent_len = sum(sent_chars) / len(sent_chars) if sent_chars else 0.0
 
@@ -384,7 +385,7 @@ method_html = f"""
 <li><b>分词</b>：jieba 精确模式 + 词性标注；仅保留词性标记以 <code>n / v / a</code> 开头的名词、动词、形容词（实词），并剔除内置停用词表（含标点、虚词、高频对话动词如「说/道」等）。</li>
 <li><b>Top 关键词</b>：全本实词按出现频次降序取前 50。</li>
 <li><b>逐章 TTR</b>：类符/形符比 = 该章不重复实词数 ÷ 该章实词总数。</li>
-<li><b>平均句长</b>：以「。！？」切分全本，统计每句汉字数取均值，得 <b>{avg_sent_len:.2f}</b> 字/句。</li>
+<li><b>平均句长</b>：以「。！？」切分 62 章正文，统计每句汉字数取均值，得 <b>{avg_sent_len:.2f}</b> 字/句（与风格计量报告同口径）。</li>
 <li><b>用词漂移</b>：前 19 章 vs 后 19 章，各取每千词出现率，比较独占词与率差。</li>
 <li><b>方法注记（重要）</b>：TTR 受章节长度显著影响——短章的可复用实词少，TTR 天然偏高；长章因重复用词多，TTR 天然偏低。本折线图已观察到短章 TTR 普遍偏高，属正常计量现象，解读章节间 TTR 差异时须结合章节实词总量，不宜直接据此判定「词汇丰富度」。</li>
 </ul>

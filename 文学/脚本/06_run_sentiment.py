@@ -96,7 +96,7 @@ except Exception as e:
 # ----------------------------------------------------------------------------
 # 2) 逐章读取并计算 sentiment
 # ----------------------------------------------------------------------------
-N = 59
+N = 62
 sentiments = [None] * (N + 1)   # 1-indexed
 for ch in range(1, N + 1):
     if method == "snownlp" and _snownlp_scores is not None:
@@ -128,10 +128,12 @@ for ch in range(1, N + 1):
 
 mean_all = sum(sentiments[1:]) / N
 
-# 前/中/后 1/3：59 -> 19 / 20 / 20 三段（1-19, 20-39, 40-59）
-early = sentiments[1:20]
-mid = sentiments[20:40]
-late = sentiments[40:60]
+# 前/中/后 1/3：动态三等分（随章节数 N 自适应，如 62 -> 21 / 20 / 21）
+_b1 = round(N / 3)
+_b2 = round(2 * N / 3)
+early = sentiments[1:_b1 + 1]
+mid = sentiments[_b1 + 1:_b2 + 1]
+late = sentiments[_b2 + 1:]
 mean_early = sum(early) / len(early)
 mean_mid = sum(mid) / len(mid)
 mean_late = sum(late) / len(late)
@@ -257,7 +259,7 @@ method_note = """
   <li><b>打分模型</b>：优先使用 <code>snownlp</code> 对每章<em>全文</em>计算 <code>sentiments</code>（0–1，越接近 1 越正面）；
   若 snownlp 不可用，则退回内置正/负情感词典的简易计数打分。本次实际方法：<b>%s</b>。</li>
   <li><b>snownlp 退化记录</b>：本次实测 <code>snownlp</code> 在本武侠语料上严重误判——不仅将"他死了，好悲伤好痛苦"之类明显负面句判为 0.99 正面，
-  且对全部 59 章的长文本极性均饱和到精确的 <code>1.0</code>（全章极差 &lt; 0.02，无任何区分度）。
+  且对全部 62 章的长文本极性均饱和到精确的 <code>1.0</code>（全章极差 &lt; 0.02，无任何区分度）。
   该模型在古文/武侠语域未训练、被修辞与战斗描写带偏，故被视为"不可用"并自动切回词典打分。这正是任务所述"情感模型可能偏差"的典型例证。</li>
   <li><b>战斗强度</b>：取自 <code>chapter_data/all_tags.json</code> 的 <code>combat_intensity</code>（0–3 序数）。</li>
   <li><b>相关系数</b>：Pearson 与 Spearman 均由 <code>scipy</code> 计算；p 值用于显著性判断（通常以 p&lt;0.05 视为显著）。</li>
@@ -424,7 +426,7 @@ html = """<!DOCTYPE html>
 <link rel="stylesheet" href="theme.css"></head>
 <body><div class="wrap">
 <h1>《苇舟江湖梦》情感极性时序分析</h1>
-<p class="note">逐章情感打分（59 章）与战斗强度对照 · 生成方法：%s</p>
+<p class="note">逐章情感打分（62 章）与战斗强度对照 · 生成方法：%s</p>
 
 <div class="kpis">
   <div class="kpi"><div class="v">%.4f</div><div class="l">全本情感均值</div></div>

@@ -172,7 +172,7 @@ def main():
 <link rel="stylesheet" href="theme.css"></head>
 <body>
 <header><h1>《苇舟江湖梦》章节标签量化看板</h1>
-<p>数据源：chapter_data/all_tags.json（59 章受控词表标注，subagent 并行标注 + 聚合校验）｜ 生成自全文本分章结构化标签</p></header>
+<p>数据源：chapter_data/all_tags.json（62 章受控词表标注，subagent 并行标注 + 聚合校验）｜ 生成自全文本分章结构化标签</p></header>
 <div class="wrap">
 <div class="cards">{kpi_html}</div>
 

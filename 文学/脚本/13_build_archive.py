@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """《苇舟江湖梦》全量信息归档：构建 SQLite 数据库 + HTML 总览索引。
-整合：源文件 / 分析报告 / 数据资产(JSON) / 处理脚本 / 59章结构化标签 / 人物 / 地点。
+整合：源文件 / 分析报告 / 数据资产(JSON) / 处理脚本 / 62章结构化标签 / 人物 / 地点。
 输出：
   产物/数据归档/苇舟江湖梦_数据归档.db   （可查询关系库）
   产物/数据归档/苇舟江湖梦_数据归档总览.html （浏览版索引）
@@ -64,7 +64,7 @@ ROLE_NOTE = {
 ARTIFACTS = [
     # 类别, 名称, 相对路径, 格式, 描述, 生成日期, 关键指标
     ("分析报告", "全文本量化分析报告", "产物/苇舟江湖梦_分析报告.html", "HTML",
-     "184,624字/59章自动抽取：人物识别与共现网络、时间轴、空间谱系、七幕故事线与感情线。", GEN_DATE, "7张图表"),
+     "237,264字/62章自动抽取：人物识别与共现网络、时间轴、空间谱系、七幕故事线与感情线。", GEN_DATE, "7张图表"),
     ("分析报告", "空间地点分析报告（示意图标定）", "产物/苇舟江湖梦_空间地点分析报告.html", "HTML",
      "结合文档内嵌参考图坐标，叠加旅行时间/地形/战术，建立相对坐标系与距离矩阵。", GEN_DATE, "33节点"),
     ("分析报告", "地理位置关系图（纯文本派生）", "产物/苇舟江湖梦_地理位置关系图.html", "HTML",
@@ -74,7 +74,7 @@ ARTIFACTS = [
     ("分析报告", "川阴王建都推演", "产物/川阴王建都推演.html", "HTML",
      "大战后川阴王建都最佳地点推演：京城为都、北盾南陪都东财枢格局。", GEN_DATE, "地缘推演"),
     ("分析报告", "章节标签量化看板", "产物/苇舟江湖梦_章节标签量化看板.html", "HTML",
-     "59章受控词表标注的可视化看板：类型/时间层/感情线分布、情节演进、地点与人物热度。", GEN_DATE, "6版块8图"),
+     "62章受控词表标注的可视化看板：类型/时间层/感情线分布、情节演进、地点与人物热度。", GEN_DATE, "6版块8图"),
     ("分析报告", "章节结构深度量化", "产物/苇舟江湖梦_章节结构量化.html", "HTML",
      "补完既往报告未消费的标注维度：故事线/视角分布、自由标签主题词频与前后段漂移、感情线×算法情感交叉验证。", GEN_DATE, "6版块"),
     ("分析报告", "时间节奏与空间地名量化", "产物/苇舟江湖梦_时间节奏量化.html", "HTML",
@@ -82,18 +82,18 @@ ARTIFACTS = [
     ("分析报告", "派生维度量化", "产物/苇舟江湖梦_派生维度量化.html", "HTML",
      "出场vs提及背离（幕后/符号型角色识别）与人物-地点共现矩阵（角色空间足迹）。", GEN_DATE, "2版块"),
     ("分析报告", "人物关系网络", "产物/苇舟江湖梦_人物关系网络.html", "HTML",
-     "59章人物共现网络：degree/PageRank/社区划分，spring_layout 可视化，101节点/1318边/4社区。", GEN_DATE, "网络图"),
+     "62章人物共现网络：degree/PageRank/社区划分，spring_layout 可视化，103节点/1363边/5社区。", GEN_DATE, "网络图"),
     ("分析报告", "情感时序曲线", "产物/苇舟江湖梦_情感时序.html", "HTML",
-     "59章逐章情感极性（词典法，snownlp退化回退）与战斗强度对照，含相关系数。", GEN_DATE, "时序图"),
+     "62章逐章情感极性（词典法，snownlp退化回退）与战斗强度对照，含相关系数。", GEN_DATE, "时序图"),
     ("分析报告", "词汇计量", "产物/苇舟江湖梦_词汇计量.html", "HTML",
      "全本词频Top50、分章TTR、前后19章用语漂移（市井→庙堂）。", GEN_DATE, "词频/TTR"),
     ("分析报告", "统计推断", "产物/苇舟江湖梦_统计推断.html", "HTML",
      "5项叙事假设非参检验（任琅/战斗类型与战斗强度显著正相关）。", GEN_DATE, "检验结果"),
     ("分析报告", "风格计量", "产物/苇舟江湖梦_风格计量.html", "HTML",
-     "59章文体指纹：平均句长、标点密度、对话占比，反映叙事节奏。", GEN_DATE, "风格曲线"),
+     "62章文体指纹：平均句长、标点密度、对话占比，反映叙事节奏。", GEN_DATE, "风格曲线"),
     ("数据资产", "人物统计", "数据/char_stats.json", "JSON",
      "49个规范人物：提及次数、出场章节、首末章。", GEN_DATE, "49人"),
-    ("数据资产", "章节统计", "数据/chap_stats.json", "JSON", "59章字数与段落数。", GEN_DATE, "59章"),
+    ("数据资产", "章节统计", "数据/chap_stats.json", "JSON", "62章字数与段落数。", GEN_DATE, "62章"),
     ("数据资产", "时间-地点序列", "数据/time_loc.json", "JSON", "时间线与地点标注序列。", GEN_DATE, "—"),
     ("数据资产", "章节序列", "数据/series.json", "JSON", "按章时间序列数据。", GEN_DATE, "—"),
     ("数据资产", "空间数据(示意图标定)", "数据/spatial_data.json", "JSON",
@@ -101,21 +101,21 @@ ARTIFACTS = [
     ("数据资产", "纯文本坐标", "数据/text_coords.json", "JSON",
      "纯正文派生的19节点相对坐标（1单位≈200里）。", GEN_DATE, "19节点"),
     ("数据资产", "分章索引", "数据/chapter_data/chapters_index.json", "JSON",
-     "59章：章节号/文件名/字数/场景提示。", GEN_DATE, "59章"),
+     "62章：章节号/文件名/字数/场景提示。", GEN_DATE, "62章"),
     ("数据资产", "章节结构化标签(核心)", "数据/chapter_data/all_tags.json", "JSON",
-     "59章受控词表标注聚合（时间层/地点/人物/类型/故事线/感情线/战斗强度/视角/关键事件）。", GEN_DATE, "59章"),
+     "62章受控词表标注聚合（时间层/地点/人物/类型/故事线/感情线/战斗强度/视角/关键事件）。", GEN_DATE, "62章"),
     ("数据资产", "批次标注1-6", "数据/chapter_data/tags_batch1.json … tags_batch6.json", "JSON",
      "6个subagent并行标注的原始批次输出。", GEN_DATE, "6批"),
     ("数据资产", "人物共现网络", "数据/analysis/character_network.json", "JSON",
-     "节点(度/PageRank/社区/出场)与边(共现权重)。", GEN_DATE, "101节点/1318边"),
+     "节点(度/PageRank/社区/出场)与边(共现权重)。", GEN_DATE, "103节点/1363边"),
     ("数据资产", "情感时序", "数据/analysis/sentiment_series.json", "JSON",
-     "逐章 sentiment、thirds 分段均值、与 combat_intensity 相关系数。", GEN_DATE, "59章"),
+     "逐章 sentiment、thirds 分段均值、与 combat_intensity 相关系数。", GEN_DATE, "62章"),
     ("数据资产", "词汇计量", "数据/analysis/lexical_stats.json", "JSON",
      "Top词、分章TTR、平均句长、前后期漂移。", GEN_DATE, "—"),
     ("数据资产", "统计推断", "数据/analysis/stats_inference.json", "JSON",
      "每项检验的方法/统计量/p值/效应量/显著性。", GEN_DATE, "5检验"),
     ("数据资产", "风格计量", "数据/analysis/stylometry.json", "JSON",
-     "逐章句长/标点密度/对话占比/段数。", GEN_DATE, "59章"),
+     "逐章句长/标点密度/对话占比/段数。", GEN_DATE, "62章"),
     ("数据资产", "标注规范", "数据/chapter_data/tag_schema.md", "Markdown",
      "受控词表与归一规则（人物49/地点19/枚举类型）。", GEN_DATE, "schema"),
     ("处理脚本", "全文本报告生成", "脚本/08_generate_report.py", "Python",
@@ -227,7 +227,7 @@ for e in net["edges"]:
     cur.execute("INSERT INTO net_edges VALUES(?,?,?)", (e["source"], e["target"], e["weight"]))
 n_comm = len(set(n.get("community") for n in net["nodes"]))
 net_metric = f"{len(net['nodes'])}节点 / {len(net['edges'])}边 / {n_comm}社区"
-net_sum = "共现=59章逐章两两去重；社区0陈奉天权力群/1任琅主线群/2许达-苏雨江湖群/3陆氏小群。"
+net_sum = "共现=62章逐章两两去重；社区0陈奉天权力群/1任琅主线群/2许达-苏雨江湖群/3刘媛灵乡土小群/4陆氏小群。"
 
 # 情感时序
 sent = loadp("数据/analysis/sentiment_series.json")
@@ -313,7 +313,7 @@ html_doc = f"""<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
 <title>《苇舟江湖梦》数据归档总览</title>
 <link rel="stylesheet" href="../theme.css"></head><body>
 <header><h1>《苇舟江湖梦》数据归档总览</h1>
-<p>统一索引 · 源文件 / 分析报告 / 数据资产 / 处理脚本 / 59章标签 / 人物 / 地点 ｜ 生成日期 {GEN_DATE} ｜ 配套数据库：苇舟江湖梦_数据归档.db（SQLite，可SQL查询）</p></header>
+<p>统一索引 · 源文件 / 分析报告 / 数据资产 / 处理脚本 / 62章标签 / 人物 / 地点 ｜ 生成日期 {GEN_DATE} ｜ 配套数据库：苇舟江湖梦_数据归档.db（SQLite，可SQL查询）</p></header>
 <div class="wrap">
 <div class="cards">
 <div class="card"><div class="kv">{n_art}</div><div class="kl">归档资产</div></div>

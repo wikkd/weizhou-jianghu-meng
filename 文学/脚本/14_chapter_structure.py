@@ -155,7 +155,7 @@ def main():
         for w in t.get("tags_free", []):
             free[w] += 1
     free_data = free.most_common(20)
-    # 前后段主题漂移：前 30 章 vs 后 29 章
+    # 前后段主题漂移：前 30 章 vs 后 32 章
     half = 30
     free_front = Counter()
     free_back = Counter()
@@ -209,7 +209,7 @@ def main():
 
     svg_arc = hbar(arc_data, ARC_COLOR, "章")
     svg_pov = hbar(pov_data, POV_COLOR, "章")
-    pov_note = (f"59 章实际落到 {len(pov)} 类视角（schema 定义 4 类）："
+    pov_note = (f"{N} 章实际落到 {len(pov)} 类视角（schema 定义 4 类）："
                 + "、".join(f"「{k}」{v} 章（{v*100//N}%）" for k, v in pov_data)
                 + f"。任琅/尚樱限知在本次标注中未启用；全知旁白占 {omniscient*100//N}%，"
                   f"多视角切换（{pov.get('多视角切换', 0)} 章）负责角色沉浸段落，"
@@ -225,7 +225,7 @@ def main():
     fill_html += "</table>"
 
     # 漂移表
-    drift_html = "<table><tr><th>自由标签</th><th>前段(1–30章)</th><th>后段(31–59章)</th><th>漂移</th></tr>"
+    drift_html = "<table><tr><th>自由标签</th><th>前段(1–30章)</th><th>后段(31–62章)</th><th>漂移</th></tr>"
     for w, c1, c2, d in drift_top:
         arrow = "↑后期强化" if d > 0 else ("↓前期集中" if d < 0 else "—")
         cls = "up" if d > 0 else ("down" if d < 0 else "")
@@ -257,11 +257,11 @@ def main():
 <link rel="stylesheet" href="theme.css"></head>
 <body>
 <header><h1>《苇舟江湖梦》章节结构·叙事标注深度量化</h1>
-<p>数据源：chapter_data/all_tags.json（59 章受控词表标注）＋ analysis/sentiment_series.json（逐章算法情感）｜ 增量分析，不改动标注</p></header>
+<p>数据源：chapter_data/all_tags.json（62 章受控词表标注）＋ analysis/sentiment_series.json（逐章算法情感）｜ 增量分析，不改动标注</p></header>
 <div class="wrap">
 <div class="cards">{kpi_html}</div>
 
-<section><h2>一、标注数据治理：字段填充率</h2><p class="sub">核验 59 章受控标注的完整度，作为下游量化的可信度基线</p>
+<section><h2>一、标注数据治理：字段填充率</h2><p class="sub">核验 62 章受控标注的完整度，作为下游量化的可信度基线</p>
 {fill_html}
 <div class="note">标注由 subagent 并行完成并经聚合校验；除 tags_free（自由标签，部分章节留空属正常）外，各受控字段填充率均达 100%，结构数据质量可靠。</div></section>
 
@@ -277,7 +277,7 @@ def main():
 {svg_free}
 <div class="note">高频自由标签（比武、离家、身世、战争、围城、盟约、背叛等）与章节类型、故事线高度呼应，可作为后续主题建模（LDA / 词嵌入）的输入特征。</div></section>
 
-<section><h2>五、自由标签主题漂移（前段 1–30 章 vs 后段 31–59 章）</h2><p class="sub">观察关键词在前后半书的此消彼长，反映情节重心迁移</p>
+<section><h2>五、自由标签主题漂移（前段 1–30 章 vs 后段 31–62 章）</h2><p class="sub">观察关键词在前后半书的此消彼长，反映情节重心迁移</p>
 {drift_html}
 <div class="note">后期强化项（↑）多指向军事与权谋（围城、战争、叛乱、盟约），前期集中项（↓）多指向成长与游历（比武、离家、身世）——与「江湖历练 → 庙堂战乱」的整体弧线一致。</div></section>
 
