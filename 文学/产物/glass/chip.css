@@ -1,0 +1,38 @@
+/* =====================================================================
+ *  Glass · Chip / Tag / Badge / Avatar（轻量标记与头像）
+ * ===================================================================== */
+
+/* —— 标签 chip（新版，玻璃）—— */
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:var(--radius-pill);
+  font-size:var(--fs-sm);font-weight:600;line-height:1.6;color:var(--ink);
+  background:var(--glass-bg-soft);border:1px solid var(--glass-border);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+.chip--primary{background:rgba(10,132,255,.14);color:var(--primary-d);border-color:rgba(10,132,255,.28);}
+.chip--accent{background:rgba(255,69,58,.14);color:var(--accent);border-color:rgba(255,69,58,.3);}
+.chip--success{background:rgba(48,209,88,.14);color:#0c7a31;border-color:rgba(48,209,88,.3);}
+.chip--gold{background:rgba(255,214,10,.16);color:#8a6a00;border-color:rgba(255,214,10,.34);}
+.chip--ghost{background:transparent;}
+.chip__dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex:0 0 auto;}
+.chip__close{cursor:pointer;opacity:.6;display:inline-flex;transition:opacity var(--dur-fast);}
+.chip__close:hover{opacity:1;}
+
+/* —— 徽标 badge —— */
+.badge{position:relative;display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:var(--radius-pill);
+  font-size:var(--fs-xs);font-weight:700;line-height:1.7;color:var(--muted-2);
+  background:var(--glass-bg-soft);border:1px solid var(--glass-border);}
+.badge--primary{background:rgba(10,132,255,.16);color:var(--primary-d);border-color:rgba(10,132,255,.3);}
+.badge--success{background:rgba(48,209,88,.16);color:#0c7a31;border-color:rgba(48,209,88,.3);}
+.badge--accent{background:rgba(255,69,58,.16);color:var(--accent);border-color:rgba(255,69,58,.3);}
+.badge--warn{background:rgba(255,159,10,.16);color:#9a6200;border-color:rgba(255,159,10,.32);}
+.badge--dot::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:0 0 auto;}
+.badge--count{position:absolute;top:-7px;right:-7px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;
+  background:var(--accent);color:#fff;font-size:11px;justify-content:center;align-items:center;}
+
+/* —— 头像 —— */
+.avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--band);color:#fff;font-weight:700;font-size:var(--fs-base);
+  border:1px solid var(--glass-border);box-shadow:var(--glass-highlight);flex:0 0 auto;}
+.avatar--sm{width:32px;height:32px;font-size:var(--fs-sm);}
+.avatar--lg{width:56px;height:56px;font-size:var(--fs-lg);}
+.avatar--ring{box-shadow:0 0 0 3px var(--glass-bg),var(--glass-shadow);}

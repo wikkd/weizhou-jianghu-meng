@@ -1,0 +1,789 @@
+{
+  "generated": "",
+  "source": "char_stats.json + spatial_data.json + full_text.txt",
+  "total_paragraphs": 3538,
+  "count": 71,
+  "keywords": [
+    {
+      "name": "任琅",
+      "type": "人物",
+      "total": 1445,
+      "chapters": 58,
+      "first": {
+        "ch": 0,
+        "para": 7
+      },
+      "first_label": "序"
+    },
+    {
+      "name": "尚樱",
+      "type": "人物",
+      "total": 1188,
+      "chapters": 54,
+      "first": {
+        "ch": 0,
+        "para": 7
+      },
+      "first_label": "序"
+    },
+    {
+      "name": "夏叶",
+      "type": "人物",
+      "total": 328,
+      "chapters": 22,
+      "first": {
+        "ch": 17,
+        "para": 19
+      },
+      "first_label": "第十七回"
+    },
+    {
+      "name": "刘笑岩",
+      "type": "人物",
+      "total": 288,
+      "chapters": 18,
+      "first": {
+        "ch": 25,
+        "para": 22
+      },
+      "first_label": "第二十五回"
+    },
+    {
+      "name": "陈奉天",
+      "type": "人物",
+      "total": 275,
+      "chapters": 28,
+      "first": {
+        "ch": 17,
+        "para": 6
+      },
+      "first_label": "第十七回"
+    },
+    {
+      "name": "影",
+      "type": "人物",
+      "total": 210,
+      "chapters": 46,
+      "first": {
+        "ch": 1,
+        "para": 11
+      },
+      "first_label": "第一回"
+    },
+    {
+      "name": "许达",
+      "type": "人物",
+      "total": 193,
+      "chapters": 17,
+      "first": {
+        "ch": 14,
+        "para": 40
+      },
+      "first_label": "第十四回"
+    },
+    {
+      "name": "刑布",
+      "type": "人物",
+      "total": 122,
+      "chapters": 17,
+      "first": {
+        "ch": 8,
+        "para": 7
+      },
+      "first_label": "第八回"
+    },
+    {
+      "name": "苏雨",
+      "type": "人物",
+      "total": 114,
+      "chapters": 13,
+      "first": {
+        "ch": 28,
+        "para": 14
+      },
+      "first_label": "第二十八回"
+    },
+    {
+      "name": "赵骁",
+      "type": "人物",
+      "total": 113,
+      "chapters": 10,
+      "first": {
+        "ch": 21,
+        "para": 48
+      },
+      "first_label": "第二十一回"
+    },
+    {
+      "name": "马远",
+      "type": "人物",
+      "total": 97,
+      "chapters": 11,
+      "first": {
+        "ch": 24,
+        "para": 20
+      },
+      "first_label": "第二十四回"
+    },
+    {
+      "name": "王慕",
+      "type": "人物",
+      "total": 96,
+      "chapters": 6,
+      "first": {
+        "ch": 19,
+        "para": 0
+      },
+      "first_label": "第十九回"
+    },
+    {
+      "name": "李博",
+      "type": "人物",
+      "total": 93,
+      "chapters": 9,
+      "first": {
+        "ch": 4,
+        "para": 33
+      },
+      "first_label": "第四回"
+    },
+    {
+      "name": "张潇璃",
+      "type": "人物",
+      "total": 92,
+      "chapters": 7,
+      "first": {
+        "ch": 41,
+        "para": 27
+      },
+      "first_label": "第四十一回"
+    },
+    {
+      "name": "聂林",
+      "type": "人物",
+      "total": 92,
+      "chapters": 8,
+      "first": {
+        "ch": 48,
+        "para": 4
+      },
+      "first_label": "第四十八回"
+    },
+    {
+      "name": "苏沐文",
+      "type": "人物",
+      "total": 92,
+      "chapters": 10,
+      "first": {
+        "ch": 32,
+        "para": 9
+      },
+      "first_label": "第三十二回"
+    },
+    {
+      "name": "赵翔",
+      "type": "人物",
+      "total": 89,
+      "chapters": 16,
+      "first": {
+        "ch": 22,
+        "para": 35
+      },
+      "first_label": "第二十二回"
+    },
+    {
+      "name": "陆仲",
+      "type": "人物",
+      "total": 81,
+      "chapters": 4,
+      "first": {
+        "ch": 50,
+        "para": 22
+      },
+      "first_label": "第五十回"
+    },
+    {
+      "name": "尚衫虎",
+      "type": "人物",
+      "total": 75,
+      "chapters": 5,
+      "first": {
+        "ch": 2,
+        "para": 3
+      },
+      "first_label": "第二回"
+    },
+    {
+      "name": "虞环",
+      "type": "人物",
+      "total": 69,
+      "chapters": 8,
+      "first": {
+        "ch": 18,
+        "para": 1
+      },
+      "first_label": "第十八回"
+    },
+    {
+      "name": "黄亚钊",
+      "type": "人物",
+      "total": 66,
+      "chapters": 6,
+      "first": {
+        "ch": 29,
+        "para": 0
+      },
+      "first_label": "第二十九回"
+    },
+    {
+      "name": "程廖",
+      "type": "人物",
+      "total": 65,
+      "chapters": 3,
+      "first": {
+        "ch": 53,
+        "para": 9
+      },
+      "first_label": "第五十三回"
+    },
+    {
+      "name": "纪田",
+      "type": "人物",
+      "total": 63,
+      "chapters": 6,
+      "first": {
+        "ch": 44,
+        "para": 47
+      },
+      "first_label": "第四十四回"
+    },
+    {
+      "name": "武蒯",
+      "type": "人物",
+      "total": 62,
+      "chapters": 10,
+      "first": {
+        "ch": 36,
+        "para": 59
+      },
+      "first_label": "第三十六回"
+    },
+    {
+      "name": "范豪",
+      "type": "人物",
+      "total": 56,
+      "chapters": 5,
+      "first": {
+        "ch": 25,
+        "para": 24
+      },
+      "first_label": "第二十五回"
+    },
+    {
+      "name": "叶云",
+      "type": "人物",
+      "total": 53,
+      "chapters": 11,
+      "first": {
+        "ch": 8,
+        "para": 14
+      },
+      "first_label": "第八回"
+    },
+    {
+      "name": "秦阳",
+      "type": "人物",
+      "total": 52,
+      "chapters": 4,
+      "first": {
+        "ch": 28,
+        "para": 20
+      },
+      "first_label": "第二十八回"
+    },
+    {
+      "name": "夏穗良",
+      "type": "人物",
+      "total": 44,
+      "chapters": 3,
+      "first": {
+        "ch": 26,
+        "para": 3
+      },
+      "first_label": "第二十六回"
+    },
+    {
+      "name": "法慧",
+      "type": "人物",
+      "total": 39,
+      "chapters": 7,
+      "first": {
+        "ch": 4,
+        "para": 15
+      },
+      "first_label": "第四回"
+    },
+    {
+      "name": "韩德",
+      "type": "人物",
+      "total": 37,
+      "chapters": 4,
+      "first": {
+        "ch": 50,
+        "para": 37
+      },
+      "first_label": "第五十回"
+    },
+    {
+      "name": "谢仁玄",
+      "type": "人物",
+      "total": 36,
+      "chapters": 7,
+      "first": {
+        "ch": 26,
+        "para": 4
+      },
+      "first_label": "第二十六回"
+    },
+    {
+      "name": "川阴王",
+      "type": "人物",
+      "total": 35,
+      "chapters": 19,
+      "first": {
+        "ch": 17,
+        "para": 26
+      },
+      "first_label": "第十七回"
+    },
+    {
+      "name": "安弈霖",
+      "type": "人物",
+      "total": 34,
+      "chapters": 4,
+      "first": {
+        "ch": 44,
+        "para": 41
+      },
+      "first_label": "第四十四回"
+    },
+    {
+      "name": "张百慧",
+      "type": "人物",
+      "total": 33,
+      "chapters": 5,
+      "first": {
+        "ch": 20,
+        "para": 66
+      },
+      "first_label": "第二十回"
+    },
+    {
+      "name": "王监军",
+      "type": "人物",
+      "total": 31,
+      "chapters": 1,
+      "first": {
+        "ch": 57,
+        "para": 6
+      },
+      "first_label": "第五十七回"
+    },
+    {
+      "name": "安明",
+      "type": "人物",
+      "total": 25,
+      "chapters": 6,
+      "first": {
+        "ch": 44,
+        "para": 84
+      },
+      "first_label": "第四十四回"
+    },
+    {
+      "name": "刘媛灵",
+      "type": "人物",
+      "total": 24,
+      "chapters": 4,
+      "first": {
+        "ch": 1,
+        "para": 19
+      },
+      "first_label": "第一回"
+    },
+    {
+      "name": "张洵",
+      "type": "人物",
+      "total": 20,
+      "chapters": 3,
+      "first": {
+        "ch": 20,
+        "para": 60
+      },
+      "first_label": "第二十回"
+    },
+    {
+      "name": "张览",
+      "type": "人物",
+      "total": 19,
+      "chapters": 3,
+      "first": {
+        "ch": 50,
+        "para": 37
+      },
+      "first_label": "第五十回"
+    },
+    {
+      "name": "王奔",
+      "type": "人物",
+      "total": 18,
+      "chapters": 2,
+      "first": {
+        "ch": 2,
+        "para": 24
+      },
+      "first_label": "第二回"
+    },
+    {
+      "name": "赵思俪",
+      "type": "人物",
+      "total": 18,
+      "chapters": 2,
+      "first": {
+        "ch": 36,
+        "para": 9
+      },
+      "first_label": "第三十六回"
+    },
+    {
+      "name": "李叔",
+      "type": "人物",
+      "total": 17,
+      "chapters": 6,
+      "first": {
+        "ch": 7,
+        "para": 22
+      },
+      "first_label": "第七回"
+    },
+    {
+      "name": "刑泰",
+      "type": "人物",
+      "total": 17,
+      "chapters": 3,
+      "first": {
+        "ch": 31,
+        "para": 0
+      },
+      "first_label": "第三十一回"
+    },
+    {
+      "name": "金雷",
+      "type": "人物",
+      "total": 17,
+      "chapters": 10,
+      "first": {
+        "ch": 10,
+        "para": 14
+      },
+      "first_label": "第十回"
+    },
+    {
+      "name": "雷光",
+      "type": "人物",
+      "total": 16,
+      "chapters": 11,
+      "first": {
+        "ch": 6,
+        "para": 9
+      },
+      "first_label": "第六回"
+    },
+    {
+      "name": "陈王",
+      "type": "人物",
+      "total": 15,
+      "chapters": 2,
+      "first": {
+        "ch": 56,
+        "para": 4
+      },
+      "first_label": "第五十六回"
+    },
+    {
+      "name": "阮盛",
+      "type": "人物",
+      "total": 13,
+      "chapters": 2,
+      "first": {
+        "ch": 17,
+        "para": 13
+      },
+      "first_label": "第十七回"
+    },
+    {
+      "name": "楚笙",
+      "type": "人物",
+      "total": 11,
+      "chapters": 1,
+      "first": {
+        "ch": 28,
+        "para": 42
+      },
+      "first_label": "第二十八回"
+    },
+    {
+      "name": "刘安",
+      "type": "人物",
+      "total": 9,
+      "chapters": 1,
+      "first": {
+        "ch": 2,
+        "para": 43
+      },
+      "first_label": "第二回"
+    },
+    {
+      "name": "京",
+      "type": "地点",
+      "total": 82,
+      "chapters": 30,
+      "first": {
+        "ch": 7,
+        "para": 17
+      },
+      "first_label": "第七回"
+    },
+    {
+      "name": "望岳镇",
+      "type": "地点",
+      "total": 41,
+      "chapters": 20,
+      "first": {
+        "ch": 2,
+        "para": 0
+      },
+      "first_label": "第二回"
+    },
+    {
+      "name": "楚城",
+      "type": "地点",
+      "total": 30,
+      "chapters": 7,
+      "first": {
+        "ch": 35,
+        "para": 69
+      },
+      "first_label": "第三十五回"
+    },
+    {
+      "name": "奉秋",
+      "type": "地点",
+      "total": 21,
+      "chapters": 8,
+      "first": {
+        "ch": 33,
+        "para": 68
+      },
+      "first_label": "第三十三回"
+    },
+    {
+      "name": "梨阳",
+      "type": "地点",
+      "total": 18,
+      "chapters": 9,
+      "first": {
+        "ch": 17,
+        "para": 1
+      },
+      "first_label": "第十七回"
+    },
+    {
+      "name": "川阴城",
+      "type": "地点",
+      "total": 17,
+      "chapters": 10,
+      "first": {
+        "ch": 18,
+        "para": 0
+      },
+      "first_label": "第十八回"
+    },
+    {
+      "name": "石陵",
+      "type": "地点",
+      "total": 15,
+      "chapters": 6,
+      "first": {
+        "ch": 33,
+        "para": 68
+      },
+      "first_label": "第三十三回"
+    },
+    {
+      "name": "响城",
+      "type": "地点",
+      "total": 15,
+      "chapters": 2,
+      "first": {
+        "ch": 45,
+        "para": 2
+      },
+      "first_label": "第四十五回"
+    },
+    {
+      "name": "卫京郡",
+      "type": "地点",
+      "total": 11,
+      "chapters": 3,
+      "first": {
+        "ch": 38,
+        "para": 24
+      },
+      "first_label": "第三十八回"
+    },
+    {
+      "name": "夫文渡口",
+      "type": "地点",
+      "total": 11,
+      "chapters": 6,
+      "first": {
+        "ch": 33,
+        "para": 69
+      },
+      "first_label": "第三十三回"
+    },
+    {
+      "name": "川陵",
+      "type": "地点",
+      "total": 10,
+      "chapters": 2,
+      "first": {
+        "ch": 53,
+        "para": 9
+      },
+      "first_label": "第五十三回"
+    },
+    {
+      "name": "武都",
+      "type": "地点",
+      "total": 7,
+      "chapters": 3,
+      "first": {
+        "ch": 53,
+        "para": 0
+      },
+      "first_label": "第五十三回"
+    },
+    {
+      "name": "苏城",
+      "type": "地点",
+      "total": 6,
+      "chapters": 5,
+      "first": {
+        "ch": 32,
+        "para": 46
+      },
+      "first_label": "第三十二回"
+    },
+    {
+      "name": "建武",
+      "type": "地点",
+      "total": 5,
+      "chapters": 1,
+      "first": {
+        "ch": 50,
+        "para": 25
+      },
+      "first_label": "第五十回"
+    },
+    {
+      "name": "蒙城",
+      "type": "地点",
+      "total": 4,
+      "chapters": 1,
+      "first": {
+        "ch": 53,
+        "para": 11
+      },
+      "first_label": "第五十三回"
+    },
+    {
+      "name": "方上",
+      "type": "地点",
+      "total": 4,
+      "chapters": 2,
+      "first": {
+        "ch": 50,
+        "para": 25
+      },
+      "first_label": "第五十回"
+    },
+    {
+      "name": "昌平",
+      "type": "地点",
+      "total": 3,
+      "chapters": 2,
+      "first": {
+        "ch": 53,
+        "para": 0
+      },
+      "first_label": "第五十三回"
+    },
+    {
+      "name": "南岭关",
+      "type": "地点",
+      "total": 2,
+      "chapters": 1,
+      "first": {
+        "ch": 56,
+        "para": 44
+      },
+      "first_label": "第五十六回"
+    },
+    {
+      "name": "子午郡",
+      "type": "地点",
+      "total": 2,
+      "chapters": 1,
+      "first": {
+        "ch": 53,
+        "para": 4
+      },
+      "first_label": "第五十三回"
+    },
+    {
+      "name": "京墨渡口",
+      "type": "地点",
+      "total": 1,
+      "chapters": 1,
+      "first": {
+        "ch": 56,
+        "para": 47
+      },
+      "first_label": "第五十六回"
+    },
+    {
+      "name": "角都",
+      "type": "地点",
+      "total": 1,
+      "chapters": 1,
+      "first": {
+        "ch": 52,
+        "para": 38
+      },
+      "first_label": "第五十二回"
+    },
+    {
+      "name": "清州",
+      "type": "地点",
+      "total": 1,
+      "chapters": 1,
+      "first": {
+        "ch": 50,
+        "para": 25
+      },
+      "first_label": "第五十回"
+    }
+  ]
+}

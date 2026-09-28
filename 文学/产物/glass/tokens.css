@@ -1,0 +1,121 @@
+/* =====================================================================
+ *  Glass Design System · Tokens (设计令牌)
+ *  ---------------------------------------------------------------------
+ *  单一权威变量源。所有组件仅消费此处 Token，主题/暗色/品牌切换即改这里。
+ *  保留 theme.css 同名变量名（--primary/--surface/--ink/--line/--accent/
+ *  --gold/--band/--serif/--sans/--radius/--shadow…），以便 echarts-kit.js
+ *  图表调色板与 dm-toggle 暗色切换自动适配。
+ *
+ *  视觉语言：Apple 经典冷调液态玻璃（translucent + blur + highlight + refraction）
+ * ===================================================================== */
+
+:root{
+  /* —— 品牌 / 语义色（Apple 系统冷调）—— */
+  --primary:#0a84ff;          /* 系统蓝 */
+  --primary-d:#0066d6;        /* 深蓝（渐变深端 / 数字） */
+  --primary-l:#5ac8fa;        /* 浅蓝（高光） */
+  --accent:#ff453a;           /* 系统红（关键标记 / 负向） */
+  --accent-d:#d70015;
+  --success:#30d158;          /* 系统绿 */
+  --warning:#ff9f0a;          /* 系统橙 */
+  --gold:#ffd60a;             /* 鎏金（星级 / 强调） */
+  --indigo:#5e5ce6;           /* 靛蓝（渐变伙伴） */
+  --teal:#64d2ff;
+
+  /* —— 中性 / 文本 —— */
+  --ink:#0f1620;              /* 主文字（近黑冷） */
+  --ink-2:#2a3340;
+  --muted:#5d6675;            /* 次要文字 */
+  --muted-2:#8a93a3;
+  --line:rgba(18,30,50,.12);          /* 描边 / 分隔 */
+  --line-strong:rgba(18,30,50,.22);
+
+  /* —— 表面（玻璃分层）—— */
+  --bg:#e9eef7;                       /* 页面底色（token 兜底，实际用渐变） */
+  --surface:rgba(255,255,255,.62);    /* 卡片/表面 */
+  --surface-2:rgba(255,255,255,.5);   /* 次级表面 */
+  --surface-solid:#ffffff;            /* 纯色兜底（极端对比场景） */
+
+  --band:linear-gradient(135deg,#0a84ff 0%,#5e5ce6 100%);  /* 标题带 / 主按钮 */
+
+  /* —— 字体（Apple 化：标题也走无衬线，文学感交内容层处理）—— */
+  --sans:'PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:'PingFang SC','Noto Sans SC',system-ui,sans-serif;  /* 兼容旧 h2/h3 调用 */
+  --mono:'SF Mono','JetBrains Mono','Roboto Mono',ui-monospace,Menlo,Consolas,monospace;
+
+  /* —— 形状 / 间距 / 度量 —— */
+  --radius-sm:12px; --radius:16px; --radius-lg:22px; --radius-xl:28px; --radius-pill:999px;
+  --shadow:0 6px 20px -8px rgba(20,40,80,.18);
+  --shadow-card:0 14px 38px -12px rgba(20,40,80,.26);
+  --measure:72ch;
+
+  /* —— 间距刻度（4px 基准）—— */
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:20px;
+  --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px; --space-16:64px;
+
+  /* —— 字阶（clamp 流式）—— */
+  --fs-xs:12px; --fs-sm:13.5px; --fs-base:15px; --fs-md:16px; --fs-lg:18px;
+  --fs-xl:20px; --fs-2xl:clamp(22px,2.6vw,26px); --fs-3xl:clamp(26px,3.4vw,32px);
+  --fs-4xl:clamp(32px,4.6vw,44px);
+
+  /* —— 液态玻璃核心变量（高光 + 折射 + 模糊）—— */
+  --glass-tint:255,255,255;                 /* rgb 组分，用于 rgba() 合成 */
+  --glass-bg:rgba(var(--glass-tint),.68);
+  --glass-bg-strong:rgba(var(--glass-tint),.85);  /* 文本密集表面（悬浮窗增加不透明度） */
+  --glass-bg-soft:rgba(var(--glass-tint),.4);     /* 轻量提示 */
+  --glass-border:rgba(var(--glass-tint),.7);
+  --glass-blur:22px;
+  --glass-saturate:170%;
+  /* 顶部高光 + 底部内阴影 = 玻璃边缘的"折射"观感 */
+  --glass-highlight:
+     inset 0 1px 1px rgba(255,255,255,.75),
+     inset 0 -.5px 0 rgba(255,255,255,.12),
+     inset 0 0 0 1px rgba(255,255,255,.18);
+  /* 多层投影 = 悬浮折射出的柔光 */
+  --glass-shadow:0 12px 34px -10px rgba(15,30,60,.28), 0 2px 8px rgba(15,30,60,.12);
+  --glass-ring:0 0 0 1px rgba(var(--glass-tint),.35);
+  --glass-sheen:linear-gradient(135deg,rgba(255,255,255,.5) 0%,rgba(255,255,255,0) 38%);
+
+  /* —— 动效（Apple 弹簧缓动）—— */
+  --dur-fast:.18s; --dur:.28s; --dur-slow:.46s;
+  --ease:cubic-bezier(.32,.72,0,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-in-out:cubic-bezier(.65,0,.35,1);
+
+  /* —— 层级 —— */
+  --z-base:1; --z-sticky:100; --z-overlay:1000; --z-toast:1100; --z-modal:1200; --z-tooltip:1300;
+}
+
+/* ============================================================
+ *  暗色（body.dark）—— 冷调深夜玻璃，保留同名 Token
+ *  ========================================================= */
+body.dark{
+  --primary:#0a84ff; --primary-d:#409cff; --primary-l:#64d2ff;
+  --accent:#ff6961; --accent-d:#ff453a;
+  --success:#30d158; --warning:#ffd60a; --gold:#ffd60a;
+  --indigo:#7d7bff; --teal:#64d2ff;
+
+  --ink:#eef2f8; --ink-2:#c9d2df; --muted:#9aa6b6; --muted-2:#6f7a8a;
+  --line:rgba(255,255,255,.1); --line-strong:rgba(255,255,255,.2);
+
+  --bg:#0a0d13;
+  --surface:rgba(28,32,42,.55);
+  --surface-2:rgba(28,32,42,.45);
+  --surface-solid:#161a22;
+
+  --band:linear-gradient(135deg,#0a84ff 0%,#5e5ce6 100%);
+  --shadow:0 8px 26px -10px rgba(0,0,0,.55);
+  --shadow-card:0 18px 46px -12px rgba(0,0,0,.62);
+
+  --glass-tint:22,26,34;
+  --glass-bg:rgba(var(--glass-tint),.62);
+  --glass-bg-strong:rgba(var(--glass-tint),.85);  /* 悬浮窗增加不透明度 */
+  --glass-bg-soft:rgba(var(--glass-tint),.4);
+  --glass-border:rgba(255,255,255,.16);
+  --glass-highlight:
+     inset 0 1px 1px rgba(255,255,255,.16),
+     inset 0 0 0 1px rgba(255,255,255,.06);
+  --glass-shadow:0 16px 44px -12px rgba(0,0,0,.65), 0 2px 10px rgba(0,0,0,.4);
+  --glass-ring:0 0 0 1px rgba(255,255,255,.1);
+  --glass-sheen:linear-gradient(135deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,0) 40%);
+}

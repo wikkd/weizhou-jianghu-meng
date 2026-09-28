@@ -1,0 +1,68 @@
+/* =====================================================================
+ *  Glass · Data（数据展示：KPI 卡 / 键值 / 表格 / 列表 / 时间线）
+ *  注意：保留 theme.css 旧 .stat/.kpi/.metric/.meta 于 legacy.css，
+ *        此处新组件命名为 .statcard 以免冲突。
+ * ===================================================================== */
+
+/* —— KPI 指标卡（新版玻璃）—— */
+.statcard{display:flex;flex-direction:column;gap:2px;padding:var(--space-4);
+  background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:var(--glass-highlight);
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);}
+.statcard:hover{transform:translateY(-2px);box-shadow:var(--glass-highlight),var(--glass-shadow);}
+.statcard__value{font-size:var(--fs-2xl);font-weight:800;color:var(--primary-d);line-height:1.1;
+  font-variant-numeric:tabular-nums;}
+.statcard__label{font-size:var(--fs-sm);color:var(--muted);}
+.statcard__delta{font-size:var(--fs-sm);font-weight:600;}
+.statcard__delta.up{color:var(--success);} .statcard__delta.down{color:var(--accent);}
+.statcard--inline{flex-direction:row;align-items:baseline;gap:8px;padding:10px 16px;}
+.statcard--accent .statcard__value{color:var(--accent);}
+.statcard--gold .statcard__value{color:#9a7a00;}
+
+/* —— 键值对 —— */
+.kv{display:flex;justify-content:space-between;gap:var(--space-3);padding:9px 0;border-bottom:1px solid var(--line);}
+.kv:last-child{border-bottom:0;}
+.kv__k{color:var(--muted);} .kv__v{font-weight:600;color:var(--ink);text-align:right;}
+
+/* —— 表格（玻璃，兼作全局 table 基础样式）—— */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0;border-radius:var(--radius);}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:var(--fs-sm);line-height:1.6;overflow:hidden;}
+caption{caption-side:top;text-align:left;color:var(--muted);font-size:var(--fs-sm);padding:0 0 8px;letter-spacing:.3px;}
+thead th{background:var(--glass-bg-strong);color:var(--primary-d);font-weight:700;text-align:left;
+  padding:10px 14px;border-bottom:1px solid var(--line);position:sticky;top:0;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+tbody tr{transition:background var(--dur-fast) var(--ease);}
+tbody tr:hover{background:rgba(10,132,255,.08);}
+tbody tr:nth-child(even){background:rgba(120,135,160,.06);}
+td.nm,td.name{font-weight:600;color:var(--ink);}
+
+/* 包裹式玻璃表格 */
+.datatable{padding:0;border-radius:var(--radius);overflow:hidden;
+  background:var(--glass-bg);border:1px solid var(--glass-border);box-shadow:var(--glass-highlight);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+.datatable .table-wrap{margin:0;border-radius:0;}
+.datatable table{margin:0;}
+
+/* —— 列表 —— */
+.list{display:flex;flex-direction:column;}
+.list__item{display:flex;align-items:center;gap:var(--space-3);padding:12px var(--space-3);
+  border-radius:var(--radius-sm);transition:background var(--dur-fast) var(--ease);cursor:pointer;}
+.list__item + .list__item{border-top:1px solid var(--line);}
+.list__item:hover{background:var(--glass-bg-soft);}
+.list__media{flex:0 0 auto;}
+.list__content{flex:1 1 auto;min-width:0;}
+.list__title{font-weight:600;color:var(--ink);}
+.list__sub{font-size:var(--fs-sm);color:var(--muted);}
+.list__action{flex:0 0 auto;color:var(--muted);}
+
+/* —— 时间线 —— */
+.timeline{position:relative;padding-left:var(--space-6);}
+.timeline::before{content:"";position:absolute;left:7px;top:4px;bottom:4px;width:2px;border-radius:2px;
+  background:linear-gradient(var(--primary),var(--indigo));opacity:.45;}
+.timeline__item{position:relative;padding:0 0 var(--space-5);}
+.timeline__item:last-child{padding-bottom:0;}
+.timeline__dot{position:absolute;left:calc(-1 * var(--space-6) + 1px);top:4px;width:14px;height:14px;border-radius:50%;
+  background:var(--surface-solid);border:3px solid var(--primary);box-shadow:0 0 0 4px rgba(10,132,255,.15);}
+.timeline__time{font-size:var(--fs-xs);color:var(--primary-d);font-weight:700;letter-spacing:.04em;}
+.timeline__title{font-weight:600;color:var(--ink);margin:2px 0;}
+.timeline__body{font-size:var(--fs-sm);color:var(--muted);}

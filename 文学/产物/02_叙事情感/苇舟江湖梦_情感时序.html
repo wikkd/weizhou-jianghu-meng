@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<script id="wzjm-key-migration">try{var n0=localStorage.getItem("wzjm_dark");if(n0===null){var o0=localStorage.getItem("wzjm_dark");if(o0!==null)localStorage.setItem("wzjm_dark",o0);}var n1=localStorage.getItem("wzjm_lib_dark");if(n1===null){var o1=localStorage.getItem("wzjm_lib_dark");if(o1!==null)localStorage.setItem("wzjm_lib_dark",o1);}var n2=localStorage.getItem("wzjm_lib_accent");if(n2===null){var o2=localStorage.getItem("wzjm_lib_accent");if(o2!==null)localStorage.setItem("wzjm_lib_accent",o2);}var n3=localStorage.getItem("wzjm_mm_theme");if(n3===null){var o3=localStorage.getItem("wzjm_mm_theme");if(o3!==null)localStorage.setItem("wzjm_mm_theme",o3);}}catch(e){}</script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>苇舟江湖梦 · 情感时序</title>
+<link rel="stylesheet" href="theme.css"></head>
+<body><div class="wrap">
+<h1>《苇舟江湖梦》情感极性时序分析</h1>
+<p class="note">逐章情感打分（62 章）与战斗强度对照 · 生成方法：dict_fallback</p>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">0.5867</div><div class="l">全本情感均值</div></div>
+  <div class="kpi"><div class="v">0.6058</div><div class="l">前 1/3 均值</div></div>
+  <div class="kpi"><div class="v">0.5865</div><div class="l">中 1/3 均值</div></div>
+  <div class="kpi"><div class="v">0.5677</div><div class="l">后 1/3 均值</div></div>
+  <div class="kpi"><div class="v">-0.4851</div><div class="l">Pearson r（情感~战斗）</div></div>
+  <div class="kpi"><div class="v">-0.4942</div><div class="l">Spearman ρ（情感~战斗）</div></div>
+</div>
+
+<!--WZ-CHART-BLOCK-START-->
+<h2>情感时序 vs 战斗强度（交互式动态图表）</h2>
+<div class="card wz-chart-card">
+  <div class="wz-controls">
+    <div class="wz-ctrl-group">
+      <button id="wz-play" class="wz-btn" type="button" aria-label="播放时间轴">▶ 播放时间轴</button>
+      <input id="wz-seek" class="wz-seek" type="range" min="1" max="62" value="62" aria-label="时间轴进度">
+      <span id="wz-frame" class="wz-frame">第 62 / 62 章</span>
+    </div>
+    <div class="wz-ctrl-group">
+      <button id="wz-live" class="wz-btn" type="button" aria-label="模拟实时数据流">⦿ 模拟实时数据流</button>
+      <span id="wz-live-dot" class="wz-dot" aria-hidden="true"></span>
+    </div>
+  </div>
+  <div id="wz-chart" data-wz-chart style="width:100%;height:440px"></div>
+  <div id="wz-detail" class="wz-detail" hidden></div>
+  <p class="wz-hint">交互：悬停查看逐章数值 · 拖动滑块缩放(dataZoom) · 点击图例筛选序列 · 点击数据点查看章节详情 · 「播放时间轴」逐章演进 · 「模拟实时数据流」演示外部事件触发的平滑重绘。</p>
+</div>
+<!--WZ-CHART-BLOCK-END-->
+
+
+<h2>相关系数解读</h2>
+<div class="card note">
+<p>全本情感均值 <b>0.5867</b>（0=极负, 0.5=中性, 1=极正），整体偏正面。</p>
+<p>前后段对比：前 1/3 均值 <b>0.6058</b>，中 1/3 <b>0.5865</b>，后 1/3 <b>0.5677</b>。
+后段相对走低</p>
+<p><b>Pearson r = -0.4851</b>（p=0.0001），相关强度：中等。该系数衡量情感与战斗强度的<em>线性</em>同步程度。</p>
+<p><b>Spearman ρ = -0.4942</b>（p=0.0000），相关强度：中等。该系数基于秩次，衡量单调趋势，对非线性/异常值更稳健。</p>
+<p>若两系数均接近 0，说明本章情感高低与战斗激烈程度之间不存在稳定的系统关联——
+武侠小说中激烈的战斗既可伴随悲壮/愤怒（负向），也可伴随豪情/畅快（正向），极性被文本修辞中和属正常现象。</p>
+</div>
+
+<h2>方法注记与局限</h2>
+<div class="card note">
+<ul>
+  <li><b>打分模型</b>：优先使用 <code>snownlp</code> 对每章<em>全文</em>计算 <code>sentiments</code>（0–1，越接近 1 越正面）；
+  若 snownlp 不可用，则退回内置正/负情感词典的简易计数打分。本次实际方法：<b>dict_fallback</b>。</li>
+  <li><b>snownlp 退化记录</b>：本次实测 <code>snownlp</code> 在本武侠语料上严重误判——不仅将"他死了，好悲伤好痛苦"之类明显负面句判为 0.99 正面，
+  且对全部 62 章的长文本极性均饱和到精确的 <code>1.0</code>（全章极差 &lt; 0.02，无任何区分度）。
+  该模型在古文/武侠语域未训练、被修辞与战斗描写带偏，故被视为"不可用"并自动切回词典打分。这正是任务所述"情感模型可能偏差"的典型例证。</li>
+  <li><b>战斗强度</b>：取自 <code>chapter_data/all_tags.json</code> 的 <code>combat_intensity</code>（0–3 序数）。</li>
+  <li><b>相关系数</b>：Pearson 与 Spearman 均由 <code>scipy</code> 计算；p 值用于显著性判断（通常以 p&lt;0.05 视为显著）。</li>
+  <li><b>词典回退打分加固（2026-08-18）</b>：回退打分器对单字情感种子（笑/好等）采用「否定清单边界」——<code>score()</code> 前先以 <code>_clean()</code> 剔除 嘲笑/冷笑/讥笑/好像 等同字污染复合词，避免子串污染（与 <code>_rebuild_char_mentions.py</code> 修正「影」同机制）。实测全本均值仅变动约 0.3 个百分点（低于 1%），Pearson/Spearman 相关方向与显著性（p&lt;0.001）均不变。</li>
+  <li><b>重要方法局限</b>：武侠文本大量包含<strong>讽刺、反语、夸张、正话反说、以乐景写哀情</strong>等修辞，
+  通用情感模型（尤其 snownlp 在古文/武侠语域上未专门训练）可能产生<strong>系统性偏差</strong>，
+  例如把"快意恩仇""笑傲"误判为轻松正面、把含蓄悲壮判为中性。因此本分析<strong>仅作趋势性参考</strong>，
+  不可作为文本情感事实的定论。如需严谨结论，建议结合人工标注或领域微调模型。</li>
+  <li><b>纪律</b>：分析过程仅读取源文件，未对任何 chapter_data 或源文件做任何修改。</li>
+</ul>
+</div>
+
+<h2>逐章明细</h2>
+<div class="card scroll"><table>
+<thead><tr><th>章</th><th>sentiment</th><th>combat</th></tr></thead>
+<tbody><tr><td>01</td><td>0.5882</td><td>1</td></tr><tr><td>02</td><td>0.3519</td><td>2</td></tr><tr><td>03</td><td>0.4364</td><td>2</td></tr><tr><td>04</td><td>0.5000</td><td>2</td></tr><tr><td>05</td><td>0.4500</td><td>2</td></tr><tr><td>06</td><td>0.4886</td><td>2</td></tr><tr><td>07</td><td>0.6883</td><td>1</td></tr><tr><td>08</td><td>0.5526</td><td>0</td></tr><tr><td>09</td><td>0.8043</td><td>0</td></tr><tr><td>10</td><td>0.5385</td><td>3</td></tr><tr><td>11</td><td>0.6848</td><td>2</td></tr><tr><td>12</td><td>0.9014</td><td>0</td></tr><tr><td>13</td><td>0.7538</td><td>0</td></tr><tr><td>14</td><td>0.5769</td><td>2</td></tr><tr><td>15</td><td>0.5660</td><td>2</td></tr><tr><td>16</td><td>0.6932</td><td>1</td></tr><tr><td>17</td><td>0.3611</td><td>2</td></tr><tr><td>18</td><td>0.7273</td><td>2</td></tr><tr><td>19</td><td>0.9130</td><td>1</td></tr><tr><td>20</td><td>0.7444</td><td>1</td></tr><tr><td>21</td><td>0.4000</td><td>1</td></tr><tr><td>22</td><td>0.5079</td><td>2</td></tr><tr><td>23</td><td>0.5652</td><td>0</td></tr><tr><td>24</td><td>0.3690</td><td>3</td></tr><tr><td>25</td><td>0.5833</td><td>0</td></tr><tr><td>26</td><td>0.7033</td><td>2</td></tr><tr><td>27</td><td>0.7379</td><td>2</td></tr><tr><td>28</td><td>0.6000</td><td>2</td></tr><tr><td>29</td><td>0.5182</td><td>2</td></tr><tr><td>30</td><td>0.6667</td><td>2</td></tr><tr><td>31</td><td>0.7403</td><td>1</td></tr><tr><td>32</td><td>0.6588</td><td>2</td></tr><tr><td>33</td><td>0.6312</td><td>2</td></tr><tr><td>34</td><td>0.3514</td><td>3</td></tr><tr><td>35</td><td>0.4419</td><td>1</td></tr><tr><td>36</td><td>0.7193</td><td>1</td></tr><tr><td>37</td><td>0.4889</td><td>3</td></tr><tr><td>38</td><td>0.7465</td><td>0</td></tr><tr><td>39</td><td>0.3373</td><td>2</td></tr><tr><td>40</td><td>0.5455</td><td>0</td></tr><tr><td>41</td><td>0.8182</td><td>1</td></tr><tr><td>42</td><td>0.7000</td><td>0</td></tr><tr><td>43</td><td>0.7000</td><td>0</td></tr><tr><td>44</td><td>0.7133</td><td>1</td></tr><tr><td>45</td><td>0.6066</td><td>0</td></tr><tr><td>46</td><td>0.5747</td><td>2</td></tr><tr><td>47</td><td>0.5667</td><td>2</td></tr><tr><td>48</td><td>0.4796</td><td>0</td></tr><tr><td>49</td><td>0.4667</td><td>1</td></tr><tr><td>50</td><td>0.5231</td><td>3</td></tr><tr><td>51</td><td>0.4694</td><td>3</td></tr><tr><td>52</td><td>0.6452</td><td>3</td></tr><tr><td>53</td><td>0.3968</td><td>0</td></tr><tr><td>54</td><td>0.5586</td><td>1</td></tr><tr><td>55</td><td>0.4557</td><td>3</td></tr><tr><td>56</td><td>0.4182</td><td>3</td></tr><tr><td>57</td><td>0.3962</td><td>3</td></tr><tr><td>58</td><td>0.4492</td><td>3</td></tr><tr><td>59</td><td>0.7324</td><td>0</td></tr><tr><td>60</td><td>0.6724</td><td>0</td></tr><tr><td>61</td><td>0.7879</td><td>0</td></tr><tr><td>62</td><td>0.6087</td><td>2</td></tr></tbody></table></div>
+</div><!--WZ-SCRIPT-START-->
+<script src="echarts-kit.js"></script>
+<script>
+WZ.ready(function(){
+  var CH = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62];
+  var S = [0.588235, 0.351852, 0.436364, 0.5, 0.45, 0.488636, 0.688312, 0.552632, 0.804348, 0.538462, 0.684783, 0.901408, 0.753846, 0.576923, 0.566038, 0.693182, 0.361111, 0.727273, 0.913043, 0.744361, 0.4, 0.507937, 0.565217, 0.369048, 0.583333, 0.703297, 0.737864, 0.6, 0.518248, 0.666667, 0.74026, 0.658824, 0.63125, 0.351351, 0.44186, 0.719298, 0.488889, 0.746479, 0.337349, 0.545455, 0.818182, 0.7, 0.7, 0.713287, 0.606557, 0.574713, 0.566667, 0.479592, 0.466667, 0.523077, 0.469388, 0.645161, 0.396825, 0.558559, 0.455696, 0.418182, 0.396226, 0.449153, 0.732394, 0.672414, 0.787879, 0.608696];
+  var C = [1, 2, 2, 2, 2, 2, 1, 0, 0, 3, 2, 0, 0, 2, 2, 1, 2, 2, 1, 1, 1, 2, 0, 3, 0, 2, 2, 2, 2, 2, 1, 2, 2, 3, 1, 1, 3, 0, 2, 0, 1, 0, 0, 1, 0, 2, 2, 0, 1, 3, 3, 3, 0, 1, 3, 3, 3, 3, 0, 0, 0, 2];
+  var MEAN = 0.586657;
+  var PEARSON = -0.485065;
+  var N = CH.length;
+
+  function hexToRgba(hex,a){hex=hex.replace('#','');if(hex.length===3){hex=hex.split('').map(function(x){return x+x;}).join('');}var r=parseInt(hex.substr(0,2),16),g=parseInt(hex.substr(2,2),16),b=parseInt(hex.substr(4,2),16);return 'rgba('+r+','+g+','+b+','+a+')';}
+  function emotion(s){return s>0.62?'偏正面':(s<0.40?'偏负面':'中性');}
+  function combatLabel(c){return ['无战事','轻微冲突','中等交战','激烈大战'][c]||'—';}
+  function strength(r){var a=Math.abs(r);return a<0.1?'可忽略':a<0.3?'弱':a<0.5?'中等':a<0.7?'较强':'强';}
+
+  var chart = WZ.chart(document.getElementById('wz-chart'), function(vars){
+    var palette = WZ.buildTheme().color;
+    var blue = palette[0], red = palette[1];
+    return {
+      legend:{data:['情感 polarity','战斗强度'],top:6,icon:'roundRect'},
+      grid:{left:50,right:50,top:42,bottom:72,containLabel:true},
+      xAxis:{type:'category',boundaryGap:false,data:CH.map(function(c){return ('0'+c).slice(-2);}),name:'章',nameGap:30},
+      yAxis:[
+        {type:'value',name:'情感 polarity',min:0,max:1,position:'left',splitNumber:5},
+        {type:'value',name:'战斗强度',min:0,max:3,position:'right',interval:1,splitNumber:3}
+      ],
+      series:[
+        {name:'情感 polarity',type:'line',smooth:true,yAxisIndex:0,showSymbol:false,data:S,
+          lineStyle:{width:2.4,color:blue},itemStyle:{color:blue},
+          areaStyle:{color:new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:hexToRgba(blue,0.20)},{offset:1,color:hexToRgba(blue,0)}])},
+          markLine:{silent:true,symbol:'none',data:[{yAxis:MEAN}],lineStyle:{type:'dashed',color:vars.muted},label:{formatter:'均值 '+MEAN.toFixed(3),color:vars.muted,position:'insideEndTop'}},
+          emphasis:{focus:'series'}},
+        {name:'战斗强度',type:'line',yAxisIndex:1,step:'middle',showSymbol:true,symbolSize:5,data:C,
+          lineStyle:{width:2,type:'dashed',color:red},itemStyle:{color:red},emphasis:{focus:'series'}}
+      ],
+      animationDuration:600,animationDurationUpdate:420,animationEasingUpdate:'cubicInOut'
+    };
+  }, {
+    onClick:function(p){ if(p.componentType==='series' && p.dataIndex!=null){ showDetail(p.dataIndex); } }
+  });
+
+  function showDetail(i){
+    var d=document.getElementById('wz-detail');
+    d.hidden=false;
+    d.innerHTML='<b>第 '+CH[i]+' 章</b> · 情感 polarity <b>'+S[i].toFixed(4)+'</b>（'+emotion(S[i])+'）'
+      +' · 战斗强度 <b>'+C[i]+'</b>（'+combatLabel(C[i])+'）'
+      +'<br><span class="wz-hint">Pearson r = '+PEARSON.toFixed(4)+'（'+strength(PEARSON)+'负相关）｜点击图例可筛选序列，拖动滑块缩放，悬停查看任意章。</span>';
+  }
+
+  var playBtn=document.getElementById('wz-play');
+  var seekEl=document.getElementById('wz-seek');
+  var frameEl=document.getElementById('wz-frame');
+  var player = WZ.timelinePlayer(chart, {
+    max:N, step:200, stride:1,
+    onFrame:function(t){
+      chart.setOption({
+        xAxis:{data:CH.slice(0,t).map(function(c){return ('0'+c).slice(-2);})},
+        series:[{data:S.slice(0,t)},{data:C.slice(0,t)}]
+      });
+      seekEl.value=t;
+      frameEl.textContent='第 '+t+' / '+N+' 章';
+      if(t>=N){ playBtn.classList.remove('active'); playBtn.textContent='▶ 重播时间轴'; }
+    }
+  });
+  playBtn.addEventListener('click',function(){
+    if(player.isPlaying()){ player.pause(); playBtn.classList.remove('active'); playBtn.textContent='▶ 播放时间轴'; }
+    else { player.play(); playBtn.classList.add('active'); playBtn.textContent='⏸ 暂停'; }
+  });
+  seekEl.addEventListener('input',function(e){
+    player.pause(); playBtn.classList.remove('active'); playBtn.textContent='▶ 播放时间轴';
+    player.seek(parseInt(e.target.value,10));
+  });
+
+  var liveBtn=document.getElementById('wz-live');
+  var dot=document.getElementById('wz-live-dot');
+  var live = WZ.liveStream({
+    interval:1400,
+    onState:function(on){ liveBtn.classList.toggle('active',on); liveBtn.classList.toggle('wz-live',on); dot.classList.toggle('live',on); liveBtn.textContent = on?'■ 停止实时流':'⦿ 模拟实时数据流'; },
+    onTick:function(){
+      var K=8;
+      for(var i=N-K;i<N;i++){
+        S[i]=Math.max(0.12,Math.min(0.92, S[i]+(Math.random()-0.5)*0.06));
+        C[i]=Math.max(0,Math.min(3, Math.round(C[i]+(Math.random()-0.5)*1.2)));
+      }
+      chart.setOption({series:[{data:S},{data:C}]}, {lazyUpdate:true});
+    }
+  });
+  liveBtn.addEventListener('click',function(){ live.toggle(); });
+});
+</script>
+<!--WZ-SCRIPT-END-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  var KEY='wzjm_dark';
+  function apply(d){ document.body.classList.toggle('dark', d); }
+  var SUN='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON='<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function sync(){
+    var b=document.querySelector('.dm-toggle');
+    if(b){ var d=document.body.classList.contains('dark'); b.innerHTML = d ? SUN+'<span>浅色</span>' : MOON+'<span>深色</span>'; }
+  }
+  function buildBtn(){
+    var s=document.createElement('style');
+    s.textContent='.dm-cluster{position:fixed;top:16px;right:16px;z-index:9999;display:flex;gap:8px}'
+    +'.dm-toggle,.dm-back{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;'
+    +"font-family:'HarmonyOS Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;font-weight:500;"
+    +'border:1px solid var(--line,var(--rc-line,#dfe3e8));background:var(--surface,var(--rc-surface,#fff));'
+    +'color:var(--primary,var(--rc-primary,#0A59F7));box-shadow:0 4px 14px rgba(24,36,49,.14);'
+    +'transition:transform .2s cubic-bezier(.25,0,.3,1),background-color .3s,color .3s,border-color .3s}'
+    +'.dm-toggle:hover,.dm-back:hover{transform:translateY(-2px)}'
+    +'.dm-back{text-decoration:none}';
+    document.head.appendChild(s);
+    var c=document.createElement('div');c.className='dm-cluster';
+    var backHref='../index.html';
+    if(backHref){
+      var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+      a.setAttribute('aria-label','返回报告中心');a.textContent='报告中心';
+      c.appendChild(a);
+    }
+    var b=document.createElement('button');b.className='dm-toggle';
+    b.setAttribute('aria-label','切换深色模式');
+    b.addEventListener('click', function(){
+      var d=!document.body.classList.contains('dark');
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(e){}
+      sync(); broadcast(d);
+    });
+    c.appendChild(b);
+    document.body.appendChild(c);
+  }
+  function broadcast(d){
+    try{
+      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：图表主题热更新 */
+      if(window.parent!==window){ window.parent.postMessage({wzTheme:d?'dark':'light'},'*'); }
+      else{ var fs=document.querySelectorAll('iframe'); for(var i=0;i<fs.length;i++){ try{ fs[i].contentWindow.postMessage({wzTheme:d?'dark':'light'},'*'); }catch(e){} } }
+    }catch(e){}
+  }
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(saved ? saved==='1' : !!prefers);
+  buildBtn();
+  sync();
+  setTimeout(function(){ broadcast(document.body.classList.contains('dark')); },0);
+  window.addEventListener('message', function(e){
+    if(e.data && e.data.wzTheme){
+      var d = e.data.wzTheme==='dark';
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(err){}
+      sync();
+    }
+  });
+})();
+</script>
+
+</body><!--WZ-KEYINDEX-START-->
+<div id="wz-kwindex"></div>
+<script src="keyword-index-widget.js"></script>
+<!--WZ-KEYINDEX-END-->
+</html>

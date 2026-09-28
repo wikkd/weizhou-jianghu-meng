@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script id="wzjm-key-migration">try{var n0=localStorage.getItem("wzjm_dark");if(n0===null){var o0=localStorage.getItem("wzjm_dark");if(o0!==null)localStorage.setItem("wzjm_dark",o0);}var n1=localStorage.getItem("wzjm_lib_dark");if(n1===null){var o1=localStorage.getItem("wzjm_lib_dark");if(o1!==null)localStorage.setItem("wzjm_lib_dark",o1);}var n2=localStorage.getItem("wzjm_lib_accent");if(n2===null){var o2=localStorage.getItem("wzjm_lib_accent");if(o2!==null)localStorage.setItem("wzjm_lib_accent",o2);}var n3=localStorage.getItem("wzjm_mm_theme");if(n3===null){var o3=localStorage.getItem("wzjm_mm_theme");if(o3!==null)localStorage.setItem("wzjm_mm_theme",o3);}}catch(e){}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>苇舟江湖梦 · 报告归纳整理</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+:root{--bg:#0a0f1c;--panel:rgba(20,32,54,.62);--brd:rgba(90,150,230,.22);--txt:#e8eefc;--muted:#9fb2d4;
+  --blue:#3b82f6;--cyan:#22d3ee;--violet:#a78bfa;--amber:#f59e0b;--red:#ef4444;--green:#34d399;}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 700px at 80% -10%,rgba(167,139,250,.16),transparent 60%),
+  radial-gradient(900px 600px at 0% 110%,rgba(34,211,238,.12),transparent 55%),var(--bg);
+  color:var(--txt);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;line-height:1.65}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 80px}
+header h1{margin:0;font-size:27px;letter-spacing:2px;background:linear-gradient(90deg,var(--violet),var(--cyan),var(--blue));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+header p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:18px 0 4px}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--panel);border:1px solid var(--brd);border-radius:12px;padding:12px 14px}
+.kpi b{font-size:22px;display:block}.kpi span{color:var(--muted);font-size:12px}
+section{background:var(--panel);border:1px solid var(--brd);border-radius:16px;padding:18px;margin-top:20px;
+  backdrop-filter:blur(14px);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+section>h2{margin:0 0 12px;font-size:20px;display:flex;align-items:center;gap:8px}
+section>h2 .dot{width:12px;height:12px;border-radius:3px}
+.grp{margin-bottom:16px}
+.grp h3{margin:14px 0 6px;font-size:16px;color:var(--cyan)}
+.grp h3 small{color:var(--muted);font-size:12px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;color:var(--muted);font-weight:600;border-bottom:1px solid var(--brd);padding:6px 8px}
+td{padding:6px 8px;border-bottom:1px solid rgba(90,150,230,.08);vertical-align:top}
+td.f{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#c9d8f5;white-space:nowrap}
+td.desc{color:var(--muted)}
+.b{display:inline-block;font-size:10.5px;border-radius:6px;padding:1px 6px;margin:1px 2px;white-space:nowrap}
+.b-rc{background:rgba(59,130,246,.18);color:#8ab6ff;border:1px solid rgba(59,130,246,.4)}
+.b-lib{background:rgba(34,211,238,.14);color:#7fe6f2;border:1px solid rgba(34,211,238,.35)}
+.b-top{background:rgba(167,139,250,.16);color:#c3abff;border:1px solid rgba(167,139,250,.4)}
+.b-off{background:rgba(120,140,180,.08);color:#5c6a86;border:1px solid transparent}
+.dup{background:rgba(6,11,22,.4);border:1px solid rgba(90,150,230,.14);border-radius:12px;padding:12px 14px;margin-bottom:14px}
+.dup-h{display:flex;align-items:center;gap:10px}
+.dup-h h3{margin:0;font-size:16px}
+.lv{font-size:11px;font-weight:700;border-radius:8px;padding:2px 8px;white-space:nowrap}
+.lv-hi{background:rgba(239,68,68,.16);color:#ff9d9d;border:1px solid rgba(239,68,68,.45)}
+.lv-mid{background:rgba(245,158,11,.15);color:#ffd18a;border:1px solid rgba(245,158,11,.4)}
+.lv-lo{background:rgba(52,211,153,.13);color:#8ff0c6;border:1px solid rgba(52,211,153,.35)}
+.dup ul{margin:8px 0 6px;padding-left:20px;color:#d7e2f7}
+.dup ul li{margin:2px 0}
+.dup .act{color:#ffd9a0;margin:6px 0 2px}
+.dup .note{color:var(--muted);font-size:12.5px;margin:4px 0 0}
+.act-block{border-radius:12px;padding:12px 14px;margin-bottom:14px;border:1px solid}
+.act-block h3{margin:0 0 8px;font-size:16px}
+.act-block h3 small{font-size:12px;color:var(--muted)}
+td.how{color:#8ff0c6}
+.sev1{background:rgba(239,68,68,.07);border-color:rgba(239,68,68,.35)}
+.sev2{background:rgba(245,158,11,.06);border-color:rgba(245,158,11,.32)}
+.sev3{background:rgba(59,130,246,.06);border-color:rgba(59,130,246,.3)}
+.sev4{background:rgba(52,211,153,.05);border-color:rgba(52,211,153,.28)}
+.notice{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.35);border-radius:12px;
+  padding:10px 14px;color:#ffd9a0;font-size:13px;margin-top:14px}
+.hint{color:var(--muted);font-size:12px;margin-top:8px}
+</style>
+<style id="wz-harmony-font">body,h1,h2,h3,h4,button,input,select,textarea{font-family:'HarmonyOS Sans SC','HarmonyOS Sans','PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif!important}</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>苇舟江湖梦 · 报告归纳整理</h1>
+  <p>只读盘点：全部报告按主题分组、识别重复/重叠、输出分安全等级的动作清单。<b style="color:#ffd9a0">本页不删除/移动任何文件，执行需确认。</b></p>
+  <div class="kpis" id="kpis"></div>
+</header>
+
+<section>
+  <h2><span class="dot" style="background:var(--cyan)"></span>① 报告全景地图（按主题分组）</h2>
+  <div class="grp"><h3>总览 <small>3 份</small></h3><table><thead><tr><th>文件</th><th>标题</th><th>定位/差异</th><th>入口覆盖</th></tr></thead><tbody><tr><td class="f">苇舟江湖梦_分析报告.html</td><td>全文本量化分析报告</td><td class="desc">早期一体化总览：概况/人物/时间轴/空间/故事线/感情线/结论，八节被后分化专业报告超越</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">苇舟江湖梦_数据归档总览.html</td><td>数据归档总览</td><td class="desc">归档目录 + 索引数据库入口（数据归档/）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-off">—</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">苇舟江湖梦_报告归纳整理.html</td><td>报告归纳整理（治理页）</td><td class="desc">只读盘点：9 主题分组 / 6 重复组 / L1–L4 动作清单（本页即产出）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr></tbody></table></div><div class="grp"><h3>人物 <small>3 份</small></h3><table><thead><tr><th>文件</th><th>标题</th><th>定位/差异</th><th>入口覆盖</th></tr></thead><tbody><tr><td class="f">苇舟江湖梦_人物关系网络.html</td><td>人物关系网络</td><td class="desc">共现网络 / PageRank 中心性 / 社区划分</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">苇舟江湖梦_派生维度量化.html</td><td>派生维度量化</td><td class="desc">出场vs提及背离 + 人物-地点共现矩阵（与人物网络、空间报告部分重叠）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-off">—</span></td></tr><tr><td class="f">苇舟江湖梦_角色性格量化.html</td><td>角色性格量化</td><td class="desc">六轴性格分布 + 角色档案（Phase2 新增）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-off">—</span> <span class="b b-off">—</span></td></tr></tbody></table></div><div class="grp"><h3>章节 <small>3 份</small></h3><table><thead><tr><th>文件</th><th>标题</th><th>定位/差异</th><th>入口覆盖</th></tr></thead><tbody><tr><td class="f">苇舟江湖梦_章节结构量化.html</td><td>章节结构量化</td><td class="desc">标注治理基线 / 故事线 / 视角 / 主题词频与漂移 / 感情线×故事线</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-off">—</span></td></tr><tr><td class="f">苇舟江湖梦_章节标签量化看板.html</td><td>章节标签量化看板</td><td class="desc">情节演进（时间层色带+战斗强度）+ 分布速览（类型/感情线/战斗/地点/人物）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">苇舟江湖梦_统计推断.html</td><td>统计推断</td><td class="desc">非参数检验：叙事假设的统计验证（Mann-Whitney U / Spearman）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr></tbody></table></div><div class="grp"><h3>时空地理 <small>4 份</small></h3><table><thead><tr><th>文件</th><th>标题</th><th>定位/差异</th><th>入口覆盖</th></tr></thead><tbody><tr><td class="f">苇舟江湖梦_空间地点分析报告.html</td><td>空间地点分析报告</td><td class="desc">内嵌参考图坐标版：距离矩阵 / 地形分类 / 战术地理 / 旅行时间（最权威）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">苇舟江湖梦_地理位置关系图.html</td><td>地理位置关系图</td><td class="desc">纯文本派生版：方位约束 / 相对坐标系 / 战术地理（不引用内嵌图）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">苇舟江湖梦_地理描述量化.html</td><td>地理描述量化</td><td class="desc">地形要素分布 + 地点地理档案（Phase2，语境段数排序）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-off">—</span> <span class="b b-off">—</span></td></tr><tr><td class="f">苇舟江湖梦_时间节奏量化.html</td><td>时间节奏量化</td><td class="desc">季节/昼夜/相对时间密度 + 第4节 ner_loc 地名热度（空间部分重复）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-off">—</span></td></tr></tbody></table></div><div class="grp"><h3>语言计量 <small>4 份</small></h3><table><thead><tr><th>文件</th><th>标题</th><th>定位/差异</th><th>入口覆盖</th></tr></thead><tbody><tr><td class="f">苇舟江湖梦_风格计量.html</td><td>风格计量</td><td class="desc">文体指纹与节奏（句长/标点/对话占比等）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">苇舟江湖梦_词汇计量.html</td><td>词汇计量</td><td class="desc">词频 / TTR / 前后期用词漂移</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">苇舟江湖梦_口头禅量化.html</td><td>口头禅量化</td><td class="desc">标志短语 Top15 + 各角色标志语（词汇计量的角色侧深化）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-off">—</span> <span class="b b-off">—</span></td></tr><tr><td class="f">苇舟江湖梦_对打动作量化.html</td><td>对打动作量化</td><td class="desc">动作频次 / 词表 Top40 / 招式组合序列（动作词汇库）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-off">—</span> <span class="b b-off">—</span></td></tr></tbody></table></div><div class="grp"><h3>情感节奏 <small>1 份</small></h3><table><thead><tr><th>文件</th><th>标题</th><th>定位/差异</th><th>入口覆盖</th></tr></thead><tbody><tr><td class="f">苇舟江湖梦_情感时序.html</td><td>情感时序</td><td class="desc">情感极性时序 vs 战斗强度 + 相关系数</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr></tbody></table></div><div class="grp"><h3>研究考据 <small>3 份</small></h3><table><thead><tr><th>文件</th><th>标题</th><th>定位/差异</th><th>入口覆盖</th></tr></thead><tbody><tr><td class="f">苇舟江湖梦_官制考究.html</td><td>官制考究</td><td class="desc">职官术语抽取 + 历代官制比对</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">川阴王建都推演.html</td><td>川阴王建都推演</td><td class="desc">基于空间报告结论的战略推演（独立，不重复）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">黄家概况.html</td><td>黄家概况</td><td class="desc">家族谱系分析（独立，已补注册）</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr></tbody></table></div><div class="grp"><h3>叙事可视化 <small>3 份</small></h3><table><thead><tr><th>文件</th><th>标题</th><th>定位/差异</th><th>入口覆盖</th></tr></thead><tbody><tr><td class="f">苇舟江湖梦_可视化叙事系统.html</td><td>可视化叙事系统</td><td class="desc">四维状态转移流程图（剧情/情感/空间/时间）+ Nexus 立体交叉引用</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">苇舟江湖梦_扩展叙事可视化.html</td><td>扩展叙事可视化</td><td class="desc">因果事件链 / 叙事节奏谱 / 角色六维雷达 / 登场矩阵热力图</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr><tr><td class="f">苇舟江湖梦_深度叙事可视化.html</td><td>深度叙事可视化</td><td class="desc">伏笔回收网络 / 时空动画地图 / 文风漂移流图 / 知识图谱+MOC</td><td class="bdg"><span class="b b-rc">报告中心</span> <span class="b b-lib">图书馆</span> <span class="b b-top">顶层索引</span></td></tr></tbody></table></div><div class="grp"><h3>工具阅读 <small>2 份</small></h3><table><thead><tr><th>文件</th><th>标题</th><th>定位/差异</th><th>入口覆盖</th></tr></thead><tbody><tr><td class="f">苇舟江湖梦_关键词索引.html</td><td>关键词索引</td><td class="desc">关键词→原文跨索引页（配套 keyword-index-widget.js）</td><td class="bdg"><span class="b b-off">—</span> <span class="b b-lib">图书馆</span> <span class="b b-off">—</span></td></tr><tr><td class="f">苇舟江湖梦_原文阅读.html</td><td>原文阅读</td><td class="desc">59 章全文阅读器，支持 ?loc / ?kw 深链</td><td class="bdg"><span class="b b-off">—</span> <span class="b b-lib">图书馆</span> <span class="b b-off">—</span></td></tr></tbody></table></div>
+  <div class="hint">入口覆盖：报告中心(19) / 图书馆(17项) / 顶层 index.html(12) —— 三个入口本身即存在重叠，见 ③。</div>
+</section>
+
+<section>
+  <h2><span class="dot" style="background:var(--amber)"></span>② 重复/重叠组分析</h2>
+  <div class="dup"><div class="dup-h"><span class="lv lv-hi">高度重叠</span><h3>G1 空间/地理 ×4</h3></div><ul><li>空间地点分析报告（内嵌参考图坐标：距离矩阵/地形/战术地理）</li><li>地理位置关系图（纯文本派生：方位约束/相对坐标/战术地理）</li><li>地理描述量化（地形要素分布 + 地点语境档案）</li><li>时间节奏量化·第4节 ner_loc 地名热度（空间子集）</li></ul><p class="act"><b>建议：</b>保留 1 权威 + 1 量化，其余并入</p><p class="note">前两份同为「空间格局+地形+战术地理」，仅数据源不同（内嵌参考图 vs 纯文本），建议以「空间地点分析报告」为主报告，把「地理位置关系图」的方位约束并入其附录；「地理描述量化」保留（语境档案是独有产出）；ner_loc 地名热度并入主报告。「时间节奏量化」去掉第4节只留时间维度。</p></div><div class="dup"><div class="dup-h"><span class="lv lv-mid">中度重叠</span><h3>G2 情感/时间/节奏 ×3</h3></div><ul><li>情感时序（情感极性 vs 战斗强度）</li><li>章节标签量化看板（情节演进：时间层色带 + 战斗强度）</li><li>时间节奏量化（季节/昼夜/相对时间）</li></ul><p class="act"><b>建议：</b>保留 3 份但各自聚焦，标注交叉引用</p><p class="note">战斗强度时间序列同时出现在「情感时序」与「看板」，建议看板保留战斗强度、情感时序专注情感极性，两页顶部互链；时间节奏专注季节/昼夜，移除 ner_loc 后与其余两页不再重叠。</p></div><div class="dup"><div class="dup-h"><span class="lv lv-mid">中度重叠</span><h3>G3 章节 ×2</h3></div><ul><li>章节结构量化（故事线/视角/主题漂移/感情线×故事线）</li><li>章节标签量化看板（分布速览：章节类型/感情线/战斗强度/地点/人物）</li></ul><p class="act"><b>建议：</b>保留 2 份，拆分职责</p><p class="note">「结构量化」= 数据治理与结构研究；「看板」= 速览聚合。重叠处（感情线/故事线分布）由看板保留速览图，结构量化聚焦漂移与交叉分析。</p></div><div class="dup"><div class="dup-h"><span class="lv lv-lo">轻度重叠</span><h3>G4 语言计量 ×4</h3></div><ul><li>词汇计量（词频/TTR/漂移）</li><li>口头禅量化（标志短语/角色标志语）</li><li>风格计量（文体指纹/节奏）</li><li>对打动作量化（动作词表/招式序列）</li></ul><p class="act"><b>建议：</b>保留 4 份，归位归类</p><p class="note">口头禅量化是词汇计量的角色侧深化（可并入词汇计量做「角色标志语」章节，或保留独立）；对打动作量化归「章节/语言」边界——建议归档到语言计量组并在报告中心改分类。</p></div><div class="dup"><div class="dup-h"><span class="lv lv-lo">轻度重叠</span><h3>G5 人物 ×3</h3></div><ul><li>人物关系网络（共现/中心性/社区）</li><li>派生维度量化（出场vs提及背离/人物-地点共现）</li><li>角色性格量化（六轴性格）</li></ul><p class="act"><b>建议：</b>保留 3 份（维度各自独立）</p><p class="note">人物-地点共现与空间报告、人物网络有交集，但「出场vs提及背离」是独有指标，建议保留并互链。</p></div><div class="dup"><div class="dup-h"><span class="lv lv-hi">历史遗留重叠</span><h3>G6 总览 vs 专业报告</h3></div><ul><li>分析报告（八节综合：人物/时间轴/空间/故事线/感情线）</li><li>人物关系网络 / 时间节奏量化 / 空间地点分析报告 / 章节结构量化 / 情感时序</li></ul><p class="act"><b>建议：</b>分析报告降级为「导读总览」，各节链接到专业报告</p><p class="note">分析报告的八节内容均已被后分化专业报告覆盖或超越。建议：保留其作为入门总览，每节加「详见 XX 报告」跳转，避免重复维护；或将其归档。</p></div>
+  <div class="hint">重叠级别依据「主题 + 图表/数据源 + 结论」三重判断；文学量化报告互相有交集属正常，此处只收敛真正冗余的。</div>
+</section>
+
+<section>
+  <h2><span class="dot" style="background:var(--red)"></span>③ 建议动作清单（按安全等级）</h2>
+  <div class="act-block sev1"><h3>L1 · 清理残留 <small>2 项</small></h3><table><thead><tr><th>文件/对象</th><th>理由</th><th>建议动作</th></tr></thead><tbody><tr><td class="f">产物/苇舟江湖梦_情感时序.html.bak</td><td>升级图表前的旧版备份，现版已可用；98 行差异为图表升级，非独有内容</td><td class="how">删除或移入数据归档/</td></tr><tr><td class="f">产物/echarts-kit.js（CDN 依赖）</td><td>14 份旧报告仍靠它从 jsdelivr 惰性加载 ECharts；离线时图表降级为提示</td><td class="how">改为优先加载本地 echarts.min.js（保留 kit 作回退）</td></tr></tbody></table></div><div class="act-block sev2"><h3>L2 · 入口收敛 <small>1 项</small></h3><table><thead><tr><th>文件/对象</th><th>理由</th><th>建议动作</th></tr></thead><tbody><tr><td class="f">产物/index.html（旧，注册 12 份）</td><td>与报告中心(19份)、图书馆(17项) 三个入口重叠</td><td class="how">统一收敛到报告中心；index.html 保留为跳转页</td></tr><tr><td class="f">可视化三页未注册任何入口</td><td>叙事可视化体系(23/24/25) 只有页间互链，外部找不到</td><td class="how">注册进报告中心 + 图书馆（每类加一个分类）</td></tr><tr><td class="f">黄家概况.html 未进入口</td><td>独立研究页，外部无法发现</td><td class="how">注册进报告中心「研究考据」</td></tr></tbody></table></div><div class="act-block sev3"><h3>L3 · 合并重构（需构建器改动） <small>3 项</small></h3><table><thead><tr><th>文件/对象</th><th>理由</th><th>建议动作</th></tr></thead><tbody><tr><td class="f">空间 4 份 → 1+1</td><td>按 G1 方案：主报告吸收方位约束与地名热度；时间节奏去掉第4节</td><td class="how">改 09/11/20/15 生成器 + 重建</td></tr><tr><td class="f">分析报告 → 导读总览</td><td>按 G6 方案：各节加「详见」链接或归档</td><td class="how">改 08 生成器 + 重建</td></tr><tr><td class="f">口头禅量化 → 并入词汇计量</td><td>按 G4 方案（可选）</td><td class="how">改 05/18 生成器 + 重建</td></tr></tbody></table></div><div class="act-block sev4"><h3>L4 · 保持现状 <small>0 项</small></h3><table><thead><tr><th>文件/对象</th><th>理由</th><th>建议动作</th></tr></thead><tbody><tr><td class="f">可视化叙事三页 / 原文阅读 / 关键词索引 / 组件库</td><td>独立体系，职责清晰，不动</td><td class="how">—</td></tr><tr><td class="f">官制考究 / 建都推演 / 黄家概况 / 统计推断</td><td>独立研究，不重复，不动</td><td class="how">—</td></tr></tbody></table></div>
+  <div class="notice">⚠ 执行前需确认：L1/L2 为低风险（清理残留/入口收敛），L3 涉及生成器改动与重建（会覆盖对应 HTML 产物），
+  每项执行前会再次列出具体文件清单。L4 不动。</div>
+</section>
+
+</div>
+
+<script>
+const S={"total": 26, "rc": 24, "lib": 21, "top": 17, "unreg": [], "missing": ["05_制度家族/川阴王建都推演.html", "05_制度家族/黄家概况.html", "苇舟江湖梦_关键词索引.html"], "dup_groups": 6};
+document.getElementById('kpis').innerHTML=[
+  ['报告总数',S.total],['报告中心',S.rc],['图书馆',S.lib],['顶层索引',S.top],['重复组',S.dup_groups]
+].map(([k,v])=>'<div class="kpi"><b>'+v+'</b><span>'+k+'</span></div>').join('');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  var KEY='wzjm_dark';
+  function apply(d){ document.body.classList.toggle('dark', d); }
+  var SUN='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON='<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function sync(){
+    var b=document.querySelector('.dm-toggle');
+    if(b){ var d=document.body.classList.contains('dark'); b.innerHTML = d ? SUN+'<span>浅色</span>' : MOON+'<span>深色</span>'; }
+  }
+  function buildBtn(){
+    var s=document.createElement('style');
+    s.textContent='.dm-cluster{position:fixed;top:16px;right:16px;z-index:9999;display:flex;gap:8px}'
+    +'.dm-toggle,.dm-back{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;'
+    +"font-family:'HarmonyOS Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;font-weight:500;"
+    +'border:1px solid var(--line,var(--rc-line,#dfe3e8));background:var(--surface,var(--rc-surface,#fff));'
+    +'color:var(--primary,var(--rc-primary,#0A59F7));box-shadow:0 4px 14px rgba(24,36,49,.14);'
+    +'transition:transform .2s cubic-bezier(.25,0,.3,1),background-color .3s,color .3s,border-color .3s}'
+    +'.dm-toggle:hover,.dm-back:hover{transform:translateY(-2px)}'
+    +'.dm-back{text-decoration:none}';
+    document.head.appendChild(s);
+    var c=document.createElement('div');c.className='dm-cluster';
+    var backHref='index.html';
+    if(backHref){
+      var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+      a.setAttribute('aria-label','返回报告中心');a.textContent='报告中心';
+      c.appendChild(a);
+    }
+    var b=document.createElement('button');b.className='dm-toggle';
+    b.setAttribute('aria-label','切换深色模式');
+    b.addEventListener('click', function(){
+      var d=!document.body.classList.contains('dark');
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(e){}
+      sync(); broadcast(d);
+    });
+    c.appendChild(b);
+    document.body.appendChild(c);
+  }
+  function broadcast(d){
+    try{
+      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：图表主题热更新 */
+      if(window.parent!==window){ window.parent.postMessage({wzTheme:d?'dark':'light'},'*'); }
+      else{ var fs=document.querySelectorAll('iframe'); for(var i=0;i<fs.length;i++){ try{ fs[i].contentWindow.postMessage({wzTheme:d?'dark':'light'},'*'); }catch(e){} } }
+    }catch(e){}
+  }
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(saved ? saved==='1' : !!prefers);
+  buildBtn();
+  sync();
+  setTimeout(function(){ broadcast(document.body.classList.contains('dark')); },0);
+  window.addEventListener('message', function(e){
+    if(e.data && e.data.wzTheme){
+      var d = e.data.wzTheme==='dark';
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(err){}
+      sync();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,825 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<script id="wzjm-key-migration">try{var n0=localStorage.getItem("wzjm_dark");if(n0===null){var o0=localStorage.getItem("wzjm_dark");if(o0!==null)localStorage.setItem("wzjm_dark",o0);}var n1=localStorage.getItem("wzjm_lib_dark");if(n1===null){var o1=localStorage.getItem("wzjm_lib_dark");if(o1!==null)localStorage.setItem("wzjm_lib_dark",o1);}var n2=localStorage.getItem("wzjm_lib_accent");if(n2===null){var o2=localStorage.getItem("wzjm_lib_accent");if(o2!==null)localStorage.setItem("wzjm_lib_accent",o2);}var n3=localStorage.getItem("wzjm_mm_theme");if(n3===null){var o3=localStorage.getItem("wzjm_mm_theme");if(o3!==null)localStorage.setItem("wzjm_mm_theme",o3);}}catch(e){}</script><meta charset="utf-8"><title>《苇舟江湖梦》空间地点分析报告</title>
+<link rel="stylesheet" href="theme.css"></head><body>
+<h1>《苇舟江湖梦》空间地点专业分析报告</h1>
+<p><b>分析对象：</b>霜月仲明《苇舟江湖梦》全本 62 章；<b>数据来源：</b>小说内嵌参考图（reference_map.jpeg）像素坐标 + 文本旅行时间/方向/地形/战术描述。</p>
+<div style="display:flex;flex-wrap:wrap;justify-content:center">
+<div class="metric"><b>32</b>空间节点</div>
+<div class="metric"><b>228</b>km/标准行军日<br><span class="small">基准：望岳镇→京≈13日</span></div>
+<div class="metric"><b>35</b>里/日<br><span class="small">混合行军速度假设</span></div>
+<div class="metric"><b>0.41</b>里/px<br><span class="small">地图像素比例尺</span></div>
+</div>
+<h2>一、空间分析方法论</h2>
+<ol>
+<li><b>底图：</b>从 docx 中提取作者手绘《简易参考图》，尺寸 3174×2244 px，包含主要都市、山脉、河流、关隘。</li>
+<li><b>坐标采集：</b>在带网格底图上读取各节点像素坐标，以 京 为地理中心，建立相对坐标系。</li>
+<li><b>比例尺标定：</b>以文本强锚点「任琅一行从望岳镇到京城，十几天后抵达」为基准，取 13 日；按古代混合行军速度 35 里/日（≈17.5 km/日）折算，得 455 里≈228 km 对应图上 1122 px，故比例尺 ≈0.203 km/px。</li>
+<li><b>地形修正：</b>山河、峡谷、雪原、沼泽等地形对实际通行速度的影响，在「战术地理」章节单独标注；距离矩阵给出的是直线/标准道路行军日，复杂地形需乘以 1.3–2.0 的通行系数。</li>
+</ol>
+<div class="note"><b>重要说明：</b>本分析为「相对空间关系」而非绝对经纬度。所有距离、方位均以内嵌图为框架、以文本旅行时间为约束，用于理解叙事中的行军节奏、战略纵深与地形价值。</div>
+<h2>二、宏观空间格局</h2>
+<p>小说地理呈现<b>“一核两翼、三河两山”</b>格局：</p>
+<ul>
+<li><b>一核：</b>京（帝都）位于北部中央盆地，是全书政治终点与最终战场。</li>
+<li><b>西翼：</b>川阴城—梨阳—望岳镇一线，为任琅成长与陈奉天势力根源；梨花川上游流经。</li>
+<li><b>东翼：</b>海都—奉秋—石陵—楚城—苏城沿海/沿河走廊，为许达、苏雨、马远、赵骁角逐的东区战线。</li>
+<li><b>北翼：</b>卫京郡—宿冰都（浣冰郡）构成京城北方屏障与后方。</li>
+<li><b>两山：</b>北梨岭、南梨岭横亘中部，成为东西翼天然分隔；卫京郡北侧山谷、南岭关则是京城南北两大门户。</li>
+<li><b>三河：</b>梨花川（东西横贯）、墨川（东北纵向入海）提供水运通道与渡江战场；清水渡口、大支渡口、京墨渡口为关键节点。</li>
+</ul>
+<h2>三、相对空间位置图</h2>
+<div class="mapbox">
+<svg viewBox="0 0 3174 2244" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#e8e0c5">
+<defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#555"/></marker>
+    </defs>
+<path d="M3174,0 L2700,0 Q2600,400 2700,900 Q2850,1600 3174,2244 Z" fill="#4a90d9" opacity="0.35"/>
+<rect width="3174" height="2244" fill="#e8e0c5"/>
+<path d="M3174,0 L2700,0 Q2600,400 2700,900 Q2850,1600 3174,2244 Z" fill="#6baed6" opacity="0.35"/>
+<polygon points="0,300 400,320 500,500 300,650 0,600" fill="#7f8c5a" opacity="0.35" stroke="none"/>
+<polygon points="1200,1000 1800,1050 1850,1180 1300,1200 1100,1130" fill="#7f8c5a" opacity="0.35" stroke="none"/>
+<polygon points="1150,1300 1750,1350 1800,1500 1200,1480 1050,1400" fill="#7f8c5a" opacity="0.35" stroke="none"/>
+<polygon points="1050,1550 1350,1600 1400,1900 1100,1850" fill="#7f8c5a" opacity="0.35" stroke="none"/>
+<polygon points="1700,1700 2100,1750 2150,2000 1750,1980" fill="#7f8c5a" opacity="0.35" stroke="none"/>
+<polygon points="700,150 1100,180 1150,450 850,500 650,350" fill="#7f8c5a" opacity="0.35" stroke="none"/>
+<polyline points="40,1080 120,1050 250,1020 420,1010 600,1030 800,1060 1000,1090 1200,1110 1400,1130 1600,1140 1800,1150 2000,1160 2200,1170 2400,1180 2600,1220 2750,1300 2850,1400 2900,1550 2920,1700 2910,1900 2880,2100 2840,2244" fill="none" stroke="#5dade2" stroke-width="14" stroke-linecap="round"/>
+<polyline points="2300,0 2280,80 2270,160 2260,240 2240,320 2200,400 2150,500 2120,600 2140,700 2200,800 2280,900 2340,1000 2380,1100 2420,1200 2480,1350 2550,1500 2620,1650 2700,1800 2780,1950 2850,2100 2920,2244" fill="none" stroke="#5dade2" stroke-width="14" stroke-linecap="round"/>
+<circle cx="1580" cy="140" r="986.0" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="8,8" opacity="0.4"/>
+<text x="2576.0" y="140.0" font-size="28" fill="#c0392b" opacity="0.6">200km</text>
+<circle cx="1580" cy="140" r="1972.1" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="8,8" opacity="0.4"/>
+<text x="3562.1" y="140.0" font-size="28" fill="#c0392b" opacity="0.6">400km</text>
+<line x1="620" y1="720" x2="1580" y2="140" stroke="#e74c3c" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="1580" y1="140" x2="900" y2="260" stroke="#8e44ad" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="900" y1="260" x2="80" y2="1180" stroke="#8e44ad" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="80" y1="1180" x2="1240" y2="1660" stroke="#3498db" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="1240" y1="1660" x2="1920" y2="1860" stroke="#3498db" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="1920" y1="1860" x2="2340" y2="1160" stroke="#16a085" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="2580" y1="1560" x2="2700" y2="980" stroke="#d35400" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="2700" y1="980" x2="2440" y2="940" stroke="#d35400" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="2440" y1="940" x2="1920" y2="1860" stroke="#d35400" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="1320" y1="440" x2="1700" y2="300" stroke="#f39c12" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="1580" y1="140" x2="1320" y2="440" stroke="#f39c12" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<line x1="2860" y1="240" x2="1580" y2="140" stroke="#7f8c8d" stroke-width="4" stroke-dasharray="12,8" opacity="0.75" marker-end="url(#arrow)"/>
+<circle cx="1580" cy="140" r="9" fill="#c0392b" stroke="#fff" stroke-width="3"/>
+<text x="1580" y="123" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">京</text>
+<circle cx="900" cy="260" r="9" fill="#c0392b" stroke="#fff" stroke-width="3"/>
+<text x="900" y="243" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">卫京郡</text>
+<circle cx="2860" cy="240" r="7" fill="#2980b9" stroke="#fff" stroke-width="3"/>
+<text x="2860" y="225" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">宿冰都</text>
+<circle cx="1320" cy="440" r="7" fill="#2980b9" stroke="#fff" stroke-width="3"/>
+<text x="1320" y="425" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">南岭关</text>
+<circle cx="1700" cy="300" r="5" fill="#27ae60" stroke="#fff" stroke-width="3"/>
+<text x="1700" y="287" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">角都</text>
+<circle cx="620" cy="720" r="7" fill="#2980b9" stroke="#fff" stroke-width="3"/>
+<text x="620" y="705" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">望岳镇</text>
+<circle cx="1140" cy="740" r="5" fill="#27ae60" stroke="#fff" stroke-width="3"/>
+<text x="1140" y="727" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">川陵</text>
+<circle cx="1940" cy="700" r="5" fill="#27ae60" stroke="#fff" stroke-width="3"/>
+<text x="1940" y="687" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">昌平</text>
+<circle cx="2180" cy="740" r="5" fill="#27ae60" stroke="#fff" stroke-width="3"/>
+<text x="2180" y="727" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">武都</text>
+<circle cx="2440" cy="700" r="5" fill="#27ae60" stroke="#fff" stroke-width="3"/>
+<text x="2440" y="687" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">方上</text>
+<circle cx="2760" cy="640" r="5" fill="#27ae60" stroke="#fff" stroke-width="3"/>
+<text x="2760" y="627" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">建武</text>
+<circle cx="180" cy="1050" r="5" fill="#27ae60" stroke="#fff" stroke-width="3"/>
+<text x="180" y="1037" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">梨阳</text>
+<circle cx="2440" cy="940" r="7" fill="#2980b9" stroke="#fff" stroke-width="3"/>
+<text x="2440" y="925" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">石陵</text>
+<circle cx="2700" cy="980" r="7" fill="#2980b9" stroke="#fff" stroke-width="3"/>
+<text x="2700" y="965" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">奉秋</text>
+<circle cx="2340" cy="1160" r="7" fill="#2980b9" stroke="#fff" stroke-width="3"/>
+<text x="2340" y="1145" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">夫文渡口</text>
+<circle cx="2580" cy="1560" r="9" fill="#c0392b" stroke="#fff" stroke-width="3"/>
+<text x="2580" y="1543" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">海都</text>
+<circle cx="2100" cy="1100" r="5" fill="#27ae60" stroke="#fff" stroke-width="3"/>
+<text x="2100" y="1087" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">响城</text>
+<circle cx="2500" cy="800" r="5" fill="#27ae60" stroke="#fff" stroke-width="3"/>
+<text x="2500" y="787" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">清州</text>
+<circle cx="1240" cy="1660" r="7" fill="#2980b9" stroke="#fff" stroke-width="3"/>
+<text x="1240" y="1645" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">苏城</text>
+<circle cx="1920" cy="1860" r="7" fill="#2980b9" stroke="#fff" stroke-width="3"/>
+<text x="1920" y="1845" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">楚城</text>
+<circle cx="80" cy="1180" r="9" fill="#c0392b" stroke="#fff" stroke-width="3"/>
+<text x="80" y="1163" text-anchor="middle" font-size="30" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="4" paint-order="stroke">川阴城</text>
+<rect x="20" y="2050" width="420" height="160" fill="#fff" opacity="0.85" rx="15"/>
+<circle cx="40" cy="2100" r="10" fill="#c0392b"/>
+<text x="65" y="2108" font-size="28" fill="#2c3e50">A 级：核心都市/战略枢纽</text>
+<circle cx="40" cy="2145" r="10" fill="#2980b9"/>
+<text x="65" y="2153" font-size="28" fill="#2c3e50">B 级：郡县重镇/战线节点</text>
+<circle cx="40" cy="2190" r="10" fill="#27ae60"/>
+<text x="65" y="2198" font-size="28" fill="#2c3e50">C 级：一般城邑/辅助据点</text>
+<text x="1587" y="60" text-anchor="middle" font-size="48" font-weight="bold" fill="#2c3e50" stroke="#fff" stroke-width="5" paint-order="stroke">《苇舟江湖梦》相对空间位置与战略走廊</text>
+</svg>
+</div>
+<div class="note">图例：红色虚线圈为以京为中心的 200 km、400 km 战略纵深环；彩色虚线为书中主要行军/补给走廊；绿色阴影为山脉，蓝色为河流，右侧蓝色为海域。</div>
+<h2>四、节点地形与战略角色</h2>
+<table><tr><th>节点</th><th>等级</th><th>战略角色</th><th>地形特征</th><th>文本依据摘要</th></tr>
+<tr><td><b>京</b></td><td>A</td><td>帝都/政治中心</td><td>盆地平原，宫城雄踞</td><td>全书终极战略目标；盆地粮仓角邺为其供给</td></tr>
+<tr><td><b>川阴城</b></td><td>A</td><td>西南王都/陈奉天根据地</td><td>南依山脉，梨花川上游</td><td>中原第二都，王宫依山而建；陈奉天策源地</td></tr>
+<tr><td><b>海都</b></td><td>A</td><td>东海水师/商贸港城</td><td>滨海，铁闸海防</td><td>许达起家之地；海运关键，受海盗袭扰</td></tr>
+<tr><td><b>楚城</b></td><td>B</td><td>南疆商都/苏氏前线</td><td>前为旷野，城防坚固</td><td>赵骁屠城地；后成东区战线补给源</td></tr>
+<tr><td><b>苏城</b></td><td>B</td><td>苏氏商帮本部</td><td>山谷中的城池</td><td>苏雨、苏沐文根据地；连接楚城与川阴</td></tr>
+<tr><td><b>望岳镇</b></td><td>B</td><td>主角启程点/京西门户</td><td>北侧平原，近山</td><td>任琅和尚樱离开山村后首个重要城镇</td></tr>
+<tr><td><b>奉秋</b></td><td>B</td><td>海郡北方重镇</td><td>丘陵环绕</td><td>许达海郡起兵后首取；马远、黄亚钊争夺</td></tr>
+<tr><td><b>石陵</b></td><td>B</td><td>奉秋西侧据点</td><td>主城周围多丘陵</td><td>十日内被许达攻下；与奉秋互为犄角</td></tr>
+<tr><td><b>卫京郡</b></td><td>A</td><td>京城北方最后一道关隘</td><td>峡谷关城，绝壁夹道，内外双层城墙</td><td>陈奉天北上必经之路；聂林山顶设伏点</td></tr>
+<tr><td><b>南岭关</b></td><td>B</td><td>京城东南门户</td><td>山岭关隘</td><td>赵翔献城；通角邺粮仓</td></tr>
+<tr><td><b>夫文渡口</b></td><td>B</td><td>梨花川战略渡口</td><td>江面开阔，南北岸对垒</td><td>许达八日埋伏、火攻张广义；冬季水缓可渡</td></tr>
+<tr><td><b>宿冰都</b></td><td>B</td><td>东北冰雪重镇/浣冰郡入口</td><td>雪峰环绕，冰窟资源</td><td>朝廷疏散百姓方向；苦寒但战略后方</td></tr>
+<tr><td><b>建武</b></td><td>C</td><td>东部沿海郡县</td><td>平原近海</td><td>黄九州联合防线东翼</td></tr>
+<tr><td><b>川陵</b></td><td>C</td><td>川阴东部边城</td><td>梨花川西北岸平原</td><td>程廖 exile 之地；陈奉天攻势中易帜</td></tr>
+<tr><td><b>梨阳</b></td><td>C</td><td>陈奉天故乡/旧封地</td><td>川阴北侧平原</td><td>被屠城；距川阴城仅约2日路程</td></tr>
+<tr><td><b>角都</b></td><td>C</td><td>京畿粮仓</td><td>关内盆地</td><td>京城近郊，南岭关东折可达</td></tr>
+<tr><td><b>昌平</b></td><td>C</td><td>京南郡县</td><td>平原</td><td></td></tr>
+<tr><td><b>武都</b></td><td>C</td><td>东部郡县</td><td>平原</td><td>东线被赵翔攻下</td></tr>
+<tr><td><b>方上</b></td><td>C</td><td>东部郡县</td><td>平原</td><td>黄九州防线中枢</td></tr>
+<tr><td><b>响城</b></td><td>C</td><td>夫文渡口上游小城</td><td>临江，东西多绝壁</td><td>冬季渡江替代点，有烽火台</td></tr>
+<tr><td><b>清州</b></td><td>C</td><td>东部沿海州</td><td>平原</td><td>黄九州联合防线西翼</td></tr>
+</table>
+<h2>五、核心距离矩阵（km / 标准行军日）</h2>
+<p>下表为 21 个关键节点间的直线距离与按 35 里/日估算的标准行军日。山地、渡河、围城等场景实际耗时需增加 30%–100%。</p>
+<div style="overflow-x:auto"><table><tr><th></th>
+<th>京</th>
+<th>川阴城</th>
+<th>海都</th>
+<th>楚城</th>
+<th>苏城</th>
+<th>望岳镇</th>
+<th>奉秋</th>
+<th>石陵</th>
+<th>卫京郡</th>
+<th>南岭关</th>
+<th>夫文渡口</th>
+<th>宿冰都</th>
+<th>建武</th>
+<th>川陵</th>
+<th>梨阳</th>
+<th>角都</th>
+<th>昌平</th>
+<th>武都</th>
+<th>方上</th>
+<th>响城</th>
+<th>清州</th>
+</tr>
+<tr><th>京</th>
+<td>0<br><span class="small">0.0日</span></td>
+<td>370<br><span class="small">21.2日</span></td>
+<td>352<br><span class="small">20.1日</span></td>
+<td>356<br><span class="small">20.3日</span></td>
+<td>316<br><span class="small">18.1日</span></td>
+<td>228<br><span class="small">13.0日</span></td>
+<td>284<br><span class="small">16.2日</span></td>
+<td>238<br><span class="small">13.6日</span></td>
+<td>140<br><span class="small">8.0日</span></td>
+<td>81<br><span class="small">4.6日</span></td>
+<td>258<br><span class="small">14.7日</span></td>
+<td>260<br><span class="small">14.9日</span></td>
+<td>260<br><span class="small">14.9日</span></td>
+<td>151<br><span class="small">8.6日</span></td>
+<td>339<br><span class="small">19.4日</span></td>
+<td>41<br><span class="small">2.3日</span></td>
+<td>135<br><span class="small">7.7日</span></td>
+<td>172<br><span class="small">9.8日</span></td>
+<td>208<br><span class="small">11.9日</span></td>
+<td>221<br><span class="small">12.7日</span></td>
+<td>230<br><span class="small">13.1日</span></td>
+</tr>
+<tr><th>川阴城</th>
+<td>370<br><span class="small">21.2日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>513<br><span class="small">29.3日</span></td>
+<td>398<br><span class="small">22.7日</span></td>
+<td>255<br><span class="small">14.6日</span></td>
+<td>144<br><span class="small">8.2日</span></td>
+<td>533<br><span class="small">30.5日</span></td>
+<td>481<br><span class="small">27.5日</span></td>
+<td>250<br><span class="small">14.3日</span></td>
+<td>293<br><span class="small">16.7日</span></td>
+<td>458<br><span class="small">26.2日</span></td>
+<td>595<br><span class="small">34.0日</span></td>
+<td>555<br><span class="small">31.7日</span></td>
+<td>233<br><span class="small">13.3日</span></td>
+<td>33<br><span class="small">1.9日</span></td>
+<td>374<br><span class="small">21.4日</span></td>
+<td>390<br><span class="small">22.3日</span></td>
+<td>435<br><span class="small">24.9日</span></td>
+<td>488<br><span class="small">27.9日</span></td>
+<td>410<br><span class="small">23.4日</span></td>
+<td>497<br><span class="small">28.4日</span></td>
+</tr>
+<tr><th>海都</th>
+<td>352<br><span class="small">20.1日</span></td>
+<td>513<br><span class="small">29.3日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>147<br><span class="small">8.4日</span></td>
+<td>273<br><span class="small">15.6日</span></td>
+<td>433<br><span class="small">24.7日</span></td>
+<td>120<br><span class="small">6.9日</span></td>
+<td>129<br><span class="small">7.4日</span></td>
+<td>431<br><span class="small">24.6日</span></td>
+<td>342<br><span class="small">19.5日</span></td>
+<td>95<br><span class="small">5.4日</span></td>
+<td>274<br><span class="small">15.6日</span></td>
+<td>190<br><span class="small">10.9日</span></td>
+<td>336<br><span class="small">19.2日</span></td>
+<td>498<br><span class="small">28.4日</span></td>
+<td>312<br><span class="small">17.8日</span></td>
+<td>217<br><span class="small">12.4日</span></td>
+<td>185<br><span class="small">10.6日</span></td>
+<td>177<br><span class="small">10.1日</span></td>
+<td>135<br><span class="small">7.7日</span></td>
+<td>155<br><span class="small">8.9日</span></td>
+</tr>
+<tr><th>楚城</th>
+<td>356<br><span class="small">20.3日</span></td>
+<td>398<br><span class="small">22.7日</span></td>
+<td>147<br><span class="small">8.4日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>144<br><span class="small">8.2日</span></td>
+<td>351<br><span class="small">20.0日</span></td>
+<td>239<br><span class="small">13.6日</span></td>
+<td>214<br><span class="small">12.2日</span></td>
+<td>385<br><span class="small">22.0日</span></td>
+<td>313<br><span class="small">17.9日</span></td>
+<td>166<br><span class="small">9.5日</span></td>
+<td>380<br><span class="small">21.7日</span></td>
+<td>300<br><span class="small">17.2日</span></td>
+<td>277<br><span class="small">15.8日</span></td>
+<td>389<br><span class="small">22.2日</span></td>
+<td>320<br><span class="small">18.3日</span></td>
+<td>235<br><span class="small">13.4日</span></td>
+<td>233<br><span class="small">13.3日</span></td>
+<td>258<br><span class="small">14.7日</span></td>
+<td>158<br><span class="small">9.1日</span></td>
+<td>245<br><span class="small">14.0日</span></td>
+</tr>
+<tr><th>苏城</th>
+<td>316<br><span class="small">18.1日</span></td>
+<td>255<br><span class="small">14.6日</span></td>
+<td>273<br><span class="small">15.6日</span></td>
+<td>144<br><span class="small">8.2日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>228<br><span class="small">13.1日</span></td>
+<td>327<br><span class="small">18.7日</span></td>
+<td>284<br><span class="small">16.2日</span></td>
+<td>292<br><span class="small">16.7日</span></td>
+<td>248<br><span class="small">14.2日</span></td>
+<td>245<br><span class="small">14.0日</span></td>
+<td>437<br><span class="small">25.0日</span></td>
+<td>371<br><span class="small">21.2日</span></td>
+<td>188<br><span class="small">10.7日</span></td>
+<td>248<br><span class="small">14.2日</span></td>
+<td>291<br><span class="small">16.6日</span></td>
+<td>241<br><span class="small">13.8日</span></td>
+<td>267<br><span class="small">15.2日</span></td>
+<td>312<br><span class="small">17.8日</span></td>
+<td>208<br><span class="small">11.9日</span></td>
+<td>309<br><span class="small">17.7日</span></td>
+</tr>
+<tr><th>望岳镇</th>
+<td>228<br><span class="small">13.0日</span></td>
+<td>144<br><span class="small">8.2日</span></td>
+<td>433<br><span class="small">24.7日</span></td>
+<td>351<br><span class="small">20.0日</span></td>
+<td>228<br><span class="small">13.1日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>425<br><span class="small">24.3日</span></td>
+<td>372<br><span class="small">21.2日</span></td>
+<td>109<br><span class="small">6.2日</span></td>
+<td>153<br><span class="small">8.7日</span></td>
+<td>360<br><span class="small">20.6日</span></td>
+<td>465<br><span class="small">26.6日</span></td>
+<td>434<br><span class="small">24.8日</span></td>
+<td>106<br><span class="small">6.0日</span></td>
+<td>112<br><span class="small">6.4日</span></td>
+<td>235<br><span class="small">13.4日</span></td>
+<td>268<br><span class="small">15.3日</span></td>
+<td>316<br><span class="small">18.1日</span></td>
+<td>369<br><span class="small">21.1日</span></td>
+<td>310<br><span class="small">17.7日</span></td>
+<td>382<br><span class="small">21.8日</span></td>
+</tr>
+<tr><th>奉秋</th>
+<td>284<br><span class="small">16.2日</span></td>
+<td>533<br><span class="small">30.5日</span></td>
+<td>120<br><span class="small">6.9日</span></td>
+<td>239<br><span class="small">13.6日</span></td>
+<td>327<br><span class="small">18.7日</span></td>
+<td>425<br><span class="small">24.3日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>53<br><span class="small">3.0日</span></td>
+<td>393<br><span class="small">22.5日</span></td>
+<td>301<br><span class="small">17.2日</span></td>
+<td>82<br><span class="small">4.7日</span></td>
+<td>154<br><span class="small">8.8日</span></td>
+<td>70<br><span class="small">4.0日</span></td>
+<td>320<br><span class="small">18.3日</span></td>
+<td>511<br><span class="small">29.2日</span></td>
+<td>245<br><span class="small">14.0日</span></td>
+<td>164<br><span class="small">9.4日</span></td>
+<td>116<br><span class="small">6.6日</span></td>
+<td>78<br><span class="small">4.4日</span></td>
+<td>124<br><span class="small">7.1日</span></td>
+<td>55<br><span class="small">3.1日</span></td>
+</tr>
+<tr><th>石陵</th>
+<td>238<br><span class="small">13.6日</span></td>
+<td>481<br><span class="small">27.5日</span></td>
+<td>129<br><span class="small">7.4日</span></td>
+<td>214<br><span class="small">12.2日</span></td>
+<td>284<br><span class="small">16.2日</span></td>
+<td>372<br><span class="small">21.2日</span></td>
+<td>53<br><span class="small">3.0日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>341<br><span class="small">19.5日</span></td>
+<td>249<br><span class="small">14.2日</span></td>
+<td>49<br><span class="small">2.8日</span></td>
+<td>166<br><span class="small">9.5日</span></td>
+<td>89<br><span class="small">5.1日</span></td>
+<td>267<br><span class="small">15.2日</span></td>
+<td>459<br><span class="small">26.2日</span></td>
+<td>198<br><span class="small">11.3日</span></td>
+<td>112<br><span class="small">6.4日</span></td>
+<td>67<br><span class="small">3.8日</span></td>
+<td>49<br><span class="small">2.8日</span></td>
+<td>76<br><span class="small">4.4日</span></td>
+<td>31<br><span class="small">1.8日</span></td>
+</tr>
+<tr><th>卫京郡</th>
+<td>140<br><span class="small">8.0日</span></td>
+<td>250<br><span class="small">14.3日</span></td>
+<td>431<br><span class="small">24.6日</span></td>
+<td>385<br><span class="small">22.0日</span></td>
+<td>292<br><span class="small">16.7日</span></td>
+<td>109<br><span class="small">6.2日</span></td>
+<td>393<br><span class="small">22.5日</span></td>
+<td>341<br><span class="small">19.5日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>93<br><span class="small">5.3日</span></td>
+<td>344<br><span class="small">19.7日</span></td>
+<td>398<br><span class="small">22.7日</span></td>
+<td>385<br><span class="small">22.0日</span></td>
+<td>109<br><span class="small">6.2日</span></td>
+<td>217<br><span class="small">12.4日</span></td>
+<td>162<br><span class="small">9.3日</span></td>
+<td>229<br><span class="small">13.1日</span></td>
+<td>277<br><span class="small">15.8日</span></td>
+<td>325<br><span class="small">18.6日</span></td>
+<td>297<br><span class="small">17.0日</span></td>
+<td>343<br><span class="small">19.6日</span></td>
+</tr>
+<tr><th>南岭关</th>
+<td>81<br><span class="small">4.6日</span></td>
+<td>293<br><span class="small">16.7日</span></td>
+<td>342<br><span class="small">19.5日</span></td>
+<td>313<br><span class="small">17.9日</span></td>
+<td>248<br><span class="small">14.2日</span></td>
+<td>153<br><span class="small">8.7日</span></td>
+<td>301<br><span class="small">17.2日</span></td>
+<td>249<br><span class="small">14.2日</span></td>
+<td>93<br><span class="small">5.3日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>253<br><span class="small">14.5日</span></td>
+<td>315<br><span class="small">18.0日</span></td>
+<td>295<br><span class="small">16.9日</span></td>
+<td>71<br><span class="small">4.1日</span></td>
+<td>262<br><span class="small">15.0日</span></td>
+<td>82<br><span class="small">4.7日</span></td>
+<td>136<br><span class="small">7.8日</span></td>
+<td>185<br><span class="small">10.6日</span></td>
+<td>233<br><span class="small">13.3日</span></td>
+<td>207<br><span class="small">11.8日</span></td>
+<td>250<br><span class="small">14.3日</span></td>
+</tr>
+<tr><th>夫文渡口</th>
+<td>258<br><span class="small">14.7日</span></td>
+<td>458<br><span class="small">26.2日</span></td>
+<td>95<br><span class="small">5.4日</span></td>
+<td>166<br><span class="small">9.5日</span></td>
+<td>245<br><span class="small">14.0日</span></td>
+<td>360<br><span class="small">20.6日</span></td>
+<td>82<br><span class="small">4.7日</span></td>
+<td>49<br><span class="small">2.8日</span></td>
+<td>344<br><span class="small">19.7日</span></td>
+<td>253<br><span class="small">14.5日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>214<br><span class="small">12.2日</span></td>
+<td>136<br><span class="small">7.7日</span></td>
+<td>258<br><span class="small">14.7日</span></td>
+<td>439<br><span class="small">25.1日</span></td>
+<td>217<br><span class="small">12.4日</span></td>
+<td>124<br><span class="small">7.1日</span></td>
+<td>91<br><span class="small">5.2日</span></td>
+<td>95<br><span class="small">5.5日</span></td>
+<td>50<br><span class="small">2.9日</span></td>
+<td>80<br><span class="small">4.6日</span></td>
+</tr>
+<tr><th>宿冰都</th>
+<td>260<br><span class="small">14.9日</span></td>
+<td>595<br><span class="small">34.0日</span></td>
+<td>274<br><span class="small">15.6日</span></td>
+<td>380<br><span class="small">21.7日</span></td>
+<td>437<br><span class="small">25.0日</span></td>
+<td>465<br><span class="small">26.6日</span></td>
+<td>154<br><span class="small">8.8日</span></td>
+<td>166<br><span class="small">9.5日</span></td>
+<td>398<br><span class="small">22.7日</span></td>
+<td>315<br><span class="small">18.0日</span></td>
+<td>214<br><span class="small">12.2日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>84<br><span class="small">4.8日</span></td>
+<td>363<br><span class="small">20.8日</span></td>
+<td>568<br><span class="small">32.5日</span></td>
+<td>236<br><span class="small">13.5日</span></td>
+<td>209<br><span class="small">11.9日</span></td>
+<td>171<br><span class="small">9.8日</span></td>
+<td>126<br><span class="small">7.2日</span></td>
+<td>233<br><span class="small">13.3日</span></td>
+<td>135<br><span class="small">7.7日</span></td>
+</tr>
+<tr><th>建武</th>
+<td>260<br><span class="small">14.9日</span></td>
+<td>555<br><span class="small">31.7日</span></td>
+<td>190<br><span class="small">10.9日</span></td>
+<td>300<br><span class="small">17.2日</span></td>
+<td>371<br><span class="small">21.2日</span></td>
+<td>434<br><span class="small">24.8日</span></td>
+<td>70<br><span class="small">4.0日</span></td>
+<td>89<br><span class="small">5.1日</span></td>
+<td>385<br><span class="small">22.0日</span></td>
+<td>295<br><span class="small">16.9日</span></td>
+<td>136<br><span class="small">7.7日</span></td>
+<td>84<br><span class="small">4.8日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>329<br><span class="small">18.8日</span></td>
+<td>530<br><span class="small">30.3日</span></td>
+<td>226<br><span class="small">12.9日</span></td>
+<td>167<br><span class="small">9.5日</span></td>
+<td>119<br><span class="small">6.8日</span></td>
+<td>66<br><span class="small">3.8日</span></td>
+<td>163<br><span class="small">9.3日</span></td>
+<td>62<br><span class="small">3.5日</span></td>
+</tr>
+<tr><th>川陵</th>
+<td>151<br><span class="small">8.6日</span></td>
+<td>233<br><span class="small">13.3日</span></td>
+<td>336<br><span class="small">19.2日</span></td>
+<td>277<br><span class="small">15.8日</span></td>
+<td>188<br><span class="small">10.7日</span></td>
+<td>106<br><span class="small">6.0日</span></td>
+<td>320<br><span class="small">18.3日</span></td>
+<td>267<br><span class="small">15.2日</span></td>
+<td>109<br><span class="small">6.2日</span></td>
+<td>71<br><span class="small">4.1日</span></td>
+<td>258<br><span class="small">14.7日</span></td>
+<td>363<br><span class="small">20.8日</span></td>
+<td>329<br><span class="small">18.8日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>205<br><span class="small">11.7日</span></td>
+<td>144<br><span class="small">8.3日</span></td>
+<td>162<br><span class="small">9.3日</span></td>
+<td>211<br><span class="small">12.1日</span></td>
+<td>264<br><span class="small">15.1日</span></td>
+<td>208<br><span class="small">11.9日</span></td>
+<td>276<br><span class="small">15.8日</span></td>
+</tr>
+<tr><th>梨阳</th>
+<td>339<br><span class="small">19.4日</span></td>
+<td>33<br><span class="small">1.9日</span></td>
+<td>498<br><span class="small">28.4日</span></td>
+<td>389<br><span class="small">22.2日</span></td>
+<td>248<br><span class="small">14.2日</span></td>
+<td>112<br><span class="small">6.4日</span></td>
+<td>511<br><span class="small">29.2日</span></td>
+<td>459<br><span class="small">26.2日</span></td>
+<td>217<br><span class="small">12.4日</span></td>
+<td>262<br><span class="small">15.0日</span></td>
+<td>439<br><span class="small">25.1日</span></td>
+<td>568<br><span class="small">32.5日</span></td>
+<td>530<br><span class="small">30.3日</span></td>
+<td>205<br><span class="small">11.7日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>344<br><span class="small">19.6日</span></td>
+<td>364<br><span class="small">20.8日</span></td>
+<td>411<br><span class="small">23.5日</span></td>
+<td>464<br><span class="small">26.5日</span></td>
+<td>390<br><span class="small">22.3日</span></td>
+<td>473<br><span class="small">27.0日</span></td>
+</tr>
+<tr><th>角都</th>
+<td>41<br><span class="small">2.3日</span></td>
+<td>374<br><span class="small">21.4日</span></td>
+<td>312<br><span class="small">17.8日</span></td>
+<td>320<br><span class="small">18.3日</span></td>
+<td>291<br><span class="small">16.6日</span></td>
+<td>235<br><span class="small">13.4日</span></td>
+<td>245<br><span class="small">14.0日</span></td>
+<td>198<br><span class="small">11.3日</span></td>
+<td>162<br><span class="small">9.3日</span></td>
+<td>82<br><span class="small">4.7日</span></td>
+<td>217<br><span class="small">12.4日</span></td>
+<td>236<br><span class="small">13.5日</span></td>
+<td>226<br><span class="small">12.9日</span></td>
+<td>144<br><span class="small">8.3日</span></td>
+<td>344<br><span class="small">19.6日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>95<br><span class="small">5.4日</span></td>
+<td>132<br><span class="small">7.5日</span></td>
+<td>171<br><span class="small">9.7日</span></td>
+<td>181<br><span class="small">10.4日</span></td>
+<td>191<br><span class="small">10.9日</span></td>
+</tr>
+<tr><th>昌平</th>
+<td>135<br><span class="small">7.7日</span></td>
+<td>390<br><span class="small">22.3日</span></td>
+<td>217<br><span class="small">12.4日</span></td>
+<td>235<br><span class="small">13.4日</span></td>
+<td>241<br><span class="small">13.8日</span></td>
+<td>268<br><span class="small">15.3日</span></td>
+<td>164<br><span class="small">9.4日</span></td>
+<td>112<br><span class="small">6.4日</span></td>
+<td>229<br><span class="small">13.1日</span></td>
+<td>136<br><span class="small">7.8日</span></td>
+<td>124<br><span class="small">7.1日</span></td>
+<td>209<br><span class="small">11.9日</span></td>
+<td>167<br><span class="small">9.5日</span></td>
+<td>162<br><span class="small">9.3日</span></td>
+<td>364<br><span class="small">20.8日</span></td>
+<td>95<br><span class="small">5.4日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>49<br><span class="small">2.8日</span></td>
+<td>101<br><span class="small">5.8日</span></td>
+<td>87<br><span class="small">5.0日</span></td>
+<td>115<br><span class="small">6.6日</span></td>
+</tr>
+<tr><th>武都</th>
+<td>172<br><span class="small">9.8日</span></td>
+<td>435<br><span class="small">24.9日</span></td>
+<td>185<br><span class="small">10.6日</span></td>
+<td>233<br><span class="small">13.3日</span></td>
+<td>267<br><span class="small">15.2日</span></td>
+<td>316<br><span class="small">18.1日</span></td>
+<td>116<br><span class="small">6.6日</span></td>
+<td>67<br><span class="small">3.8日</span></td>
+<td>277<br><span class="small">15.8日</span></td>
+<td>185<br><span class="small">10.6日</span></td>
+<td>91<br><span class="small">5.2日</span></td>
+<td>171<br><span class="small">9.8日</span></td>
+<td>119<br><span class="small">6.8日</span></td>
+<td>211<br><span class="small">12.1日</span></td>
+<td>411<br><span class="small">23.5日</span></td>
+<td>132<br><span class="small">7.5日</span></td>
+<td>49<br><span class="small">2.8日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>53<br><span class="small">3.0日</span></td>
+<td>75<br><span class="small">4.3日</span></td>
+<td>66<br><span class="small">3.8日</span></td>
+</tr>
+<tr><th>方上</th>
+<td>208<br><span class="small">11.9日</span></td>
+<td>488<br><span class="small">27.9日</span></td>
+<td>177<br><span class="small">10.1日</span></td>
+<td>258<br><span class="small">14.7日</span></td>
+<td>312<br><span class="small">17.8日</span></td>
+<td>369<br><span class="small">21.1日</span></td>
+<td>78<br><span class="small">4.4日</span></td>
+<td>49<br><span class="small">2.8日</span></td>
+<td>325<br><span class="small">18.6日</span></td>
+<td>233<br><span class="small">13.3日</span></td>
+<td>95<br><span class="small">5.5日</span></td>
+<td>126<br><span class="small">7.2日</span></td>
+<td>66<br><span class="small">3.8日</span></td>
+<td>264<br><span class="small">15.1日</span></td>
+<td>464<br><span class="small">26.5日</span></td>
+<td>171<br><span class="small">9.7日</span></td>
+<td>101<br><span class="small">5.8日</span></td>
+<td>53<br><span class="small">3.0日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>106<br><span class="small">6.1日</span></td>
+<td>24<br><span class="small">1.4日</span></td>
+</tr>
+<tr><th>响城</th>
+<td>221<br><span class="small">12.7日</span></td>
+<td>410<br><span class="small">23.4日</span></td>
+<td>135<br><span class="small">7.7日</span></td>
+<td>158<br><span class="small">9.1日</span></td>
+<td>208<br><span class="small">11.9日</span></td>
+<td>310<br><span class="small">17.7日</span></td>
+<td>124<br><span class="small">7.1日</span></td>
+<td>76<br><span class="small">4.4日</span></td>
+<td>297<br><span class="small">17.0日</span></td>
+<td>207<br><span class="small">11.8日</span></td>
+<td>50<br><span class="small">2.9日</span></td>
+<td>233<br><span class="small">13.3日</span></td>
+<td>163<br><span class="small">9.3日</span></td>
+<td>208<br><span class="small">11.9日</span></td>
+<td>390<br><span class="small">22.3日</span></td>
+<td>181<br><span class="small">10.4日</span></td>
+<td>87<br><span class="small">5.0日</span></td>
+<td>75<br><span class="small">4.3日</span></td>
+<td>106<br><span class="small">6.1日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+<td>101<br><span class="small">5.8日</span></td>
+</tr>
+<tr><th>清州</th>
+<td>230<br><span class="small">13.1日</span></td>
+<td>497<br><span class="small">28.4日</span></td>
+<td>155<br><span class="small">8.9日</span></td>
+<td>245<br><span class="small">14.0日</span></td>
+<td>309<br><span class="small">17.7日</span></td>
+<td>382<br><span class="small">21.8日</span></td>
+<td>55<br><span class="small">3.1日</span></td>
+<td>31<br><span class="small">1.8日</span></td>
+<td>343<br><span class="small">19.6日</span></td>
+<td>250<br><span class="small">14.3日</span></td>
+<td>80<br><span class="small">4.6日</span></td>
+<td>135<br><span class="small">7.7日</span></td>
+<td>62<br><span class="small">3.5日</span></td>
+<td>276<br><span class="small">15.8日</span></td>
+<td>473<br><span class="small">27.0日</span></td>
+<td>191<br><span class="small">10.9日</span></td>
+<td>115<br><span class="small">6.6日</span></td>
+<td>66<br><span class="small">3.8日</span></td>
+<td>24<br><span class="small">1.4日</span></td>
+<td>101<br><span class="small">5.8日</span></td>
+<td>0<br><span class="small">0.0日</span></td>
+</tr>
+</table></div>
+<h2>六、文本旅行时间锚点</h2>
+<table><tr><th>路线</th><th>文本描述</th><th>推算距离</th><th>与模型偏差</th><th>说明</th></tr>
+<tr><td>望岳镇→京</td><td>任琅一行人到达京城是十几天后的事</td><td>≈228 km / 13 日</td><td>基准锚点</td><td>混合商旅速度</td></tr>
+<tr><td>暮山城→川阴城</td><td>到达川阴城的前二十天，行至暮山城</td><td>≈350 km / 20 日</td><td>模型：京→川阴≈370 km/21 日</td><td>暮山城可视作京畿西道节点</td></tr>
+<tr><td>当前位置→浣冰郡</td><td>浣冰郡也不算近，大概得有两个多月</td><td>—</td><td>图上宿冰都距京仅 260 km</td><td>宿冰都或为浣冰郡南境入口，郡治距图框外；冬季慢行、绕路</td></tr>
+<tr><td>奕剑峰→山下镇</td><td>约莫两个时辰的路</td><td>≈7–10 km</td><td>山径慢行</td><td>符合</td></tr>
+<tr><td>某地→村口</td><td>又走了不到两个时辰，抵达村口</td><td>≈7–10 km</td><td>山径/马行</td><td>符合</td></tr>
+<tr><td>许达营→奉秋</td><td>近一个半时辰狂奔到达奉秋</td><td>≈15–20 km</td><td>骑兵追击</td><td>急行军</td></tr>
+<tr><td>黄亚钊营↔马远营</td><td>相距十五里</td><td>≈7.5 km</td><td>营地间距</td><td>符合</td></tr>
+<tr><td>苏雨营↔许达营</td><td>相距十五里</td><td>≈7.5 km</td><td>江岸对峙</td><td>符合</td></tr>
+<tr><td>陈奉天攻卫京郡</td><td>没个三五月休想破城</td><td>—</td><td>卫京郡地形险峻</td><td>防御价值极高</td></tr>
+</table>
+<h2>七、战术地理研判</h2>
+<h3>7.1 京城防御：两关一谷</h3>
+<ul>
+<li><b>卫京郡（北大门）：</b>距京约 140 km / 8 日，处于「必经谷道，两侧绝壁」。陈奉天正面强攻七日无果，聂林于北侧山峰俯瞰全军；程廖试图绕山偷袭后方。该谷道是全书最关键的防御咽喉。</li>
+<li><b>南岭关（东南门）：</b>距京仅 81 km / 4.6 日，是京畿东南最后一道山隘；通关后东折可达角都粮仓，再北便是京城平原。</li>
+<li><b>京城本身：</b>内外城结构（据卫京郡推断），盆地粮仓支撑长期围困；最终皇帝疏散百姓往东北浣冰郡，说明京城依赖东北后方通道。</li>
+</ul>
+<h3>7.2 东区战线：海都—奉秋—石陵—楚城—苏城走廊</h3>
+<ul>
+<li><b>海都：</b>东海水师基地，铁闸海防；许达以此为根据地北征。海都→奉秋约 120 km / 7 日，是张广义受命平叛的进军距离。</li>
+<li><b>奉秋—石陵：</b>相距仅 53 km / 3 日，互为犄角；石陵周围多丘陵，利于设伏与阻击。</li>
+<li><b>楚城—夫文渡口：</b>楚城距渡口约 166 km / 9.5 日，是东区战线向中部渡河延伸的必经之路。冬季水缓，响城东西绝壁使夫文渡口成为渡江焦点。</li>
+<li><b>苏城—楚城：</b>仅 144 km / 8.2 日，苏氏商帮可快速支援楚城，亦可通过楚城获得川阴铁骑援助。</li>
+</ul>
+<h3>7.3 西翼与川阴势力</h3>
+<ul>
+<li><b>川阴城—梨阳：</b>仅 33 km / 1.9 日，陈奉天故乡梨阳被屠后，他迅速以川阴城为新核心；两者同处梨花川上游平原，便于控制。</li>
+<li><b>川阴城→苏城：</b>255 km / 14.6 日，是陈奉天结盟苏氏、建立南区战线的通道。</li>
+<li><b>川阴城→京：</b>370 km / 21 日，陈奉天北上直取帝都的主轴；途中需穿越或绕过卫京郡。</li>
+<li><b>望岳镇：</b>位于京西 228 km，是任琅和尚樱走出山林后的第一个社会化节点；其北侧平原便于结营扎寨。</li>
+</ul>
+<h3>7.4 东北后方与浣冰郡</h3>
+<ul>
+<li><b>宿冰都/浣冰郡：</b>位于东北沿海，雪峰环绕、冰窟资源独特；皇帝将京城百姓迁往「东北浣冰郡一带」，显示其为王朝战略后方与避难所。</li>
+<li><b>墨川—京墨渡口：</b>纵向河流将东北与京城连接，水运可加速兵员、粮草调动。</li>
+</ul>
+<h2>八、关键发现</h2>
+<ol>
+<li><b>空间叙事的双轴结构：</b>全书军事行动围绕「西轴（川阴城→京）」与「东轴（海都→楚城/夫文渡口）」展开，两轴在京城交汇，形成东西夹击之势。</li>
+<li><b>京城的致命纵深：</b>京城距南岭关仅约 80 km（4–5 日），距卫京郡约 140 km（8 日），战略纵深偏薄；一旦两关失守，京城无险可守，只能依赖疏散。</li>
+<li><b>梨花川的切割作用：</b>东西横贯的梨花川将地图分为南北两半，夫文渡口、大支渡口成为东线兵力北渡的必争之地；冬季水缓时渡口价值倍增。</li>
+<li><b>北梨岭—南梨岭的屏障效应：</b>两岭横亘中部，使川阴势力难以直接东进，也迫使陈奉天选择「北上取京」而非「东出争海」。</li>
+<li><b>海都的侧翼价值：</b>海都距京约 350 km（20 日），看似遥远，但海运可压缩后勤时间；许达若能控制夫文渡口并建立水军，可从东侧威胁京城侧背。</li>
+<li><b>地形与行军节奏高度吻合：</b>小说中「十几日到京」「前二十天到暮山城」「两个时辰到山下镇」「十五里对峙」等描述，与基于参考图测算的相对距离基本一致，说明作者在空间设定上具有内在一致性。</li>
+</ol>
+<h2>九、局限与使用建议</h2>
+<ul>
+<li>内嵌图为示意性手绘，节点坐标存在 ±20–40 km 的判读误差。</li>
+<li>「标准行军日」假设为每日 35 里平坦道路；实际小说中的急行、追兵、风雪、围城会显著改变耗时。</li>
+<li>部分节点（如仙境、千佛谷、堕凤谷）不在参考图中，未纳入本空间模型；它们属于秘境/超自然空间，应单独分析。</li>
+<li>建议结合本报告与前期人物/事件量化报告，进一步分析「空间距离如何影响救援、情报传递与战争动员节奏」。</li>
+</ul>
+<p style="margin-top:40px;color:#7f8c8d;font-size:13px;text-align:center">报告生成时间：2026-08-17 · 分析文件：苇舟江湖梦.docx</p>
+<h2>十、整合来源</h2>
+<p class="see-also" style="background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.3);border-radius:10px;padding:10px 14px;margin:6px 0;color:#d7e2f7;font-size:13px"><b>本报告为空间地理的权威主版本。</b>相关视角与子集：</p>
+<ul>
+<li>📐 <b>纯文本派生版（互补视角）</b>：<a href="../苇舟江湖梦_地理位置关系图.html">苇舟江湖梦_地理位置关系图.html</a> — 仅依据方位词/里程/水文，不引用内嵌参考图，§ 1 SVG 地图 + § 2 方位约束表 + § 5 关键距离与本报告互为参照。</li>
+<li>📊 <b>地点语境档案（量化补充）</b>：<a href="../苇舟江湖梦_地理描述量化.html">苇舟江湖梦_地理描述量化.html</a> — 54 个地点的地形类型 + 17 项地理要素 + 抽样描述句。</li>
+<li>🕒 <b>地名热度（原 15 § 4，已并入本体系）</b>：清洗后地名 Top 15 详见 <a href="../苇舟江湖梦_时间节奏量化.html">苇舟江湖梦_时间节奏量化.html</a> 历史版本（15 § 4 现已跳转至此体系）。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  var KEY='wzjm_dark';
+  function apply(d){ document.body.classList.toggle('dark', d); }
+  var SUN='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON='<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function sync(){
+    var b=document.querySelector('.dm-toggle');
+    if(b){ var d=document.body.classList.contains('dark'); b.innerHTML = d ? SUN+'<span>浅色</span>' : MOON+'<span>深色</span>'; }
+  }
+  function buildBtn(){
+    var s=document.createElement('style');
+    s.textContent='.dm-cluster{position:fixed;top:16px;right:16px;z-index:9999;display:flex;gap:8px}'
+    +'.dm-toggle,.dm-back{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;'
+    +"font-family:'HarmonyOS Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;font-weight:500;"
+    +'border:1px solid var(--line,var(--rc-line,#dfe3e8));background:var(--surface,var(--rc-surface,#fff));'
+    +'color:var(--primary,var(--rc-primary,#0A59F7));box-shadow:0 4px 14px rgba(24,36,49,.14);'
+    +'transition:transform .2s cubic-bezier(.25,0,.3,1),background-color .3s,color .3s,border-color .3s}'
+    +'.dm-toggle:hover,.dm-back:hover{transform:translateY(-2px)}'
+    +'.dm-back{text-decoration:none}';
+    document.head.appendChild(s);
+    var c=document.createElement('div');c.className='dm-cluster';
+    var backHref='../index.html';
+    if(backHref){
+      var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+      a.setAttribute('aria-label','返回报告中心');a.textContent='报告中心';
+      c.appendChild(a);
+    }
+    var b=document.createElement('button');b.className='dm-toggle';
+    b.setAttribute('aria-label','切换深色模式');
+    b.addEventListener('click', function(){
+      var d=!document.body.classList.contains('dark');
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(e){}
+      sync(); broadcast(d);
+    });
+    c.appendChild(b);
+    document.body.appendChild(c);
+  }
+  function broadcast(d){
+    try{
+      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：图表主题热更新 */
+      if(window.parent!==window){ window.parent.postMessage({wzTheme:d?'dark':'light'},'*'); }
+      else{ var fs=document.querySelectorAll('iframe'); for(var i=0;i<fs.length;i++){ try{ fs[i].contentWindow.postMessage({wzTheme:d?'dark':'light'},'*'); }catch(e){} } }
+    }catch(e){}
+  }
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(saved ? saved==='1' : !!prefers);
+  buildBtn();
+  sync();
+  setTimeout(function(){ broadcast(document.body.classList.contains('dark')); },0);
+  window.addEventListener('message', function(e){
+    if(e.data && e.data.wzTheme){
+      var d = e.data.wzTheme==='dark';
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(err){}
+      sync();
+    }
+  });
+})();
+</script>
+
+</body><!--WZ-KEYINDEX-START-->
+<div id="wz-kwindex"></div>
+<script src="keyword-index-widget.js"></script>
+<!--WZ-KEYINDEX-END-->
+</html>

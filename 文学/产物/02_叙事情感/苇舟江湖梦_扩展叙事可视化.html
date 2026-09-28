@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script id="wzjm-key-migration">try{var n0=localStorage.getItem("wzjm_dark");if(n0===null){var o0=localStorage.getItem("wzjm_dark");if(o0!==null)localStorage.setItem("wzjm_dark",o0);}var n1=localStorage.getItem("wzjm_lib_dark");if(n1===null){var o1=localStorage.getItem("wzjm_lib_dark");if(o1!==null)localStorage.setItem("wzjm_lib_dark",o1);}var n2=localStorage.getItem("wzjm_lib_accent");if(n2===null){var o2=localStorage.getItem("wzjm_lib_accent");if(o2!==null)localStorage.setItem("wzjm_lib_accent",o2);}var n3=localStorage.getItem("wzjm_mm_theme");if(n3===null){var o3=localStorage.getItem("wzjm_mm_theme");if(o3!==null)localStorage.setItem("wzjm_mm_theme",o3);}}catch(e){}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>苇舟江湖梦 · 扩展叙事可视化</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+:root{--bg:#0a0f1c;--panel:rgba(20,32,54,.62);--brd:rgba(90,150,230,.22);--txt:#e8eefc;--muted:#9fb2d4;
+  --blue:#3b82f6;--cyan:#22d3ee;--violet:#a78bfa;--amber:#f59e0b;--red:#ef4444;--green:#34d399;}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 700px at 80% -10%,rgba(59,130,246,.18),transparent 60%),
+  radial-gradient(900px 600px at 0% 110%,rgba(167,139,250,.14),transparent 55%),var(--bg);
+  color:var(--txt);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 22px 80px}
+header h1{margin:0;font-size:28px;letter-spacing:2px;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--violet));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+header p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.nav{margin:10px 0 4px}
+.nav a{color:var(--cyan);text-decoration:none;font-size:13px;border:1px solid var(--brd);padding:4px 10px;border-radius:8px}
+.nav a:hover{background:rgba(34,211,238,.12)}
+section{background:var(--panel);border:1px solid var(--brd);border-radius:16px;padding:18px;margin-top:20px;
+  backdrop-filter:blur(14px);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+section h2{margin:0 0 4px;font-size:20px;display:flex;align-items:center;gap:8px}
+section h2 .dot{width:12px;height:12px;border-radius:3px}
+.sub{color:var(--muted);font-size:13px;margin-bottom:12px}
+.chart{width:100%;height:460px}
+.flow-host{overflow:auto;max-height:560px;border-radius:10px;background:rgba(6,11,22,.45);border:1px solid rgba(90,150,230,.12);padding:6px}
+pre.mermaid{background:transparent;margin:0}
+.samples{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:800px){.samples{grid-template-columns:1fr}}
+.scard{background:rgba(6,11,22,.4);border:1px solid rgba(90,150,230,.12);border-radius:10px;padding:10px 12px;font-size:12.5px}
+.scard b{color:var(--amber)}
+.scard .ev{color:var(--txt)} .scard .cue{color:var(--red);font-weight:700}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.nx-hl{outline:3px solid var(--amber)!important;outline-offset:2px;filter:drop-shadow(0 0 8px var(--amber))}
+.hint{color:var(--muted);font-size:12px;margin-top:8px}
+a.rdr{color:var(--cyan);text-decoration:none}
+</style>
+<style id="wz-harmony-font">body,h1,h2,h3,h4,button,input,select,textarea{font-family:'HarmonyOS Sans SC','HarmonyOS Sans','PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif!important}</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>苇舟江湖梦 · 扩展叙事可视化</h1>
+  <p>在四维状态转移流程图之外，用因果链、节奏谱、性格雷达/谱系、登场矩阵进一步把小说的「隐性结构」显性化。全部离线可用。</p>
+  <div class="nav"><a href="../苇舟江湖梦_可视化叙事系统.html">← 返回四维叙事系统</a></div>
+</header>
+
+<section>
+  <h2><span class="dot" style="background:var(--red)"></span>① 因果事件链图</h2>
+  <div class="sub">从各章关键事件抽取因果连词（于是/因而/所以/遂/由此/缘…），仅当「下一章事件由前文导出」时连边——高亮全书<b>因果密集段</b>。共 55 条因果边；点击节点跳转原文。</div>
+  <div class="flow-host" id="host_causal"><pre class="mermaid">
+flowchart TD
+    c1["第1章"]
+    c2["第2章"]
+    c3["第3章"]
+    c4["第4章"]
+    c5["第5章"]
+    c6["第6章"]
+    c7["第7章"]
+    c8["第8章"]
+    c9["第9章"]
+    c10["第10章"]
+    c11["第11章"]
+    c12["第12章"]
+    c13["第13章"]
+    c14["第14章"]
+    c15["第15章"]
+    c16["第16章"]
+    c17["第17章"]
+    c18["第18章"]
+    c19["第19章"]
+    c20["第20章"]
+    c21["第21章"]
+    c22["第22章"]
+    c23["第23章"]
+    c24["第24章"]
+    c25["第25章"]
+    c26["第26章"]
+    c27["第27章"]
+    c28["第28章"]
+    c29["第29章"]
+    c30["第30章"]
+    c31["第31章"]
+    c32["第32章"]
+    c33["第33章"]
+    c34["第34章"]
+    c35["第35章"]
+    c36["第36章"]
+    c37["第37章"]
+    c38["第38章"]
+    c39["第39章"]
+    c40["第40章"]
+    c41["第41章"]
+    c42["第42章"]
+    c43["第43章"]
+    c44["第44章"]
+    c45["第45章"]
+    c46["第46章"]
+    c47["第47章"]
+    c48["第48章"]
+    c49["第49章"]
+    c50["第50章"]
+    c51["第51章"]
+    c52["第52章"]
+    c53["第53章"]
+    c54["第54章"]
+    c55["第55章"]
+    c56["第56章"]
+    c57["第57章"]
+    c58["第58章"]
+    c59["第59章"]
+    c60["第60章"]
+    c61["第61章"]
+    c62["第62章"]
+    c1 -->|"所以"| c2
+    c2 -->|"于是"| c3
+    c3 -->|"于是"| c4
+    c5 -->|"所以"| c6
+    c6 -->|"所以"| c7
+    c8 -->|"所以"| c9
+    c9 -->|"缘"| c10
+    c10 -->|"于是"| c11
+    c12 -->|"于是"| c13
+    c13 -->|"于是"| c14
+    c14 -->|"于是"| c15
+    c15 -->|"于是"| c16
+    c16 -->|"所以"| c17
+    c17 -->|"于是"| c18
+    c18 -->|"于是"| c19
+    c19 -->|"所以"| c20
+    c20 -->|"所以"| c21
+    c21 -->|"缘"| c22
+    c22 -->|"于是"| c23
+    c23 -->|"所以"| c24
+    c24 -->|"所以"| c25
+    c25 -->|"于是"| c26
+    c26 -->|"于是"| c27
+    c27 -->|"于是"| c28
+    c28 -->|"于是"| c29
+    c29 -->|"于是"| c30
+    c30 -->|"于是"| c31
+    c31 -->|"所以"| c32
+    c32 -->|"于是"| c33
+    c33 -->|"所以"| c34
+    c34 -->|"于是"| c35
+    c35 -->|"所以"| c36
+    c36 -->|"于是"| c37
+    c37 -->|"所以"| c38
+    c38 -.->|"旋"| c39
+    c39 -->|"所以"| c40
+    c41 -->|"于是"| c42
+    c42 -->|"于是"| c43
+    c43 -->|"于是"| c44
+    c44 -->|"于是"| c45
+    c45 -->|"于是"| c46
+    c47 -->|"所以"| c48
+    c48 -->|"于是"| c49
+    c49 -->|"于是"| c50
+    c50 -->|"所以"| c51
+    c51 -->|"所以"| c52
+    c52 -->|"于是"| c53
+    c53 -->|"所以"| c54
+    c54 -->|"所以"| c55
+    c55 -->|"所以"| c56
+    c57 -->|"所以"| c58
+    c58 -->|"所以"| c59
+    c59 -->|"所以"| c60
+    c60 -->|"所以"| c61
+    c61 -->|"所以"| c62</pre></div>
+  <div class="samples" id="samples"></div>
+  <div class="hint">章内子事件因果链样例（12 章）：连词以<span style="color:var(--red);font-weight:700">红</span>标出，可见一步推一步的因果脉络。</div>
+</section>
+
+<section>
+  <h2><span class="dot" style="background:var(--amber)"></span>② 叙事节奏谱 · 小说心电图</h2>
+  <div class="sub">左轴＝篇幅(字数)，右轴＝战斗强度(0–3)，红色阴影＝悲情/伤亡章。看全书的张弛与留白。</div>
+  <div class="chart" id="rhythm"></div>
+</section>
+
+<section>
+  <h2><span class="dot" style="background:var(--violet)"></span>③ 角色六维性格雷达 + 性格谱系</h2>
+  <div class="sub">六维＝各性格轴被「刻画证据」的强度计数（非极性评分）。左：刻画最密的角色对比；右：余弦相似谱系网络（连边＝性格刻画模式相近），节点越大刻画越丰。</div>
+  <div class="two">
+    <div class="chart" id="radar"></div>
+    <div class="chart" id="cluster"></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="dot" style="background:var(--cyan)"></span>④ 角色登场矩阵热力图</h2>
+  <div class="sub">纵轴＝角色（按首登场排序），横轴＝章节(1–62)。亮点＝该章登场。竖向光带即人物弧光；群像章（多角色同亮）与独奏章一目了然。点击格子跳转原文。</div>
+  <div class="chart" id="heat" style="height:720px"></div>
+</section>
+
+</div>
+
+<script src="echarts.min.js"></script>
+<script src="mermaid.min.js"></script>
+<script>
+const READER="../苇舟江湖梦_原文阅读.html";
+const RHYTHM={"chs": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62], "ci": [1, 2, 2, 2, 2, 2, 1, 0, 0, 3, 2, 0, 0, 2, 2, 1, 2, 2, 1, 1, 1, 2, 0, 3, 0, 2, 2, 2, 2, 2, 1, 2, 2, 3, 1, 1, 3, 0, 2, 0, 1, 0, 0, 1, 0, 2, 2, 0, 1, 3, 3, 3, 0, 1, 3, 3, 3, 3, 0, 0, 0, 2], "wc": [1683, 1863, 3121, 3232, 3113, 3246, 2385, 2173, 1580, 2543, 2838, 2355, 1801, 2541, 2811, 3315, 2785, 2804, 3711, 6645, 3277, 2779, 3704, 3735, 3399, 2765, 3302, 6372, 5561, 5665, 2935, 3134, 6437, 6750, 4984, 5022, 7727, 3179, 4266, 3197, 3058, 3985, 4580, 7279, 3426, 3846, 3722, 3405, 4831, 3000, 4041, 3420, 3054, 5321, 4612, 4122, 3697, 5001, 697, 4210, 5728, 3978], "tragic": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0]};
+const RADAR={"axes": ["性情", "品性", "心气", "情义", "智愚", "胆气"], "series": [{"name": "任琅", "value": [1, 1, 1, 1, 1, 1], "dom": ["重情", "仁厚", "谦和"]}, {"name": "尚樱", "value": [1, 0, 1, 0, 1, 1], "dom": ["急躁", "谦和", "机变"]}, {"name": "影", "value": [1, 0, 0, 1, 0, 1], "dom": ["沉稳", "重情", "无畏"]}, {"name": "陈奉天", "value": [1, 0, 1, 0, 0, 0], "dom": ["沉稳", "谦和"]}, {"name": "刑布", "value": [1, 0, 0, 1, 0, 0], "dom": ["急躁", "重情"]}, {"name": "夏叶", "value": [1, 0, 0, 0, 1, 0], "dom": ["急躁", "鲁莽"]}, {"name": "李博", "value": [0, 1, 0, 1, 0, 0], "dom": ["仁厚", "重情"]}, {"name": "王慕", "value": [0, 1, 0, 1, 0, 0], "dom": ["仁厚", "重情"]}]};
+const CLUSTER={"nodes": [{"name": "刘笑岩", "size": 1}, {"name": "张潇璃", "size": 1}, {"name": "苏沐文", "size": 1}, {"name": "陈奉天", "size": 2}, {"name": "任琅", "size": 6}, {"name": "刑布", "size": 2}, {"name": "夏叶", "size": 2}, {"name": "安明", "size": 1}, {"name": "尚樱", "size": 4}, {"name": "李博", "size": 2}, {"name": "王慕", "size": 2}, {"name": "程廖", "size": 1}, {"name": "纪田", "size": 2}, {"name": "聂林", "size": 1}, {"name": "苏雨", "size": 1}, {"name": "许达", "size": 1}, {"name": "赵翔", "size": 1}, {"name": "赵骁", "size": 2}, {"name": "陆仲", "size": 2}, {"name": "陈王", "size": 1}, {"name": "雷光", "size": 1}, {"name": "马远", "size": 1}, {"name": "影", "size": 3}], "edges": [["刘笑岩", "张潇璃", 1.0], ["刘笑岩", "苏沐文", 1.0], ["刘笑岩", "安明", 1.0], ["刘笑岩", "程廖", 1.0], ["刘笑岩", "聂林", 1.0], ["刘笑岩", "许达", 1.0], ["刘笑岩", "赵翔", 1.0], ["刘笑岩", "陈王", 1.0], ["刘笑岩", "雷光", 1.0], ["张潇璃", "苏沐文", 1.0], ["张潇璃", "安明", 1.0], ["张潇璃", "程廖", 1.0], ["张潇璃", "聂林", 1.0], ["张潇璃", "许达", 1.0], ["张潇璃", "赵翔", 1.0], ["张潇璃", "陈王", 1.0], ["张潇璃", "雷光", 1.0], ["苏沐文", "安明", 1.0], ["苏沐文", "程廖", 1.0], ["苏沐文", "聂林", 1.0], ["苏沐文", "许达", 1.0], ["苏沐文", "赵翔", 1.0], ["苏沐文", "陈王", 1.0], ["苏沐文", "雷光", 1.0], ["刑布", "陆仲", 1.0], ["安明", "程廖", 1.0], ["安明", "聂林", 1.0], ["安明", "许达", 1.0], ["安明", "赵翔", 1.0], ["安明", "陈王", 1.0], ["安明", "雷光", 1.0], ["李博", "王慕", 1.0], ["程廖", "聂林", 1.0], ["程廖", "许达", 1.0], ["程廖", "赵翔", 1.0], ["程廖", "陈王", 1.0], ["程廖", "雷光", 1.0], ["纪田", "赵骁", 1.0], ["聂林", "许达", 1.0], ["聂林", "赵翔", 1.0], ["聂林", "陈王", 1.0], ["聂林", "雷光", 1.0], ["许达", "赵翔", 1.0], ["许达", "陈王", 1.0], ["许达", "雷光", 1.0], ["赵翔", "陈王", 1.0], ["赵翔", "雷光", 1.0], ["陈王", "雷光", 1.0]]};
+const HEAT={"chars": ["任琅", "刘媛灵", "刘老太公", "尚衫虎", "王奔", "李勇", "影", "尚樱", "法慧", "李博", "福", "六方剑", "枭", "叶云", "刑布", "许达", "阮盛", "端木邦", "黄羽", "陈奉天", "虞环", "夏叶", "王慕", "孑", "张洵", "张百慧", "赵翔", "赵骁", "范豪", "刘笑岩", "夏穗良", "魏才思", "苏雨", "秦阳", "岱胜", "黄亚钊", "李月婵", "谢仁玄", "刑泰", "陆宇堃", "谢春华", "皇帝", "苏沐文", "张广义", "魏祎心", "黄朱陶", "陈番", "道士", "马远", "王芣", "赵思俪", "武蒯", "楚圆圆", "铁面人", "张潇璃", "老道", "空", "陆天", "陆海", "安弈霖", "纪程浩", "纪田", "安明", "聂林", "陆仲", "白族主", "牛金", "牛银", "贺曲", "刘基", "韩德", "高颌", "张览", "程廖", "陆仲枢", "鹤童子", "黄四海"], "chs": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62], "cells": [[0, 0, 1], [1, 0, 1], [2, 0, 1], [3, 0, 1], [4, 0, 1], [5, 0, 1], [6, 0, 1], [7, 0, 1], [8, 0, 1], [9, 0, 1], [10, 0, 1], [11, 0, 1], [12, 0, 1], [13, 0, 1], [14, 0, 1], [15, 0, 1], [16, 0, 1], [17, 0, 1], [18, 0, 1], [19, 0, 1], [20, 0, 1], [21, 0, 1], [22, 0, 1], [23, 0, 1], [26, 0, 1], [27, 0, 1], [28, 0, 1], [29, 0, 1], [30, 0, 1], [31, 0, 1], [32, 0, 1], [33, 0, 1], [34, 0, 1], [35, 0, 1], [36, 0, 1], [37, 0, 1], [38, 0, 1], [39, 0, 1], [40, 0, 1], [41, 0, 1], [42, 0, 1], [43, 0, 1], [44, 0, 1], [45, 0, 1], [46, 0, 1], [48, 0, 1], [49, 0, 1], [50, 0, 1], [51, 0, 1], [53, 0, 1], [54, 0, 1], [55, 0, 1], [56, 0, 1], [57, 0, 1], [59, 0, 1], [60, 0, 1], [61, 0, 1], [0, 1, 1], [1, 1, 1], [23, 1, 1], [0, 2, 1], [1, 2, 1], [1, 3, 1], [2, 3, 1], [3, 3, 1], [4, 3, 1], [5, 3, 1], [1, 4, 1], [3, 4, 1], [1, 5, 1], [3, 5, 1], [1, 6, 1], [2, 6, 1], [3, 6, 1], [4, 6, 1], [20, 6, 1], [30, 6, 1], [31, 6, 1], [36, 6, 1], [38, 6, 1], [48, 6, 1], [49, 6, 1], [3, 7, 1], [4, 7, 1], [5, 7, 1], [6, 7, 1], [7, 7, 1], [8, 7, 1], [9, 7, 1], [10, 7, 1], [11, 7, 1], [12, 7, 1], [13, 7, 1], [14, 7, 1], [15, 7, 1], [16, 7, 1], [17, 7, 1], [18, 7, 1], [19, 7, 1], [20, 7, 1], [21, 7, 1], [22, 7, 1], [23, 7, 1], [26, 7, 1], [27, 7, 1], [28, 7, 1], [29, 7, 1], [30, 7, 1], [31, 7, 1], [32, 7, 1], [33, 7, 1], [34, 7, 1], [35, 7, 1], [36, 7, 1], [37, 7, 1], [38, 7, 1], [39, 7, 1], [40, 7, 1], [41, 7, 1], [42, 7, 1], [43, 7, 1], [44, 7, 1], [45, 7, 1], [46, 7, 1], [47, 7, 1], [48, 7, 1], [49, 7, 1], [50, 7, 1], [51, 7, 1], [53, 7, 1], [54, 7, 1], [55, 7, 1], [56, 7, 1], [57, 7, 1], [59, 7, 1], [60, 7, 1], [61, 7, 1], [3, 8, 1], [27, 8, 1], [31, 8, 1], [47, 8, 1], [48, 8, 1], [49, 8, 1], [56, 8, 1], [57, 8, 1], [3, 9, 1], [4, 9, 1], [5, 9, 1], [6, 9, 1], [18, 9, 1], [19, 9, 1], [20, 9, 1], [35, 9, 1], [41, 9, 1], [5, 10, 1], [6, 10, 1], [7, 10, 1], [9, 10, 1], [10, 10, 1], [11, 10, 1], [12, 10, 1], [13, 10, 1], [14, 10, 1], [15, 10, 1], [16, 10, 1], [19, 10, 1], [28, 10, 1], [37, 10, 1], [41, 10, 1], [45, 10, 1], [48, 10, 1], [49, 10, 1], [50, 10, 1], [53, 10, 1], [54, 10, 1], [57, 10, 1], [58, 10, 1], [7, 11, 1], [9, 11, 1], [7, 12, 1], [10, 12, 1], [7, 13, 1], [9, 13, 1], [11, 13, 1], [17, 13, 1], [24, 13, 1], [9, 14, 1], [10, 14, 1], [11, 14, 1], [30, 14, 1], [47, 14, 1], [49, 14, 1], [50, 14, 1], [51, 14, 1], [52, 14, 1], [54, 14, 1], [13, 15, 1], [27, 15, 1], [28, 15, 1], [29, 15, 1], [32, 15, 1], [33, 15, 1], [34, 15, 1], [42, 15, 1], [43, 15, 1], [46, 15, 1], [47, 15, 1], [52, 15, 1], [55, 15, 1], [59, 15, 1], [16, 16, 1], [17, 16, 1], [16, 17, 1], [17, 17, 1], [35, 17, 1], [36, 17, 1], [16, 18, 1], [17, 18, 1], [17, 19, 1], [18, 19, 1], [22, 19, 1], [23, 19, 1], [32, 19, 1], [34, 19, 1], [36, 19, 1], [39, 19, 1], [42, 19, 1], [43, 19, 1], [45, 19, 1], [48, 19, 1], [49, 19, 1], [50, 19, 1], [51, 19, 1], [52, 19, 1], [54, 19, 1], [55, 19, 1], [56, 19, 1], [58, 19, 1], [59, 19, 1], [61, 19, 1], [17, 20, 1], [22, 20, 1], [23, 20, 1], [34, 20, 1], [43, 20, 1], [45, 20, 1], [47, 20, 1], [61, 20, 1], [17, 21, 1], [19, 21, 1], [20, 21, 1], [24, 21, 1], [25, 21, 1], [26, 21, 1], [27, 21, 1], [28, 21, 1], [29, 21, 1], [30, 21, 1], [31, 21, 1], [32, 21, 1], [35, 21, 1], [36, 21, 1], [37, 21, 1], [40, 21, 1], [41, 21, 1], [42, 21, 1], [43, 21, 1], [45, 21, 1], [18, 22, 1], [19, 22, 1], [20, 22, 1], [21, 22, 1], [22, 22, 1], [18, 23, 1], [23, 23, 1], [41, 23, 1], [19, 24, 1], [35, 24, 1], [41, 24, 1], [20, 25, 1], [22, 25, 1], [23, 25, 1], [21, 26, 1], [22, 26, 1], [23, 26, 1], [36, 26, 1], [39, 26, 1], [42, 26, 1], [44, 26, 1], [46, 26, 1], [47, 26, 1], [52, 26, 1], [55, 26, 1], [59, 26, 1], [23, 27, 1], [34, 27, 1], [36, 27, 1], [39, 27, 1], [42, 27, 1], [43, 27, 1], [48, 27, 1], [49, 27, 1], [50, 27, 1], [24, 28, 1], [25, 28, 1], [26, 28, 1], [24, 29, 1], [25, 29, 1], [26, 29, 1], [27, 29, 1], [28, 29, 1], [29, 29, 1], [30, 29, 1], [31, 29, 1], [32, 29, 1], [35, 29, 1], [36, 29, 1], [37, 29, 1], [40, 29, 1], [41, 29, 1], [42, 29, 1], [43, 29, 1], [45, 29, 1], [47, 29, 1], [25, 30, 1], [26, 30, 1], [28, 30, 1], [25, 31, 1], [26, 31, 1], [27, 31, 1], [27, 32, 1], [28, 32, 1], [29, 32, 1], [31, 32, 1], [32, 32, 1], [34, 32, 1], [36, 32, 1], [42, 32, 1], [44, 32, 1], [46, 32, 1], [47, 32, 1], [52, 32, 1], [60, 32, 1], [27, 33, 1], [28, 33, 1], [29, 33, 1], [27, 34, 1], [36, 34, 1], [46, 34, 1], [28, 35, 1], [44, 35, 1], [46, 35, 1], [28, 36, 1], [29, 36, 1], [34, 36, 1], [42, 36, 1], [29, 37, 1], [30, 37, 1], [47, 37, 1], [52, 37, 1], [30, 38, 1], [52, 38, 1], [56, 38, 1], [61, 38, 1], [30, 39, 1], [31, 39, 1], [30, 40, 1], [31, 40, 1], [30, 41, 1], [31, 41, 1], [33, 41, 1], [38, 41, 1], [40, 41, 1], [47, 41, 1], [48, 41, 1], [49, 41, 1], [56, 41, 1], [57, 41, 1], [31, 42, 1], [32, 42, 1], [34, 42, 1], [39, 42, 1], [40, 42, 1], [42, 42, 1], [44, 42, 1], [46, 42, 1], [47, 42, 1], [52, 42, 1], [60, 42, 1], [32, 43, 1], [33, 43, 1], [32, 44, 1], [33, 44, 1], [32, 45, 1], [60, 45, 1], [33, 46, 1], [38, 46, 1], [33, 47, 1], [36, 47, 1], [34, 48, 1], [42, 48, 1], [44, 48, 1], [46, 48, 1], [47, 48, 1], [52, 48, 1], [55, 48, 1], [34, 49, 1], [35, 49, 1], [36, 49, 1], [40, 49, 1], [41, 49, 1], [42, 49, 1], [47, 49, 1], [61, 49, 1], [35, 50, 1], [36, 50, 1], [35, 51, 1], [37, 51, 1], [40, 51, 1], [41, 51, 1], [42, 51, 1], [47, 51, 1], [51, 51, 1], [54, 51, 1], [55, 51, 1], [61, 51, 1], [39, 52, 1], [59, 52, 1], [60, 52, 1], [40, 53, 1], [41, 53, 1], [44, 53, 1], [45, 53, 1], [48, 53, 1], [49, 53, 1], [40, 54, 1], [41, 54, 1], [44, 54, 1], [45, 54, 1], [48, 54, 1], [53, 54, 1], [54, 54, 1], [61, 54, 1], [41, 55, 1], [47, 55, 1], [48, 55, 1], [41, 56, 1], [42, 56, 1], [45, 56, 1], [48, 56, 1], [50, 56, 1], [53, 56, 1], [57, 56, 1], [58, 56, 1], [43, 57, 1], [45, 57, 1], [43, 58, 1], [45, 58, 1], [43, 59, 1], [51, 59, 1], [54, 59, 1], [59, 59, 1], [43, 60, 1], [51, 60, 1], [54, 60, 1], [59, 60, 1], [43, 61, 1], [48, 61, 1], [49, 61, 1], [50, 61, 1], [51, 61, 1], [43, 62, 1], [48, 62, 1], [49, 62, 1], [50, 62, 1], [51, 62, 1], [47, 63, 1], [48, 63, 1], [49, 63, 1], [53, 63, 1], [54, 63, 1], [55, 63, 1], [56, 63, 1], [57, 63, 1], [48, 64, 1], [49, 64, 1], [48, 65, 1], [53, 65, 1], [49, 66, 1], [50, 66, 1], [49, 67, 1], [51, 67, 1], [54, 67, 1], [55, 67, 1], [49, 68, 1], [55, 68, 1], [56, 68, 1], [49, 69, 1], [56, 69, 1], [59, 69, 1], [61, 69, 1], [49, 70, 1], [50, 70, 1], [51, 70, 1], [54, 70, 1], [61, 70, 1], [49, 71, 1], [50, 71, 1], [51, 71, 1], [49, 72, 1], [51, 72, 1], [54, 72, 1], [52, 73, 1], [54, 73, 1], [53, 74, 1], [54, 74, 1], [57, 74, 1], [53, 75, 1], [54, 75, 1], [59, 76, 1], [60, 76, 1]], "first": {"任琅": 1, "刘媛灵": 1, "刘老太公": 1, "尚衫虎": 2, "王奔": 2, "李勇": 2, "影": 2, "刘安": 2, "李二": 3, "尚樱": 4, "法慧": 4, "李博": 4, "福": 6, "六方剑": 8, "枭": 8, "叶云": 8, "刑布": 10, "元工匠人": 13, "许达": 14, "王五": 14, "阮盛": 17, "端木邦": 17, "黄羽": 17, "陈奉天": 18, "虞环": 18, "夏叶": 18, "向巢": 18, "向达": 18, "王慕": 19, "孑": 19, "张洵": 20, "张百慧": 21, "赵翔": 22, "赵骁": 24, "范豪": 25, "刘笑岩": 25, "夏穗良": 26, "魏才思": 26, "苏雨": 28, "秦阳": 28, "楚笙": 28, "楚湘": 28, "岱胜": 28, "黄亚钊": 29, "秦昭": 29, "李月婵": 29, "谢仁玄": 30, "刑泰": 31, "陆宇堃": 31, "谢春华": 31, "皇帝": 31, "苏沐文": 32, "张广义": 33, "魏祎心": 33, "黄朱陶": 33, "陈番": 34, "道士": 34, "马远": 35, "王芣": 35, "赵思俪": 36, "武蒯": 36, "楚涣": 37, "楚圆圆": 40, "铁面人": 41, "张潇璃": 41, "孙维": 42, "老道": 42, "空": 42, "陆天": 44, "陆海": 44, "周舫": 44, "孟柯": 44, "安弈霖": 44, "纪程浩": 44, "纪田": 44, "安明": 44, "督军": 47, "聂林": 48, "陈彻": 48, "上官安": 48, "陆仲": 49, "白族主": 49, "黄九州": 50, "建武太守": 50, "牛金": 50, "牛银": 50, "王浑": 50, "贺曲": 50, "刘基": 50, "韩德": 50, "高颌": 50, "张览": 50, "吕真": 50, "方奇": 50, "马垈": 50, "聂铎": 51, "陆子明": 51, "程廖": 53, "陆仲枢": 54, "鹤童子": 54, "王监军": 57, "黄四海": 60, "夏寂然": 62}};
+const SAMPLES=[{"ch": 19, "chains": [["”尚樱小啜一口茶水，平淡地说", "”李博眼珠子都瞪圆了“算年头，你丫头是不小了，去年我女儿也出嫁了，加上虎哥已经故去，", "所以"], ["”李博点头“是我多虑了，倒也是，你这丫头精明的很，眼光也不会差到哪去", "”\n“那所以", "所以"], ["歹徒在被带出门的最后，回头看向任琅，眼神复杂", "“你去把带回来的东西规整规整，完好的衣物留下，损坏的就拿去丢了，我去把屋子里的东西清", "所以"], ["”周围的囚犯都来了兴致", "“后来，朝廷与蛮夷二次交战，这次蛮夷人根基不稳，于是在交界地的我，又成为了官军的俘虏", "于是"], ["“但是好巧不巧，你估计候审得多等几天", "”右边的囚犯说“刚才给送饭的老刘说，上一任的总捕的养女今天回来了，听说不久要成婚，这", "缘"], ["”\n“我知道", "”任琅点头后对上尚樱更加疑惑的眼神，随即又补充道“正因为我知道，所以才如此做的", "所以"], ["’”\n“行，我知道了", "”话语同翻书声一起响起“对了，你去偏房添些灯油，本是没打算再住偏房的，但如今阿琅去了", "所以"]]}, {"ch": 38, "chains": [["”\n“我果然没有看错人——”空旷的声音回荡着“这是‘连理镯’，赠予你和尚樱姑娘，前路", "”\n“所以，这是梦吗", "所以"], ["”空旷的声音再次响起“凡人习惯性地称此为‘仙境’", "”\n“所以，这是梦境咯", "所以"], ["”\n尚樱点点头，随后两人几乎异口同声地说：“神奇", "”\n“所以你哪来的这", "所以"], ["”任琅笑着说", "“今年秋季武举我打算去，所以近期先练练", "所以"], ["”\n“谁说不是啊", "”刘笑岩点头，看着院中的夏叶轻笑“或许，他骨子里还想证明自己吧，所以才没开口寻求你二", "所以"], ["“许达不知怎么在石陵一带造了反，楚城又听说被苏氏占领，传言其中似乎还有川阴铁骑的影子", "”任琅担忧地说“所以，平静的日子不会很多，专心享受当下吧", "所以"]]}, {"ch": 42, "chains": [["”\n到了府邸门口，任琅向院中指挥摆放物品的尚樱喊：“樱，叫两人过来把酒坛子拿进去", "”这一句，可把后面跟着的孙维吓得不轻，尚樱看见后面还跟着军士，心里立马猜到八九分，于", "于是"], ["待一曲舞毕，尚樱回座，轻轻拍拍任琅说：“想什么呢，我跳得咋样", "”\n“刚刚走曲时，左墙之上似有人，但表演很精彩所以没去理会，现在结束了，你先主持着，", "所以"], ["老道手抱拂尘对孑说：“这位，佳节之时，怎与贫道这出家人一样无所依", "”孑看着老道没有说话，那老道摆摆手继续说：“也罢，定是有自己的难言之隐，贫道看与汝有", "缘"], ["”说罢便从背囊中拿出一个卷轴递到孑手上，随后转身，瞬间消失在夜色中", "孑不明所以，打开卷轴，只见那画中间是一堵高墙，左边有墙檐右边更像山体的绝壁，左边墙内", "所以"], ["墙的右侧石壁旁则有一人做飞扑状，远处一战将张弓搭箭，眉宇间尽是杀意，右上题字有：“张", "”\n孑看完苦笑一声，要不说有缘呢，这左半场景同当下简直一模一样，一墙之隔，隔下了欢闹", "缘"], ["“都是自己人", "”\n张潇璃邪魅一笑，轻声说：“小女子我啊，是机缘巧合下所形成的，世间最后一只狐妖", "缘"]]}, {"ch": 4, "chains": [["“你与那个经常出现在别人家屋顶的怪人什么关系", "”尚樱问，当时还未习惯，所以并未以父亲称呼尚衫虎", "所以"], ["尚樱点点头，尚衫虎忽地注意到她的瞳仁是淡紫色的，也感到一些惊奇，心想：这似乎就是影说", "“所以，你会教我武术吗", "所以"], ["”影淡淡地说“不过他却也很厉害，其他我只知道他号法慧而已", "”\n“所以他为什么一直雕刻神像", "所以"], ["”说完一把抽出后背的长刀，刀上还散出淡淡血红色的光气", "任琅对影的招式没有任何了解，所以也不敢着急进攻", "所以"], ["”随后影走近两步说：“上路，路上我把我的计划说与你听", "”\n任琅刚上马，忽地想起来影的那把有红光的刀，于是好奇地问：“那刀", "于是"]]}, {"ch": 20, "chains": [["”尚樱将双臂抱到身前“我的比你这还多个盖头，能闷死个人", "明天还要游街一圈，所以还佩刀吗", "所以"], ["”\n“你别管，反正这里的老官差大多都认得", "”任琅笑笑：“所以你下一个目的地是哪", "所以"], ["”夏叶一摊手“向他弟子学习几招都够我用的了", "所以，任哥，刚刚那招你在哪学的", "所以"], ["”\n“如何这般模样", "!”\n“自分别之后，我的记忆不久也恢复完全，这才是本身的样子，我是迦淤‘神’族的头领", "所以"], ["”\n“我记得你说需要这个，才能打开连通两界的通道”尚樱取下充当发簪的木枝", "”福点头“我知此物代表着少侠的一片真情，所以我愿以肉身所炼化的两副‘永生散’同尚姑娘", "所以"]]}, {"ch": 28, "chains": [["”\n“苏风，去衙门报一下案", "”（苏雨的三名随从，虽是下人但由于忠诚便被赐得主家姓氏）\n“所以你们是好人", "所以"], ["您二位也原谅孩儿吧", "”许达虽在海郡官任都尉，但家里穷的却连一个下人也雇不起，所以夜里便显得有些冷清，但他", "所以"], ["”刘笑岩坐下，而后问出在心中憋了很久的问题", "“我找到个可能击垮‘黄帮’的线索，但黄帮背后有北方高官，我们商人嘛，虽然有钱，但正所", "于是"], ["”苏雨回头看了眼刘笑岩说“说实话，我现在跟家里闹翻了，‘楚帮’说可以跟我们联手，但代", "于是我就离家出走了", "于是"], ["此时半个集市已然陷入混乱之中，楚湘见情况不对，连忙带人撤退，任、尚二人也没理由追，便", "至于那城镇官员，早早受了楚湘的贿赂，所以自始至终根本没管，这楚湘也是仗着有近乎宗师级", "所以"]]}, {"ch": 33, "chains": [["”\n“怎么了，非得穿舞蹈服吗", "你只说来一段，可没说正式的，再说我以为用不到所以已经给包起来了", "所以"], ["”苏沐文没有说完便被苏雨打断“你别跟你姐整那么多弯弯绕绕，我昨天晚上整理大小事务的时", "”\n“行，你厉害，所以你也不小了，该找个郎君嫁了", "所以"], ["“其实说白了，黄亚钊也不怎么样，就是仗着身后有人", "”苏雨说到一半故意停顿一下，看看苏沐文的反应“所以，我打算去攀附川阴王这个高枝", "所以"], ["”\n“先生，等我片刻，去去就来", "”少爷知道这位先生向来讨厌半途离席，于是连忙起身歉意地说，没等先生答话立即随两名下人", "于是"], ["“看给你美的", "”任琅轻扶额头，须臾后又说“所以，你这成本多少", "所以"]]}, {"ch": 45, "chains": [["商人头目随即快步进到船舱，在木梯正下方站定，移走几袋米，抽出袖中短刃，撬开木板，伴随", "响城是军事关口并无百姓居住所以城很小，驻军也就三百余人，一夜的功夫全部遇难，那商贩站", "所以"], ["走在花园甬路上尚樱对任琅说：“那是之前我在一次炼制神之飞雪时，快要蒸干的液体飞雪偶然", "”\n走了没半个时辰，尚樱说：“这园子真大，只是由于是冬季，略显单调了，我有点累，咱们", "于是"], ["”\n“好，好", "”尚樱微笑着点头“正因你做事稳重，所以我才可以随性一些，正所谓‘被爱者有恃无恐’嘛", "所以"], ["”\n“你都说了，它与不同物品相配有不同的增幅效果，仔细想想便不难得出，它是由几种不同", "”尚樱说“其本质在于‘无’，正因为没有具体定向，所以哪里都可以是它的作用方向", "所以"], ["”\n“明白了", "”任琅点头“所以在哪看原料的内性", "所以"]]}, {"ch": 46, "chains": [["”\n时间转眼来到傍晚，陈奉天开设官宴暂且不提，单说馆驿之中", "同是异客，驿站之中的一众也互相熟络起来，十几人一合计，咱们也一样吃个大餐意思一下，于", "于是"], ["”\n“按你的视角来说，我应该是你的——‘敌人’", "”张潇璃俯身飞到任琅耳边说“你虽为‘神’，可似乎不会解此术法，‘他’这次错杀太多，所", "所以"], ["“那就难办了", "”尚樱将发簪取下，秀发随即散开“应该是以此为媒介发动的某种幻术，给我说说幻境里的事吧", "以此"], ["”说话间用余光瞟向卧室门口的刘笑岩", "”刘笑岩再也绷不住，带着些许哭腔说“后半夜，我没睡着，想着或许是馆驿那边出了事，今早", "所以"], ["空一身纯黑道袍与纯白的拂尘形成了强烈反差，空急匆匆地走到福近前说：“弟，‘狐人族’没", "”\n福脸上没有半点表情，片刻的沉默后缓缓吐出三个字“所以呢", "所以"]]}, {"ch": 49, "chains": [["”那个孩子向前一步“我的命是陛下救的，就当还命便是", "”羽扇满满缩回“你先跟着陛下习武、生活，待身形长成之时，世上自会流传关于长生不死的传", "以此"], ["如讨则胜，若伐则取", "州郡各整戎马，罗落境界，举师扬威，则非常之业于是乎立", "于是"], ["一众红色影子先是一惊，随后语气里尽是害怕：“空", "”白族主对出现在真实世界的情况愣了片刻，随后上前一步准备给空作揖行礼，却被空拍拍肩膀", "致使"], ["”白族主弯腰准备扶起空，但刚刚伸手只听空继续说：“今日得知诸位魂魄未散，可借吾血肉复", "”\n白族主皱眉，她明白如果这事简单，福也不可能对这事只字不提，于是开口问：“如何", "于是"], ["”\n白族主皱眉，她明白如果这事简单，福也不可能对这事只字不提，于是开口问：“如何", "”\n“贫道曾在祸事结束后到过神狐庄，清点了共计两千八百零九具尸体，所以，以此神刃，割", "所以"]]}, {"ch": 3, "chains": [["”\n任琅回到酒楼，看了看自己的钱袋，寻思着按这么个用法，不出四个月就得喝西北风，眼下", "于是他付了房费，而后向掌柜的打听了镇上镖局的位置", "于是"], ["”来者正是影", "尚衫虎见影如此说，也不好驳了他的面子，于是收刀而后将铁戟往地上狠狠一插，说：“有屁快", "于是"], ["“你小丫头是被他拐的", "”那个女孩支支吾吾也没说出个所以然，最后又看了眼任琅说：“不是", "所以"], ["时间一长，就忘记了", "”女孩说语气中带着一丝遗憾与悲伤“所以你叫任琅是吧", "所以"]]}, {"ch": 18, "chains": [["陈奉天高坐殿内王座", "王座用黄金铸成并雕有四爪巨蟒，王座靠背最上方，放着他的武器——鎏金星芒枪，同时因为镶", "所以"], ["坐在任琅身旁的尚樱捂着嘴偷乐，夏叶见状随即说：“哎，嫂子别光顾着笑，也给我们说说经过", "”尚樱看了任琅一眼，见任琅笑着点头，于是缓缓开口：“我是尚樱", "于是"], ["帐子中间桌子上放着一封信，以及一本薄薄的书", "任琅看看四周，似乎没人，不知福去了哪里，随即目光落在信上，定睛一看只见：\n少侠，昨日", "缘"], ["任琅看看四周，似乎没人，不知福去了哪里，随即目光落在信上，定睛一看只见：\n少侠，昨日", "对了，我留下一个抄本，其上有我的炼物之术，底本是我被困前所写，于现今难免有些许晦涩之", "于是"]]}];
+
+/* 暗色玻璃主题 */
+const AX='#33415c', TXT='#cdd9f0', MUT='#9fb2d0';
+const PAL=['#3b82f6','#22d3ee','#a78bfa','#f59e0b','#34d399','#ef4444','#60a5fa','#f472b6'];
+function tip(){return {trigger:'axis',backgroundColor:'rgba(10,15,28,.92)',borderColor:'#33415c',textStyle:{color:TXT}};}
+
+/* ① Mermaid */
+mermaid.initialize({startOnLoad:false,securityLevel:'loose',theme:'base',
+  themeVariables:{background:'transparent',primaryColor:'rgba(40,20,30,.85)',primaryTextColor:'#ffe1e1',
+    primaryBorderColor:'#ef4444',lineColor:'#f59e0b',fontSize:'13px'},
+  flowchart:{curve:'basis',htmlLabels:true,nodeSpacing:30,rankSpacing:42}});
+
+/* ② 节奏谱 */
+(function(){
+  const el=document.getElementById('rhythm');
+  const ch=echarts.init(el,null,{renderer:'canvas'});
+  ch.setOption({
+    backgroundColor:'transparent',
+    tooltip:tip(),
+    legend:{data:['篇幅(字)','战斗强度'],textStyle:{color:TXT},top:0},
+    grid:{left:58,right:54,top:40,bottom:60},
+    xAxis:{type:'category',data:RHYTHM.chs,axisLine:{lineStyle:{color:AX}},axisLabel:{color:MUT,interval:4}},
+    yAxis:[
+      {type:'value',name:'字数',axisLine:{lineStyle:{color:AX}},splitLine:{lineStyle:{color:'rgba(90,150,230,.08)'}},axisLabel:{color:MUT}},
+      {type:'value',name:'战力',min:0,max:3,axisLine:{lineStyle:{color:AX}},splitLine:{show:false},axisLabel:{color:MUT}}
+    ],
+    series:[
+      {name:'篇幅(字)',type:'line',smooth:true,data:RHYTHM.wc,showSymbol:false,lineStyle:{color:'#22d3ee',width:2},
+        areaStyle:{color:'rgba(34,211,238,.12)'},
+        markArea:{silent:true,itemStyle:{color:'rgba(239,68,68,.10)'},
+          data:RHYTHM.tragic.map((t,i)=> t?[{xAxis:i},{xAxis:i}]:null).filter(Boolean)}},
+      {name:'战斗强度',type:'bar',yAxisIndex:1,data:RHYTHM.ci,barWidth:'55%',
+        itemStyle:{color:function(p){return ['#34d399','#a3e635','#f59e0b','#ef4444'][p.value]||'#ef4444';}}}
+    ]
+  });
+  ch.on('click',p=>{ if(p.dataIndex!=null) window.open(READER+'?loc=ch'+RHYTHM.chs[p.dataIndex],'_blank','noopener'); });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* ③ 雷达 */
+(function(){
+  const el=document.getElementById('radar');
+  const ch=echarts.init(el,null,{renderer:'canvas'});
+  ch.setOption({
+    backgroundColor:'transparent',
+    tooltip:{backgroundColor:'rgba(10,15,28,.92)',borderColor:'#33415c',textStyle:{color:TXT}},
+    legend:{data:RADAR.series.map(s=>s.name),textStyle:{color:TXT},top:0,type:'scroll'},
+    radar:{indicator:RADAR.axes.map(a=>({name:a,max:Math.max(3,...RADAR.series.map(s=>s.value[RADAR.axes.indexOf(a)]))})),
+      axisName:{color:TXT},splitLine:{lineStyle:{color:'rgba(90,150,230,.18)'}},
+      splitArea:{areaStyle:{color:['rgba(34,211,238,.04)','rgba(59,130,246,.04)']}},
+      axisLine:{lineStyle:{color:'rgba(90,150,230,.25)'}}},
+    series:[{type:'radar',data:RADAR.series.map((s,i)=>({name:s.name,value:s.value,
+      lineStyle:{color:PAL[i%PAL.length],width:2},itemStyle:{color:PAL[i%PAL.length]},
+      areaStyle:{opacity:0.08}}))}]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* ③ 谱系网络 */
+(function(){
+  const el=document.getElementById('cluster');
+  const ch=echarts.init(el,null,{renderer:'canvas'});
+  const nodes=CLUSTER.nodes.map((n,i)=>({id:n.name,name:n.name,value:n.size,
+    symbolSize:10+Math.sqrt(n.size)*6,
+    itemStyle:{color:PAL[i%PAL.length]},
+    label:{show:true,color:TXT,fontSize:11}}));
+  const links=CLUSTER.edges.map(e=>({source:e[0],target:e[1],value:e[2],
+    lineStyle:{color:'rgba(167,139,250,.45)',width:1+e[2]*2}}));
+  ch.setOption({
+    backgroundColor:'transparent',
+    tooltip:{backgroundColor:'rgba(10,15,28,.92)',borderColor:'#33415c',textStyle:{color:TXT},
+      formatter:p=> p.dataType==='edge'? (p.data.source+' ↔ '+p.data.target+'  相似 '+p.data.value):(p.data.name+'  刻画证据 '+p.data.value+' 条')},
+    series:[{type:'graph',layout:'force',roam:true,
+      force:{repulsion:160,edgeLength:[40,120],gravity:0.08},
+      data:nodes,links:links,
+      lineStyle:{opacity:0.6},emphasis:{focus:'adjacency'}}]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* ④ 热力图 */
+(function(){
+  const el=document.getElementById('heat');
+  const ch=echarts.init(el,null,{renderer:'canvas'});
+  ch.setOption({
+    backgroundColor:'transparent',
+    tooltip:{position:'top',backgroundColor:'rgba(10,15,28,.92)',borderColor:'#33415c',textStyle:{color:TXT},
+      formatter:p=> HEAT.chars[p.data[1]]+' · 第'+HEAT.chs[p.data[0]]+'章（登场）'},
+    grid:{left:96,right:20,top:10,bottom:50},
+    xAxis:{type:'category',data:HEAT.chs,axisLine:{lineStyle:{color:AX}},axisLabel:{color:MUT,interval:4},splitArea:{show:false}},
+    yAxis:{type:'category',data:HEAT.chars,axisLine:{lineStyle:{color:AX}},axisLabel:{color:MUT,fontSize:10}},
+    visualMap:{min:0,max:1,calculable:true,show:false,inRange:{color:['#0a0f1c','#3b82f6','#22d3ee','#a78bfa']}},
+    series:[{type:'heatmap',data:HEAT.cells,progressive:2000,
+      itemStyle:{borderColor:'rgba(10,15,28,.6)',borderWidth:0.5},
+      emphasis:{itemStyle:{color:'#f59e0b'}}}]
+  });
+  ch.on('click',p=>{ if(p.data) window.open(READER+'?loc=ch'+HEAT.chs[p.data[0]],'_blank','noopener'); });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* ① 样例面板 */
+(function(){
+  const box=document.getElementById('samples');
+  box.innerHTML=SAMPLES.map(s=>{
+    const items=s.chains.map(c=>{
+      const a=c[0],b=c[1],cue=c[2];
+      const bb=b.replace(cue,'<span class="cue">'+cue+'</span>');
+      return '<div class="ev">'+a+'</div><div class="ev">→ '+bb+'</div>';
+    }).join('');
+    return '<div class="scard"><b>第'+s.ch+'章</b>'+items+'</div>';
+  }).join('');
+})();
+
+/* 渲染因果图 + 节点跳转 */
+(async function(){
+  try{ await mermaid.run(); }catch(e){ console.error(e); }
+  const host=document.getElementById('host_causal');
+  host.addEventListener('click',e=>{
+    const g=e.target.closest('g.node');
+    if(!g) return;
+    const t=g.querySelector('.nodeLabel'); const txt=t?t.textContent:'';
+    const m=txt.match(/第(\d+)章/); if(m) window.open(READER+'?loc=ch'+m[1],'_blank','noopener');
+  });
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  var KEY='wzjm_dark';
+  function apply(d){ document.body.classList.toggle('dark', d); }
+  var SUN='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON='<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function sync(){
+    var b=document.querySelector('.dm-toggle');
+    if(b){ var d=document.body.classList.contains('dark'); b.innerHTML = d ? SUN+'<span>浅色</span>' : MOON+'<span>深色</span>'; }
+  }
+  function buildBtn(){
+    var s=document.createElement('style');
+    s.textContent='.dm-cluster{position:fixed;top:16px;right:16px;z-index:9999;display:flex;gap:8px}'
+    +'.dm-toggle,.dm-back{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;'
+    +"font-family:'HarmonyOS Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;font-weight:500;"
+    +'border:1px solid var(--line,var(--rc-line,#dfe3e8));background:var(--surface,var(--rc-surface,#fff));'
+    +'color:var(--primary,var(--rc-primary,#0A59F7));box-shadow:0 4px 14px rgba(24,36,49,.14);'
+    +'transition:transform .2s cubic-bezier(.25,0,.3,1),background-color .3s,color .3s,border-color .3s}'
+    +'.dm-toggle:hover,.dm-back:hover{transform:translateY(-2px)}'
+    +'.dm-back{text-decoration:none}';
+    document.head.appendChild(s);
+    var c=document.createElement('div');c.className='dm-cluster';
+    var backHref='../index.html';
+    if(backHref){
+      var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+      a.setAttribute('aria-label','返回报告中心');a.textContent='报告中心';
+      c.appendChild(a);
+    }
+    var b=document.createElement('button');b.className='dm-toggle';
+    b.setAttribute('aria-label','切换深色模式');
+    b.addEventListener('click', function(){
+      var d=!document.body.classList.contains('dark');
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(e){}
+      sync(); broadcast(d);
+    });
+    c.appendChild(b);
+    document.body.appendChild(c);
+  }
+  function broadcast(d){
+    try{
+      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：图表主题热更新 */
+      if(window.parent!==window){ window.parent.postMessage({wzTheme:d?'dark':'light'},'*'); }
+      else{ var fs=document.querySelectorAll('iframe'); for(var i=0;i<fs.length;i++){ try{ fs[i].contentWindow.postMessage({wzTheme:d?'dark':'light'},'*'); }catch(e){} } }
+    }catch(e){}
+  }
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(saved ? saved==='1' : !!prefers);
+  buildBtn();
+  sync();
+  setTimeout(function(){ broadcast(document.body.classList.contains('dark')); },0);
+  window.addEventListener('message', function(e){
+    if(e.data && e.data.wzTheme){
+      var d = e.data.wzTheme==='dark';
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(err){}
+      sync();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

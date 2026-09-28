@@ -1,0 +1,28 @@
+/* =====================================================================
+ *  Glass · Print（打印：报告可归档 / 出纸，关闭玻璃特效）
+ * ===================================================================== */
+@media print{
+  body{
+    background:#fff!important;color:#000!important;
+    background-image:none!important;
+  }
+  /* 玻璃在纸上无效，降级为白底细描边 */
+  .glass,.glass-card,.panel,.card,section,.surface,
+  .modal__panel,.drawer,.popover,.toast,.alert{
+    background:#fff!important;
+    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+    box-shadow:none!important;border:1px solid #bbb!important;
+    color:#000!important;
+  }
+  .container,.wrap,main{padding:0;max-width:none;}
+  section,.card,section,.glass-card{break-inside:avoid;margin-bottom:14px;}
+  .dm-toggle,.wz-controls,.wz-hint,.toolbar,.topbar,.nav,.tabs,.segmented,
+  .modal__backdrop,.toast-stack,.tooltip{display:none!important;}
+  header,header h1{
+    background:#0a84ff!important;color:#fff!important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
+  a{color:#000;text-decoration:underline;}
+  table th{background:#eee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  tbody tr:nth-child(even) td{background:#f4f4f4!important;}
+}

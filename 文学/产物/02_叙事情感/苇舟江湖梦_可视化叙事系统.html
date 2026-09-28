@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script id="wzjm-key-migration">try{var n0=localStorage.getItem("wzjm_dark");if(n0===null){var o0=localStorage.getItem("wzjm_dark");if(o0!==null)localStorage.setItem("wzjm_dark",o0);}var n1=localStorage.getItem("wzjm_lib_dark");if(n1===null){var o1=localStorage.getItem("wzjm_lib_dark");if(o1!==null)localStorage.setItem("wzjm_lib_dark",o1);}var n2=localStorage.getItem("wzjm_lib_accent");if(n2===null){var o2=localStorage.getItem("wzjm_lib_accent");if(o2!==null)localStorage.setItem("wzjm_lib_accent",o2);}var n3=localStorage.getItem("wzjm_mm_theme");if(n3===null){var o3=localStorage.getItem("wzjm_mm_theme");if(o3!==null)localStorage.setItem("wzjm_mm_theme",o3);}}catch(e){}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>苇舟江湖梦 · 可视化叙事系统</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+:root{
+  --bg:#0a0f1c; --bg2:#0e1626; --panel:rgba(20,32,54,.62); --panel-brd:rgba(90,150,230,.22);
+  --txt:#e8eefc; --muted:#9fb2d4; --blue:#3b82f6; --cyan:#22d3ee; --violet:#a78bfa;
+  --amber:#f59e0b; --red:#ef4444; --green:#34d399; --glass:blur(14px);
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 700px at 80% -10%,rgba(59,130,246,.18),transparent 60%),
+  radial-gradient(900px 600px at 0% 110%,rgba(167,139,250,.14),transparent 55%),var(--bg);
+  color:var(--txt);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;line-height:1.6;}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 22px 80px}
+header h1{margin:0;font-size:30px;letter-spacing:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+header p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.legend span{font-size:13px;padding:5px 12px;border-radius:20px;border:1px solid var(--panel-brd);
+  background:var(--panel);backdrop-filter:var(--glass)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--panel-brd);border-radius:16px;
+  padding:16px 16px 8px;backdrop-filter:var(--glass);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.card h2{margin:0 0 4px;font-size:18px;display:flex;align-items:center;gap:8px}
+.card h2 .dot{width:12px;height:12px;border-radius:3px}
+.card .cap{margin:2px 0 10px;font-size:12.5px;color:var(--muted)}
+.flow-host{overflow:auto;max-height:520px;border-radius:10px;background:rgba(6,11,22,.45);
+  border:1px solid rgba(90,150,230,.12);padding:6px}
+.cap[data-for]{display:none}
+.cap.show{display:block}
+pre.mermaid{background:transparent;margin:0}
+/* (placeholder removed) */
+/* mermaid node highlight */
+.nx-hl{outline:3px solid var(--amber)!important;outline-offset:2px;filter:drop-shadow(0 0 8px var(--amber))}
+.nx-hl-weak{outline:2px dashed rgba(245,158,11,.6)!important;outline-offset:2px}
+/* nexus */
+.nexus{margin-top:26px;background:var(--panel);border:1px solid var(--panel-brd);border-radius:16px;
+  padding:18px;backdrop-filter:var(--glass)}
+.nexus h2{margin:0 0 4px;font-size:20px}
+.nexus .sub{color:var(--muted);font-size:13px;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:7px 8px;text-align:left;border-bottom:1px solid rgba(90,150,230,.12)}
+th{color:var(--cyan);font-weight:600;font-size:12px;letter-spacing:.5px}
+tr:hover td{background:rgba(59,130,246,.08)}
+.cch{color:var(--violet);font-weight:700}
+.ci3{color:var(--red);font-weight:700} .ci2{color:var(--amber)} .ci1{color:var(--green)} .ci0{color:var(--muted)}
+.chips .chip{font-size:11px;padding:2px 7px;border-radius:10px;margin-right:3px}
+.chip-on{background:rgba(239,68,68,.18);color:#ffb4b4;border:1px solid rgba(239,68,68,.4)}
+.key{color:var(--muted);max-width:340px}
+button.locate{background:linear-gradient(90deg,var(--blue),var(--violet));color:#fff;border:0;
+  border-radius:8px;padding:5px 10px;cursor:pointer;font-size:12px}
+button.locate:hover{filter:brightness(1.12)}
+a.rdr{margin-left:6px;color:var(--cyan);text-decoration:none;font-size:12px}
+a.rdr:hover{text-decoration:underline}
+/* side info */
+#info{position:fixed;right:18px;bottom:18px;width:300px;background:var(--panel);border:1px solid var(--panel-brd);
+  border-radius:14px;padding:14px;backdrop-filter:var(--glass);box-shadow:0 12px 40px rgba(0,0,0,.5);
+  font-size:13px;display:none;z-index:50}
+#info h3{margin:0 0 6px;font-size:15px;color:var(--cyan)}
+#info .row{color:var(--muted);margin:3px 0}
+#info .chaps{color:var(--txt);word-break:break-all;font-size:12px}
+#info a{color:var(--violet)}
+#info .clo{float:right;cursor:pointer;color:var(--muted)}
+.hint{font-size:12px;color:var(--muted);margin:8px 0 0}
+</style>
+<style id="wz-harmony-font">body,h1,h2,h3,h4,button,input,select,textarea{font-family:'HarmonyOS Sans SC','HarmonyOS Sans','PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif!important}</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>苇舟江湖梦 · 可视化叙事系统</h1>
+  <p>以流程图呈现「剧情推进 · 情感变化 · 地点转移 · 时间流逝」四维度的状态变迁与转换关系；点击任意节点可在其余三张图中联动高亮其共现章节，点击枢纽章可在四图同步定位——立体交织故事结构与节奏。</p>
+</header>
+
+<div class="legend">
+  <span><i style="background:var(--blue)"></i>剧情推进脉络（D1）</span>
+  <span><i style="background:var(--cyan)"></i>角色情感曲线（D2）</span>
+  <span><i style="background:var(--violet)"></i>场景空间切换（D3）</span>
+  <span><i style="background:var(--amber)"></i>时间线演进（D4）</span>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h2><span class="dot" style="background:var(--blue)"></span>① 剧情推进脉络</h2>
+    <div class="cap" data-for="g1"></div>
+    <div class="flow-host" id="host_g1"></div>
+  </div>
+  <div class="card">
+    <h2><span class="dot" style="background:var(--cyan)"></span>② 角色情感曲线</h2>
+    <div class="cap" data-for="g2"></div>
+    <div class="flow-host" id="host_g2"></div>
+  </div>
+  <div class="card">
+    <h2><span class="dot" style="background:var(--violet)"></span>③ 场景空间切换</h2>
+    <div class="cap" data-for="g3"></div>
+    <div class="flow-host" id="host_g3"></div>
+  </div>
+  <div class="card">
+    <h2><span class="dot" style="background:var(--amber)"></span>④ 时间线演进</h2>
+    <div class="cap" data-for="g4"></div>
+    <div class="flow-host" id="host_g4"></div>
+  </div>
+</div>
+<div class="hint">提示：点击任一流程图节点 → 右侧信息卡显示其覆盖章节，并在其余三张图中高亮<b>共现章节</b>；点击枢纽章「◎ 立体定位」→ 四图同时聚焦该章所在节点。<span id="capToggle" style="cursor:pointer;color:var(--cyan)"> ［显示/隐藏全部维度说明］</span></div>
+
+<div class="nexus">
+  <h2>立体交叉引用 · 枢纽章 Nexus</h2>
+  <div class="sub">以下章节在多维度同时达峰（战力峰值 / 悲情 / 叛乱主线 / 战乱 / 伤亡 中 ≥3 项叠加），是全书的戏剧枢纽。点击「◎ 立体定位」在四张流程图中同步锚定该章的剧情弧、情感、地点与时间节点。</div>
+  <table>
+    <thead><tr><th>章</th><th>时间层</th><th>剧情弧</th><th>情感</th><th>主地点</th><th>战力</th><th>叠加维度</th><th>关键事件</th><th>操作</th></tr></thead>
+    <tbody>
+<tr data-ch="57">
+          <td class="cch">ch57</td>
+          <td>大战/决战</td>
+          <td>主线·川阴王叛乱/战争</td>
+          <td>虐/悲情</td>
+          <td>京城</td>
+          <td class="ci3">L3</td>
+          <td class="chips"><span class="chip chip-on">战力峰值</span><span class="chip chip-on">悲情</span><span class="chip chip-on">叛乱主线</span><span class="chip chip-on">战乱</span><span class="chip chip-on">伤亡</span></td>
+          <td class="key" title="刑泰在戈壁得知刑布死讯，发动最后一战；陈奉天兵临京城，阵斩守将王监军后破城；入宫后老皇帝现出黑龙真身，陈奉天、聂林、法慧合力围攻，皇帝将任琅、尚樱拉入幻境，幻境中任琅竟刺穿尚樱前胸。">刑泰在戈壁得知刑布死讯，发动最后一战；陈奉天兵临京城，阵斩守将王监军后破城；入宫后老皇帝现出…</td>
+          <td><button class="locate" data-ch="57">◎ 立体定位</button>
+              <a class="rdr" href="苇舟江湖梦_原文阅读.html?loc=ch57" target="_blank" rel="noopener">读原文</a></td>
+        </tr>
+<tr data-ch="24">
+          <td class="cch">ch24</td>
+          <td>乱世将起</td>
+          <td>主线·川阴王叛乱/战争</td>
+          <td>虐/悲情</td>
+          <td>川阴城</td>
+          <td class="ci3">L3</td>
+          <td class="chips"><span class="chip chip-on">战力峰值</span><span class="chip chip-on">悲情</span><span class="chip chip-on">叛乱主线</span><span class="chip chip-on">伤亡</span></td>
+          <td class="key" title="城外孑向赵骁赵翔父子递密信示警；任琅尚樱撞见黑衣人刺杀卫兵分头迎敌，尚樱在后宫与黑衣人刘媛灵交战并将其斩杀（刘媛灵实为任琅竹马）；赵翔率铁骑半渡击破张百慧劫掠人马，陈奉天于殿前独战九名黑衣人，任琅金雷助阵、赵翔率援军解围；张百慧被赵骁擒于水井，事后陈奉天认任琅为妹夫并赠剑与长公主礼服，二人辞行。">城外孑向赵骁赵翔父子递密信示警；任琅尚樱撞见黑衣人刺杀卫兵分头迎敌，尚樱在后宫与黑衣人刘媛灵…</td>
+          <td><button class="locate" data-ch="24">◎ 立体定位</button>
+              <a class="rdr" href="苇舟江湖梦_原文阅读.html?loc=ch24" target="_blank" rel="noopener">读原文</a></td>
+        </tr>
+<tr data-ch="51">
+          <td class="cch">ch51</td>
+          <td>战乱爆发</td>
+          <td>主线·川阴王叛乱/战争</td>
+          <td>无显著感情戏</td>
+          <td>莫庸城</td>
+          <td class="ci3">L3</td>
+          <td class="chips"><span class="chip chip-on">战力峰值</span><span class="chip chip-on">叛乱主线</span><span class="chip chip-on">战乱</span><span class="chip chip-on">伤亡</span></td>
+          <td class="key" title="上界福与聂铎因战后地盘分配争执不下；高颌轻敌率五千迎战，被尚樱、任琅以神之飞雪铁骑一举击溃；牛金设伏反被纪田、安明斩杀，赵骁追击中毒箭身亡。">上界福与聂铎因战后地盘分配争执不下；高颌轻敌率五千迎战，被尚樱、任琅以神之飞雪铁骑一举击溃；…</td>
+          <td><button class="locate" data-ch="51">◎ 立体定位</button>
+              <a class="rdr" href="苇舟江湖梦_原文阅读.html?loc=ch51" target="_blank" rel="noopener">读原文</a></td>
+        </tr>
+<tr data-ch="52">
+          <td class="cch">ch52</td>
+          <td>战乱爆发</td>
+          <td>主线·川阴王叛乱/战争</td>
+          <td>无显著感情戏</td>
+          <td>莫庸城</td>
+          <td class="ci3">L3</td>
+          <td class="chips"><span class="chip chip-on">战力峰值</span><span class="chip chip-on">叛乱主线</span><span class="chip chip-on">战乱</span><span class="chip chip-on">伤亡</span></td>
+          <td class="key" title="武蒯自望岳镇来投军；陈奉天遣纪程浩、安弈霖领兵守护粮道；刑布令张览伪装自己设伏，夜袭斩杀纪田、安明；韩德获释领兵去断陈奉天粮道。">武蒯自望岳镇来投军；陈奉天遣纪程浩、安弈霖领兵守护粮道；刑布令张览伪装自己设伏，夜袭斩杀纪田…</td>
+          <td><button class="locate" data-ch="52">◎ 立体定位</button>
+              <a class="rdr" href="苇舟江湖梦_原文阅读.html?loc=ch52" target="_blank" rel="noopener">读原文</a></td>
+        </tr>
+<tr data-ch="55">
+          <td class="cch">ch55</td>
+          <td>战乱爆发</td>
+          <td>主线·川阴王叛乱/战争</td>
+          <td>无显著感情戏</td>
+          <td>卫京郡</td>
+          <td class="ci3">L3</td>
+          <td class="chips"><span class="chip chip-on">战力峰值</span><span class="chip chip-on">叛乱主线</span><span class="chip chip-on">战乱</span><span class="chip chip-on">伤亡</span></td>
+          <td class="key" title="程廖袭扰刑布粮道，韩德在云风山脉被迷路的纪程浩、安弈霖误击；陈奉天夜率主力带神之飞雪大破刑布，任琅于谷道伏击，刑布兵败身死；程廖绕袭卫京郡被聂林毒刃所杀；陆仲枢启程赴京城，陈奉天围困卫京郡。">程廖袭扰刑布粮道，韩德在云风山脉被迷路的纪程浩、安弈霖误击；陈奉天夜率主力带神之飞雪大破刑布…</td>
+          <td><button class="locate" data-ch="55">◎ 立体定位</button>
+              <a class="rdr" href="苇舟江湖梦_原文阅读.html?loc=ch55" target="_blank" rel="noopener">读原文</a></td>
+        </tr>
+<tr data-ch="56">
+          <td class="cch">ch56</td>
+          <td>大战/决战</td>
+          <td>主线·川阴王叛乱/战争</td>
+          <td>无显著感情戏</td>
+          <td>卫京郡</td>
+          <td class="ci3">L3</td>
+          <td class="chips"><span class="chip chip-on">战力峰值</span><span class="chip chip-on">叛乱主线</span><span class="chip chip-on">战乱</span><span class="chip chip-on">伤亡</span></td>
+          <td class="key" title="聂林雨夜献铁索潜入之计，任琅、尚樱、武蒯里应外合攻破卫京郡，牛银授首；陈奉天犒赏众将；赵翔得南岭关献城，与许达、马远议定取角邺、渡京墨渡口直指浣冰的进军方略。">聂林雨夜献铁索潜入之计，任琅、尚樱、武蒯里应外合攻破卫京郡，牛银授首；陈奉天犒赏众将；赵翔得…</td>
+          <td><button class="locate" data-ch="56">◎ 立体定位</button>
+              <a class="rdr" href="苇舟江湖梦_原文阅读.html?loc=ch56" target="_blank" rel="noopener">读原文</a></td>
+        </tr>
+<tr data-ch="37">
+          <td class="cch">ch37</td>
+          <td>乱世将起</td>
+          <td>多线交织</td>
+          <td>虐/悲情</td>
+          <td>望岳镇</td>
+          <td class="ci3">L3</td>
+          <td class="chips"><span class="chip chip-on">战力峰值</span><span class="chip chip-on">悲情</span><span class="chip chip-on">伤亡</span></td>
+          <td class="key" title="任琅、尚樱赴村助夏叶、刘笑岩脱离端木邦家的排挤，任琅怒斥乡邻并带二人回望岳镇；插叙赵骁奉陈奉天命血洗楚城、楚涣战死；影与道士忆及当年为赵骁赐姓命名；苏雨抵楚城主持重建，任琅、尚樱获封“逍遥统领”与“慧灵长公主”。">任琅、尚樱赴村助夏叶、刘笑岩脱离端木邦家的排挤，任琅怒斥乡邻并带二人回望岳镇；插叙赵骁奉陈奉…</td>
+          <td><button class="locate" data-ch="37">◎ 立体定位</button>
+              <a class="rdr" href="苇舟江湖梦_原文阅读.html?loc=ch37" target="_blank" rel="noopener">读原文</a></td>
+        </tr>
+<tr data-ch="46">
+          <td class="cch">ch46</td>
+          <td>乱世将起</td>
+          <td>主线·川阴王叛乱/战争</td>
+          <td>虐/悲情</td>
+          <td>川阴城</td>
+          <td class="ci2">L2</td>
+          <td class="chips"><span class="chip chip-on">悲情</span><span class="chip chip-on">叛乱主线</span><span class="chip chip-on">伤亡</span></td>
+          <td class="key" title="尚樱偕虞环接刘笑岩进宫论曲，馆驿考生聚宴；岁末夜铁面人率众血洗馆驿，夏叶与陆家兄弟遇害，张潇璃以幻术困住任琅；任琅脱困报信，与尚樱隐瞒死讯安抚有孕的刘笑岩；仙境中“空”告知“福”狐人族未绝。">尚樱偕虞环接刘笑岩进宫论曲，馆驿考生聚宴；岁末夜铁面人率众血洗馆驿，夏叶与陆家兄弟遇害，张潇…</td>
+          <td><button class="locate" data-ch="46">◎ 立体定位</button>
+              <a class="rdr" href="苇舟江湖梦_原文阅读.html?loc=ch46" target="_blank" rel="noopener">读原文</a></td>
+        </tr>
+<tr data-ch="50">
+          <td class="cch">ch50</td>
+          <td>战乱爆发</td>
+          <td>主线·川阴王叛乱/战争</td>
+          <td>平淡/日常</td>
+          <td>尸花谷</td>
+          <td class="ci3">L3</td>
+          <td class="chips"><span class="chip chip-on">战力峰值</span><span class="chip chip-on">叛乱主线</span><span class="chip chip-on">战乱</span></td>
+          <td class="key" title="十年前影奉帝命离去的往事引出；任琅于尸花谷与杀夏叶的铁面人决战，借赤焰手镯与雷火腰斩仇敌；浣冰郡黄九州联三地太守固守阻叛军北上，望岳镇纪田安明与牛金牛银先锋交锋；陈奉天、刑布两军阵前下战书，约定黎明决战，仙境中福与陆仲隔水对峙。">十年前影奉帝命离去的往事引出；任琅于尸花谷与杀夏叶的铁面人决战，借赤焰手镯与雷火腰斩仇敌；浣…</td>
+          <td><button class="locate" data-ch="50">◎ 立体定位</button>
+              <a class="rdr" href="苇舟江湖梦_原文阅读.html?loc=ch50" target="_blank" rel="noopener">读原文</a></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div id="info">
+  <span class="clo" onclick="closeInfo()">✕</span>
+  <h3 id="infoTitle">节点详情</h3>
+  <div id="infoBody"></div>
+  <a id="infoReader" href="#" target="_blank" rel="noopener">打开原文阅读器 →</a>
+</div>
+
+<script src="mermaid.min.js"></script>
+<script>
+const GRAPHS = [{"id": "g1", "title": "剧情推进脉络", "dim": "story_arc", "layout": "TD", "source": "flowchart TD\n    Sg([开篇])\n    g0[\"主线·任琅成长<br/>‹10章›\"]\n    g1[\"支线·配角故事<br/>‹3章›\"]\n    g2[\"多线交织<br/>‹25章›\"]\n    g3[\"主线·任琅尚樱感情<br/>‹8章›\"]\n    g4[\"主线·川阴王叛乱/战争<br/>‹15章›\"]\n    g5[\"支线·江湖门派<br/>‹1章›\"]\n    Sg --> g0\n    g0 -->|\"×1\"| g1\n    g1 -->|\"×1\"| g0\n    g0 -->|\"×4\"| g2\n    g2 -->|\"×2\"| g0\n    g2 -->|\"×3\"| g3\n    g3 -->|\"×2\"| g0\n    g0 -->|\"×1\"| g3\n    g3 -->|\"×2\"| g2\n    g2 -->|\"×5\"| g4\n    g4 -->|\"×1\"| g3\n    g3 -->|\"×1\"| g4\n    g4 -->|\"×1\"| g1\n    g1 -->|\"×1\"| g5\n    g5 -->|\"×1\"| g2\n    g4 -->|\"×4\"| g2", "nodes": [{"id": "g0", "value": "主线·任琅成长", "chapters": [1, 3, 4, 7, 10, 14, 15, 16, 17, 38], "count": 10}, {"id": "g1", "value": "支线·配角故事", "chapters": [2, 25, 26], "count": 3}, {"id": "g2", "value": "多线交织", "chapters": [5, 6, 8, 18, 20, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 40, 43, 48, 49, 54, 58, 60, 61, 62], "count": 25}, {"id": "g3", "value": "主线·任琅尚樱感情", "chapters": [9, 11, 12, 13, 19, 23, 41, 42], "count": 8}, {"id": "g4", "value": "主线·川阴王叛乱/战争", "chapters": [21, 22, 24, 44, 45, 46, 47, 50, 51, 52, 53, 55, 56, 57, 59], "count": 15}, {"id": "g5", "value": "支线·江湖门派", "chapters": [27], "count": 1}], "edges": [{"src": "g0", "dst": "g1", "value_src": "主线·任琅成长", "value_dst": "支线·配角故事", "count": 1, "chapters": [2], "back": false}, {"src": "g1", "dst": "g0", "value_src": "支线·配角故事", "value_dst": "主线·任琅成长", "count": 1, "chapters": [3], "back": false}, {"src": "g0", "dst": "g2", "value_src": "主线·任琅成长", "value_dst": "多线交织", "count": 4, "chapters": [5, 8, 18, 39], "back": false}, {"src": "g2", "dst": "g0", "value_src": "多线交织", "value_dst": "主线·任琅成长", "count": 2, "chapters": [7, 38], "back": false}, {"src": "g2", "dst": "g3", "value_src": "多线交织", "value_dst": "主线·任琅尚樱感情", "count": 3, "chapters": [9, 19, 41], "back": false}, {"src": "g3", "dst": "g0", "value_src": "主线·任琅尚樱感情", "value_dst": "主线·任琅成长", "count": 2, "chapters": [10, 14], "back": false}, {"src": "g0", "dst": "g3", "value_src": "主线·任琅成长", "value_dst": "主线·任琅尚樱感情", "count": 1, "chapters": [11], "back": false}, {"src": "g3", "dst": "g2", "value_src": "主线·任琅尚樱感情", "value_dst": "多线交织", "count": 2, "chapters": [20, 43], "back": false}, {"src": "g2", "dst": "g4", "value_src": "多线交织", "value_dst": "主线·川阴王叛乱/战争", "count": 5, "chapters": [21, 44, 50, 55, 59], "back": false}, {"src": "g4", "dst": "g3", "value_src": "主线·川阴王叛乱/战争", "value_dst": "主线·任琅尚樱感情", "count": 1, "chapters": [23], "back": false}, {"src": "g3", "dst": "g4", "value_src": "主线·任琅尚樱感情", "value_dst": "主线·川阴王叛乱/战争", "count": 1, "chapters": [24], "back": false}, {"src": "g4", "dst": "g1", "value_src": "主线·川阴王叛乱/战争", "value_dst": "支线·配角故事", "count": 1, "chapters": [25], "back": false}, {"src": "g1", "dst": "g5", "value_src": "支线·配角故事", "value_dst": "支线·江湖门派", "count": 1, "chapters": [27], "back": false}, {"src": "g5", "dst": "g2", "value_src": "支线·江湖门派", "value_dst": "多线交织", "count": 1, "chapters": [28], "back": false}, {"src": "g4", "dst": "g2", "value_src": "主线·川阴王叛乱/战争", "value_dst": "多线交织", "count": 4, "chapters": [48, 54, 58, 60], "back": false}]}, {"id": "g2", "title": "角色情感曲线", "dim": "emotion_line", "layout": "LR", "source": "flowchart LR\n    Sg([序章])\n    g0[\"分离/离别<br/>‹1章›\"]\n    g1[\"无显著感情戏<br/>‹9章›\"]\n    g2[\"平淡/日常<br/>‹28章›\"]\n    g3[\"虐/悲情<br/>‹9章›\"]\n    g4[\"升温/进展<br/>‹13章›\"]\n    g5[\"波折/误会<br/>‹2章›\"]\n    Sg --> g0\n    g0 -->|\"×1\"| g1\n    g1 -->|\"×4\"| g2\n    g2 -->|\"×5\"| g3\n    g3 -->|\"×6\"| g2\n    g2 -->|\"×3\"| g4\n    g4 -->|\"×1\"| g1\n    g3 -->|\"×2\"| g4\n    g4 -->|\"×2\"| g2\n    g4 -->|\"×2\"| g3\n    g2 -->|\"×1\"| g5\n    g5 -->|\"×1\"| g3\n    g2 -->|\"×2\"| g1\n    g1 -->|\"×1\"| g3\n    g3 -->|\"×1\"| g5\n    g5 -->|\"×1\"| g1", "nodes": [{"id": "g0", "value": "分离/离别", "chapters": [1], "count": 1}, {"id": "g1", "value": "无显著感情戏", "chapters": [2, 14, 15, 51, 52, 53, 55, 56, 59], "count": 9}, {"id": "g2", "value": "平淡/日常", "chapters": [3, 4, 5, 7, 8, 16, 21, 22, 25, 28, 33, 34, 35, 38, 39, 40, 41, 42, 43, 44, 45, 47, 49, 50, 54, 60, 61, 62], "count": 28}, {"id": "g3", "value": "虐/悲情", "chapters": [6, 17, 24, 27, 29, 37, 46, 48, 57], "count": 9}, {"id": "g4", "value": "升温/进展", "chapters": [9, 10, 11, 12, 13, 18, 19, 20, 23, 30, 31, 32, 36], "count": 13}, {"id": "g5", "value": "波折/误会", "chapters": [26, 58], "count": 2}], "edges": [{"src": "g0", "dst": "g1", "value_src": "分离/离别", "value_dst": "无显著感情戏", "count": 1, "chapters": [2], "back": false}, {"src": "g1", "dst": "g2", "value_src": "无显著感情戏", "value_dst": "平淡/日常", "count": 4, "chapters": [3, 16, 54, 60], "back": false}, {"src": "g2", "dst": "g3", "value_src": "平淡/日常", "value_dst": "虐/悲情", "count": 5, "chapters": [6, 17, 29, 46, 48], "back": false}, {"src": "g3", "dst": "g2", "value_src": "虐/悲情", "value_dst": "平淡/日常", "count": 6, "chapters": [7, 25, 28, 38, 47, 49], "back": false}, {"src": "g2", "dst": "g4", "value_src": "平淡/日常", "value_dst": "升温/进展", "count": 3, "chapters": [9, 23, 36], "back": false}, {"src": "g4", "dst": "g1", "value_src": "升温/进展", "value_dst": "无显著感情戏", "count": 1, "chapters": [14], "back": false}, {"src": "g3", "dst": "g4", "value_src": "虐/悲情", "value_dst": "升温/进展", "count": 2, "chapters": [18, 30], "back": false}, {"src": "g4", "dst": "g2", "value_src": "升温/进展", "value_dst": "平淡/日常", "count": 2, "chapters": [21, 33], "back": false}, {"src": "g4", "dst": "g3", "value_src": "升温/进展", "value_dst": "虐/悲情", "count": 2, "chapters": [24, 37], "back": false}, {"src": "g2", "dst": "g5", "value_src": "平淡/日常", "value_dst": "波折/误会", "count": 1, "chapters": [26], "back": false}, {"src": "g5", "dst": "g3", "value_src": "波折/误会", "value_dst": "虐/悲情", "count": 1, "chapters": [27], "back": false}, {"src": "g2", "dst": "g1", "value_src": "平淡/日常", "value_dst": "无显著感情戏", "count": 2, "chapters": [51, 55], "back": false}, {"src": "g1", "dst": "g3", "value_src": "无显著感情戏", "value_dst": "虐/悲情", "count": 1, "chapters": [57], "back": false}, {"src": "g3", "dst": "g5", "value_src": "虐/悲情", "value_dst": "波折/误会", "count": 1, "chapters": [58], "back": false}, {"src": "g5", "dst": "g1", "value_src": "波折/误会", "value_dst": "无显著感情戏", "count": 1, "chapters": [59], "back": false}]}, {"id": "g3", "title": "场景空间切换", "dim": "main_locations", "layout": "LR", "source": "flowchart LR\n    Sl([启程·望岳镇])\n    l0[\"望岳镇<br/>‹20章›\"]\n    l1[\"京城<br/>‹17章›\"]\n    l2[\"川阴城<br/>‹13章›\"]\n    l3[\"仙境<br/>‹8章›\"]\n    l4[\"镜湖<br/>‹7章›\"]\n    l5[\"海郡<br/>‹7章›\"]\n    l6[\"浣冰郡<br/>‹5章›\"]\n    l7[\"奉秋<br/>‹5章›\"]\n    l8[\"卫京郡<br/>‹4章›\"]\n    l9[\"金刚山<br/>‹3章›\"]\n    l10[\"夫文渡口<br/>‹3章›\"]\n    l11[\"极死门<br/>‹2章›\"]\n    l12[\"气刃宗<br/>‹2章›\"]\n    l13[\"苏城<br/>‹2章›\"]\n    Sl --> l0\n    l0 -->|\"×2\"| l1\n    l1 -->|\"×1\"| l4\n    l4 -->|\"×1\"| l9\n    l9 -->|\"×1\"| l0\n    l0 -->|\"×2\"| l2\n    l2 -->|\"×2\"| l0\n    l12 -->|\"×1\"| l5\n    l5 -->|\"×1\"| l1\n    l1 -->|\"×1\"| l5\n    l5 -->|\"×1\"| l6\n    l6 -->|\"×1\"| l7\n    l7 -->|\"×1\"| l0\n    l2 -->|\"×1\"| l10\n    l10 -->|\"×1\"| l1\n    l3 -->|\"×1\"| l8\n    l8 -->|\"×1\"| l1\n    l1 -->|\"×1\"| l6\n    l6 -->|\"×1\"| l8", "nodes": [{"id": "l0", "value": "望岳镇", "chapters": [1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20, 36, 37, 38, 40, 41, 42, 43, 48, 50], "count": 20}, {"id": "l1", "value": "京城", "chapters": [8, 9, 10, 11, 21, 24, 31, 32, 39, 41, 48, 53, 57, 58, 59, 60, 61], "count": 17}, {"id": "l2", "value": "川阴城", "chapters": [18, 19, 21, 23, 24, 35, 37, 40, 43, 44, 45, 46, 47], "count": 13}, {"id": "l3", "value": "仙境", "chapters": [38, 42, 46, 49, 54, 55, 58, 59], "count": 8}, {"id": "l4", "value": "镜湖", "chapters": [8, 9, 10, 11, 12, 13, 62], "count": 7}, {"id": "l5", "value": "海郡", "chapters": [28, 29, 30, 31, 32, 35, 43], "count": 7}, {"id": "l6", "value": "浣冰郡", "chapters": [33, 34, 50, 60, 61], "count": 5}, {"id": "l7", "value": "奉秋", "chapters": [33, 34, 35, 47, 48], "count": 5}, {"id": "l8", "value": "卫京郡", "chapters": [55, 56, 60, 62], "count": 4}, {"id": "l9", "value": "金刚山", "chapters": [14, 15, 16], "count": 3}, {"id": "l10", "value": "夫文渡口", "chapters": [44, 45, 47], "count": 3}, {"id": "l11", "value": "极死门", "chapters": [5, 6], "count": 2}, {"id": "l12", "value": "气刃宗", "chapters": [26, 27], "count": 2}, {"id": "l13", "value": "苏城", "chapters": [32, 33], "count": 2}], "edges": [{"src": "l0", "dst": "l1", "value_src": "望岳镇", "value_dst": "京城", "count": 2, "chapters": [8, 21], "back": false}, {"src": "l1", "dst": "l4", "value_src": "京城", "value_dst": "镜湖", "count": 1, "chapters": [11], "back": false}, {"src": "l4", "dst": "l9", "value_src": "镜湖", "value_dst": "金刚山", "count": 1, "chapters": [14], "back": false}, {"src": "l9", "dst": "l0", "value_src": "金刚山", "value_dst": "望岳镇", "count": 1, "chapters": [17], "back": false}, {"src": "l0", "dst": "l2", "value_src": "望岳镇", "value_dst": "川阴城", "count": 2, "chapters": [18, 44], "back": false}, {"src": "l2", "dst": "l0", "value_src": "川阴城", "value_dst": "望岳镇", "count": 2, "chapters": [20, 41], "back": false}, {"src": "l12", "dst": "l5", "value_src": "气刃宗", "value_dst": "海郡", "count": 1, "chapters": [28], "back": false}, {"src": "l5", "dst": "l1", "value_src": "海郡", "value_dst": "京城", "count": 1, "chapters": [31], "back": false}, {"src": "l1", "dst": "l5", "value_src": "京城", "value_dst": "海郡", "count": 1, "chapters": [32], "back": false}, {"src": "l5", "dst": "l6", "value_src": "海郡", "value_dst": "浣冰郡", "count": 1, "chapters": [33], "back": false}, {"src": "l6", "dst": "l7", "value_src": "浣冰郡", "value_dst": "奉秋", "count": 1, "chapters": [34], "back": false}, {"src": "l7", "dst": "l0", "value_src": "奉秋", "value_dst": "望岳镇", "count": 1, "chapters": [36], "back": false}, {"src": "l2", "dst": "l10", "value_src": "川阴城", "value_dst": "夫文渡口", "count": 1, "chapters": [47], "back": false}, {"src": "l10", "dst": "l1", "value_src": "夫文渡口", "value_dst": "京城", "count": 1, "chapters": [48], "back": false}, {"src": "l3", "dst": "l8", "value_src": "仙境", "value_dst": "卫京郡", "count": 1, "chapters": [55], "back": false}, {"src": "l8", "dst": "l1", "value_src": "卫京郡", "value_dst": "京城", "count": 1, "chapters": [57], "back": false}, {"src": "l1", "dst": "l6", "value_src": "京城", "value_dst": "浣冰郡", "count": 1, "chapters": [61], "back": false}, {"src": "l6", "dst": "l8", "value_src": "浣冰郡", "value_dst": "卫京郡", "count": 1, "chapters": [62], "back": false}]}, {"id": "g4", "title": "时间线演进", "dim": "time_layer", "layout": "LR", "source": "flowchart LR\n    Sg([纪元之初])\n    g0[\"初入江湖<br/>‹10章›\"]\n    g1[\"江湖历练<br/>‹16章›\"]\n    g2[\"庙堂初涉<br/>‹3章›\"]\n    g3[\"乱世将起<br/>‹19章›\"]\n    g4[\"战乱爆发<br/>‹7章›\"]\n    g5[\"大战/决战<br/>‹3章›\"]\n    g6[\"战后格局<br/>‹4章›\"]\n    Sg --> g0\n    g0 -->|\"×1\"| g1\n    g1 -->|\"×1\"| g2\n    g2 -->|\"×1\"| g3\n    g3 -.->|\"回溯\"| g1\n    g1 -->|\"×1\"| g3\n    g3 -->|\"×1\"| g4\n    g4 -->|\"×1\"| g5\n    g5 -->|\"×1\"| g6", "nodes": [{"id": "g0", "value": "初入江湖", "chapters": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "count": 10}, {"id": "g1", "value": "江湖历练", "chapters": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30], "count": 16}, {"id": "g2", "value": "庙堂初涉", "chapters": [21, 22, 23], "count": 3}, {"id": "g3", "value": "乱世将起", "chapters": [24, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48], "count": 19}, {"id": "g4", "value": "战乱爆发", "chapters": [49, 50, 51, 52, 53, 54, 55], "count": 7}, {"id": "g5", "value": "大战/决战", "chapters": [56, 57, 58], "count": 3}, {"id": "g6", "value": "战后格局", "chapters": [59, 60, 61, 62], "count": 4}], "edges": [{"src": "g0", "dst": "g1", "value_src": "初入江湖", "value_dst": "江湖历练", "count": 1, "chapters": [11], "back": false}, {"src": "g1", "dst": "g2", "value_src": "江湖历练", "value_dst": "庙堂初涉", "count": 1, "chapters": [21], "back": false}, {"src": "g2", "dst": "g3", "value_src": "庙堂初涉", "value_dst": "乱世将起", "count": 1, "chapters": [24], "back": false}, {"src": "g3", "dst": "g1", "value_src": "乱世将起", "value_dst": "江湖历练", "count": 1, "chapters": [25], "back": true}, {"src": "g1", "dst": "g3", "value_src": "江湖历练", "value_dst": "乱世将起", "count": 1, "chapters": [31], "back": false}, {"src": "g3", "dst": "g4", "value_src": "乱世将起", "value_dst": "战乱爆发", "count": 1, "chapters": [49], "back": false}, {"src": "g4", "dst": "g5", "value_src": "战乱爆发", "value_dst": "大战/决战", "count": 1, "chapters": [56], "back": false}, {"src": "g5", "dst": "g6", "value_src": "大战/决战", "value_dst": "战后格局", "count": 1, "chapters": [59], "back": false}]}];
+const NEXUS = [{"ch": 57, "arc": "主线·川阴王叛乱/战争", "emo": "虐/悲情", "loc": "京城", "tl": "大战/决战", "ci": 3, "flags": {"ci3": true, "tragic": true, "war": true, "wartime": true, "casualty": true}, "score": 5, "key": "刑泰在戈壁得知刑布死讯，发动最后一战；陈奉天兵临京城，阵斩守将王监军后破城；入宫后老皇帝现出黑龙真身，陈奉天、聂林、法慧合力围攻，皇帝将任琅、尚樱拉入幻境，幻境中任琅竟刺穿尚樱前胸。", "chars": ["刑泰", "陈奉天", "王监军", "刘基", "尚樱", "任琅"]}, {"ch": 24, "arc": "主线·川阴王叛乱/战争", "emo": "虐/悲情", "loc": "川阴城", "tl": "乱世将起", "ci": 3, "flags": {"ci3": true, "tragic": true, "war": true, "wartime": false, "casualty": true}, "score": 4, "key": "城外孑向赵骁赵翔父子递密信示警；任琅尚樱撞见黑衣人刺杀卫兵分头迎敌，尚樱在后宫与黑衣人刘媛灵交战并将其斩杀（刘媛灵实为任琅竹马）；赵翔率铁骑半渡击破张百慧劫掠人马，陈奉天于殿前独战九名黑衣人，任琅金雷助阵、赵翔率援军解围；张百慧被赵骁擒于水井，事后陈奉天认任琅为妹夫并赠剑与长公主礼服，二人辞行。", "chars": ["任琅", "尚樱", "陈奉天", "虞环", "赵翔", "赵骁"]}, {"ch": 51, "arc": "主线·川阴王叛乱/战争", "emo": "无显著感情戏", "loc": "莫庸城", "tl": "战乱爆发", "ci": 3, "flags": {"ci3": true, "tragic": false, "war": true, "wartime": true, "casualty": true}, "score": 4, "key": "上界福与聂铎因战后地盘分配争执不下；高颌轻敌率五千迎战，被尚樱、任琅以神之飞雪铁骑一举击溃；牛金设伏反被纪田、安明斩杀，赵骁追击中毒箭身亡。", "chars": ["福", "聂铎", "陆子明", "空", "韩德", "高颌"]}, {"ch": 52, "arc": "主线·川阴王叛乱/战争", "emo": "无显著感情戏", "loc": "莫庸城", "tl": "战乱爆发", "ci": 3, "flags": {"ci3": true, "tragic": false, "war": true, "wartime": true, "casualty": true}, "score": 4, "key": "武蒯自望岳镇来投军；陈奉天遣纪程浩、安弈霖领兵守护粮道；刑布令张览伪装自己设伏，夜袭斩杀纪田、安明；韩德获释领兵去断陈奉天粮道。", "chars": ["任琅", "武蒯", "尚樱", "牛银", "刑布", "张览"]}, {"ch": 55, "arc": "主线·川阴王叛乱/战争", "emo": "无显著感情戏", "loc": "卫京郡", "tl": "战乱爆发", "ci": 3, "flags": {"ci3": true, "tragic": false, "war": true, "wartime": true, "casualty": true}, "score": 4, "key": "程廖袭扰刑布粮道，韩德在云风山脉被迷路的纪程浩、安弈霖误击；陈奉天夜率主力带神之飞雪大破刑布，任琅于谷道伏击，刑布兵败身死；程廖绕袭卫京郡被聂林毒刃所杀；陆仲枢启程赴京城，陈奉天围困卫京郡。", "chars": ["刑布", "牛银", "韩德", "纪程浩", "安弈霖", "陈奉天"]}, {"ch": 56, "arc": "主线·川阴王叛乱/战争", "emo": "无显著感情戏", "loc": "卫京郡", "tl": "大战/决战", "ci": 3, "flags": {"ci3": true, "tragic": false, "war": true, "wartime": true, "casualty": true}, "score": 4, "key": "聂林雨夜献铁索潜入之计，任琅、尚樱、武蒯里应外合攻破卫京郡，牛银授首；陈奉天犒赏众将；赵翔得南岭关献城，与许达、马远议定取角邺、渡京墨渡口直指浣冰的进军方略。", "chars": ["牛银", "聂林", "陈奉天", "任琅", "尚樱", "武蒯"]}, {"ch": 37, "arc": "多线交织", "emo": "虐/悲情", "loc": "望岳镇", "tl": "乱世将起", "ci": 3, "flags": {"ci3": true, "tragic": true, "war": false, "wartime": false, "casualty": true}, "score": 3, "key": "任琅、尚樱赴村助夏叶、刘笑岩脱离端木邦家的排挤，任琅怒斥乡邻并带二人回望岳镇；插叙赵骁奉陈奉天命血洗楚城、楚涣战死；影与道士忆及当年为赵骁赐姓命名；苏雨抵楚城主持重建，任琅、尚樱获封“逍遥统领”与“慧灵长公主”。", "chars": ["任琅", "尚樱", "夏叶", "刘笑岩", "端木邦", "赵思俪"]}, {"ch": 46, "arc": "主线·川阴王叛乱/战争", "emo": "虐/悲情", "loc": "川阴城", "tl": "乱世将起", "ci": 2, "flags": {"ci3": false, "tragic": true, "war": true, "wartime": false, "casualty": true}, "score": 3, "key": "尚樱偕虞环接刘笑岩进宫论曲，馆驿考生聚宴；岁末夜铁面人率众血洗馆驿，夏叶与陆家兄弟遇害，张潇璃以幻术困住任琅；任琅脱困报信，与尚樱隐瞒死讯安抚有孕的刘笑岩；仙境中“空”告知“福”狐人族未绝。", "chars": ["虞环", "尚樱", "刘笑岩", "夏叶", "任琅", "张潇璃"]}, {"ch": 50, "arc": "主线·川阴王叛乱/战争", "emo": "平淡/日常", "loc": "尸花谷", "tl": "战乱爆发", "ci": 3, "flags": {"ci3": true, "tragic": false, "war": true, "wartime": true, "casualty": false}, "score": 3, "key": "十年前影奉帝命离去的往事引出；任琅于尸花谷与杀夏叶的铁面人决战，借赤焰手镯与雷火腰斩仇敌；浣冰郡黄九州联三地太守固守阻叛军北上，望岳镇纪田安明与牛金牛银先锋交锋；陈奉天、刑布两军阵前下战书，约定黎明决战，仙境中福与陆仲隔水对峙。", "chars": ["影", "皇帝", "任琅", "尚樱", "聂林", "法慧"]}];
+const DV2N = {"g1": {"主线·任琅成长": "g0", "支线·配角故事": "g1", "多线交织": "g2", "主线·任琅尚樱感情": "g3", "主线·川阴王叛乱/战争": "g4", "支线·江湖门派": "g5"}, "g2": {"分离/离别": "g0", "无显著感情戏": "g1", "平淡/日常": "g2", "虐/悲情": "g3", "升温/进展": "g4", "波折/误会": "g5"}, "g3": {"望岳镇": "l0", "京城": "l1", "川阴城": "l2", "仙境": "l3", "镜湖": "l4", "海郡": "l5", "浣冰郡": "l6", "奉秋": "l7", "卫京郡": "l8", "金刚山": "l9", "夫文渡口": "l10", "极死门": "l11", "气刃宗": "l12", "苏城": "l13"}, "g4": {"初入江湖": "g0", "江湖历练": "g1", "庙堂初涉": "g2", "乱世将起": "g3", "战乱爆发": "g4", "大战/决战": "g5", "战后格局": "g6"}};
+const READER = "../苇舟江湖梦_原文阅读.html";
+const capMap = {"g1": "节点＝剧情弧（主线/支线）；连线＝相邻章节间的弧线切换，标注<b>×切换次数</b>。纵向展开叙事主脉的更迭与交织。", "g2": "节点＝情感状态；连线＝相邻章节间的情感迁移，标注切换次数。横向铺开角色情绪起伏的波动节律。", "g3": "节点＝高频场景地点（‹出现章数›）；连线＝连续章节间的<b>主地点迁移</b>，标注迁移次数。呈现空间行程与枢纽。", "g4": "节点＝时间层（按史序排列）；实线＝时间推进，<b>虚线＝时间回溯</b>（非线性叙事）。构成全书时间脊柱。"};
+
+/* 初始化 Mermaid（离线，base 主题 + 科技蓝变量） */
+mermaid.initialize({
+  startOnLoad:false, securityLevel:'loose', theme:'base',
+  themeVariables:{
+    background:'transparent', primaryColor:'rgba(30,48,80,.85)', primaryTextColor:'#e8eefc',
+    primaryBorderColor:'#3b82f6', lineColor:'#5a96e6', secondaryColor:'rgba(34,211,238,.18)',
+    tertiaryColor:'rgba(167,139,250,.18)', fontFamily:'"PingFang SC","Microsoft YaHei",sans-serif',
+    fontSize:'14px'
+  },
+  flowchart:{ curve:'basis', htmlLabels:true, nodeSpacing:38, rankSpacing:46 }
+});
+
+/* 注入 mermaid 源 */
+GRAPHS.forEach(g=>{
+  const host=document.getElementById('host_'+g.id);
+  const pre=document.createElement('pre');
+  pre.className='mermaid'; pre.textContent=g.source;
+  host.appendChild(pre);
+});
+
+/* 节点文本 -> nid 反查表（渲染后建立） */
+const labelToNid = {};
+function buildLabelIndex(){
+  GRAPHS.forEach(g=>{
+    labelToNid[g.id] = {};
+    const svg=document.querySelector('#host_'+g.id+' svg');
+    if(!svg) return;
+    svg.querySelectorAll('g.node').forEach(node=>{
+      const t=node.querySelector('.nodeLabel');
+      const txt=(t?t.textContent:'').replace(/\s+/g,'');
+      for(const nd of g.nodes){
+        if(txt.includes(nd.value.replace(/\s+/g,''))){
+          node.dataset.nid=nd.id;
+          labelToNid[g.id][nd.id]=node;
+          break;
+        }
+      }
+    });
+  });
+}
+
+function clearHighlight(){
+  document.querySelectorAll('.nx-hl,.nx-hl-weak').forEach(e=>e.classList.remove('nx-hl','nx-hl-weak'));
+}
+
+/* 点击节点：联动高亮共现章节 */
+function selectNode(gid, nid){
+  const g=GRAPHS.find(x=>x.id===gid);
+  const nd=g.nodes.find(x=>x.id===nid);
+  if(!nd) return;
+  clearHighlight();
+  const chSet=new Set(nd.chapters);
+  // 本图高亮
+  const self=labelToNid[gid] && labelToNid[gid][nid];
+  if(self) self.classList.add('nx-hl');
+  // 其它图：按章节交集高亮
+  let maxOv=0;
+  const ov={};
+  GRAPHS.forEach(og=>{
+    if(og.id===gid) return;
+    og.nodes.forEach(on=>{
+      const inter=on.chapters.filter(c=>chSet.has(c)).length;
+      if(inter>0){ ov[og.id]=ov[og.id]||{}; ov[og.id][on.id]=inter; maxOv=Math.max(maxOv,inter); }
+    });
+  });
+  GRAPHS.forEach(og=>{
+    if(og.id===gid) return;
+    Object.entries(ov[og.id]||{}).forEach(([id,c])=>{
+      const el=labelToNid[og.id] && labelToNid[og.id][id];
+      if(el) el.classList.add(c>=Math.max(2,Math.ceil(maxOv*0.6))?'nx-hl':'nx-hl-weak');
+    });
+  });
+  showInfo(g.title, nd.value, nd.chapters, nd.count, '维度节点');
+}
+
+/* nexus 立体定位 */
+function locateNexus(ch){
+  clearHighlight();
+  const x=NEXUS.find(n=>n.ch===ch);
+  if(!x) return;
+  const map={g1:x.arc, g2:x.emo, g3:x.loc, g4:x.tl};
+  Object.entries(map).forEach(([gid,val])=>{
+    const nid=DV2N[gid] && DV2N[gid][val];
+    if(!nid) return;
+    const el=labelToNid[gid] && labelToNid[gid][nid];
+    if(el){ el.classList.add('nx-hl'); el.scrollIntoView({block:'center',behavior:'smooth'}); }
+  });
+  const chips=Object.entries(x.flags).filter(([k,v])=>v).map(([k])=>k).join('、');
+  showInfo('枢纽章 ch'+ch, x.arc+' / '+x.emo, [ch], 1,
+    '时间层：'+x.tl+' ｜ 主地点：'+(x.loc||'—')+' ｜ 战力：L'+x.ci+' ｜ 叠加：'+chips, x.key);
+}
+
+/* 信息卡 */
+function showInfo(title, value, chapters, count, dimLabel, key){
+  const box=document.getElementById('info');
+  document.getElementById('infoTitle').textContent=title;
+  let html=`<div class="row">维度值：<b style="color:var(--txt)">${value}</b></div>`;
+  html+=`<div class="row">${dimLabel} ｜ 覆盖 <b style="color:var(--cyan)">${count}</b> 章</div>`;
+  html+=`<div class="row">章节：</div><div class="chaps">${fmtRange(chapters)}</div>`;
+  if(key) html+=`<div class="row" style="margin-top:6px">关键：${key}</div>`;
+  document.getElementById('infoBody').innerHTML=html;
+  const first=chapters&&chapters.length?chapters[0]:1;
+  document.getElementById('infoReader').href=READER+'?loc=ch'+first;
+  box.style.display='block';
+}
+function closeInfo(){ document.getElementById('info').style.display='none'; }
+function fmtRange(chs){
+  chs=[...new Set(chs)].sort((a,b)=>a-b); if(!chs.length) return '—';
+  let parts=[],s=chs[0],p=chs[0];
+  for(const x of chs.slice(1)){ if(x===p+1){p=x;} else {parts.push(s===p?s:s+'-'+p);s=p=x;} }
+  parts.push(s===p?s:s+'-'+p); return parts.join(',');
+}
+
+/* 事件委托：节点点击 */
+GRAPHS.forEach(g=>{
+  const host=document.getElementById('host_'+g.id);
+  host.addEventListener('click', e=>{
+    const node=e.target.closest('g.node');
+    if(node && node.dataset.nid) selectNode(g.id, node.dataset.nid);
+  });
+});
+document.querySelectorAll('button.locate').forEach(b=>{
+  b.addEventListener('click', ()=>locateNexus(parseInt(b.dataset.ch,10)));
+});
+
+/* 维度说明显隐 */
+let capsShown=false;
+document.getElementById('capToggle').addEventListener('click', ()=>{
+  capsShown=!capsShown;
+  document.querySelectorAll('.cap[data-for]').forEach(c=>c.classList.toggle('show',capsShown));
+});
+
+/* 渲染 */
+(async function(){
+  try{ await mermaid.run(); }catch(e){ console.error('mermaid run failed', e); }
+  buildLabelIndex();
+  // 兜底补全：若某图索引缺失再补一次
+  setTimeout(buildLabelIndex, 400);
+})();
+</script>
+<script>
+/* 把维度说明文本填入对应卡片 */
+(function(){
+  GRAPHS.forEach(g=>{
+    const cap=document.querySelector('.cap[data-for="'+g.id+'"]');
+    if(cap) cap.innerHTML=capMap[g.id];
+  });
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  var KEY='wzjm_dark';
+  function apply(d){ document.body.classList.toggle('dark', d); }
+  var SUN='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON='<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function sync(){
+    var b=document.querySelector('.dm-toggle');
+    if(b){ var d=document.body.classList.contains('dark'); b.innerHTML = d ? SUN+'<span>浅色</span>' : MOON+'<span>深色</span>'; }
+  }
+  function buildBtn(){
+    var s=document.createElement('style');
+    s.textContent='.dm-cluster{position:fixed;top:16px;right:16px;z-index:9999;display:flex;gap:8px}'
+    +'.dm-toggle,.dm-back{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;'
+    +"font-family:'HarmonyOS Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;font-weight:500;"
+    +'border:1px solid var(--line,var(--rc-line,#dfe3e8));background:var(--surface,var(--rc-surface,#fff));'
+    +'color:var(--primary,var(--rc-primary,#0A59F7));box-shadow:0 4px 14px rgba(24,36,49,.14);'
+    +'transition:transform .2s cubic-bezier(.25,0,.3,1),background-color .3s,color .3s,border-color .3s}'
+    +'.dm-toggle:hover,.dm-back:hover{transform:translateY(-2px)}'
+    +'.dm-back{text-decoration:none}';
+    document.head.appendChild(s);
+    var c=document.createElement('div');c.className='dm-cluster';
+    var backHref='../index.html';
+    if(backHref){
+      var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+      a.setAttribute('aria-label','返回报告中心');a.textContent='报告中心';
+      c.appendChild(a);
+    }
+    var b=document.createElement('button');b.className='dm-toggle';
+    b.setAttribute('aria-label','切换深色模式');
+    b.addEventListener('click', function(){
+      var d=!document.body.classList.contains('dark');
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(e){}
+      sync(); broadcast(d);
+    });
+    c.appendChild(b);
+    document.body.appendChild(c);
+  }
+  function broadcast(d){
+    try{
+      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：图表主题热更新 */
+      if(window.parent!==window){ window.parent.postMessage({wzTheme:d?'dark':'light'},'*'); }
+      else{ var fs=document.querySelectorAll('iframe'); for(var i=0;i<fs.length;i++){ try{ fs[i].contentWindow.postMessage({wzTheme:d?'dark':'light'},'*'); }catch(e){} } }
+    }catch(e){}
+  }
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(saved ? saved==='1' : !!prefers);
+  buildBtn();
+  sync();
+  setTimeout(function(){ broadcast(document.body.classList.contains('dark')); },0);
+  window.addEventListener('message', function(e){
+    if(e.data && e.data.wzTheme){
+      var d = e.data.wzTheme==='dark';
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(err){}
+      sync();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

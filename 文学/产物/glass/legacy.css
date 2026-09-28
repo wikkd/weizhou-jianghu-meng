@@ -1,0 +1,124 @@
+/* =====================================================================
+ *  Glass · Legacy（兼容层：移植 theme.css 全部旧选择器为玻璃风格）
+ *  目的：全量迁移后 17 份报告结构与视觉不破。仅重皮肤，不改结构。
+ * ===================================================================== */
+
+/* —— 页面标题带 —— */
+h1{display:block;background:var(--band);color:#fff;font-family:var(--sans);
+  font-size:clamp(22px,3.2vw,27px);font-weight:800;line-height:1.3;letter-spacing:.4px;
+  padding:18px 24px;border-radius:var(--radius);margin:0 0 6px;position:relative;overflow:hidden;
+  box-shadow:var(--glass-highlight),0 12px 32px -12px rgba(10,132,255,.55);}
+h1::after{content:"";position:absolute;inset:0;background:var(--glass-sheen);opacity:.4;pointer-events:none;}
+
+/* —— 区块标题（左色条）—— */
+h2{font-family:var(--sans);font-size:20px;font-weight:700;color:var(--primary-d);
+  margin:0 0 16px;padding:2px 0 2px 13px;border-left:4px solid var(--primary);letter-spacing:.2px;line-height:1.4;}
+h2+h3{margin-top:6px;}
+h3{font-family:var(--sans);font-size:17px;color:var(--ink);margin:24px 0 12px;letter-spacing:.1px;line-height:1.45;}
+
+.sub{color:var(--muted);font-size:13px;text-align:center;margin:0 0 28px;line-height:1.7;}
+.author{text-align:center;color:var(--accent);font-size:13px;margin:0 0 28px;}
+
+/* —— 页眉容器（渐变玻璃带）—— */
+header{background:var(--band);color:#fff;padding:24px 28px;margin-bottom:24px;border-radius:var(--radius);
+  position:relative;overflow:hidden;box-shadow:var(--glass-highlight),var(--glass-shadow);}
+header::after{content:"";position:absolute;inset:0;background:var(--glass-sheen);opacity:.35;pointer-events:none;}
+header h1{background:none;padding:0;margin:0 0 4px;box-shadow:none;font-size:clamp(22px,3.2vw,27px);}
+header p{position:relative;margin:0;opacity:.92;font-size:13px;line-height:1.6;}
+
+/* —— 卡片 / 区块（玻璃）—— */
+section,.card{position:relative;background:var(--glass-bg);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:22px 24px;margin-bottom:22px;
+  box-shadow:var(--glass-highlight),var(--glass-shadow);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+section h2,.card h2{margin-top:0;margin-bottom:16px;}
+
+/* —— 统计磁贴 —— */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:12px 0 26px;}
+.cards .card{padding:16px 12px;text-align:center;margin-bottom:0;box-shadow:var(--glass-highlight);background:var(--glass-bg-soft);}
+.kpis{display:flex;flex-wrap:wrap;gap:16px;margin:12px 0 26px;}
+.kpi{flex:1 1 150px;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-sm);
+  padding:16px 18px;box-shadow:var(--glass-highlight);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+.kpi .v,.kpi-v{font-size:24px;font-weight:800;color:var(--primary-d);line-height:1.2;font-variant-numeric:tabular-nums;}
+.kpi .l,.kpi-l{font-size:12px;color:var(--muted);margin-top:4px;}
+.metric{display:inline-block;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-sm);
+  padding:16px 20px;margin:8px;text-align:center;min-width:150px;box-shadow:var(--glass-highlight);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+.metric b{display:block;font-size:28px;color:var(--primary);line-height:1.2;}
+.small{font-size:12px;color:var(--muted);}
+.meta{display:flex;gap:24px;flex-wrap:wrap;font-size:14px;margin:6px 0;}
+.meta b{display:block;font-size:20px;color:var(--primary);}
+.stat{display:inline-block;margin-right:22px;font-size:14px;}
+.stat b{font-size:20px;color:var(--primary);}
+
+/* —— 列表（正文语境）—— */
+ul,ol{line-height:1.85;font-size:14.5px;margin:0 0 1em;padding-left:22px;}
+ul.tight{margin:6px 0;padding-left:20px;} ul.tight li{margin:4px 0;}
+
+/* —— 注释 / 提示 —— */
+.note{font-size:13px;color:var(--muted);line-height:1.78;margin:12px 0;background:var(--glass-bg-soft);
+  border-left:3px solid var(--primary);padding:12px 16px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+.note code{background:rgba(120,135,160,.22);}
+.warn{background:rgba(255,69,58,.12);border:1px solid rgba(255,69,58,.3);border-radius:var(--radius-sm);
+  padding:12px 16px;color:var(--accent);font-size:13px;line-height:1.6;margin:12px 0;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+.up{color:var(--success);font-weight:600;}
+.down{color:var(--accent);font-weight:600;}
+
+/* —— 标签 chip（旧，实色）—— */
+.tag{display:inline-block;background:var(--primary);color:#fff;border-radius:6px;padding:2px 8px;font-size:12px;margin:2px 3px 2px 0;}
+.tag.g{background:var(--gold);color:#3a2e05;}
+.tag.r{background:var(--accent);}
+.tag.ok{background:var(--success);color:#06351c;}      /* 通过 */
+.tag.mid{background:var(--warning);color:#3a2e05;}     /* 中等 */
+.tag.no{background:var(--accent);color:#fff;}         /* 不通过 */
+
+/* 统计显著性标记 */
+.sig{color:var(--success);font-weight:600;}
+.nsig{color:var(--muted);}
+.p-sig{color:var(--success);font-weight:600;}
+.p-nsig{color:var(--muted);}
+
+/* 索引页描述文本 */
+.desc{color:var(--muted);font-size:13px;line-height:1.6;}
+
+/* 原文阅读页：关键词高亮导航（KW_JS 生成，玻璃化） */
+.kw-prev,.kw-next{font:inherit;cursor:pointer;border:1px solid var(--glass-border);
+  background:var(--glass-bg-strong);color:var(--ink);border-radius:var(--radius-pill);padding:4px 12px;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:var(--glass-highlight);}
+.kw-prev:hover,.kw-next:hover{background:var(--glass-bg);}
+.kw-n{color:var(--muted);font-size:13px;margin:0 8px;}
+
+/* —— 故事线步骤 —— */
+.arc{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0;}
+.arc .step{flex:1 1 150px;border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:10px 12px;
+  background:var(--glass-bg);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+.arc .step b{color:var(--accent);}
+
+/* —— 页脚 —— */
+.foot,.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:36px;}
+
+/* —— 索引专用 —— */
+.ext{color:var(--accent);font-weight:700;}
+
+/* —— 静态推演专用 —— */
+.best{background:var(--primary-d);color:#fff;padding:12px 16px;border-radius:var(--radius-sm);font-size:15px;line-height:1.7;margin:14px 0;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:var(--glass-highlight);}
+body.dark .best{background:var(--primary);}
+.verdict{font-weight:700;color:var(--success);}
+.star{color:var(--gold);}
+
+/* —— 图例 / 图表容器（玻璃化）—— */
+.legend{margin:6px 0 12px;font-size:12px;color:var(--muted);}
+.lg{display:inline-block;margin-right:12px;}
+.lg i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:4px;vertical-align:-1px;}
+.legend span{display:inline-flex;align-items:center;gap:6px;}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,.3);}
+.mapbox{background:var(--glass-bg);padding:12px;border-radius:var(--radius-sm);border:1px solid var(--glass-border);
+  overflow:auto;box-shadow:var(--glass-highlight);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+
+/* —— 深色微调（报表专用表面）—— */
+body.dark .note{background:var(--glass-bg-soft);border-left:3px solid var(--primary);}
+body.dark .note code{background:rgba(255,255,255,.1);}
+body.dark .mapbox{background:var(--glass-bg-soft);}

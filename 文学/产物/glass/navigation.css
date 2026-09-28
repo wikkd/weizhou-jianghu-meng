@@ -1,0 +1,60 @@
+/* =====================================================================
+ *  Glass · Navigation（导航：顶栏 / 菜单 / 面包屑 / 标签页 / 分段控件 / 工具条）
+ * ===================================================================== */
+
+/* —— 顶栏（sticky 玻璃）—— */
+.topbar{position:sticky;top:0;z-index:var(--z-sticky);display:flex;align-items:center;gap:var(--space-4);
+  padding:10px var(--space-5);
+  background:var(--glass-bg-strong);
+  -webkit-backdrop-filter:blur(calc(var(--glass-blur) + 6px)) saturate(var(--glass-saturate));
+  backdrop-filter:blur(calc(var(--glass-blur) + 6px)) saturate(var(--glass-saturate));
+  border-bottom:1px solid var(--line);box-shadow:var(--glass-highlight);}
+.topbar__brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:var(--fs-lg);color:var(--ink);}
+.topbar__brand .logo{width:30px;height:30px;border-radius:9px;background:var(--band);box-shadow:var(--glass-highlight);}
+.topbar__actions{margin-left:auto;display:flex;align-items:center;gap:var(--space-2);}
+
+/* —— 横向导航 —— */
+.nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+.nav__link{padding:8px 14px;border-radius:var(--radius-pill);color:var(--muted);font-weight:600;
+  font-size:var(--fs-sm);cursor:pointer;transition:background var(--dur) var(--ease),color var(--dur) var(--ease);}
+.nav__link:hover{background:var(--glass-bg-soft);color:var(--ink);text-decoration:none;}
+.nav__link.is-active{background:rgba(10,132,255,.14);color:var(--primary-d);}
+
+/* —— 面包屑 —— */
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:var(--fs-sm);color:var(--muted);flex-wrap:wrap;}
+.breadcrumb a{color:var(--muted);}
+.breadcrumb a:hover{color:var(--primary);}
+.breadcrumb .sep{opacity:.5;}
+.breadcrumb .current{color:var(--ink);font-weight:600;}
+
+/* —— 标签页（下划线 + 滑动指示）—— */
+.tabs{position:relative;}
+.tabs__list{position:relative;display:flex;gap:4px;border-bottom:1px solid var(--line);}
+.tabs__tab{position:relative;z-index:1;border:0;background:none;cursor:pointer;font-family:var(--sans);
+  font-size:var(--fs-base);font-weight:600;color:var(--muted);padding:10px 16px;
+  transition:color var(--dur) var(--ease);}
+.tabs__tab:hover{color:var(--ink);}
+.tabs__tab.is-active{color:var(--primary-d);}
+.tabs__indicator{position:absolute;bottom:-1px;left:0;height:2px;border-radius:2px;background:var(--primary);
+  box-shadow:0 0 10px rgba(10,132,255,.6);transition:transform var(--dur) var(--ease),width var(--dur) var(--ease);}
+.tabs__panel{display:none;padding-top:var(--space-4);animation:glass-fade var(--dur) var(--ease) both;}
+.tabs__panel.is-active{display:block;}
+
+/* —— 分段控件（胶囊 + 滑动滑块）—— */
+.segmented{position:relative;display:inline-flex;padding:4px;gap:2px;border-radius:var(--radius-pill);
+  background:var(--glass-bg-soft);border:1px solid var(--glass-border);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+.segmented__item{position:relative;z-index:1;border:0;background:none;cursor:pointer;white-space:nowrap;
+  padding:7px 16px;border-radius:var(--radius-pill);font-family:var(--sans);font-size:var(--fs-sm);
+  font-weight:600;color:var(--muted);transition:color var(--dur) var(--ease);}
+.segmented__item.is-active{color:var(--primary-d);}
+.segmented__thumb{position:absolute;z-index:0;top:4px;bottom:4px;left:4px;border-radius:var(--radius-pill);
+  background:var(--surface-solid);box-shadow:var(--glass-highlight),0 2px 8px rgba(0,0,0,.15);
+  transition:transform var(--dur) var(--ease),width var(--dur) var(--ease);}
+
+/* —— 工具条 —— */
+.toolbar{display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;padding:var(--space-3);
+  background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:var(--glass-highlight);}
+.toolbar__title{font-weight:700;margin-right:var(--space-2);}
+.toolbar__spacer{flex:1 1 auto;}

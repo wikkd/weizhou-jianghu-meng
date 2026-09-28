@@ -1,0 +1,78 @@
+/* =====================================================================
+ *  Glass · Button（按钮：玻璃质感 + 多形态 + 涟漪反馈）
+ * ===================================================================== */
+
+.btn{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);
+  font-family:var(--sans);font-size:var(--fs-base);font-weight:600;line-height:1;
+  padding:11px 18px;border-radius:var(--radius-pill);border:1px solid transparent;
+  cursor:pointer;user-select:none;white-space:nowrap;text-decoration:none;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  transition:transform var(--dur-fast) var(--ease),box-shadow var(--dur) var(--ease),
+             background var(--dur) var(--ease),filter var(--dur) var(--ease),color var(--dur) var(--ease);
+}
+.btn:active{transform:scale(.97);}
+.btn:disabled,.btn[aria-disabled="true"]{opacity:.5;pointer-events:none;}
+.btn__icon{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.btn__icon svg{width:100%;height:100%;}
+.btn__label{display:inline-block;}
+
+/* —— 形态 —— */
+.btn--glass{
+  background:var(--glass-bg);color:var(--ink);
+  border-color:var(--glass-border);box-shadow:var(--glass-highlight);
+}
+.btn--glass:hover{background:var(--glass-bg-strong);transform:translateY(-1px);box-shadow:var(--glass-highlight),var(--glass-shadow);}
+
+.btn--primary{
+  background:var(--band);color:#fff;border-color:rgba(255,255,255,.4);
+  box-shadow:var(--glass-highlight),0 8px 22px -8px rgba(10,132,255,.65);
+}
+.btn--primary:hover{filter:brightness(1.07);transform:translateY(-1px);
+  box-shadow:var(--glass-highlight),0 12px 30px -8px rgba(10,132,255,.75);}
+
+.btn--soft{background:rgba(10,132,255,.12);color:var(--primary-d);border-color:rgba(10,132,255,.22);}
+.btn--soft:hover{background:rgba(10,132,255,.2);}
+
+.btn--ghost{background:transparent;color:var(--primary);border-color:var(--line);}
+.btn--ghost:hover{background:rgba(10,132,255,.08);border-color:var(--primary);}
+
+.btn--accent{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.35);
+  box-shadow:var(--glass-highlight),0 8px 22px -8px rgba(255,69,58,.6);}
+.btn--accent:hover{filter:brightness(1.06);transform:translateY(-1px);}
+
+.btn--success{background:var(--success);color:#06351c;border-color:rgba(255,255,255,.35);
+  box-shadow:var(--glass-highlight),0 8px 22px -8px rgba(48,209,88,.55);}
+.btn--danger{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.35);
+  box-shadow:var(--glass-highlight),0 8px 22px -8px rgba(255,69,58,.6);}
+
+/* —— 尺寸 —— */
+.btn--sm{padding:7px 13px;font-size:var(--fs-sm);border-radius:var(--radius-pill);}
+.btn--lg{padding:14px 26px;font-size:var(--fs-md);}
+.btn--block{width:100%;}
+
+/* —— 图标按钮（圆形）—— */
+.icon-btn{
+  position:relative;overflow:hidden;width:40px;height:40px;flex:0 0 auto;
+  display:inline-flex;align-items:center;justify-content:center;
+  border-radius:50%;border:1px solid var(--glass-border);cursor:pointer;
+  background:var(--glass-bg);color:var(--ink);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  box-shadow:var(--glass-highlight);
+  transition:transform var(--dur-fast) var(--ease),background var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
+}
+.icon-btn:hover{background:var(--glass-bg-strong);transform:translateY(-1px);}
+.icon-btn:active{transform:scale(.93);}
+.icon-btn svg{width:20px;height:20px;}
+.icon-btn--sm{width:32px;height:32px;}
+.icon-btn--sm svg{width:16px;height:16px;}
+.icon-btn--lg{width:48px;height:48px;}
+.icon-btn--lg svg{width:24px;height:24px;}
+
+/* —— 涟漪（由 glass.js 注入 <span class="ripple">）—— */
+.btn .ripple,.icon-btn .ripple{
+  position:absolute;border-radius:50%;pointer-events:none;transform:scale(0);
+  background:rgba(255,255,255,.5);animation:glass-ripple .6s var(--ease-out);
+}
+.btn--glass .ripple,.icon-btn .ripple{background:rgba(10,132,255,.3);}

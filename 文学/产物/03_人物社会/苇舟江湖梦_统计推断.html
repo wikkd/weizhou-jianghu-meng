@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script id="wzjm-key-migration">try{var n0=localStorage.getItem("wzjm_dark");if(n0===null){var o0=localStorage.getItem("wzjm_dark");if(o0!==null)localStorage.setItem("wzjm_dark",o0);}var n1=localStorage.getItem("wzjm_lib_dark");if(n1===null){var o1=localStorage.getItem("wzjm_lib_dark");if(o1!==null)localStorage.setItem("wzjm_lib_dark",o1);}var n2=localStorage.getItem("wzjm_lib_accent");if(n2===null){var o2=localStorage.getItem("wzjm_lib_accent");if(o2!==null)localStorage.setItem("wzjm_lib_accent",o2);}var n3=localStorage.getItem("wzjm_mm_theme");if(n3===null){var o3=localStorage.getItem("wzjm_mm_theme");if(o3!==null)localStorage.setItem("wzjm_mm_theme",o3);}}catch(e){}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>苇舟江湖梦 · 章节标注统计推断</title>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>《苇舟江湖梦》章节标注 · 统计推断报告</h1>
+  <div class="sub">文学计量分析 · 非参数检验（Mann-Whitney U / Spearman）· 样本量 N=62 章 · 生成于分析脚本</div>
+
+  <div class="card">
+    <h2>一、结果速览</h2>
+    <p>本次 5 项检验中，共 <b>2</b> 项在原始 α=0.05 下显著：<b>b_任琅_出场vs未出场、c_章节类型_含战斗vs不含</b>。经 Bonferroni 校正（阈值 0.010），需进一步核对上述显著项是否仍能通过校正阈值。</p>
+    <p class="note">原始显著性水平 α=0.05；共 5 项检验，Bonferroni 校正阈值 = 0.05 / 5 = <b>0.010</b>。
+    下表 <span class="p-sig">红色 p 值</span> 为该检验在原始 α 下显著。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>检验</th><th>方法</th><th>统计量</th><th>p 值</th>
+          <th>效应量</th><th>原始 α 结论</th><th>Bonferroni</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="nsig">
+        <td>a_陈奉天_出场vs未出场</td>
+        <td>Mann-Whitney U (双侧)</td>
+        <td>508.0</td>
+        <td class="p-nsig">0.3014</td>
+        <td>Cliff's δ=+0.155</td>
+        <td>— 不显著</td>
+        <td>—</td>
+      </tr>
+      <tr class="sig">
+        <td>b_任琅_出场vs未出场</td>
+        <td>Mann-Whitney U (双侧)</td>
+        <td>225.5</td>
+        <td class="p-sig">0.0265</td>
+        <td>Cliff's δ=+0.582</td>
+        <td>✅ 显著</td>
+        <td>未达</td>
+      </tr>
+      <tr class="sig">
+        <td>c_章节类型_含战斗vs不含</td>
+        <td>Mann-Whitney U (双侧)</td>
+        <td>841.0</td>
+        <td class="p-sig">0.0</td>
+        <td>Cliff's δ=+0.875</td>
+        <td>✅ 显著</td>
+        <td>通过</td>
+      </tr>
+      <tr class="nsig">
+        <td>d_情感线序数_vs_战斗强度</td>
+        <td>Spearman 秩相关</td>
+        <td>0.277</td>
+        <td class="p-nsig">0.0514</td>
+        <td>ρ=+0.277</td>
+        <td>— 不显著</td>
+        <td>—</td>
+      </tr>
+      <tr class="nsig">
+        <td>e_主地点_京城vs其他</td>
+        <td>Mann-Whitney U (双侧)</td>
+        <td>325.0</td>
+        <td class="p-nsig">0.3493</td>
+        <td>Cliff's δ=-0.150</td>
+        <td>— 不显著</td>
+        <td>—</td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>二、通俗解读</h2>
+    <ul>
+<li><b>a_陈奉天_出场vs未出场</b>（Mann-Whitney U (双侧)）：陈奉天出场与未出场章节的战斗强度无显著差异（均值 1.64 vs 1.35）。U=508，p=0.301，Cliff's δ=+0.155（小效应）。不显著，不能拒绝原假设：现有数据不足以说明陈奉天是否出场会影响战斗强度。</li>
+<li><b>b_任琅_出场vs未出场</b>（Mann-Whitney U (双侧)）：任琅出场的章节（均值 1.54，n=57）战斗强度高于其未出场章节（均值 0.40，n=5）。U=226，p=0.026，Cliff's δ=+0.582（大效应）。差异在 α=0.05 下具有统计学意义。</li>
+<li><b>c_章节类型_含战斗vs不含</b>（Mann-Whitney U (双侧)）：标注含'战斗/武斗'类型的章节（均值 2.08，n=39）战斗强度高于不含战斗类型的章节（均值 0.39，n=23）。U=841，p=0.000，Cliff's δ=+0.875（大效应）。差异在 α=0.05 下显著，符合'战斗章节更激烈'的直觉。</li>
+<li><b>d_情感线序数_vs_战斗强度</b>（Spearman 秩相关）：情感线强度序数与战斗强度无显著相关（Spearman ρ=+0.277，n=50，p=0.051，小效应）。不显著，不能拒绝原假设：现有样本未呈现情感强度与战斗强度之间的系统性关联。（已按指令排除 9 章'无显著感情戏'、2 章'波折/误会'、1 章'分离/离别'等'未明'类别。）</li>
+<li><b>e_主地点_京城vs其他</b>（Mann-Whitney U (双侧)）：主地点含'京城'与其他地点的章节战斗强度无显著差异（均值 1.24 vs 1.53）。U=325，p=0.349，Cliff's δ=-0.150（小效应）。不显著，不能拒绝原假设：现有数据不足以说明京城场景对应更高或更低的战斗强度。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>三、方法注记（小样本 / 多重比较需谨慎）</h2>
+    <ul>
+      <li><span class="tag">数据</span>来源 <code>chapter_data/all_tags.json</code>，仅做读取分析，未修改任何源文件。战斗强度 <code>combat_intensity</code> 为 0–3 的序数变量，分布非正态，故优先采用非参数方法。</li>
+      <li><span class="tag">检验选择</span>组间比较用 <b>Mann-Whitney U</b>（不假设正态与方差齐性）；相关性用 <b>Spearman 秩相关</b>（对单调关系稳健）。</li>
+      <li><span class="tag">效应量</span>组间比较报告 <b>Cliff's δ</b>（P&gt;Q 之差，∈[-1,1]）：|δ|&lt;0.147 可忽略、0.147–0.33 小、0.33–0.474 中、≥0.474 大。相关报告 <b>Spearman ρ</b> 本身。</li>
+      <li><span class="tag">情感线编码</span>按指令映射：平淡/日常=0、升温/进展=1、虐/悲情=2；其余"无显著感情戏"(9)、"波折/误会"(2)、"分离/离别"(1) 共 12 章视为"未明"排除，相关分析实际 n=50。</li>
+      <li><span class="tag">多重比较</span>共 5 项检验，若把全部检验当作同一家族，Bonferroni 校正后阈值收紧至 <b>0.010</b>。任一"显著"项若其 p 仍 ≥ 0.010，应视为在更严格标准下不再显著，需谨慎表述。</li>
+      <li><span class="tag">小样本风险</span>任琅未出场仅 8 章、京城组仅 15 章、情感极端类别样本少，统计功效低；即便某检验不显著，也<b>不能证明"无效应"</b>，只能说"现有证据不足"。</li>
+      <li><span class="tag">纪律</span>对所有 p≥0.05 的结果一律写作"不显著，不能拒绝原假设"，不夸大、不编造显著性。</li>
+    </ul>
+    <div class="warn">⚠️ 本推断基于人工标注的章节级聚合数据，结论仅描述"标注层面的统计关联"，不等同于作者创作意图或文本细读的因果判断。小样本下请结合叙事语境谨慎解读。</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  var KEY='wzjm_dark';
+  function apply(d){ document.body.classList.toggle('dark', d); }
+  var SUN='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON='<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function sync(){
+    var b=document.querySelector('.dm-toggle');
+    if(b){ var d=document.body.classList.contains('dark'); b.innerHTML = d ? SUN+'<span>浅色</span>' : MOON+'<span>深色</span>'; }
+  }
+  function buildBtn(){
+    var s=document.createElement('style');
+    s.textContent='.dm-cluster{position:fixed;top:16px;right:16px;z-index:9999;display:flex;gap:8px}'
+    +'.dm-toggle,.dm-back{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;'
+    +"font-family:'HarmonyOS Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;font-weight:500;"
+    +'border:1px solid var(--line,var(--rc-line,#dfe3e8));background:var(--surface,var(--rc-surface,#fff));'
+    +'color:var(--primary,var(--rc-primary,#0A59F7));box-shadow:0 4px 14px rgba(24,36,49,.14);'
+    +'transition:transform .2s cubic-bezier(.25,0,.3,1),background-color .3s,color .3s,border-color .3s}'
+    +'.dm-toggle:hover,.dm-back:hover{transform:translateY(-2px)}'
+    +'.dm-back{text-decoration:none}';
+    document.head.appendChild(s);
+    var c=document.createElement('div');c.className='dm-cluster';
+    var backHref='../index.html';
+    if(backHref){
+      var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+      a.setAttribute('aria-label','返回报告中心');a.textContent='报告中心';
+      c.appendChild(a);
+    }
+    var b=document.createElement('button');b.className='dm-toggle';
+    b.setAttribute('aria-label','切换深色模式');
+    b.addEventListener('click', function(){
+      var d=!document.body.classList.contains('dark');
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(e){}
+      sync(); broadcast(d);
+    });
+    c.appendChild(b);
+    document.body.appendChild(c);
+  }
+  function broadcast(d){
+    try{
+      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：图表主题热更新 */
+      if(window.parent!==window){ window.parent.postMessage({wzTheme:d?'dark':'light'},'*'); }
+      else{ var fs=document.querySelectorAll('iframe'); for(var i=0;i<fs.length;i++){ try{ fs[i].contentWindow.postMessage({wzTheme:d?'dark':'light'},'*'); }catch(e){} } }
+    }catch(e){}
+  }
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(saved ? saved==='1' : !!prefers);
+  buildBtn();
+  sync();
+  setTimeout(function(){ broadcast(document.body.classList.contains('dark')); },0);
+  window.addEventListener('message', function(e){
+    if(e.data && e.data.wzTheme){
+      var d = e.data.wzTheme==='dark';
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(err){}
+      sync();
+    }
+  });
+})();
+</script>
+
+</body><!--WZ-KEYINDEX-START-->
+<div id="wz-kwindex"></div>
+<script src="keyword-index-widget.js"></script>
+<!--WZ-KEYINDEX-END-->
+
+</html>

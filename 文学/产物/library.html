@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script id="wzjm-key-migration">try{var n0=localStorage.getItem("wzjm_dark");if(n0===null){var o0=localStorage.getItem("wzjm_dark");if(o0!==null)localStorage.setItem("wzjm_dark",o0);}var n1=localStorage.getItem("wzjm_lib_dark");if(n1===null){var o1=localStorage.getItem("wzjm_lib_dark");if(o1!==null)localStorage.setItem("wzjm_lib_dark",o1);}var n2=localStorage.getItem("wzjm_lib_accent");if(n2===null){var o2=localStorage.getItem("wzjm_lib_accent");if(o2!==null)localStorage.setItem("wzjm_lib_accent",o2);}var n3=localStorage.getItem("wzjm_mm_theme");if(n3===null){var o3=localStorage.getItem("wzjm_mm_theme");if(o3!==null)localStorage.setItem("wzjm_mm_theme",o3);}}catch(e){}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>《苇舟江湖梦》· 数字图书馆</title>
+<link rel="stylesheet" href="glass.css">
+<style>
+  /* ===== 图书馆外壳布局（叠加于 glass.css 之上）===== */
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:var(--sans);color:var(--ink);}
+  ::-webkit-scrollbar{width:10px;height:10px}
+  ::-webkit-scrollbar-thumb{background:var(--glass-border);border-radius:10px;border:2px solid transparent;background-clip:content-box}
+  ::-webkit-scrollbar-thumb:hover{background:var(--muted-2);background-clip:content-box}
+
+  .lib{
+    display:grid;
+    grid-template-columns:304px 1fr;
+    grid-template-rows:auto 1fr;
+    grid-template-areas:"top top" "side main";
+    height:100vh;overflow:hidden;
+  }
+
+  /* —— 顶栏 —— */
+  .topbar{grid-area:top;}
+  .topbar__brand .logo{background:var(--band);}
+  .lib__menu{display:none;}
+  .lib__search{position:relative;width:360px;max-width:36vw;}
+  .lib__search .input{border-radius:var(--radius-pill);}
+  .lib__search .search__icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+  .accent-dot{width:15px;height:15px;border-radius:50%;box-shadow:0 0 0 2px rgba(255,255,255,.5),0 1px 4px rgba(0,0,0,.3)}
+
+  /* —— 侧栏目录 —— */
+  .sidebar{
+    grid-area:side;display:flex;flex-direction:column;min-height:0;
+    margin:14px 0 14px 14px;border-radius:var(--radius-lg);overflow:hidden;
+    background:var(--glass-bg);border:1px solid var(--glass-border);
+    -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    box-shadow:var(--glass-highlight),var(--glass-shadow);
+  }
+  .sidebar__head{
+    display:flex;align-items:center;gap:10px;padding:18px 18px 12px;
+    font-weight:800;font-size:15px;letter-spacing:.02em;
+  }
+  .sidebar__head .mk{width:26px;height:26px;border-radius:8px;background:var(--band);box-shadow:var(--glass-highlight);flex:0 0 auto}
+  .sidebar__head small{margin-left:auto;color:var(--muted);font-weight:600;font-size:12px}
+  .catalog{flex:1;min-height:0;overflow-y:auto;position:relative;padding:4px 10px 18px}
+  .cat-group{margin-top:6px}
+  .cat-group.is-hidden{display:none}
+  .cat-group__head{
+    display:flex;align-items:center;gap:8px;padding:12px 10px 6px;
+    font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--muted);
+  }
+  .cat-group__head .cnt{font-size:11px;font-weight:700;color:var(--muted-2);
+    background:var(--glass-bg-soft);border:1px solid var(--glass-border);border-radius:20px;padding:1px 8px}
+  .cat-group__list{position:relative;display:flex;flex-direction:column;gap:2px}
+  .nav-item{
+    position:relative;display:flex;align-items:center;gap:11px;width:100%;
+    text-align:left;background:none;border:0;cursor:pointer;
+    padding:9px 12px 9px 14px;border-radius:var(--radius-sm);
+    color:var(--muted);font-family:var(--sans);font-size:14px;font-weight:600;
+    transition:background var(--dur) var(--ease),color var(--dur) var(--ease);
+  }
+  .nav-item:hover{background:var(--glass-bg-soft);color:var(--ink)}
+  .nav-item.is-active{color:var(--primary-d);background:rgba(10,132,255,.10)}
+  .nav-item.is-hidden{display:none}
+  .nav-item__icon{width:20px;height:20px;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;font-size:15px;opacity:.92}
+  .nav-item__text{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cat-indicator{
+    position:absolute;left:3px;top:0;width:3px;height:22px;border-radius:3px;
+    background:var(--primary);box-shadow:0 0 10px rgba(10,132,255,.6);
+    transition:transform var(--dur) var(--ease),height var(--dur) var(--ease);
+    pointer-events:none;
+  }
+  .cat-nomatch{display:none;padding:14px;text-align:center;color:var(--muted);font-size:13px}
+  .cat-nomatch.is-shown{display:block}
+  .sidebar__foot{padding:12px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:11.5px;line-height:1.6}
+
+  /* —— 舞台 —— */
+  .stage{grid-area:main;display:flex;flex-direction:column;min-width:0;margin:14px 14px 14px 0}
+  .stage__bar{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:10px 18px;margin-bottom:12px;border-radius:var(--radius);
+  }
+  .stage__bar .breadcrumb{font-size:14px}
+  .stage__body{position:relative;flex:1;min-height:0;border-radius:var(--radius-lg);overflow:hidden;
+    background:var(--surface-solid);box-shadow:var(--glass-highlight),var(--glass-shadow);}
+  .room{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--surface-solid);
+    transition:opacity .34s var(--ease)}
+  .room.view-hidden{opacity:0}
+  .room--enter{animation:glass-fade-up .45s var(--ease) both}
+  .overview{position:absolute;inset:0;overflow-y:auto;padding:26px 30px 56px;
+    transition:opacity .34s var(--ease),visibility .34s var(--ease)}
+  .overview.view-hidden{opacity:0;visibility:hidden;pointer-events:none}
+  .ov-wrap{max-width:1080px;margin:0 auto}
+  .stage__loading{
+    position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+    flex-direction:column;gap:14px;background:var(--surface-solid);border-radius:var(--radius-lg);
+    z-index:6;color:var(--muted);font-size:13px;
+  }
+  .lib-spinner{width:40px;height:40px;border-radius:50%;border:3px solid var(--line);
+    border-top-color:var(--primary);animation:glass-spin .85s linear infinite}
+
+  /* —— 概览 —— */
+  .ov-hero{margin-bottom:26px}
+  .ov-hero .hero__title{font-size:46px}
+  .ov-hero .hero__sub{font-size:17px;max-width:64ch;margin-top:6px}
+  .ov-lead{margin:18px 2px 0;color:var(--ink);font-size:15.5px;line-height:1.85;max-width:74ch}
+  .ov-lead p{margin:0 0 12px}
+  .ov-section{margin-top:30px}
+  .ov-section__h{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;margin:0 0 14px}
+  .ov-section__h::before{content:"";width:5px;height:20px;border-radius:20px;background:var(--band)}
+  .ov-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  .ov-stats .statcard{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius);
+    padding:16px;box-shadow:var(--glass-highlight);transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+  .ov-stats .statcard:hover{transform:translateY(-3px);box-shadow:var(--glass-highlight),var(--glass-shadow)}
+  .ov-stats .statcard__value{font-size:26px;font-weight:800;color:var(--primary-d);line-height:1.1;font-variant-numeric:tabular-nums}
+  .ov-stats .statcard__label{font-size:12.5px;color:var(--muted);margin-top:3px}
+
+  .ov-dist{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:center;
+    background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-lg);
+    padding:22px;box-shadow:var(--glass-highlight)}
+  .donut-num{font-size:30px;font-weight:800;fill:var(--ink);font-family:var(--sans)}
+  .donut-lbl{font-size:12px;fill:var(--muted);font-family:var(--sans)}
+  .donut-legend{display:flex;flex-direction:column;gap:7px}
+  .donut-leg{display:flex;align-items:center;gap:10px;font-size:13.5px}
+  .donut-leg__dot{width:11px;height:11px;border-radius:3px;flex:0 0 auto}
+  .donut-leg__l{color:var(--ink);font-weight:600;flex:1}
+  .donut-leg__v{color:var(--muted);font-variant-numeric:tabular-nums;font-weight:700}
+  .ov-hint{margin-top:14px;font-size:12.5px;color:var(--muted)}
+
+  .ov-feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .ov-card{display:flex;flex-direction:column;gap:10px;cursor:pointer;
+    background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius);
+    padding:18px;box-shadow:var(--glass-highlight);
+    transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),border-color var(--dur) var(--ease)}
+  .ov-card:hover{transform:translateY(-4px);box-shadow:var(--glass-highlight),var(--glass-shadow);border-color:rgba(10,132,255,.4)}
+  .ov-card__top{display:flex;align-items:center;gap:9px}
+  .ov-card__icon{width:34px;height:34px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
+    background:rgba(10,132,255,.14);font-size:18px;flex:0 0 auto}
+  .ov-card__title{font-weight:700;font-size:15.5px;color:var(--ink)}
+  .ov-card__desc{font-size:13px;color:var(--muted);line-height:1.65;flex:1}
+  .ov-card__tags{display:flex;flex-wrap:wrap;gap:6px}
+  .ov-card__go{display:inline-flex;align-items:center;gap:6px;color:var(--primary-d);font-weight:700;font-size:13px}
+
+  .ov-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .ov-step{background:var(--glass-bg-soft);border:1px solid var(--glass-border);border-radius:var(--radius);padding:16px 18px}
+  .ov-step__n{display:inline-flex;width:26px;height:26px;border-radius:50%;align-items:center;justify-content:center;
+    background:var(--band);color:#fff;font-weight:800;font-size:13px;margin-bottom:8px}
+  .ov-step__t{font-weight:700;color:var(--ink);margin-bottom:4px}
+  .ov-step__b{font-size:13px;color:var(--muted);line-height:1.6}
+
+  .ov-anim{opacity:0}
+  #overview.is-shown .ov-anim{animation:glass-fade-up .55s var(--ease) forwards}
+
+  /* —— 响应式 —— */
+  @media(max-width:1040px){
+    .ov-grid{grid-template-columns:repeat(3,1fr)}
+    .ov-dist{grid-template-columns:1fr;justify-items:center}
+    .ov-steps{grid-template-columns:1fr}
+  }
+  @media(max-width:920px){
+    .lib{grid-template-columns:1fr;grid-template-areas:"top" "main"}
+    .lib__menu{display:inline-flex}
+    .lib__search{width:auto;flex:1;max-width:none;margin:0 8px}
+    .topbar__brand span:last-child{display:none}
+    .sidebar{position:fixed;top:0;left:0;bottom:0;width:286px;z-index:60;margin:0;border-radius:0;
+      transform:translateX(-102%);transition:transform var(--dur) var(--ease)}
+    .lib.is-drawer-open .sidebar{transform:none;box-shadow:0 0 60px rgba(0,0,0,.4)}
+    .stage{margin:12px}
+    .sidebar__scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:55;opacity:0;visibility:hidden;
+      transition:opacity var(--dur) var(--ease),visibility var(--dur) var(--ease)}
+    .lib.is-drawer-open .sidebar__scrim{opacity:1;visibility:visible}
+  }
+  @media(max-width:560px){ .ov-grid{grid-template-columns:repeat(2,1fr)} .ov-hero .hero__title{font-size:34px} }
+</style>
+</head>
+<body>
+<div class="lib" id="lib">
+
+  <!-- 顶栏 -->
+  <header class="topbar">
+    <button class="icon-btn lib__menu" id="menuBtn" aria-label="目录">☰</button>
+    <div class="topbar__brand">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;margin-right:12px;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;color:var(--ink);background:var(--glass-bg);border:1px solid var(--glass-border);transition:transform var(--dur-fast,.12s) var(--ease-std,.25s ease)">← 分析中心</a><span class="logo"></span><span>苇舟江湖梦 · 图书馆</span></div>
+    <div class="lib__search">
+      <span class="search__icon">⌕</span>
+      <input class="input" id="search" type="search" placeholder="检索馆藏：报告 / 人物 / 地理 / 标签…" aria-label="检索馆藏">
+    </div>
+    <div class="topbar__actions">
+      <div class="segmented" id="accentSeg" title="主题色">
+        <span class="segmented__thumb"></span>
+        <button class="segmented__item" data-value="#0a84ff"><span class="accent-dot" style="background:#0a84ff"></span></button>
+        <button class="segmented__item" data-value="#5e5ce6"><span class="accent-dot" style="background:#5e5ce6"></span></button>
+        <button class="segmented__item" data-value="#30d158"><span class="accent-dot" style="background:#30d158"></span></button>
+        <button class="segmented__item" data-value="#ff9f0a"><span class="accent-dot" style="background:#ff9f0a"></span></button>
+        <button class="segmented__item" data-value="#ff453a"><span class="accent-dot" style="background:#ff453a"></span></button>
+      </div>
+      <button class="icon-btn" id="darkBtn" aria-label="切换深色">🌙</button>
+    </div>
+  </header>
+
+  <!-- 侧栏目录 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__head"><span class="mk"></span>馆藏目录<small id="libCount"></small></div>
+    <nav class="catalog" id="catalog"></nav>
+    <div class="cat-nomatch" id="noMatch">未找到匹配的馆藏</div>
+    <div class="sidebar__foot">本馆为《苇舟江湖梦》分析产物的统一入口，所有阅览室共享同一套液态玻璃视觉语言。</div>
+  </aside>
+  <div class="sidebar__scrim" id="scrim"></div>
+
+  <!-- 舞台 -->
+  <main class="stage">
+    <div class="stage__bar glass">
+      <div class="breadcrumb" id="crumb"><span>馆藏</span></div>
+      <div class="badge badge--primary badge--dot">液态玻璃 · 阅览室</div>
+    </div>
+    <div class="stage__body">
+      <section class="overview" id="overview" hidden></section>
+      <iframe class="room" id="room" title="阅览室" style="display:none"></iframe>
+      <div class="stage__loading" id="loading"><div class="lib-spinner"></div><span>正在开启阅览室…</span></div>
+    </div>
+  </main>
+</div>
+
+<script src="glass.js"></script>
+<script>
+(function(){
+  "use strict";
+  var lib = document.getElementById('lib');
+  var catalog = document.getElementById('catalog');
+  var crumb = document.getElementById('crumb');
+  var room = document.getElementById('room');
+  var overview = document.getElementById('overview');
+  var loading = document.getElementById('loading');
+  var darkBtn = document.getElementById('darkBtn');
+  var search = document.getElementById('search');
+  var noMatch = document.getElementById('noMatch');
+
+  /* ---------- 馆藏数据 ---------- */
+  var GROUPS = [
+    { name:"卷首", items:[
+      { id:"overview", title:"卷首 · 概览", kind:"overview", icon:"❖", tags:["总览","导航","关于"],
+        desc:"这本书的数字典藏总入口，以及如何使用这座图书馆。" }
+    ]},
+    { name:"原文典藏", items:[
+      { id:"reader", title:"原文典藏", file:"苇舟江湖梦_原文阅读.html", icon:"📜", tags:["全文","原文","阅读"],
+        desc:"233,494 字 · 60 章完整原文，支持关键字高亮与原文定位跳转。" }
+    ]},
+    { name:"人物", items:[
+      { id:"network", title:"人物关系网络", file:"03_人物社会/苇舟江湖梦_人物关系网络.html", icon:"🕸", tags:["共现","PageRank","社区"],
+        desc:"101 节点 / 1318 边，权力群与主线群的社区划分。" },
+      { id:"traits", title:"角色性格量化", file:"03_人物社会/苇舟江湖梦_角色性格量化.html", icon:"🎭", tags:["性格档案","六轴","证据"],
+        desc:"六轴受控词表（性情/品性/心气/情义/智愚/胆气）自动抽取 49 角色性格档案，附原文证据片段。" },
+      { id:"catch", title:"口头禅与标志语量化", file:"03_人物社会/苇舟江湖梦_口头禅量化.html", icon:"💬", tags:["口头禅","标志语","n-gram"],
+        desc:"对话归属 + 复现识别：抽取各角色标志语与特征 n-gram（如陈奉天「本王」、尚樱「一百两」、夏叶「任哥」）。" }
+    ]},
+    { name:"地理", items:[
+      { id:"geo-rel", title:"地理位置关系图", file:"04_空间地理/苇舟江湖梦_地理位置关系图.html", icon:"🗺", tags:["纯文本派生","最小二乘","SVG"],
+        desc:"仅依正文方位词、里程与地形，以加权最小二乘求解相对坐标。" },
+      { id:"spatial", title:"空间地点分析报告", file:"04_空间地理/苇舟江湖梦_空间地点分析报告.html", icon:"⛰", tags:["距离矩阵","战术地理","地形"],
+        desc:"相对坐标系、距离矩阵与战争阶段战术地理研判。" },
+      { id:"geodesc", title:"地理描述量化", file:"04_空间地理/苇舟江湖梦_地理描述量化.html", icon:"🧭", tags:["地形归类","地理要素","描述抽样"],
+        desc:"对 54 个地点归类地形类型、聚合 17 项地理要素、抽样描述句；叙事相对坐标地图可按地形着色并跳原文。" }
+    ]},
+    { name:"官制", items:[
+      { id:"guanzhi", title:"官制考究", file:"05_制度家族/苇舟江湖梦_官制考究.html", icon:"🏛", tags:["职官","朝代判定","架空"],
+        desc:"以两汉郡县—将相制为体，兼采唐以来科举与县制的架空仿古官制。" }
+    ]},
+    { name:"量化研究", items:[
+      { id:"organize", title:"报告归纳整理（盘点方案）", file:"苇舟江湖梦_报告归纳整理.html", icon:"🗂", tags:["治理","重复识别","入口收敛"],
+        desc:"25 份报告 × 3 入口 × 6 重复组的只读盘点与安全等级动作清单。" },
+      { id:"report", title:"全文本量化分析报告", file:"苇舟江湖梦_分析报告.html", icon:"📊", tags:["综合","七幕","感情线"],
+        desc:"人物识别、时间轴、空间谱系、七幕故事线与感情线的综合量化。" },
+      { id:"emotion", title:"情感时序曲线", file:"02_叙事情感/苇舟江湖梦_情感时序.html", icon:"🌊", tags:["情感极性","战斗强度","相关"],
+        desc:"60 章逐章情感极性，与战斗强度显著负相关（r≈−0.475）。" },
+      { id:"lexical", title:"词汇与用词漂移", file:"01_文本语言/苇舟江湖梦_词汇计量.html", icon:"🔤", tags:["词频","TTR","语义迁移"],
+        desc:"全本词频 Top50、分章 TTR≈0.687，呈现市井→庙堂的用语漂移。" },
+      { id:"stylometry", title:"文体指纹与节奏", file:"01_文本语言/苇舟江湖梦_风格计量.html", icon:"✒", tags:["句长","对话占比","节奏"],
+        desc:"平均句长、标点密度与对话占比；决战章对话骤降，全本对话占比≈35.6%。" },
+      { id:"structure", title:"章节结构量化", file:"02_叙事情感/苇舟江湖梦_章节结构量化.html", icon:"🧱", tags:["叙事标注","结构"],
+        desc:"七幕结构与叙事单元的深度量化标注。" },
+      { id:"tagdash", title:"章节标签看板", file:"02_叙事情感/苇舟江湖梦_章节标签量化看板.html", icon:"🏷", tags:["受控词表","热度","情节"],
+        desc:"60 章标签聚合、时间层色带与战斗强度走势看板。" },
+      { id:"rhythm", title:"时间节奏量化", file:"02_叙事情感/苇舟江湖梦_时间节奏量化.html", icon:"⏳", tags:["时间层","节奏"],
+        desc:"章内时间流速与叙事节奏的量化分布。" },
+      { id:"derived", title:"派生维度量化", file:"02_叙事情感/苇舟江湖梦_派生维度量化.html", icon:"🧮", tags:["出场-提及","人物-地点","热力图"],
+        desc:"49 角色出场 vs 提及背离，识别「在场却不在场」的幕后人物；逐章人物-地点共现热力图。" },
+      { id:"inference", title:"叙事假设统计检验", file:"03_人物社会/苇舟江湖梦_统计推断.html", icon:"🔬", tags:["非参检验","假设","校正"],
+        desc:"5 项叙事假设的非参检验，含 Bonferroni 多重校正提示。" },
+      { id:"jiandu", title:"川阴王建都推演", file:"05_制度家族/川阴王建都推演.html", icon:"🏯", tags:["模拟推理","建都","地缘"],
+        desc:"战后建都格局推演：京城·卫京·川阴·海郡的四角支撑。" },
+      { id:"combat", title:"精彩对打动作量化", file:"03_人物社会/苇舟江湖梦_对打动作量化.html", icon:"⚔", tags:["对打动作","招式序列","兵器"],
+        desc:"六类动作词表（兵器/身法/内力/招式/防守/伤效）抽取战斗章动作分布与招式组合序列，含兵器功法。" }
+    ]},
+    { name:"检索", items:[
+      { id:"kwindex", title:"关键词索引", file:"苇舟江湖梦_关键词索引.html", icon:"🔎", tags:["索引","跳转","对照"],
+        desc:"关键字 → 原文定位与高亮，便于快速对照查阅。" }
+    ]},
+    { name:"研究", items:[
+      { id:"huangjia", title:"黄氏家族概况", file:"05_制度家族/黄家概况.html", icon:"♟", tags:["家族","势力","黄亚钊"],
+        desc:"黄氏家族谱系：家主 / 成员 / 势力地缘 / 恩怨脉络 / 命运走向。" }
+    ]},
+    { name:"可视化", items:[
+      { id:"narrative", title:"可视化叙事系统（四维流程图）", file:"02_叙事情感/苇舟江湖梦_可视化叙事系统.html", icon:"✦", tags:["四维","Nexus","立体交叉"],
+        desc:"剧情/情感/空间/时间 四维状态转移流程图 + 9 章 Nexus 立体交叉引用。" },
+      { id:"narrativeExt", title:"扩展叙事可视化", file:"02_叙事情感/苇舟江湖梦_扩展叙事可视化.html", icon:"✦", tags:["因果链","节奏谱","雷达","热力图"],
+        desc:"因果事件链 / 叙事节奏谱 / 角色六维雷达 / 角色登场矩阵热力图。" },
+      { id:"narrativeDeep", title:"深度叙事可视化", file:"02_叙事情感/苇舟江湖梦_深度叙事可视化.html", icon:"✦", tags:["伏笔","时空动画","文风","知识图谱"],
+        desc:"伏笔—回收网络 / 时空动画地图 / 文风漂移流图 / 知识图谱+MOC。" }
+    ]},
+    { name:"设计", items:[
+      { id:"components", title:"液态玻璃组件典", file:"苇舟江湖梦_组件库.html", icon:"🎛", tags:["设计系统","组件"],
+        desc:"本馆统一视觉语言的设计规范与可复用组件库。" },
+      { id:"aesthetics", title:"美学图谱", file:"美学图谱.html", icon:"🎨", tags:["美学","视觉","配色"],
+        desc:"全局视觉与美学图谱总览，呈现本馆统一的液态玻璃设计语言与配色体系。" }
+    ]},
+    { name:"数据归档", items:[
+      { id:"archive", title:"数据归档总览（索引数据库）", file:"数据归档/苇舟江湖梦_数据归档总览.html", icon:"🗄", tags:["归档","SQLite","全量索引"],
+        desc:"统一归档全部信息：资产清单、60 章标签、106 人物、32 地点。配套 SQLite 数据库可 SQL 查询。" }
+    ]}
+  ];
+
+  var MAP = {};
+  GROUPS.forEach(function(g){
+    g.items.forEach(function(it){ it.group = g.name; MAP[it.id] = it; });
+  });
+
+  /* ---------- 渲染目录 ---------- */
+  var indicator = document.createElement('div');
+  indicator.className = 'cat-indicator';
+  GROUPS.forEach(function(g){
+    var grp = document.createElement('div');
+    grp.className = 'cat-group';
+    var head = document.createElement('div');
+    head.className = 'cat-group__head';
+    head.innerHTML = '<span>'+g.name+'</span><span class="cnt">'+g.items.length+'</span>';
+    var list = document.createElement('div');
+    list.className = 'cat-group__list';
+    g._el = grp; g._items = [];
+    g.items.forEach(function(it){
+      var b = document.createElement('button');
+      b.className = 'nav-item';
+      b.dataset.id = it.id;
+      b.innerHTML = '<span class="nav-item__icon">'+it.icon+'</span><span class="nav-item__text">'+it.title+'</span>';
+      b.addEventListener('click', function(){ open(it.id); });
+      list.appendChild(b);
+      it._el = b; g._items.push(it);
+    });
+    grp.appendChild(head);
+    grp.appendChild(list);
+    catalog.appendChild(grp);
+  });
+  catalog.appendChild(indicator);
+  document.getElementById('libCount').textContent = GROUPS.reduce(function(a,g){return a+g.items.length;},0) + ' 间';
+
+  /* ---------- 指标滑块定位 ---------- */
+  function moveIndicator(){
+    var active = catalog.querySelector('.nav-item.is-active');
+    if(!active){ indicator.style.opacity = 0; return; }
+    indicator.style.opacity = 1;
+    var top = active.getBoundingClientRect().top - catalog.getBoundingClientRect().top + catalog.scrollTop;
+    indicator.style.transform = 'translateY(' + top + 'px)';
+    indicator.style.height = active.offsetHeight + 'px';
+  }
+
+  /* ---------- 概览渲染 ---------- */
+  function renderOverview(){
+    overview.innerHTML =
+    '<div class="ov-wrap">' +
+      '<div class="ov-hero hero ov-anim" style="animation-delay:.02s">' +
+        '<h1 class="hero__title">《苇舟江湖梦》</h1>' +
+        '<p class="hero__sub">一座为这部长篇单独修建的数字图书馆。原文、人物、地理与二十余份量化考据，同处一个屋檐之下。</p>' +
+        '<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">' +
+          '<button class="btn btn--primary" data-open="reader">开始阅览原文 →</button>' +
+          '<button class="btn btn--glass" data-open="network">查看人物关系</button>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="ov-lead ov-anim" style="animation-delay:.08s">' +
+        '<p>这里收着两样东西：一边是 23 万余字的原文，一边是把这 23 万字拆开、称重、比对之后得到的二十余份报告。我们没打算把它做成一本严谨的论文集——更像是在书旁另起了一间屋子，把人物关系、地理坐标、用词习惯、情感起伏这些平时散落在字里行间的东西，都挂到墙上，方便你随时走过去看一眼。</p>' +
+        '<p>左侧是按门类排好的目录：原文、人物、地理、官制、量化研究……点开任意一间「阅览室」，里面的图表和原文都还是它们本来的样子，只是现在它们共享同一套液态玻璃的外壳，翻起来更顺手一些。</p>' +
+      '</div>' +
+
+      '<div class="ov-section ov-anim" style="animation-delay:.14s">' +
+        '<h2 class="ov-section__h">典藏一览</h2>' +
+        '<div class="ov-grid ov-stats">' +
+          stat('233,494','总字数') + stat('60','章节') + stat('106','登场人物') +
+          stat('32','地理坐标') + stat('28','馆藏阅览室') + stat('70+','交互图表') +
+        '</div>' +
+      '</div>' +
+
+      '<div class="ov-section ov-anim" style="animation-delay:.2s">' +
+        '<h2 class="ov-section__h">馆藏分布</h2>' +
+          '<div class="ov-dist">' +
+            '<svg id="donut" viewBox="0 0 180 180" width="180" height="180" aria-label="馆藏分布环形图"></svg>' +
+            '<div class="donut-legend" id="donutLegend"></div>' +
+          '</div>' +
+          '<p class="ov-hint">点击扇区或图例，直接进入对应门类的阅览室。</p>' +
+        '</div>' +
+
+      '<div class="ov-section ov-anim" style="animation-delay:.26s">' +
+        '<h2 class="ov-section__h">精选阅览室</h2>' +
+        '<div class="ov-feat" id="ovFeat"></div>' +
+      '</div>' +
+
+      '<div class="ov-section ov-anim" style="animation-delay:.32s">' +
+        '<h2 class="ov-section__h">如何使用这座图书馆</h2>' +
+        '<div class="ov-steps">' +
+          step('1','挑一间阅览室','从左侧目录按门类（原文 / 人物 / 地理 / 官制 / 量化研究）挑选，点击即可在右侧展开。') +
+          step('2','用搜索定位','顶部搜索框可按报告名、标签或简介快速筛选目录，找不到时会有提示。') +
+          step('3','换肤与同步','右上角切换深色模式与主题色，所有阅览室会同步跟随，无需逐个设置。') +
+        '</div>' +
+      '</div>' +
+    '</div>';
+    // 精选卡片
+    var feat = overview.querySelector('#ovFeat');
+    ['report','network','spatial','emotion','lexical'].forEach(function(id){
+      var it = MAP[id];
+      var c = document.createElement('div');
+      c.className = 'ov-card';
+      c.setAttribute('data-open', id);
+      c.innerHTML =
+        '<div class="ov-card__top"><span class="ov-card__icon">'+it.icon+'</span><span class="ov-card__title">'+it.title+'</span></div>' +
+        '<div class="ov-card__desc">'+it.desc+'</div>' +
+        '<div class="ov-card__tags">'+ it.tags.map(function(t){return '<span class="chip chip--primary">'+t+'</span>';}).join('') +'</div>' +
+        '<div class="ov-card__go">进入阅览室 →</div>';
+      feat.appendChild(c);
+    });
+    buildDonut();
+  }
+  function stat(v,l){ return '<div class="statcard"><div class="statcard__value">'+v+'</div><div class="statcard__label">'+l+'</div></div>'; }
+  function step(n,t,b){ return '<div class="ov-step"><div class="ov-step__n">'+n+'</div><div class="ov-step__t">'+t+'</div><div class="ov-step__b">'+b+'</div></div>'; }
+
+  function buildDonut(){
+    var seg = [
+      {l:'量化研究',v:12,c:'#0a84ff'},{l:'地理',v:3,c:'#ff9f0a'},
+      {l:'人物',v:3,c:'#30d158'},{l:'可视化',v:3,c:'#bf5af2'},
+      {l:'设计',v:2,c:'#5e5ce6'},{l:'原文典藏',v:1,c:'#64d2ff'},
+      {l:'官制',v:1,c:'#ffd60a'},{l:'检索',v:1,c:'#ff453a'},
+      {l:'研究',v:1,c:'#ff9f0a'},{l:'数据归档',v:1,c:'#8e8e93'}
+    ];
+    var total = seg.reduce(function(a,b){return a+b.v;},0);
+    var r = 70, C = 2*Math.PI*r, off = 0;
+    var NS = 'http://www.w3.org/2000/svg';
+    var svg = overview.querySelector('#donut');
+    seg.forEach(function(s){
+      var f = s.v/total;
+      var cir = document.createElementNS(NS,'circle');
+      cir.setAttribute('cx',90); cir.setAttribute('cy',90); cir.setAttribute('r',r);
+      cir.setAttribute('fill','none'); cir.setAttribute('stroke',s.c);
+      cir.setAttribute('stroke-width',22);
+      cir.setAttribute('stroke-dasharray',(f*C)+' '+(C-f*C));
+      cir.setAttribute('stroke-dashoffset',(-off*C));
+      cir.setAttribute('transform','rotate(-90 90 90)');
+      cir.style.transition = 'stroke-width .2s var(--ease)';
+      var t = document.createElementNS(NS,'title'); t.textContent = s.l+' · '+s.v+' 间'; cir.appendChild(t);
+      cir.addEventListener('mouseenter',function(){cir.setAttribute('stroke-width',27);});
+      cir.addEventListener('mouseleave',function(){cir.setAttribute('stroke-width',22);});
+      cir.style.cursor = 'pointer';
+      cir.addEventListener('click', function(){
+        var g = GROUPS.filter(function(x){ return x.name === s.l; })[0];
+        if(g && g.items.length){ open(g.items[0].id); }
+      });
+      svg.appendChild(cir);
+      off += f;
+    });
+    var ct = document.createElementNS(NS,'text');
+    ct.setAttribute('x',90); ct.setAttribute('y',86); ct.setAttribute('text-anchor','middle');
+    ct.setAttribute('class','donut-num'); ct.textContent = total; svg.appendChild(ct);
+    var cl = document.createElementNS(NS,'text');
+    cl.setAttribute('x',90); cl.setAttribute('y',104); cl.setAttribute('text-anchor','middle');
+    cl.setAttribute('class','donut-lbl'); cl.textContent = '间阅览室'; svg.appendChild(cl);
+    var leg = overview.querySelector('#donutLegend');
+    seg.forEach(function(s){
+      var row = document.createElement('div'); row.className = 'donut-leg';
+      row.innerHTML = '<span class="donut-leg__dot" style="background:'+s.c+'"></span>'+
+                      '<span class="donut-leg__l">'+s.l+'</span><span class="donut-leg__v">'+s.v+'</span>';
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', function(){
+        var g = GROUPS.filter(function(x){ return x.name === s.l; })[0];
+        if(g && g.items.length){ open(g.items[0].id); }
+      });
+      leg.appendChild(row);
+    });
+  }
+
+  function replayOverview(){
+    overview.classList.remove('is-shown');
+    void overview.offsetWidth;
+    overview.classList.add('is-shown');
+  }
+
+  /* ---------- 打开一间阅览室 ---------- */
+  var activeId = null;
+  var currentView = 'overview';
+  var viewSeq = 0;
+
+  /* 高亮侧栏并滚动到激活项，使指示点与点击来源点对点对齐 */
+  function setActiveNav(id){
+    Array.prototype.forEach.call(catalog.querySelectorAll('.nav-item'), function(n){
+      n.classList.toggle('is-active', n.dataset.id === id);
+    });
+    moveIndicator();
+    var active = catalog.querySelector('.nav-item.is-active');
+    if(active){
+      var cr = catalog.getBoundingClientRect();
+      var ar = active.getBoundingClientRect();
+      if(ar.top < cr.top + 6 || ar.bottom > cr.bottom - 6){
+        active.scrollIntoView({ behavior:'smooth', block:'nearest' });
+      }
+    }
+  }
+  function setCrumb(it){
+    crumb.innerHTML = '<span>馆藏</span><span class="sep">/</span><span>'+it.group+
+                      '</span><span class="sep">/</span><span class="current">'+it.title+'</span>';
+  }
+  function open(id){
+    var it = MAP[id];
+    if(!it) return;
+    activeId = id;
+    setActiveNav(id);
+    setCrumb(it);
+    if(it.kind === 'overview'){ showOverview(); }
+    else { showRoom(it); }
+    lib.classList.remove('is-drawer-open');
+  }
+  /* 概览 / 阅览室 交叉淡入淡出（viewSeq 防止快速来回切换时的陈旧定时器误伤） */
+  function showOverview(){
+    var seq = ++viewSeq;
+    overview.hidden = false;
+    overview.classList.remove('view-hidden');
+    if(currentView === 'room'){
+      room.classList.add('view-hidden');
+      setTimeout(function(){ if(viewSeq === seq){ room.style.display = 'none'; } }, 360);
+    }
+    loading.style.display = 'none';
+    replayOverview();
+    currentView = 'overview';
+  }
+  function showRoom(it){
+    var seq = ++viewSeq;
+    var url = encodeURI(it.file) + '?embed=1';
+    overview.classList.add('view-hidden');
+    if(currentView === 'overview'){
+      setTimeout(function(){ if(viewSeq === seq){ overview.hidden = true; } }, 360);
+    }
+    room.style.display = '';
+    room.classList.remove('view-hidden');
+    if(room.getAttribute('data-src') !== url){
+      loading.style.display = 'flex';
+      room.classList.remove('room--enter');
+      room.src = url;
+      room.setAttribute('data-src', url);
+    } else {
+      loading.style.display = 'none';
+      replayRoom();
+    }
+    currentView = 'room';
+  }
+  function replayRoom(){
+    room.classList.remove('room--enter');
+    void room.offsetWidth;
+    room.classList.add('room--enter');
+  }
+  room.addEventListener('load', function(){
+    if(room.style.display !== 'none') loading.style.display = 'none';
+    replayRoom();
+    postTheme(); postAccent();
+  });
+
+  /* ---------- 主题 / 主题色 同步到 iframe ---------- */
+  function postTheme(){
+    try{ if(room.contentWindow) room.contentWindow.postMessage({wzTheme: dark?'dark':'light'},'*'); }catch(e){}
+  }
+  function postAccent(){
+    try{ if(room.contentWindow) room.contentWindow.postMessage({wzAccent: curAccent},'*'); }catch(e){}
+  }
+
+  /* ---------- 深色模式 ---------- */
+  var dark = false;
+  function applyDark(d, silent){
+    dark = d;
+    document.body.classList.toggle('dark', d);
+    darkBtn.textContent = d ? '☀' : '🌙';
+    darkBtn.setAttribute('aria-label', d ? '切换为浅色' : '切换为深色');
+    try{ localStorage.setItem('wzjm_lib_dark', d?'1':'0'); }catch(e){}
+    if(!silent) postTheme();
+  }
+  (function(){
+    var s = null; try{ s = localStorage.getItem('wzjm_lib_dark'); }catch(e){}
+    var p = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+    applyDark(s ? s==='1' : !!p, true);
+  })();
+  darkBtn.addEventListener('click', function(){ applyDark(!dark); });
+
+  /* ---------- 主题色（分段控件）---------- */
+  var curAccent = '#0a84ff';
+  var AC = ['#0a84ff','#5e5ce6','#30d158','#ff9f0a','#ff453a'];
+  (function(){
+    var s = null; try{ s = localStorage.getItem('wzjm_lib_accent'); }catch(e){}
+    if(s && AC.indexOf(s) >= 0) curAccent = s;
+    if(window.Glass) Glass.setAccent(curAccent);
+    Array.prototype.forEach.call(document.querySelectorAll('#accentSeg .segmented__item'), function(it){
+      it.classList.toggle('is-active', it.dataset.value === curAccent);
+    });
+  })();
+  document.getElementById('accentSeg').addEventListener('segmented:change', function(e){
+    curAccent = e.detail.value;
+    if(window.Glass) Glass.setAccent(curAccent);
+    try{ localStorage.setItem('wzjm_lib_accent', curAccent); }catch(err){}
+    postAccent();
+  });
+
+  /* ---------- 搜索筛选 ---------- */
+  search.addEventListener('input', function(){
+    var q = this.value.trim().toLowerCase();
+    var anyVisible = false;
+    GROUPS.forEach(function(g){
+      var vis = 0;
+      g._items.forEach(function(it){
+        var hit = !q || (it.title+it.tags.join(' ')+it.desc+it.group).toLowerCase().indexOf(q) >= 0;
+        it._el.classList.toggle('is-hidden', !hit);
+        if(hit) vis++;
+      });
+      g._el.classList.toggle('is-hidden', vis === 0);
+      if(vis > 0) anyVisible = true;
+    });
+    noMatch.classList.toggle('is-shown', !anyVisible);
+    if(activeId) moveIndicator();
+  });
+
+  /* ---------- 移动端抽屉 ---------- */
+  document.getElementById('menuBtn').addEventListener('click', function(){ lib.classList.toggle('is-drawer-open'); });
+  document.getElementById('scrim').addEventListener('click', function(){ lib.classList.remove('is-drawer-open'); });
+
+  /* ---------- 概览内「进入」按钮委托 ---------- */
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('[data-open]');
+    if(b){ open(b.getAttribute('data-open')); }
+  });
+
+  /* ---------- 初始化 ---------- */
+  window.addEventListener('resize', moveIndicator);
+  renderOverview();
+  open('overview');
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  var KEY='wzjm_dark';
+  function apply(d){ document.body.classList.toggle('dark', d); }
+  var SUN='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON='<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function sync(){
+    var b=document.querySelector('.dm-toggle');
+    if(b){ var d=document.body.classList.contains('dark'); b.innerHTML = d ? SUN+'<span>浅色</span>' : MOON+'<span>深色</span>'; }
+  }
+  function buildBtn(){
+    var s=document.createElement('style');
+    s.textContent='.dm-cluster{position:fixed;top:16px;right:16px;z-index:9999;display:flex;gap:8px}'
+    +'.dm-toggle,.dm-back{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;'
+    +"font-family:'HarmonyOS Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;font-weight:500;"
+    +'border:1px solid var(--line,var(--rc-line,#dfe3e8));background:var(--surface,var(--rc-surface,#fff));'
+    +'color:var(--primary,var(--rc-primary,#0A59F7));box-shadow:0 4px 14px rgba(24,36,49,.14);'
+    +'transition:transform .2s cubic-bezier(.25,0,.3,1),background-color .3s,color .3s,border-color .3s}'
+    +'.dm-toggle:hover,.dm-back:hover{transform:translateY(-2px)}'
+    +'.dm-back{text-decoration:none}';
+    document.head.appendChild(s);
+    var c=document.createElement('div');c.className='dm-cluster';
+    var backHref='';
+    if(backHref){
+      var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+      a.setAttribute('aria-label','返回报告中心');a.textContent='报告中心';
+      c.appendChild(a);
+    }
+    var b=document.createElement('button');b.className='dm-toggle';
+    b.setAttribute('aria-label','切换深色模式');
+    b.addEventListener('click', function(){
+      var d=!document.body.classList.contains('dark');
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(e){}
+      sync(); broadcast(d);
+    });
+    c.appendChild(b);
+    document.body.appendChild(c);
+  }
+  function broadcast(d){
+    try{
+      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：图表主题热更新 */
+      if(window.parent!==window){ window.parent.postMessage({wzTheme:d?'dark':'light'},'*'); }
+      else{ var fs=document.querySelectorAll('iframe'); for(var i=0;i<fs.length;i++){ try{ fs[i].contentWindow.postMessage({wzTheme:d?'dark':'light'},'*'); }catch(e){} } }
+    }catch(e){}
+  }
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(saved ? saved==='1' : !!prefers);
+  buildBtn();
+  sync();
+  setTimeout(function(){ broadcast(document.body.classList.contains('dark')); },0);
+  window.addEventListener('message', function(e){
+    if(e.data && e.data.wzTheme){
+      var d = e.data.wzTheme==='dark';
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(err){}
+      sync();
+    }
+  });
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-wzjm-backonly>
+(function(){
+  var backHref='index.html';
+  if(!backHref) return;
+  function build(){
+    if(document.querySelector('.dm-back')) return;
+    var s=document.createElement('style');
+    s.textContent='.dm-back{position:fixed;top:16px;right:16px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(127,127,127,.35);background:rgba(127,127,127,.12);color:inherit;box-shadow:0 4px 14px rgba(0,0,0,.15);transition:transform .2s ease}.dm-back:hover{transform:translateY(-2px)}';
+    document.head.appendChild(s);
+    var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+    a.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg><span>分析中心</span>';
+    document.body.appendChild(a);
+  }
+  if(document.body){build();}else{document.addEventListener('DOMContentLoaded',build);}
+})();
+</script>
+
+</body>
+</html>

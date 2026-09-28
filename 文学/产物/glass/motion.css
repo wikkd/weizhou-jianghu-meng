@@ -1,0 +1,55 @@
+/* =====================================================================
+ *  Glass · Motion（动效：keyframes / 过渡 / 降级）
+ * ===================================================================== */
+
+/* —— 入场 / 悬浮 / 反馈 关键帧 —— */
+@keyframes glass-fade-up{
+  from{opacity:0;transform:translateY(14px) scale(.985);}
+  to{opacity:1;transform:none;}
+}
+@keyframes glass-pop{
+  0%{opacity:0;transform:scale(.96);}
+  60%{opacity:1;transform:scale(1.02);}
+  100%{transform:scale(1);}
+}
+@keyframes glass-fade{
+  from{opacity:0;} to{opacity:1;}
+}
+@keyframes glass-shimmer{
+  0%{background-position:-200% 0;}
+  100%{background-position:200% 0;}
+}
+@keyframes glass-spin{
+  to{transform:rotate(360deg);}
+}
+@keyframes glass-pulse{
+  0%,100%{opacity:1;}
+  50%{opacity:.45;}
+}
+@keyframes glass-ripple{
+  to{transform:scale(2.4);opacity:0;}
+}
+
+/* —— 可复用动效工具类 —— */
+.anim-fade-up{animation:glass-fade-up var(--dur-slow) var(--ease-out) both;}
+.anim-pop{animation:glass-pop var(--dur) var(--ease-out) both;}
+.anim-fade{animation:glass-fade var(--dur) var(--ease) both;}
+.anim-delay-1{animation-delay:.06s}.anim-delay-2{animation-delay:.12s}
+.anim-delay-3{animation-delay:.18s}.anim-delay-4{animation-delay:.24s}
+
+/* 悬浮抬升（玻璃卡片通用反馈） */
+.lift{transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);}
+.lift:hover{transform:translateY(-3px);box-shadow:var(--glass-shadow);}
+
+/* 按压回弹 */
+.press{transition:transform var(--dur-fast) var(--ease);}
+.press:active{transform:scale(.97);}
+
+/* —— 尊重"减少动态效果"偏好 —— */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{
+    animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important;
+  }
+}

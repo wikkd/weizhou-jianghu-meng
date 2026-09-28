@@ -1,0 +1,55 @@
+/* =====================================================================
+ *  Glass · Overlay（浮层：模态框 / 抽屉 / 气泡 / 手风琴）
+ * ===================================================================== */
+
+/* —— 模态框 —— */
+.modal{position:fixed;inset:0;z-index:var(--z-modal);display:none;}
+.modal.is-open{display:block;}
+.modal__backdrop{position:absolute;inset:0;background:rgba(10,15,25,.5);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);animation:glass-fade var(--dur) var(--ease) both;}
+.modal__panel{position:relative;max-width:520px;margin:8vh auto 0;overflow:hidden;border-radius:var(--radius-lg);
+  background:var(--glass-bg-strong);border:1px solid var(--glass-border);
+  box-shadow:var(--glass-highlight),0 30px 80px -20px rgba(0,0,0,.55);
+  -webkit-backdrop-filter:blur(28px) saturate(var(--glass-saturate));backdrop-filter:blur(28px) saturate(var(--glass-saturate));
+  animation:glass-pop var(--dur) var(--ease-out) both;}
+.modal__panel::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:var(--glass-sheen);opacity:.4;}
+.modal__head{position:relative;display:flex;align-items:center;justify-content:space-between;
+  padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--line);}
+.modal__title{font-size:var(--fs-lg);font-weight:700;margin:0;}
+.modal__body{position:relative;padding:var(--space-5);max-height:60vh;overflow:auto;}
+.modal__foot{position:relative;display:flex;justify-content:flex-end;gap:var(--space-2);
+  padding:var(--space-3) var(--space-5);border-top:1px solid var(--line);}
+.modal__close{width:32px;height:32px;border:0;background:none;border-radius:50%;cursor:pointer;
+  color:var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:background var(--dur-fast),color var(--dur-fast);}
+.modal__close:hover{background:var(--glass-bg-soft);color:var(--ink);}
+
+/* —— 抽屉 —— */
+.drawer{position:fixed;top:0;bottom:0;left:0;width:340px;max-width:86vw;z-index:var(--z-modal);
+  display:flex;flex-direction:column;background:var(--glass-bg-strong);border-right:1px solid var(--glass-border);
+  box-shadow:var(--glass-shadow);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);
+  transform:translateX(-100%);transition:transform var(--dur) var(--ease);}
+.drawer.is-open{transform:none;}
+.drawer--right{right:0;left:auto;border-right:0;border-left:1px solid var(--glass-border);transform:translateX(100%);}
+.drawer__head{display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);border-bottom:1px solid var(--line);}
+.drawer__title{font-weight:700;margin:0;}
+.drawer__body{flex:1 1 auto;overflow:auto;padding:var(--space-4);}
+.drawer__backdrop{position:fixed;inset:0;z-index:calc(var(--z-modal) - 1);background:rgba(10,15,25,.45);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
+
+/* —— 气泡卡 —— */
+.popover{position:absolute;z-index:var(--z-overlay);min-width:180px;padding:var(--space-3);border-radius:var(--radius);
+  background:var(--glass-bg-strong);border:1px solid var(--glass-border);box-shadow:var(--glass-highlight),var(--glass-shadow);
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);animation:glass-pop var(--dur-fast) var(--ease-out) both;}
+
+/* —— 手风琴 —— */
+.accordion{border-radius:var(--radius);overflow:hidden;background:var(--glass-bg);border:1px solid var(--glass-border);
+  box-shadow:var(--glass-highlight);}
+.accordion__item + .accordion__item{border-top:1px solid var(--line);}
+.accordion__head{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);width:100%;
+  padding:var(--space-4) var(--space-5);border:0;background:none;cursor:pointer;font-family:var(--sans);
+  font-size:var(--fs-base);font-weight:600;color:var(--ink);text-align:left;}
+.accordion__chevron{flex:0 0 auto;transition:transform var(--dur) var(--ease);color:var(--muted);}
+.accordion__item.is-open .accordion__chevron{transform:rotate(180deg);color:var(--primary);}
+.accordion__body{max-height:0;overflow:hidden;transition:max-height var(--dur-slow) var(--ease);}
+.accordion__body-inner{padding:0 var(--space-5) var(--space-4);color:var(--muted);font-size:var(--fs-sm);line-height:1.7;}

@@ -1,0 +1,98 @@
+/* =====================================================================
+ *  Glass · Surface（玻璃表面材质：所有组件共用的液态玻璃基底）
+ *  .glass 提供 blur + 半透明 + 顶部高光 + 边缘折射 + 柔光投影
+ * ===================================================================== */
+
+.glass{
+  position:relative;
+  background:var(--glass-bg);
+  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  box-shadow:var(--glass-highlight), var(--glass-shadow);
+  color:var(--ink);
+}
+/* 顶部斜向高光（折射观感），不挡内容 */
+.glass::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:var(--glass-sheen);opacity:.5;
+}
+
+/* —— 变体 —— */
+.glass--strong{background:var(--glass-bg-strong);}
+.glass--soft{background:var(--glass-bg-soft);box-shadow:var(--glass-highlight);}
+.glass--flat{box-shadow:var(--glass-highlight);}       /* 仅边缘高光，无投影 */
+.glass--round{border-radius:var(--radius-lg);}
+.glass--pill{border-radius:var(--radius-pill);}
+.glass--primary{background:rgba(10,132,255,.16);border-color:rgba(10,132,255,.34);}
+.glass--accent{background:rgba(255,69,58,.15);border-color:rgba(255,69,58,.32);}
+.glass--success{background:rgba(48,209,88,.15);border-color:rgba(48,209,88,.32);}
+.glass--gold{background:rgba(255,214,10,.16);border-color:rgba(255,214,10,.34);}
+
+/* —— 通用卡片（典型容器）—— */
+.glass-card{
+  position:relative;
+  background:var(--glass-bg);
+  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  box-shadow:var(--glass-highlight), var(--glass-shadow);
+  color:var(--ink);
+  padding:var(--space-5);
+  transition:transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.glass-card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:var(--glass-sheen);opacity:.5;
+}
+.glass-card:hover{transform:translateY(-3px);box-shadow:var(--glass-highlight), var(--glass-shadow);}
+.glass-card--strong{background:var(--glass-bg-strong);}
+.glass-card--pad-lg{padding:var(--space-6);}
+
+/* —— 面板（结构化：头/体/脚）—— */
+.panel{position:relative;background:var(--glass-bg);
+  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border:1px solid var(--glass-border);border-radius:var(--radius-lg);
+  box-shadow:var(--glass-highlight), var(--glass-shadow);color:var(--ink);overflow:hidden;}
+.panel::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:var(--glass-sheen);opacity:.45;}
+.panel__head{position:relative;display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);
+  padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--line);}
+.panel__title{font-family:var(--sans);font-size:var(--fs-lg);font-weight:700;margin:0;display:flex;align-items:center;gap:var(--space-2);}
+.panel__title::before{content:"";width:5px;height:18px;border-radius:var(--radius-pill);background:var(--band);}
+.panel__body{position:relative;padding:var(--space-5);}
+.panel__foot{position:relative;padding:var(--space-3) var(--space-5);border-top:1px solid var(--line);
+  display:flex;align-items:center;justify-content:flex-end;gap:var(--space-2);}
+
+/* —— 抽屉式工作表 —— */
+.sheet{position:relative;background:var(--glass-bg-strong);
+  -webkit-backdrop-filter:blur(calc(var(--glass-blur) + 6px)) saturate(var(--glass-saturate));
+  backdrop-filter:blur(calc(var(--glass-blur) + 6px)) saturate(var(--glass-saturate));
+  border:1px solid var(--glass-border);border-radius:var(--radius-lg);
+  box-shadow:var(--glass-highlight), var(--glass-shadow);color:var(--ink);padding:var(--space-5);}
+
+/* —— Hero 横幅 —— */
+.hero{position:relative;overflow:hidden;padding:var(--space-10) var(--space-8);
+  background:var(--glass-bg);
+  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border:1px solid var(--glass-border);border-radius:var(--radius-xl);
+  box-shadow:var(--glass-highlight), var(--glass-shadow);color:var(--ink);}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(600px 300px at 85% 10%, rgba(10,132,255,.22), transparent 60%),
+    radial-gradient(500px 300px at 5% 100%, rgba(94,92,230,.2), transparent 60%);}
+.hero>*{position:relative;}
+.hero__title{font-size:var(--fs-4xl);font-weight:800;letter-spacing:-.02em;margin:0 0 var(--space-3);}
+.hero__sub{font-size:var(--fs-lg);color:var(--muted);margin:0;max-width:60ch;}
+
+/* —— 分隔条 —— */
+.divider{display:flex;align-items:center;gap:var(--space-3);color:var(--muted);
+  font-size:var(--fs-sm);margin:var(--space-6) 0;}
+.divider::before,.divider::after{content:"";flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line),transparent);}
+.divider--label{padding:0 var(--space-2);}
+.divider__label{white-space:nowrap;}

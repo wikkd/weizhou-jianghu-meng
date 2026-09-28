@@ -1,0 +1,91 @@
+
+(function(){
+  var DATA = {"generated": "", "source": "char_stats.json + spatial_data.json + full_text.txt", "total_paragraphs": 3538, "count": 71, "keywords": [{"name": "任琅", "type": "人物", "total": 1445, "chapters": 58, "first": {"ch": 0, "para": 7}, "first_label": "序"}, {"name": "尚樱", "type": "人物", "total": 1188, "chapters": 54, "first": {"ch": 0, "para": 7}, "first_label": "序"}, {"name": "夏叶", "type": "人物", "total": 328, "chapters": 22, "first": {"ch": 17, "para": 19}, "first_label": "第十七回"}, {"name": "刘笑岩", "type": "人物", "total": 288, "chapters": 18, "first": {"ch": 25, "para": 22}, "first_label": "第二十五回"}, {"name": "陈奉天", "type": "人物", "total": 275, "chapters": 28, "first": {"ch": 17, "para": 6}, "first_label": "第十七回"}, {"name": "影", "type": "人物", "total": 210, "chapters": 46, "first": {"ch": 1, "para": 11}, "first_label": "第一回"}, {"name": "许达", "type": "人物", "total": 193, "chapters": 17, "first": {"ch": 14, "para": 40}, "first_label": "第十四回"}, {"name": "刑布", "type": "人物", "total": 122, "chapters": 17, "first": {"ch": 8, "para": 7}, "first_label": "第八回"}, {"name": "苏雨", "type": "人物", "total": 114, "chapters": 13, "first": {"ch": 28, "para": 14}, "first_label": "第二十八回"}, {"name": "赵骁", "type": "人物", "total": 113, "chapters": 10, "first": {"ch": 21, "para": 48}, "first_label": "第二十一回"}, {"name": "马远", "type": "人物", "total": 97, "chapters": 11, "first": {"ch": 24, "para": 20}, "first_label": "第二十四回"}, {"name": "王慕", "type": "人物", "total": 96, "chapters": 6, "first": {"ch": 19, "para": 0}, "first_label": "第十九回"}, {"name": "李博", "type": "人物", "total": 93, "chapters": 9, "first": {"ch": 4, "para": 33}, "first_label": "第四回"}, {"name": "张潇璃", "type": "人物", "total": 92, "chapters": 7, "first": {"ch": 41, "para": 27}, "first_label": "第四十一回"}, {"name": "聂林", "type": "人物", "total": 92, "chapters": 8, "first": {"ch": 48, "para": 4}, "first_label": "第四十八回"}, {"name": "苏沐文", "type": "人物", "total": 92, "chapters": 10, "first": {"ch": 32, "para": 9}, "first_label": "第三十二回"}, {"name": "赵翔", "type": "人物", "total": 89, "chapters": 16, "first": {"ch": 22, "para": 35}, "first_label": "第二十二回"}, {"name": "陆仲", "type": "人物", "total": 81, "chapters": 4, "first": {"ch": 50, "para": 22}, "first_label": "第五十回"}, {"name": "尚衫虎", "type": "人物", "total": 75, "chapters": 5, "first": {"ch": 2, "para": 3}, "first_label": "第二回"}, {"name": "虞环", "type": "人物", "total": 69, "chapters": 8, "first": {"ch": 18, "para": 1}, "first_label": "第十八回"}, {"name": "黄亚钊", "type": "人物", "total": 66, "chapters": 6, "first": {"ch": 29, "para": 0}, "first_label": "第二十九回"}, {"name": "程廖", "type": "人物", "total": 65, "chapters": 3, "first": {"ch": 53, "para": 9}, "first_label": "第五十三回"}, {"name": "纪田", "type": "人物", "total": 63, "chapters": 6, "first": {"ch": 44, "para": 47}, "first_label": "第四十四回"}, {"name": "武蒯", "type": "人物", "total": 62, "chapters": 10, "first": {"ch": 36, "para": 59}, "first_label": "第三十六回"}, {"name": "范豪", "type": "人物", "total": 56, "chapters": 5, "first": {"ch": 25, "para": 24}, "first_label": "第二十五回"}, {"name": "叶云", "type": "人物", "total": 53, "chapters": 11, "first": {"ch": 8, "para": 14}, "first_label": "第八回"}, {"name": "秦阳", "type": "人物", "total": 52, "chapters": 4, "first": {"ch": 28, "para": 20}, "first_label": "第二十八回"}, {"name": "夏穗良", "type": "人物", "total": 44, "chapters": 3, "first": {"ch": 26, "para": 3}, "first_label": "第二十六回"}, {"name": "法慧", "type": "人物", "total": 39, "chapters": 7, "first": {"ch": 4, "para": 15}, "first_label": "第四回"}, {"name": "韩德", "type": "人物", "total": 37, "chapters": 4, "first": {"ch": 50, "para": 37}, "first_label": "第五十回"}, {"name": "谢仁玄", "type": "人物", "total": 36, "chapters": 7, "first": {"ch": 26, "para": 4}, "first_label": "第二十六回"}, {"name": "川阴王", "type": "人物", "total": 35, "chapters": 19, "first": {"ch": 17, "para": 26}, "first_label": "第十七回"}, {"name": "安弈霖", "type": "人物", "total": 34, "chapters": 4, "first": {"ch": 44, "para": 41}, "first_label": "第四十四回"}, {"name": "张百慧", "type": "人物", "total": 33, "chapters": 5, "first": {"ch": 20, "para": 66}, "first_label": "第二十回"}, {"name": "王监军", "type": "人物", "total": 31, "chapters": 1, "first": {"ch": 57, "para": 6}, "first_label": "第五十七回"}, {"name": "安明", "type": "人物", "total": 25, "chapters": 6, "first": {"ch": 44, "para": 84}, "first_label": "第四十四回"}, {"name": "刘媛灵", "type": "人物", "total": 24, "chapters": 4, "first": {"ch": 1, "para": 19}, "first_label": "第一回"}, {"name": "张洵", "type": "人物", "total": 20, "chapters": 3, "first": {"ch": 20, "para": 60}, "first_label": "第二十回"}, {"name": "张览", "type": "人物", "total": 19, "chapters": 3, "first": {"ch": 50, "para": 37}, "first_label": "第五十回"}, {"name": "王奔", "type": "人物", "total": 18, "chapters": 2, "first": {"ch": 2, "para": 24}, "first_label": "第二回"}, {"name": "赵思俪", "type": "人物", "total": 18, "chapters": 2, "first": {"ch": 36, "para": 9}, "first_label": "第三十六回"}, {"name": "李叔", "type": "人物", "total": 17, "chapters": 6, "first": {"ch": 7, "para": 22}, "first_label": "第七回"}, {"name": "刑泰", "type": "人物", "total": 17, "chapters": 3, "first": {"ch": 31, "para": 0}, "first_label": "第三十一回"}, {"name": "金雷", "type": "人物", "total": 17, "chapters": 10, "first": {"ch": 10, "para": 14}, "first_label": "第十回"}, {"name": "雷光", "type": "人物", "total": 16, "chapters": 11, "first": {"ch": 6, "para": 9}, "first_label": "第六回"}, {"name": "陈王", "type": "人物", "total": 15, "chapters": 2, "first": {"ch": 56, "para": 4}, "first_label": "第五十六回"}, {"name": "阮盛", "type": "人物", "total": 13, "chapters": 2, "first": {"ch": 17, "para": 13}, "first_label": "第十七回"}, {"name": "楚笙", "type": "人物", "total": 11, "chapters": 1, "first": {"ch": 28, "para": 42}, "first_label": "第二十八回"}, {"name": "刘安", "type": "人物", "total": 9, "chapters": 1, "first": {"ch": 2, "para": 43}, "first_label": "第二回"}, {"name": "京", "type": "地点", "total": 82, "chapters": 30, "first": {"ch": 7, "para": 17}, "first_label": "第七回"}, {"name": "望岳镇", "type": "地点", "total": 41, "chapters": 20, "first": {"ch": 2, "para": 0}, "first_label": "第二回"}, {"name": "楚城", "type": "地点", "total": 30, "chapters": 7, "first": {"ch": 35, "para": 69}, "first_label": "第三十五回"}, {"name": "奉秋", "type": "地点", "total": 21, "chapters": 8, "first": {"ch": 33, "para": 68}, "first_label": "第三十三回"}, {"name": "梨阳", "type": "地点", "total": 18, "chapters": 9, "first": {"ch": 17, "para": 1}, "first_label": "第十七回"}, {"name": "川阴城", "type": "地点", "total": 17, "chapters": 10, "first": {"ch": 18, "para": 0}, "first_label": "第十八回"}, {"name": "石陵", "type": "地点", "total": 15, "chapters": 6, "first": {"ch": 33, "para": 68}, "first_label": "第三十三回"}, {"name": "响城", "type": "地点", "total": 15, "chapters": 2, "first": {"ch": 45, "para": 2}, "first_label": "第四十五回"}, {"name": "卫京郡", "type": "地点", "total": 11, "chapters": 3, "first": {"ch": 38, "para": 24}, "first_label": "第三十八回"}, {"name": "夫文渡口", "type": "地点", "total": 11, "chapters": 6, "first": {"ch": 33, "para": 69}, "first_label": "第三十三回"}, {"name": "川陵", "type": "地点", "total": 10, "chapters": 2, "first": {"ch": 53, "para": 9}, "first_label": "第五十三回"}, {"name": "武都", "type": "地点", "total": 7, "chapters": 3, "first": {"ch": 53, "para": 0}, "first_label": "第五十三回"}, {"name": "苏城", "type": "地点", "total": 6, "chapters": 5, "first": {"ch": 32, "para": 46}, "first_label": "第三十二回"}, {"name": "建武", "type": "地点", "total": 5, "chapters": 1, "first": {"ch": 50, "para": 25}, "first_label": "第五十回"}, {"name": "蒙城", "type": "地点", "total": 4, "chapters": 1, "first": {"ch": 53, "para": 11}, "first_label": "第五十三回"}, {"name": "方上", "type": "地点", "total": 4, "chapters": 2, "first": {"ch": 50, "para": 25}, "first_label": "第五十回"}, {"name": "昌平", "type": "地点", "total": 3, "chapters": 2, "first": {"ch": 53, "para": 0}, "first_label": "第五十三回"}, {"name": "南岭关", "type": "地点", "total": 2, "chapters": 1, "first": {"ch": 56, "para": 44}, "first_label": "第五十六回"}, {"name": "子午郡", "type": "地点", "total": 2, "chapters": 1, "first": {"ch": 53, "para": 4}, "first_label": "第五十三回"}, {"name": "京墨渡口", "type": "地点", "total": 1, "chapters": 1, "first": {"ch": 56, "para": 47}, "first_label": "第五十六回"}, {"name": "角都", "type": "地点", "total": 1, "chapters": 1, "first": {"ch": 52, "para": 38}, "first_label": "第五十二回"}, {"name": "清州", "type": "地点", "total": 1, "chapters": 1, "first": {"ch": 50, "para": 25}, "first_label": "第五十回"}]};
+  var STYLE_ID='wz-kwindex-style';
+  if(!document.getElementById(STYLE_ID)){
+    var css=[
+      '.wz-kwindex{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin:18px 0;box-shadow:var(--shadow-card);}',
+      '.wz-kw-title{margin:0 0 6px;font-size:20px;color:var(--primary-d);letter-spacing:2px;}',
+      '.wz-kw-sub{margin:0 0 16px;font-size:13px;color:var(--muted);line-height:1.6;}',
+      '.wz-kw-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:14px;}',
+      '.wz-kw-search{flex:1 1 200px;min-width:160px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;font-size:14px;}',
+      '.wz-kw-search:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(31,58,95,.12);}',
+      '.wz-kw-tabs{display:flex;gap:8px;}',
+      '.wz-kw-tabs button{padding:7px 14px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:20px;cursor:pointer;font:inherit;font-size:13px;transition:all .2s;}',
+      '.wz-kw-tabs button.active{background:var(--primary);color:#fff;border-color:var(--primary);}',
+      '.wz-kw-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;}',
+      '.wz-kw-item{display:flex;flex-direction:column;gap:4px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);cursor:pointer;transition:transform .15s,border-color .2s,box-shadow .2s;}',
+      '.wz-kw-item:hover{transform:translateY(-2px);border-color:var(--primary);box-shadow:0 6px 16px rgba(31,28,23,.12);}',
+      '.wz-kw-item:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(31,58,95,.15);}',
+      '.wz-kw-name{font-size:16px;font-weight:700;color:var(--primary-d);letter-spacing:1px;}',
+      '.wz-kw-badge{display:inline-block;align-self:flex-start;font-size:11px;padding:2px 9px;border-radius:10px;margin-top:2px;}',
+      '.wz-kw-badge.b-人物{background:rgba(31,58,95,.12);color:var(--primary-d);}',
+      '.wz-kw-badge.b-地点{background:rgba(214,160,60,.20);color:#9a6b12;}',
+      '.wz-kw-meta{font-size:12px;color:var(--muted);margin-top:2px;}',
+      '.wz-kw-none,.wz-kw-empty{padding:18px;text-align:center;color:var(--muted);font-size:14px;grid-column:1/-1;}',
+      '@media(max-width:560px){.wz-kw-list{grid-template-columns:1fr;}}'
+    ].join('\n');
+    var st=document.createElement('style'); st.id=STYLE_ID; st.textContent=css;
+    document.head.appendChild(st);
+  }
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function go(name){
+    var url='苇舟江湖梦_原文阅读.html?kw='+encodeURIComponent(name);
+    window.open(url,'_blank','noopener');
+  }
+  function render(root){
+    if(!root)return;
+    if(!DATA||!DATA.keywords){root.innerHTML='<p class="wz-kw-empty">索引数据未能加载。</p>';return;}
+    var kws=DATA.keywords;
+    var state={q:'',type:'全部'};
+    root.innerHTML=
+      '<div class="wz-kwindex">'+
+        '<div class="wz-kw-head">'+
+          '<h2 class="wz-kw-title">关键词原文索引</h2>'+
+          '<p class="wz-kw-sub">点击关键词，跳转至《原文阅读》页并高亮该词在全书中的全部出现位置（共 '+kws.length+' 个关键词）。</p>'+
+          '<div class="wz-kw-tools">'+
+            '<input class="wz-kw-search" type="search" placeholder="搜索关键词…" aria-label="搜索关键词">'+
+            '<div class="wz-kw-tabs">'+
+              '<button type="button" data-t="全部" class="active">全部</button>'+
+              '<button type="button" data-t="人物">人物</button>'+
+              '<button type="button" data-t="地点">地点</button>'+
+            '</div>'+
+          '</div>'+
+        '</div>'+
+        '<ul class="wz-kw-list" role="listbox" aria-label="关键词列表"></ul>'+
+      '</div>';
+    var ul=root.querySelector('.wz-kw-list');
+    var search=root.querySelector('.wz-kw-search');
+    var tabs=root.querySelectorAll('.wz-kw-tabs button');
+    function paint(){
+      var q=state.q.trim();
+      var list=kws.filter(function(c){
+        if(state.type!=='全部'&&c.type!==state.type)return false;
+        if(q&&c.name.indexOf(q)===-1)return false;
+        return true;
+      });
+      if(!list.length){ul.innerHTML='<li class="wz-kw-none">未找到匹配的关键词。</li>';return;}
+      ul.innerHTML=list.map(function(c){
+        return '<li class="wz-kw-item" role="option" tabindex="0" data-name="'+esc(c.name)+'">'+
+          '<span class="wz-kw-name">'+esc(c.name)+'</span>'+
+          '<span class="wz-kw-badge b-'+esc(c.type)+'">'+esc(c.type)+'</span>'+
+          '<span class="wz-kw-meta">命中 '+c.total+' 处 · 涉及 '+c.chapters+' 回 · 首现 '+esc(c.first_label)+'</span>'+
+        '</li>';
+      }).join('');
+    }
+    ul.addEventListener('click',function(e){
+      var li=e.target.closest('.wz-kw-item'); if(li) go(li.getAttribute('data-name'));
+    });
+    ul.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){var li=e.target.closest('.wz-kw-item'); if(li){e.preventDefault();go(li.getAttribute('data-name'));}}
+    });
+    search.addEventListener('input',function(){state.q=search.value;paint();});
+    tabs.forEach(function(b){b.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); state.type=b.getAttribute('data-t'); paint();
+    });});
+    paint();
+  }
+  function init(){render(document.getElementById('wz-kwindex'));}
+  if(document.readyState!=='loading')init();else document.addEventListener('DOMContentLoaded',init);
+})();

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script id="wzjm-key-migration">try{var n0=localStorage.getItem("wzjm_dark");if(n0===null){var o0=localStorage.getItem("wzjm_dark");if(o0!==null)localStorage.setItem("wzjm_dark",o0);}var n1=localStorage.getItem("wzjm_lib_dark");if(n1===null){var o1=localStorage.getItem("wzjm_lib_dark");if(o1!==null)localStorage.setItem("wzjm_lib_dark",o1);}var n2=localStorage.getItem("wzjm_lib_accent");if(n2===null){var o2=localStorage.getItem("wzjm_lib_accent");if(o2!==null)localStorage.setItem("wzjm_lib_accent",o2);}var n3=localStorage.getItem("wzjm_mm_theme");if(n3===null){var o3=localStorage.getItem("wzjm_mm_theme");if(o3!==null)localStorage.setItem("wzjm_mm_theme",o3);}}catch(e){}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>苇舟江湖梦 · 分析图谱（美学版）</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  :root{
+    --bg:#f4f1ea; --surface:#fffdf8; --ink:#1f1c17; --muted:#6b6353;
+    --line:#e3ddcf; --primary:#2c5d8a; --primary-d:#1f3a5f; --accent:#8a3324; --gold:#b8860b;
+    --serif:'Noto Serif SC','Songti SC',serif;
+    --sans:'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;
+  }
+  /* ============ 深色主题变量 ============ */
+  body.dark{
+    --bg:#0e1219; --surface:#19212c; --ink:#e9e4d8; --muted:#94a0ae;
+    --line:#2b3441; --primary:#5a93c9; --primary-d:#3d7ab0; --accent:#d8644f; --gold:#dcae46;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(44,93,138,.06), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(184,134,11,.05), transparent 60%),
+      var(--bg);
+    color:var(--ink); font-family:var(--sans); line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    transition:background-color .35s ease, color .35s ease;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:48px 24px 80px;}
+  header.hd{
+    background:linear-gradient(135deg,#1f3a5f,#2c5d8a); color:#fff;
+    border-radius:16px; padding:34px 36px; position:relative; overflow:hidden;
+    box-shadow:0 12px 36px rgba(31,58,95,.22); margin-bottom:40px;
+    transition:background .35s ease, box-shadow .35s ease;
+  }
+  body.dark header.hd{background:linear-gradient(135deg,#11283f,#1d4b73); box-shadow:0 12px 36px rgba(0,0,0,.45);}
+  header.hd::after{
+    content:"舟"; position:absolute; right:-10px; top:-44px;
+    font-family:var(--serif); font-size:230px; line-height:1;
+    color:rgba(255,255,255,.06); pointer-events:none; user-select:none;
+  }
+  header.hd h1{margin:0 0 8px; font-family:var(--serif); font-size:30px; letter-spacing:.5px;}
+  header.hd p{margin:0; color:rgba(255,255,255,.82); font-size:14px; max-width:620px; position:relative;}
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:16px;
+    padding:26px 28px 30px; margin-bottom:28px;
+    box-shadow:0 2px 6px rgba(31,28,23,.05), 0 14px 34px rgba(31,28,23,.06);
+    transition:background-color .35s ease, border-color .35s ease, box-shadow .35s ease;
+  }
+  body.dark .card{box-shadow:0 2px 6px rgba(0,0,0,.32), 0 14px 34px rgba(0,0,0,.4);}
+  .card h2{
+    margin:0 0 4px; font-family:var(--serif); font-size:20px; color:var(--primary-d);
+    display:flex; align-items:center; gap:10px; transition:color .35s ease;
+  }
+  .card h2 .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--primary),var(--primary-d));}
+  .card .sub{margin:0 0 18px; color:var(--muted); font-size:13px; transition:color .35s ease;}
+  .mermaid{display:flex; justify-content:center;}
+  .mermaid svg{max-width:100%; height:auto;}
+
+  /* ============ 主题切换按钮 ============ */
+  .theme-toggle{
+    position:fixed; top:16px; right:16px; z-index:200;
+    display:inline-flex; align-items:center; gap:6px;
+    padding:8px 15px; border-radius:20px; cursor:pointer;
+    font-family:var(--sans); font-size:13px; font-weight:600;
+    border:1px solid var(--line); background:var(--surface); color:var(--primary-d);
+    box-shadow:0 4px 14px rgba(31,28,23,.14);
+    transition:transform .2s ease, background-color .35s ease, color .35s ease, border-color .35s ease;
+  }
+  .theme-toggle:hover{transform:translateY(-2px)}
+  body.dark .theme-toggle{color:var(--gold); border-color:var(--line);}
+
+  /* ============ 美学特效 ============ */
+  .mermaid svg{animation:fadeUp .7s cubic-bezier(.2,0,0,1) both;}
+  .card:nth-child(2) .mermaid svg{animation-delay:.05s}
+  .card:nth-child(3) .mermaid svg{animation-delay:.12s}
+  .card:nth-child(4) .mermaid svg{animation-delay:.19s}
+  @keyframes fadeUp{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+
+  .mermaid .node rect,
+  .mermaid .node circle,
+  .mermaid .node polygon,
+  .mermaid .node ellipse{
+    filter:drop-shadow(0 4px 10px rgba(31,28,23,.16));
+    transition:transform .25s cubic-bezier(.2,0,0,1), filter .25s;
+    transform-box:fill-box; transform-origin:center;
+  }
+  body.dark .mermaid .node rect,
+  body.dark .mermaid .node circle,
+  body.dark .mermaid .node polygon,
+  body.dark .mermaid .node ellipse{filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));}
+  .mermaid .node:hover rect,
+  .mermaid .node:hover circle,
+  .mermaid .node:hover polygon,
+  .mermaid .node:hover ellipse{
+    transform:translateY(-3px) scale(1.015);
+    filter:drop-shadow(0 10px 20px rgba(44,93,138,.35));
+  }
+  .mermaid .edgePaths path{
+    stroke-width:1.8px;
+    filter:drop-shadow(0 1px 2px rgba(31,28,23,.12));
+  }
+  .mermaid .edgeLabel{
+    background:var(--surface); color:var(--muted); font-size:12px;
+    border-radius:6px; padding:1px 6px; transition:background-color .35s ease, color .35s ease;
+  }
+  .mermaid .pieCircle,
+  .mermaid .pieOuterCircle{filter:drop-shadow(0 4px 10px rgba(31,28,23,.14));}
+  body.dark .mermaid .pieCircle,
+  body.dark .mermaid .pieOuterCircle{filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));}
+  .mermaid .slice path{transition:transform .25s; transform-box:fill-box; transform-origin:center;}
+  .mermaid .slice:hover path{transform:scale(1.03);}
+
+  /* ============ 浅色渐变填充 ============ */
+  .node.ink rect,.node.ink circle,.node.ink polygon{fill:url(#gInk)!important}
+  .node.paper rect,.node.paper circle,.node.paper polygon{fill:url(#gPaper)!important}
+  .node.accent rect,.node.accent circle,.node.accent polygon{fill:url(#gAccent)!important}
+  .node.gold rect,.node.gold circle,.node.gold polygon{fill:url(#gGold)!important}
+
+  /* ============ 深色渐变填充覆盖 ============ */
+  body.dark .node.ink rect,body.dark .node.ink circle,body.dark .node.ink polygon{fill:url(#gInkD)!important}
+  body.dark .node.paper rect,body.dark .node.paper circle,body.dark .node.paper polygon{fill:url(#gPaperD)!important; stroke:#3d7ab0!important;}
+  body.dark .node.accent rect,body.dark .node.accent circle,body.dark .node.accent polygon{fill:url(#gAccentD)!important}
+  body.dark .node.gold rect,body.dark .node.gold circle,body.dark .node.gold polygon{fill:url(#gGoldD)!important}
+  /* 深色下 paper 节点文字反白 */
+  body.dark .node.paper text{fill:var(--ink)!important}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important; transition:none!important;}
+  }
+  footer{text-align:center; color:var(--muted); font-size:12px; margin-top:8px; transition:color .35s ease;}
+</style>
+</head>
+<body>
+<!-- 主题切换 -->
+<button id="theme-toggle" class="theme-toggle" aria-label="切换深色模式">
+  <span class="icon">🌙</span><span class="label">深色</span>
+</button>
+
+<!-- 渐变定义：浅色 / 深色 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gInk" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2c5d8a"/><stop offset="100%" stop-color="#1f3a5f"/>
+    </linearGradient>
+    <linearGradient id="gAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a8442f"/><stop offset="100%" stop-color="#8a3324"/>
+    </linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c9962a"/><stop offset="100%" stop-color="#b8860b"/>
+    </linearGradient>
+    <linearGradient id="gPaper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fffdf8"/><stop offset="100%" stop-color="#f3efe6"/>
+    </linearGradient>
+    <!-- 深色：提亮以适配深底 -->
+    <linearGradient id="gInkD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5a93c9"/><stop offset="100%" stop-color="#3d7ab0"/>
+    </linearGradient>
+    <linearGradient id="gAccentD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d8644f"/><stop offset="100%" stop-color="#b8452f"/>
+    </linearGradient>
+    <linearGradient id="gGoldD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dcae46"/><stop offset="100%" stop-color="#c4962a"/>
+    </linearGradient>
+    <linearGradient id="gPaperD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b3441"/><stop offset="100%" stop-color="#1a212c"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="hd">
+    <h1>《苇舟江湖梦》分析图谱</h1>
+    <p>基于霜月仲明原著全文（59 章 · 约 22 万字）的量化分析与考据工程。本页以美学化 Mermaid 图谱呈现分析流水线、维度体系与产物分布。</p>
+  </header>
+
+  <section class="card">
+    <h2><span class="dot"></span>分析流水线架构</h2>
+    <p class="sub">从原著文本到统一报告平台的端到端链路（脚本 01–16 → 产物 → 报告中心）。</p>
+    <pre class="mermaid">
+flowchart TD
+    classDef ink fill:#2c5d8a,stroke:#16304f,color:#fff,strokeWidth:1.5px
+    classDef paper fill:#fffdf8,stroke:#2c5d8a,color:#1f3a5f,strokeWidth:1.5px
+    classDef accent fill:#8a3324,stroke:#5e2118,color:#fff,strokeWidth:1.5px
+    classDef gold fill:#b8860b,stroke:#8a6a08,color:#fff,strokeWidth:1.5px
+
+    SRC["原著 DOCX 与参考图"]:::paper --> RAW["full_text.txt / 21.8万字 / 59章"]:::paper
+    RAW --> DATA["数据层 JSON chapter_data analysis"]:::paper
+    DATA --> P1["预处理 01-02 分章聚合标签"]:::ink
+    P1 --> P2["核心量化 03-07 统计文体词汇情感网络"]:::ink
+    P2 --> P3["语义分析 08-12 报告空间官制地图看板"]:::ink
+    P3 --> P4["补全维度 14-16 结构时间节奏派生"]:::ink
+    P2 --> ARC
+    P3 --> ARC
+    P4 --> ARC
+    ARC["数据归档 13 SQLite 索引库"]:::gold
+    ARC --> OUT["产物层 14份分析报告与归档库"]:::accent
+    OUT --> HUB["报告中心 统一平台"]:::gold
+    </pre>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot"></span>分析维度体系（脑图）</h2>
+    <p class="sub">6 大分类、15 份报告构成的文本量化与考据矩阵。</p>
+    <pre class="mermaid">
+mindmap
+  root((苇舟江湖梦 · 分析中心))
+    总体概览
+      全文本量化分析报告
+      数据归档总览
+    人物维度
+      人物关系网络
+      出场提及背离
+    章节标注
+      章节标签看板
+      章节结构量化
+    时空地理
+      空间地点分析
+      地理位置关系图
+      时间节奏量化
+    语言计量
+      文体指纹节奏
+      词汇用词漂移
+      情感时序曲线
+      叙事假设检验
+    考据专题
+      官制考究
+      川阴王建都推演
+    </pre>
+  </section>
+
+  <section class="card">
+    <h2><span class="dot"></span>报告分类分布</h2>
+    <p class="sub">15 份报告在 6 大维度上的分布占比。</p>
+    <pre class="mermaid">
+pie showData
+    title 报告分类分布（共 15 份）
+    "语言计量" : 4
+    "时空地理" : 3
+    "总体概览" : 2
+    "人物维度" : 2
+    "章节标注" : 2
+    "考据专题" : 2
+    </pre>
+  </section>
+
+  <footer>美学化 Mermaid 图谱 · 宣纸 / 墨蓝 / 朱砂设计语言 · 渐变填充 + 景深投影 + 入场动画 + 悬停发光</footer>
+</div>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+  const FONT = 'PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif';
+  const LIGHT = {
+    primaryColor:'#eaf1f8', primaryTextColor:'#1f3a5f', primaryBorderColor:'#2c5d8a',
+    lineColor:'#8a3324', secondaryColor:'#fffdf8', tertiaryColor:'#f7f4ec',
+    background:'transparent', fontSize:'14px'
+  };
+  const DARK = {
+    primaryColor:'#1b212c', primaryTextColor:'#e9e4d8', primaryBorderColor:'#5a93c9',
+    lineColor:'#d8644f', secondaryColor:'#222a36', tertiaryColor:'#1a212c',
+    background:'transparent', textColor:'#e9e4d8', fontSize:'14px'
+  };
+
+  let current = 'light';
+
+  async function render(theme){
+    mermaid.initialize({
+      startOnLoad:false,
+      theme: theme==='dark' ? 'dark' : 'base',
+      fontFamily: FONT,
+      themeVariables: theme==='dark' ? DARK : LIGHT,
+      flowchart:{ curve:'basis', nodeSpacing:46, rankSpacing:64, padding:18 },
+      mindmap:{ padding:18 },
+      pie:{ padding:18 }
+    });
+    document.querySelectorAll('pre.mermaid').forEach(el=>{
+      el.textContent = el.dataset.src;
+      el.removeAttribute('data-processed');
+    });
+    await mermaid.run();
+  }
+
+  function syncBtn(){
+    const btn = document.getElementById('theme-toggle');
+    btn.querySelector('.icon').textContent = current==='dark' ? '☀' : '🌙';
+    btn.querySelector('.label').textContent = current==='dark' ? '浅色' : '深色';
+  }
+
+  // 初始主题：localStorage > 系统偏好
+  const saved = localStorage.getItem('wzjm_mm_theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  current = saved || (prefersDark ? 'dark' : 'light');
+  document.body.classList.toggle('dark', current==='dark');
+
+  // 缓存源码（首次渲染前）
+  document.querySelectorAll('pre.mermaid').forEach(el=> el.dataset.src = el.textContent);
+
+  await render(current);
+  syncBtn();
+
+  document.getElementById('theme-toggle').addEventListener('click', async ()=>{
+    current = current==='dark' ? 'light' : 'dark';
+    document.body.classList.toggle('dark', current==='dark');
+    localStorage.setItem('wzjm_mm_theme', current);
+    syncBtn();
+    await render(current);
+  });
+</script>
+<style data-wz-embed-style>.embed{margin:0!important}.embed .topbar,.embed header[class*="bar"],.embed .nav-rail,.embed .toolbar,.embed .dm-toggle,.embed .rc-topbar,.embed .site-header{display:none!important}.embed .wrap,.embed .container,.embed main,.embed .content{padding-top:1.2rem!important}</style><script data-wz-embed>try{if(location.search.indexOf("embed")>=0){document.body.classList.add("embed");document.addEventListener("message",function(e){if(!e.data)return;if(e.data.wzTheme){document.body.classList.toggle("dark",e.data.wzTheme==="dark");}if(e.data.wzAccent){document.documentElement.style.setProperty("--primary",e.data.wzAccent);}});}}catch(e){}</script>
+
+
+
+
+
+
+
+
+
+<script data-wzjm-backonly>
+(function(){
+  var backHref='index.html';
+  if(!backHref) return;
+  function build(){
+    if(document.querySelector('.dm-back')) return;
+    var s=document.createElement('style');
+    s.textContent='.dm-back{position:fixed;top:16px;right:16px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(127,127,127,.35);background:rgba(127,127,127,.12);color:inherit;box-shadow:0 4px 14px rgba(0,0,0,.15);transition:transform .2s ease}.dm-back:hover{transform:translateY(-2px)}';
+    document.head.appendChild(s);
+    var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+    a.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg><span>分析中心</span>';
+    document.body.appendChild(a);
+  }
+  if(document.body){build();}else{document.addEventListener('DOMContentLoaded',build);}
+})();
+</script>
+
+</body>
+</html>

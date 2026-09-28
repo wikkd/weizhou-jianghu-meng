@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<script id="wzjm-key-migration">try{var n0=localStorage.getItem("wzjm_dark");if(n0===null){var o0=localStorage.getItem("wzjm_dark");if(o0!==null)localStorage.setItem("wzjm_dark",o0);}var n1=localStorage.getItem("wzjm_lib_dark");if(n1===null){var o1=localStorage.getItem("wzjm_lib_dark");if(o1!==null)localStorage.setItem("wzjm_lib_dark",o1);}var n2=localStorage.getItem("wzjm_lib_accent");if(n2===null){var o2=localStorage.getItem("wzjm_lib_accent");if(o2!==null)localStorage.setItem("wzjm_lib_accent",o2);}var n3=localStorage.getItem("wzjm_mm_theme");if(n3===null){var o3=localStorage.getItem("wzjm_mm_theme");if(o3!==null)localStorage.setItem("wzjm_mm_theme",o3);}}catch(e){}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>《苇舟江湖梦》角色性格量化</title><link rel="stylesheet" href="glass.css">
+<style>
+.dm-toggle{position:fixed;right:18px;bottom:18px;z-index:50;width:42px;height:42px;border-radius:50%;
+ border:1px solid var(--glass-border);background:var(--glass-bg-soft);color:var(--ink);font-size:18px;cursor:pointer;
+ box-shadow:var(--shadow-card)}
+.dash-block{margin-top:32px}
+.dash-block h2{font-size:19px;font-weight:800;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+.dash-block h2::before{content:"";width:5px;height:20px;border-radius:20px;background:var(--band)}
+.dash-intro{color:var(--muted);font-size:13.5px;line-height:1.72;margin:-4px 0 16px;max-width:90ch}
+.q-table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+.q-table th,.q-table td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.q-table th{color:var(--muted);font-weight:600;position:sticky;top:0;background:var(--surface)}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:600;margin:2px 3px 2px 0;
+ background:var(--primary);color:#fff}
+.badge.mut{background:var(--glass-bg-soft);color:var(--ink);border:1px solid var(--glass-border)}
+.q-card{background:var(--glass-bg-soft);border:1px solid var(--glass-border);border-radius:var(--radius,14px);
+ padding:14px 16px;margin:10px 0;box-shadow:var(--shadow-card)}
+.q-card h3{margin:0 0 6px;font-size:15px}
+.q-card .meta{color:var(--muted);font-size:12px;margin-bottom:6px}
+details{margin-top:6px}summary{cursor:pointer;color:var(--primary);font-size:12.5px}
+.ev{padding:4px 0;font-size:12.5px;color:var(--muted);border-left:2px solid var(--line);padding-left:10px;margin:4px 0}
+.wz-chart-card{background:var(--glass-bg-soft);border:1px solid var(--glass-border);border-radius:14px;padding:18px 20px;margin:10px 0}
+.wz-hint{color:var(--muted);font-size:12px;margin-top:8px}
+</style></head>
+<body>
+<script data-wz-embed>try{if(location.search.indexOf("embed")>=0){document.body.classList.add("embed");document.addEventListener("message",function(ev){if(!ev.data)return;if(ev.data.wzTheme){document.body.classList.toggle("dark",ev.data.wzTheme==="dark");}if(ev.data.wzAccent){document.documentElement.style.setProperty("--primary",ev.data.wzAccent);}});}}catch(e){}</script>
+<header><h1>《苇舟江湖梦》角色性格量化</h1><p>六轴受控词表自动抽取 · 49 角色性格档案与证据</p></header>
+<div class="wrap">
+<div class="cards"><div class="card"><div class="kpi-v">49</div><div class="kpi-l">角色档案</div></div><div class="card"><div class="kpi-v">22</div><div class="kpi-l">有主导性格</div></div><div class="card"><div class="kpi-v">0.13</div><div class="kpi-l">平均置信度</div></div><div class="card"><div class="kpi-v">6</div><div class="kpi-l">性格维度轴</div></div></div><section class='dash-block'><h2>一、六轴性格分布</h2><p class='dash-intro'>按 6 个性格维度轴统计被判定为各极的角色数量（自动词表抽取，证据见下表）。</p><div class='wz-chart-card'><div id='ch_axes' data-wz-chart style='width:100%%;height:380px'></div><p class='wz-hint'>悬停查看角色数。</p></div></section><section class='dash-block'><h2>二、角色性格档案（按语境段数排序）</h2><p class='dash-intro'>主导性格徽章 + 各轴判定 + 抽样证据（原文片段）。单字名角色（影/空/福）已启用否定清单防泛指污染。</p><table class='q-table'><thead><tr><th>角色</th><th>主导性格</th><th>各轴</th><th>语境段</th><th>置信度</th></tr></thead><tbody><tr><td><b>任琅</b></td><td><span class="badge">重情</span><span class="badge">仁厚</span><span class="badge">谦和</span></td><td><span class='badge mut'>性情:沉稳</span> <span class='badge mut'>品性:仁厚</span> <span class='badge mut'>心气:谦和</span> <span class='badge mut'>情义:重情</span> <span class='badge mut'>智愚:鲁莽</span> <span class='badge mut'>胆气:无畏</span></td><td>987</td><td>0.83</td></tr><tr><td><b>尚樱</b></td><td><span class="badge">急躁</span><span class="badge">谦和</span><span class="badge">机变</span></td><td><span class='badge mut'>性情:急躁</span> <span class='badge mut'>心气:谦和</span> <span class='badge mut'>智愚:机变</span> <span class='badge mut'>胆气:无畏</span></td><td>920</td><td>0.67</td></tr><tr><td><b>夏叶</b></td><td><span class="badge">急躁</span><span class="badge">鲁莽</span></td><td><span class='badge mut'>性情:急躁</span> <span class='badge mut'>智愚:鲁莽</span></td><td>242</td><td>0.33</td></tr><tr><td><b>刘笑岩</b></td><td><span class='badge mut'>—</span></td><td><span class='badge mut'>性情:沉稳</span></td><td>226</td><td>0.0</td></tr><tr><td><b>陈奉天</b></td><td><span class="badge">沉稳</span><span class="badge">谦和</span></td><td><span class='badge mut'>性情:沉稳</span> <span class='badge mut'>心气:谦和</span></td><td>201</td><td>0.33</td></tr><tr><td><b>影</b></td><td><span class="badge">沉稳</span><span class="badge">重情</span><span class="badge">无畏</span></td><td><span class='badge mut'>性情:沉稳</span> <span class='badge mut'>情义:重情</span> <span class='badge mut'>胆气:无畏</span></td><td>176</td><td>0.5</td></tr><tr><td><b>许达</b></td><td><span class="badge">急躁</span></td><td><span class='badge mut'>性情:急躁</span></td><td>146</td><td>0.17</td></tr><tr><td><b>苏雨</b></td><td><span class="badge">怯懦</span></td><td><span class='badge mut'>胆气:怯懦</span></td><td>104</td><td>0.17</td></tr><tr><td><b>刑布</b></td><td><span class="badge">急躁</span><span class="badge">重情</span></td><td><span class='badge mut'>性情:急躁</span> <span class='badge mut'>情义:重情</span></td><td>88</td><td>0.33</td></tr><tr><td><b>赵翔</b></td><td><span class="badge">急躁</span></td><td><span class='badge mut'>性情:急躁</span></td><td>88</td><td>0.17</td></tr><tr><td><b>赵骁</b></td><td><span class="badge">急躁</span><span class="badge">无畏</span></td><td><span class='badge mut'>性情:急躁</span> <span class='badge mut'>胆气:无畏</span></td><td>80</td><td>0.33</td></tr><tr><td><b>马远</b></td><td><span class="badge">鲁莽</span></td><td><span class='badge mut'>智愚:鲁莽</span></td><td>77</td><td>0.17</td></tr><tr><td><b>苏沐文</b></td><td><span class="badge">急躁</span></td><td><span class='badge mut'>性情:急躁</span></td><td>75</td><td>0.17</td></tr><tr><td><b>张潇璃</b></td><td><span class="badge">沉稳</span></td><td><span class='badge mut'>性情:沉稳</span></td><td>71</td><td>0.17</td></tr><tr><td><b>王慕</b></td><td><span class="badge">仁厚</span><span class="badge">重情</span></td><td><span class='badge mut'>品性:仁厚</span> <span class='badge mut'>情义:重情</span></td><td>64</td><td>0.33</td></tr><tr><td><b>聂林</b></td><td><span class="badge">沉稳</span></td><td><span class='badge mut'>性情:沉稳</span></td><td>63</td><td>0.17</td></tr><tr><td><b>陆仲</b></td><td><span class="badge">沉稳</span><span class="badge">重情</span></td><td><span class='badge mut'>性情:沉稳</span> <span class='badge mut'>情义:重情</span></td><td>63</td><td>0.33</td></tr><tr><td><b>李博</b></td><td><span class="badge">仁厚</span><span class="badge">重情</span></td><td><span class='badge mut'>品性:仁厚</span> <span class='badge mut'>情义:重情</span></td><td>62</td><td>0.33</td></tr><tr><td><b>尚衫虎</b></td><td><span class='badge mut'>—</span></td><td></td><td>53</td><td>0.0</td></tr><tr><td><b>虞环</b></td><td><span class='badge mut'>—</span></td><td></td><td>52</td><td>0.0</td></tr><tr><td><b>黄亚钊</b></td><td><span class='badge mut'>—</span></td><td></td><td>48</td><td>0.0</td></tr><tr><td><b>武蒯</b></td><td><span class='badge mut'>—</span></td><td></td><td>47</td><td>0.0</td></tr><tr><td><b>范豪</b></td><td><span class='badge mut'>—</span></td><td></td><td>40</td><td>0.0</td></tr><tr><td><b>纪田</b></td><td><span class="badge">急躁</span><span class="badge">无畏</span></td><td><span class='badge mut'>性情:急躁</span> <span class='badge mut'>胆气:无畏</span></td><td>39</td><td>0.33</td></tr><tr><td><b>叶云</b></td><td><span class='badge mut'>—</span></td><td></td><td>37</td><td>0.0</td></tr><tr><td><b>程廖</b></td><td><span class="badge">急躁</span></td><td><span class='badge mut'>性情:急躁</span></td><td>34</td><td>0.17</td></tr><tr><td><b>秦阳</b></td><td><span class='badge mut'>—</span></td><td></td><td>31</td><td>0.0</td></tr><tr><td><b>川阴王</b></td><td><span class='badge mut'>—</span></td><td></td><td>30</td><td>0.0</td></tr><tr><td><b>刑泰</b></td><td><span class='badge mut'>—</span></td><td></td><td>30</td><td>0.0</td></tr><tr><td><b>安弈霖</b></td><td><span class='badge mut'>—</span></td><td></td><td>29</td><td>0.0</td></tr><tr><td><b>谢仁玄</b></td><td><span class='badge mut'>—</span></td><td></td><td>27</td><td>0.0</td></tr><tr><td><b>法慧</b></td><td><span class='badge mut'>—</span></td><td></td><td>27</td><td>0.0</td></tr><tr><td><b>韩德</b></td><td><span class='badge mut'>—</span></td><td></td><td>26</td><td>0.0</td></tr><tr><td><b>张百慧</b></td><td><span class='badge mut'>—</span></td><td></td><td>22</td><td>0.0</td></tr><tr><td><b>安明</b></td><td><span class="badge">急躁</span></td><td><span class='badge mut'>性情:急躁</span></td><td>22</td><td>0.17</td></tr><tr><td><b>刘媛灵</b></td><td><span class='badge mut'>—</span></td><td></td><td>18</td><td>0.0</td></tr><tr><td><b>李叔</b></td><td><span class='badge mut'>—</span></td><td></td><td>16</td><td>0.0</td></tr><tr><td><b>雷光</b></td><td><span class="badge">沉稳</span></td><td><span class='badge mut'>性情:沉稳</span></td><td>15</td><td>0.17</td></tr><tr><td><b>赵思俪</b></td><td><span class='badge mut'>—</span></td><td></td><td>14</td><td>0.0</td></tr><tr><td><b>金雷</b></td><td><span class='badge mut'>—</span></td><td></td><td>14</td><td>0.0</td></tr><tr><td><b>张洵</b></td><td><span class='badge mut'>—</span></td><td></td><td>13</td><td>0.0</td></tr><tr><td><b>阮盛</b></td><td><span class='badge mut'>—</span></td><td></td><td>12</td><td>0.0</td></tr><tr><td><b>王监军</b></td><td><span class='badge mut'>—</span></td><td></td><td>11</td><td>0.0</td></tr><tr><td><b>王奔</b></td><td><span class='badge mut'>—</span></td><td></td><td>11</td><td>0.0</td></tr><tr><td><b>陈王</b></td><td><span class="badge">沉稳</span></td><td><span class='badge mut'>性情:沉稳</span></td><td>10</td><td>0.17</td></tr><tr><td><b>张览</b></td><td><span class='badge mut'>—</span></td><td></td><td>8</td><td>0.0</td></tr><tr><td><b>刘安</b></td><td><span class='badge mut'>—</span></td><td></td><td>6</td><td>0.0</td></tr><tr><td><b>楚笙</b></td><td><span class='badge mut'>—</span></td><td></td><td>6</td><td>0.0</td></tr><tr><td><b>夏穗良</b></td><td><span class='badge mut'>—</span></td><td></td><td>0</td><td>0.0</td></tr></tbody></table></section>
+</div>
+<script>
+(function(){var t=localStorage.getItem('wzjm_dark');if(t==='1')document.body.classList.add('dark');
+var b=document.createElement('button');b.className='dm-toggle';b.textContent='🌓';
+b.setAttribute('aria-label','切换深色');b.onclick=function(){var d=document.body.classList.toggle('dark');localStorage.setItem('wzjm_dark',d?'1':'0');};
+document.body.appendChild(b);})();
+</script>
+<script src="echarts-kit.js"></script>
+<script>
+    var AX=["\u6027\u60c5", "\u54c1\u6027", "\u5fc3\u6c14", "\u60c5\u4e49", "\u667a\u611a", "\u80c6\u6c14"], PA=[9, 3, 3, 6, 3, 5], PB=[10, 0, 0, 0, 1, 1];
+    WZ.ready(function(){
+      WZ.chart(document.getElementById('ch_axes'), function(vars){
+        return {title:{text:'六性格轴 · 两极角色数分布',left:'center',top:6,textStyle:{color:vars.ink,fontSize:15}},
+          tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+          legend:{bottom:6,textStyle:{color:vars.muted}},
+          grid:{left:54,right:24,top:48,bottom:64,containLabel:true},
+          xAxis:{type:'category',data:AX,axisLabel:{color:vars.muted}},
+          yAxis:{type:'value',name:'角色数',axisLabel:{color:vars.muted}},
+          series:[
+            {name:'极A',type:'bar',data:PA,itemStyle:{color:vars.palette[0],borderRadius:[4,4,0,0]},label:{show:true,position:'top',color:vars.muted}},
+            {name:'极B',type:'bar',data:PB,itemStyle:{color:vars.palette[1],borderRadius:[4,4,0,0]},label:{show:true,position:'top',color:vars.muted}}
+          ]};
+      }, {});
+    });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  var KEY='wzjm_dark';
+  function apply(d){ document.body.classList.toggle('dark', d); }
+  var SUN='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON='<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function sync(){
+    var b=document.querySelector('.dm-toggle');
+    if(b){ var d=document.body.classList.contains('dark'); b.innerHTML = d ? SUN+'<span>浅色</span>' : MOON+'<span>深色</span>'; }
+  }
+  function buildBtn(){
+    var s=document.createElement('style');
+    s.textContent='.dm-cluster{position:fixed;top:16px;right:16px;z-index:9999;display:flex;gap:8px}'
+    +'.dm-toggle,.dm-back{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;'
+    +"font-family:'HarmonyOS Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;font-weight:500;"
+    +'border:1px solid var(--line,var(--rc-line,#dfe3e8));background:var(--surface,var(--rc-surface,#fff));'
+    +'color:var(--primary,var(--rc-primary,#0A59F7));box-shadow:0 4px 14px rgba(24,36,49,.14);'
+    +'transition:transform .2s cubic-bezier(.25,0,.3,1),background-color .3s,color .3s,border-color .3s}'
+    +'.dm-toggle:hover,.dm-back:hover{transform:translateY(-2px)}'
+    +'.dm-back{text-decoration:none}';
+    document.head.appendChild(s);
+    var c=document.createElement('div');c.className='dm-cluster';
+    var backHref='../index.html';
+    if(backHref){
+      var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+      a.setAttribute('aria-label','返回报告中心');a.textContent='报告中心';
+      c.appendChild(a);
+    }
+    var b=document.createElement('button');b.className='dm-toggle';
+    b.setAttribute('aria-label','切换深色模式');
+    b.addEventListener('click', function(){
+      var d=!document.body.classList.contains('dark');
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(e){}
+      sync(); broadcast(d);
+    });
+    c.appendChild(b);
+    document.body.appendChild(c);
+  }
+  function broadcast(d){
+    try{
+      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：图表主题热更新 */
+      if(window.parent!==window){ window.parent.postMessage({wzTheme:d?'dark':'light'},'*'); }
+      else{ var fs=document.querySelectorAll('iframe'); for(var i=0;i<fs.length;i++){ try{ fs[i].contentWindow.postMessage({wzTheme:d?'dark':'light'},'*'); }catch(e){} } }
+    }catch(e){}
+  }
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(saved ? saved==='1' : !!prefers);
+  buildBtn();
+  sync();
+  setTimeout(function(){ broadcast(document.body.classList.contains('dark')); },0);
+  window.addEventListener('message', function(e){
+    if(e.data && e.data.wzTheme){
+      var d = e.data.wzTheme==='dark';
+      apply(d);
+      try{ localStorage.setItem(KEY, d?'1':'0'); }catch(err){}
+      sync();
+    }
+  });
+})();
+</script>
+
+</body></html>
