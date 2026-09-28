@@ -201,10 +201,10 @@ def main():
 
 # 自带完整主题系统的页面（键规范化仍生效，DM 注入跳过）
 SKIP_DM = {
-    "index.html",
-    "00_总览导航/index.html",
-    "00_总览导航/美学图谱.html",
-    "00_总览导航/苇舟江湖梦_图书馆.html",
+    "index.html",          # 分析中心（自带主题钮）
+    "library.html",        # 数字图书馆外壳（自带 wzjm_lib_dark 主题系统）
+    "美学图谱.html",        # 自带 mm 主题系统
+    "苇舟江湖梦_图书馆.html",  # 自带玻璃主题钮
 }
 
 
