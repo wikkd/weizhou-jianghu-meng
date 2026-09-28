@@ -17,6 +17,13 @@ git reset --hard master
 
 STAGE="../_agentkit_stage"
 if [ -d "$STAGE/产物" ]; then
+  # 深色切换后处理：生成器重写报告会冲掉注入，部署前统一补注（幂等，已注入自动跳过）
+  PYBIN="${PYBIN:-python}"
+  if command -v "$PYBIN" >/dev/null 2>&1; then
+    "$PYBIN" "$STAGE/脚本/_apply_darkmode.py" || echo "WARN: 深色注入失败，继续部署（报告将缺深色切换）"
+  else
+    echo "WARN: 未找到 python，跳过深色注入"
+  fi
   /usr/bin/rm -rf 文学/产物
   cp -r "$STAGE/产物" 文学/产物
   git add -f 文学/产物
