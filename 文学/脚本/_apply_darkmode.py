@@ -100,13 +100,11 @@ def write(p, s):
 
 
 def back_href(rel):
-    """返回报告中心：根/00_总览导航 → 本层 index；其余子目录 → ../index.html。"""
+    """返回分析中心：index.html 自身不注入；子目录 → ../index.html；根 → index.html。"""
+    if rel.replace("\\", "/") == "index.html":
+        return None  # 自身即中心
     d = os.path.dirname(rel)
-    if rel.replace("\\", "/") in ("index.html", "00_总览导航/index.html"):
-        return None  # 自身即中心/导航，不注入返回
-    if d:
-        return "index.html" if d == "00_总览导航" else "../index.html"
-    return "index.html"
+    return ("../index.html" if d else "index.html")
 
 
 def normalize_keys(html):
@@ -123,6 +121,43 @@ def normalize_keys(html):
                 html = html.replace(q + old + q, q + new + q)
                 changed = True
     return html, changed
+
+
+BACK_ONLY = r"""
+<script data-wzjm-backonly>
+(function(){
+  var backHref='__BACK__';
+  if(!backHref) return;
+  function build(){
+    if(document.querySelector('.dm-back')) return;
+    var s=document.createElement('style');
+    s.textContent='.dm-back{position:fixed;top:16px;right:16px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(127,127,127,.35);background:rgba(127,127,127,.12);color:inherit;box-shadow:0 4px 14px rgba(0,0,0,.15);transition:transform .2s ease}.dm-back:hover{transform:translateY(-2px)}';
+    document.head.appendChild(s);
+    var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+    a.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg><span>分析中心</span>';
+    document.body.appendChild(a);
+  }
+  if(document.body){build();}else{document.addEventListener('DOMContentLoaded',build);}
+})();
+</script>
+"""
+BACK_MARK_RE = re.compile(r'<script data-wzjm-backonly>[\s\S]*?</script>')
+
+
+def inject_back_only(rel):
+    full = os.path.join(BASE, rel)
+    if not os.path.exists(full):
+        return
+    html = read(full)
+    if "</body>" not in html:
+        return
+    html = BACK_MARK_RE.sub("", html, count=1)
+    href = back_href(rel)
+    if not href:
+        return
+    html = html.replace("</body>", BACK_ONLY.replace("__BACK__", href, 1) + "\n</body>", 1)
+    write(full, html)
+    print("  [返回钮] " + rel)
 
 
 def inject_dm(rel):
@@ -193,7 +228,7 @@ def main():
     # 2) 深色切换 + 返回入口：全量注入（自带主题系统的外壳页跳过，防双按钮）
     for rel in pages:
         if rel.replace("\\", "/") in SKIP_DM:
-            print("  [跳过·自带主题] " + rel)
+            inject_back_only(rel)   # 自带主题系统：只补返回钮，防双主题按钮
             continue
         inject_dm(rel)
     print("\n完成。")
@@ -201,10 +236,9 @@ def main():
 
 # 自带完整主题系统的页面（键规范化仍生效，DM 注入跳过）
 SKIP_DM = {
-    "index.html",          # 分析中心（自带主题钮）
-    "library.html",        # 数字图书馆外壳（自带 wzjm_lib_dark 主题系统）
-    "美学图谱.html",        # 自带 mm 主题系统
-    "苇舟江湖梦_图书馆.html",  # 自带玻璃主题钮
+    "index.html",          # 分析中心（自带主题钮，即中心本身）
+    "library.html",        # 数字图书馆外壳（自带主题系统 + 顶栏已有返回链接）
+    "美学图谱.html",        # 自带 mm 主题系统（back-only 补返回钮）
 }
 
 

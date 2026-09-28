@@ -17,14 +17,15 @@ git reset --hard master
 
 STAGE="../_agentkit_stage"
 if [ -d "$STAGE/产物" ]; then
-  # 深色切换后处理：生成器重写报告会冲掉注入，部署前统一补注（幂等，已注入自动跳过）
+  # 部署前后处理链（全部幂等）：报告统一分发 → 鸿蒙化 → 键规范/注入
   PYBIN="${PYBIN:-python}"
   if command -v "$PYBIN" >/dev/null 2>&1; then
+    "$PYBIN" "$STAGE/脚本/_sync_reports.py" || echo "WARN: 报告统一分发失败，继续部署"
     "$PYBIN" "$STAGE/脚本/_harmonize_report_theme.py" || echo "WARN: 鸿蒙化(theme)失败，继续部署"
     "$PYBIN" "$STAGE/脚本/_harmonize_glass_and_pages.py" || echo "WARN: 鸿蒙化(glass/pages)失败，继续部署"
     "$PYBIN" "$STAGE/脚本/_apply_darkmode.py" || echo "WARN: 深色注入失败，继续部署（报告将缺深色切换）"
   else
-    echo "WARN: 未找到 python，跳过深色注入"
+    echo "WARN: 未找到 python，跳过产物后处理链"
   fi
   /usr/bin/rm -rf 文学/产物
   cp -r "$STAGE/产物" 文学/产物
