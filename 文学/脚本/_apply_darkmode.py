@@ -1,66 +1,68 @@
 # -*- coding: utf-8 -*-
+"""报告页 DEV_RULES 合规后处理（幂等）：
+  1. 深色切换注入（body.dark + 胶囊按钮 + 初始自广播，echarts/SVG 主题热更新）
+  2. 「返回报告中心」入口（交互四件套：来路/逃生口；index 自身跳过）
+  3. localStorage 键统一 wzjm_ 前缀（自动迁移旧键：wz-dark/wz-lib-*/mm-theme）
+  4. 图标使用内联 SVG（禁 emoji 图标）
+用法：python 脚本/_apply_darkmode.py
 """
-为所有报告页面注入「自包含深色切换脚本」。
-- 兼容 theme.css（报告页）与 site.css（报告中心外壳）两套 Token：按钮样式用双变量回退 var(--x, var(--rc-x, fallback))
-- 切换时：① 切换 body.dark ② 存 localStorage ③ 广播主题
-  · 若在 iframe 内（报告页）：向 parent 广播（外壳可忽略）
-  · 若在顶层且有 iframe（报告中心）：向所有 iframe 广播（联动 iframe 报告）
-  · 接收 parent 广播（报告页）：应用主题
-用法：python3 脚本/_apply_darkmode.py
-"""
-import os, glob, io, sys, re
+import io, os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE = os.path.join(ROOT, "产物")
 
-# 需要注入的页面（排除已自带深色模式的 美学图谱.html）
-TARGETS = [
-    "产物/川阴王建都推演.html",
-    "产物/苇舟江湖梦_统计推断.html",
-    "产物/苇舟江湖梦_风格计量.html",
-    "产物/苇舟江湖梦_词汇计量.html",
-    "产物/苇舟江湖梦_情感时序.html",
-    "产物/苇舟江湖梦_空间地点分析报告.html",
-    "产物/苇舟江湖梦_官制考究.html",
-    "产物/苇舟江湖梦_地理位置关系图.html",
-    "产物/苇舟江湖梦_章节标签量化看板.html",
-    "产物/苇舟江湖梦_章节结构量化.html",
-    "产物/苇舟江湖梦_时间节奏量化.html",
-    "产物/苇舟江湖梦_人物关系网络.html",
-    "产物/数据归档/苇舟江湖梦_数据归档总览.html",
-    "产物/苇舟江湖梦_派生维度量化.html",
-    "产物/苇舟江湖梦_分析报告.html",
-    "产物/index.html",
-    "产物/报告中心/index.html",
-]
+MIG_MARK = 'id="wzjm-key-migration"'
+KEYMAP = [("wzjm_dark", "wz-dark"), ("wzjm_lib_dark", "wz-lib-dark"),
+          ("wzjm_lib_accent", "wz-lib-accent"), ("wzjm_mm_theme", "mm-theme")]
+MIG_SCRIPT = ('<script ' + MIG_MARK + '>try{'
+              + "".join('var n%d=localStorage.getItem("%s");if(n%d===null){var o%d=localStorage.getItem("%s");if(o%d!==null)localStorage.setItem("%s",o%d);}'
+                        % (i, new, i, i, old, i, new, i)
+                        for i, (new, old) in enumerate(KEYMAP))
+              + '}catch(e){}</script>')
 
 DM_SCRIPT = r"""
 <script>
 (function(){
-  var KEY='wz-dark';
+  var KEY='wzjm_dark';
   function apply(d){ document.body.classList.toggle('dark', d); }
+  var SUN='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON='<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
   function sync(){
     var b=document.querySelector('.dm-toggle');
-    if(b){ var d=document.body.classList.contains('dark'); b.textContent = d ? '☀ 浅色' : '🌙 深色'; }
+    if(b){ var d=document.body.classList.contains('dark'); b.innerHTML = d ? SUN+'<span>浅色</span>' : MOON+'<span>深色</span>'; }
   }
   function buildBtn(){
     var s=document.createElement('style');
-    s.textContent='.dm-toggle{position:fixed;top:16px;right:16px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:20px;cursor:pointer;font-family:\'PingFang SC\',\'Microsoft YaHei\',\'Noto Sans SC\',sans-serif;font-size:13px;font-weight:600;border:1px solid var(--line,var(--rc-line,#e3ddcf));background:var(--surface,var(--rc-surface,#fffdf8));color:var(--primary-d,var(--rc-primary-d,#1f3a5f));box-shadow:0 4px 14px rgba(31,28,23,.18);transition:transform .2s ease,background-color .35s ease,color .35s ease,border-color .35s ease}.dm-toggle:hover{transform:translateY(-2px)}';
+    s.textContent='.dm-cluster{position:fixed;top:16px;right:16px;z-index:9999;display:flex;gap:8px}'
+    +'.dm-toggle,.dm-back{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:999px;cursor:pointer;'
+    +"font-family:'HarmonyOS Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:12.5px;font-weight:500;"
+    +'border:1px solid var(--line,var(--rc-line,#dfe3e8));background:var(--surface,var(--rc-surface,#fff));'
+    +'color:var(--primary,var(--rc-primary,#0A59F7));box-shadow:0 4px 14px rgba(24,36,49,.14);'
+    +'transition:transform .2s cubic-bezier(.25,0,.3,1),background-color .3s,color .3s,border-color .3s}'
+    +'.dm-toggle:hover,.dm-back:hover{transform:translateY(-2px)}'
+    +'.dm-back{text-decoration:none}';
     document.head.appendChild(s);
-    var b=document.createElement('button');
-    b.className='dm-toggle';
+    var c=document.createElement('div');c.className='dm-cluster';
+    var backHref='__BACK__';
+    if(backHref){
+      var a=document.createElement('a');a.className='dm-back';a.href=backHref;
+      a.setAttribute('aria-label','返回报告中心');a.textContent='报告中心';
+      c.appendChild(a);
+    }
+    var b=document.createElement('button');b.className='dm-toggle';
     b.setAttribute('aria-label','切换深色模式');
     b.addEventListener('click', function(){
       var d=!document.body.classList.contains('dark');
       apply(d);
       try{ localStorage.setItem(KEY, d?'1':'0'); }catch(e){}
-      sync();
-      broadcast(d);
+      sync(); broadcast(d);
     });
-    document.body.appendChild(b);
+    c.appendChild(b);
+    document.body.appendChild(c);
   }
   function broadcast(d){
     try{
-      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：echarts-kit 重绘 */
+      window.postMessage({wzTheme:d?'dark':'light'},'*');   /* 自广播：图表主题热更新 */
       if(window.parent!==window){ window.parent.postMessage({wzTheme:d?'dark':'light'},'*'); }
       else{ var fs=document.querySelectorAll('iframe'); for(var i=0;i<fs.length;i++){ try{ fs[i].contentWindow.postMessage({wzTheme:d?'dark':'light'},'*'); }catch(e){} } }
     }catch(e){}
@@ -84,26 +86,127 @@ DM_SCRIPT = r"""
 </script>
 """
 
-def inject(path):
-    full = os.path.join(ROOT, path)
+DM_MARKER_RE = re.compile(r"<script>\s*\(function\(\)\{\s*var KEY='wz(?:jm)?_dark';.*?\}\)\(\);\s*</script>", re.S)
+
+
+def read(p):
+    with io.open(p, encoding="utf-8") as f:
+        return f.read()
+
+
+def write(p, s):
+    with io.open(p, "w", encoding="utf-8") as f:
+        f.write(s)
+
+
+def back_href(rel):
+    """返回报告中心：根/00_总览导航 → 本层 index；其余子目录 → ../index.html。"""
+    d = os.path.dirname(rel)
+    if rel.replace("\\", "/") in ("index.html", "00_总览导航/index.html"):
+        return None  # 自身即中心/导航，不注入返回
+    if d:
+        return "index.html" if d == "00_总览导航" else "../index.html"
+    return "index.html"
+
+
+def normalize_keys(html):
+    """localStorage 键统一 wzjm_ 前缀：head 首位插迁移脚本 + 字面量替换。"""
+    changed = False
+    if MIG_MARK not in html:
+        m = re.search(r"<head[^>]*>", html, re.I)
+        if m:
+            html = html[:m.end()] + "\n" + MIG_SCRIPT + html[m.end():]
+            changed = True
+    for new, old in KEYMAP:
+        for q in ("'", '"'):
+            if q + old + q in html:
+                html = html.replace(q + old + q, q + new + q)
+                changed = True
+    return html, changed
+
+
+def inject_dm(rel):
+    full = os.path.join(BASE, rel)
     if not os.path.exists(full):
-        print("  [跳过·不存在] " + path); return False
-    with io.open(full, "r", encoding="utf-8") as f:
-        html = f.read()
-    # 移除旧版注入（无自广播），保证升级到新版脚本
-    html = re.sub(r"<script>\s*\(function\(\)\{\s*var KEY='wz-dark';.*?\}\)\(\);\s*</script>",
-                  "", html, count=1, flags=re.S)
-    if "dm-toggle" in html:
-        print("  [跳过·已注入] " + path); return False
+        print("  [跳过·不存在] " + rel); return
+    html = read(full)
     if "</body>" not in html:
-        print("  [跳过·无</body>] " + path); return False
-    html = html.replace("</body>", DM_SCRIPT + "\n</body>", 1)
-    with io.open(full, "w", encoding="utf-8") as f:
-        f.write(html)
-    print("  [已注入] " + path); return True
+        print("  [跳过·无</body>] " + rel); return
+    # 移除旧版注入块（标记正则保证唯一），无条件重建最新版
+    html = DM_MARKER_RE.sub("", html, count=1)
+    html = html.replace("</body>", DM_SCRIPT.replace("__BACK__",
+                        back_href(rel) or "", 1) + "\n</body>", 1)
+    write(full, html)
+    print("  [已注入] " + rel)
+
+
+def rel_pages():
+    out = []
+    for p in glob.glob(os.path.join(BASE, "*.html")) + glob.glob(os.path.join(BASE, "*", "*.html")):
+        out.append(os.path.relpath(p, BASE).replace("\\", "/"))
+    return sorted(out)
+
+
+TARGETS = [
+    "苇舟江湖梦_统计推断.html",
+    "苇舟江湖梦_风格计量.html",
+    "苇舟江湖梦_词汇计量.html",
+    "苇舟江湖梦_情感时序.html",
+    "苇舟江湖梦_空间地点分析报告.html",
+    "苇舟江湖梦_官制考究.html",
+    "苇舟江湖梦_地理位置关系图.html",
+    "苇舟江湖梦_章节标签量化看板.html",
+    "苇舟江湖梦_章节结构量化.html",
+    "苇舟江湖梦_时间节奏量化.html",
+    "苇舟江湖梦_人物关系网络.html",
+    "苇舟江湖梦_派生维度量化.html",
+    "苇舟江湖梦_分析报告.html",
+    "苇舟江湖梦_可视化叙事系统.html",
+    "苇舟江湖梦_扩展叙事可视化.html",
+    "苇舟江湖梦_深度叙事可视化.html",
+    "苇舟江湖梦_报告归纳整理.html",
+    "苇舟江湖梦_原文阅读.html",
+    "数据归档/苇舟江湖梦_数据归档总览.html",
+    "05_制度家族/川阴王建都推演.html",
+    "05_制度家族/黄家概况.html",
+    "00_总览导航/苇舟江湖梦_关键词索引.html",
+    "00_总览导航/苇舟江湖梦_分析报告.html",
+    "00_总览导航/苇舟江湖梦_原文阅读.html",
+    "00_总览导航/苇舟江湖梦_图书馆.html",
+    "00_总览导航/苇舟江湖梦_报告归纳整理.html",
+    "00_总览导航/苇舟江湖梦_组件库.html",
+    "index.html",
+]
+
+
+def main():
+    # 1) 全页存储键规范化（含未注入页：美学图谱/图书馆/子目录研究页等）
+    n_ok = 0
+    pages = rel_pages()
+    for rel in pages:
+        full = os.path.join(BASE, rel)
+        html = read(full)
+        html2, changed = normalize_keys(html)
+        if changed:
+            write(full, html2); n_ok += 1
+    print("[键规范化] 处理 %d 页（迁移 snippet + 字面量替换）" % n_ok)
+    # 2) 深色切换 + 返回入口：全量注入（自带主题系统的外壳页跳过，防双按钮）
+    for rel in pages:
+        if rel.replace("\\", "/") in SKIP_DM:
+            print("  [跳过·自带主题] " + rel)
+            continue
+        inject_dm(rel)
+    print("\n完成。")
+
+
+# 自带完整主题系统的页面（键规范化仍生效，DM 注入跳过）
+SKIP_DM = {
+    "index.html",
+    "00_总览导航/index.html",
+    "00_总览导航/美学图谱.html",
+    "00_总览导航/苇舟江湖梦_图书馆.html",
+}
+
 
 if __name__ == "__main__":
-    ok = 0
-    for t in TARGETS:
-        if inject(t): ok += 1
-    print("\n完成：共注入 %d 个文件。" % ok)
+    main()
